@@ -1,0 +1,265 @@
+/* ===== HEADER STYLES ===== */
+
+/* Main Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* Smaller height for mobile */
+  padding: 0 var(--spacing-lg); /* Keep header with fixed padding */
+  position: sticky; /* Make header sticky */
+  top: 0;
+  z-index: var(--z-index-header);
+  background-color: var(--color-background); /* Default background color */
+  /* Remove border that might appear as shadow */
+  border: none;
+  box-shadow: none !important; /* Explicitly remove any shadow */
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transition: background-color var(--transition-speed) ease;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    height: 80px; /* Larger height for desktop */
+    box-shadow: none !important; /* Force no shadow on desktop */
+  }
+}
+
+/* Logo Styles */
+.logo {
+  font-weight: 600;
+  font-size: var(--font-size-large);
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo wrapper and parts for animation */
+.logo-wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.logo-part {
+  display: inline-block;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, max-width 0.6s ease-in-out;
+  position: relative;
+  height: 24px;
+  line-height: 24px; /* Match height for perfect alignment */
+}
+
+.logo-part.mid,
+.logo-part.right {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Default state - all visible */
+body:not(.scrolled) .logo-part.mid,
+body:not(.scrolled) .logo-part.right {
+  opacity: 1;
+  transform: translateX(0);
+  max-width: 100%;
+}
+
+/* Scrolled state - only T and / visible */
+body.scrolled .logo-part.mid {
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-5px);
+}
+
+body.scrolled .logo-part.right {
+  opacity: 0;
+  max-width: 0;
+}
+
+/* The slash always stays visible */
+.logo-part.slash {
+  opacity: 1 !important;
+  max-width: 100% !important;
+  transform: translateX(0) !important;
+}
+
+/* Desktop Navigation */
+.nav-container {
+  display: none; /* Hide by default for mobile */
+  align-items: center;
+  gap: var(--spacing-lg); /* Gap between menu and button */
+}
+
+@media (min-width: 768px) {
+  .nav-container {
+    display: flex; /* Show on desktop */
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu a {
+  margin-left: var(--spacing-md);  /* Reduced from 50px to 20px */
+  text-decoration: none;
+  font-weight: var(--font-weight-normal);
+  font-size: 15px;
+  color: var(--color-black);
+  position: relative;
+  transition: color var(--transition-speed) ease;
+}
+
+.menu a:hover {
+  color: var(--color-black);
+}
+
+.menu a:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.6px;
+  background: var(--color-black); /* Already using the correct color */
+  left: 0;
+  bottom: -3px;
+}
+
+.book-now-button {
+  display: flex;
+  width: 9.5rem;
+  height: 2.95rem;
+  padding: 0.025rem 0.025rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: var(--border-radius);
+  background: var(--color-black);
+  color: var(--color-background-light);
+  text-decoration: none;
+  font-weight: var(--font-weight-normal);
+  font-size: 15px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.book-now-button:hover {
+  background-color: var(--color-black-light);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-toggle {
+    display: none; /* Hide on desktop */
+  }
+}
+
+.hamburger-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-black);
+  transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+  width: 24px; /* Slightly wider in X state */
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+  width: 24px; /* Slightly wider in X state */
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: -100%; /* Start off-screen above */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px); /* Adjust height to account for header */
+  background-color: var(--color-background-light); /* Changed to requested color */
+  z-index: var(--z-index-mobile-menu); /* Below header z-index */
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
+  overflow-y: auto;
+  transition: top 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.active {
+  top: 60px; /* Slide down to below header */
+}
+
+.mobile-menu-content {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.mobile-menu-nav a {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  text-decoration: none;
+  padding: 18px 0 18px; /* Equal padding top and bottom */
+  border-bottom: 1px solid rgba(20, 20, 19, 0.1);
+  transition: color var(--transition-speed) ease;
+  display: block;
+}
+
+.mobile-menu-nav a:hover {
+  color: var(--color-black-light);
+}
+
+/* Mobile CTA buttons container */
+.mobile-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.mobile-cta-buttons .feature-cta {
+  width: 100%;
+}
+
+/* Change header background when mobile menu is open */
+body.menu-open .site-header {
+  background-color: var(--color-background-light);
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tivadar — Boudoir Photographer" />
+  <meta name="twitter:description" content="Escort and boudoir photography portfolio of Tivadar Orosz in London." />
+  <meta name="twitter:image" content="https://tivadarorosz.com/images/twitter-card.jpg" />
+
+  <title>{{ title }} \ Tivadar</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/main.js"></script>
+
+  <!-- Font Faces -->
+  <style>
+    @font-face {
+      font-family: 'Styrene A';
+      src: url('https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff2') format('woff2'),
+           url('https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff') format('woff');
+      /* src: url('/fonts/StyreneA-Bold-Web.woff2') format('woff2'),
+           url('/fonts/StyreneA-Bold-Web.woff') format('woff'); */
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Styrene A';
+      src: url('https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff2') format('woff2'),
+           url('https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff') format('woff');
+      /* src: url('/fonts/StyreneA-Medium-Web.woff2') format('woff2'),
+           url('/fonts/StyreneA-Medium-Web.woff') format('woff'); */
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Styrene A';
+      src: url('https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff2') format('woff2'),
+           url('https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff') format('woff');
+      /* src: url('/fonts/StyreneA-Regular-Web.woff2') format('woff2'),
+           url('/fonts/StyreneA-Regular-Web.woff') format('woff'); */
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Tiempos Text';
+      src: url('https://cdn.tivadarorosz.com/fonts/tiempos-text-regular.woff2') format('woff2');
+      /* src: url('/fonts/tiempos-text-regular.woff2') format('woff2'); */
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Tiempos Text';
+      src: url('https://cdn.tivadarorosz.com/fonts/tiempos-text-medium.woff2') format('woff2');
+      /* src: url('/fonts/tiempos-text-medium.woff2') format('woff2'); */
+      font-weight: 500;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  {% include "partials/header.njk" %}
+  
+  {{ content | safe }}
+  
+  {% include "partials/footer.njk" %}
+</body>
+</html>

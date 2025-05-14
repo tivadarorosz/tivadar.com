@@ -1,0 +1,60 @@
+// ==============================================
+// CSS CUSTOM PROPERTIES (VARIABLES)
+// ==============================================
+// These variables are available at runtime and support
+// features like dark mode and component-scoped overrides
+
+:root {
+  // Colors
+  --color-black: #141413;
+  --color-black-light: #3d3d3a;
+  --color-text-muted: #6c6b68;
+  --color-background: #f0eee7;
+  --color-background-light: #faf9f5;
+  --color-white: #ffffff;
+  --color-footer-text: #b0aea6;
+  --color-highlight: rgba(205, 152, 131, 0.7);
+  
+  // Typography
+  --font-primary: 'Styrene A', sans-serif;
+  --font-secondary: 'Tiempos Text', "Georgia", serif;
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-medium: 20px;
+  --font-size-large: 24px;
+  --font-size-xlarge: 32px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  // Spacing
+  --side-padding: 40px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+  --spacing-xxl: 80px;
+  
+  // Border Radius
+  --border-radius: 0.875rem;
+  
+  // Transitions
+  --transition-speed: 0.3s;
+  --transition-standard: all var(--transition-speed) ease;
+  
+  // Z-index layers
+  --z-index-header: 1000;
+  --z-index-mobile-menu: 999;
+}
+
+// Fluid padding between 768px and 1440px viewport widths
+@media (min-width: 768px) {
+  :root {
+    --side-padding: clamp(
+      40px, /* minimum value */
+      calc(40px + (180 - 40) * ((100vw - 768px) / (1440 - 768))), /* fluid scaling formula */
+      120px /* maximum value */
+    );
+  }
+}

@@ -1,0 +1,46 @@
+// ==============================================
+// MAIN SCSS ENTRY POINT
+// ==============================================
+// This file imports all SCSS partials in the correct order
+
+// 1. Variables and tokens
+// -----------------------
+// Variables are used for compile-time calculations
+@use 'variables';
+
+// Tokens are CSS variables available at runtime
+@use 'tokens';
+
+// 2. Base styles
+// -------------
+// Normalize, resets, and base element styles
+@use 'base';
+
+// 3. Typography
+// ------------
+// Text styling and typography
+@use 'typography';
+
+// 4. Layout
+// --------
+// Grid system, containers, and layout structures
+@use 'layout';
+
+// 5. Components
+// ------------
+// UI components
+@use 'buttons';
+@use 'forms';
+@use 'components/header';
+@use 'components/footer';
+
+// 6. Page-specific styles
+// ----------------------
+// Styles for specific pages
+@use 'pages/home';
+@use 'pages/about';
+
+// 7. Utilities
+// -----------
+// Utility classes come last so they can override other styles
+@use 'utilities';

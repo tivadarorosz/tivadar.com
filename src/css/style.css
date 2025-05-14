@@ -1,0 +1,13 @@
+/* Main CSS file - imports all component styles */
+
+/* Base & Typography */
+@import 'base.css';
+@import 'typography.css';
+
+/* Components */
+@import 'components/header.css';
+@import 'components/footer.css';
+
+/* Pages */
+@import 'pages/home.css';
+@import 'pages/about.css';

@@ -1,0 +1,107 @@
+// ==============================================
+// FORM STYLES
+// ==============================================
+// Form elements, inputs, and form-specific components
+
+@use 'sass:math';
+@use 'variables' as *;
+
+// Base form field styles
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-black);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-black);
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  transition: border-color var(--transition-speed) ease;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--color-highlight);
+  }
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+// Checkbox and radio styles
+.form-checkbox,
+.form-radio {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xs);
+  
+  input {
+    margin-top: 4px;
+    margin-right: var(--spacing-xs);
+  }
+  
+  label {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+  }
+}
+
+// Form validation styles
+.form-input.is-invalid,
+.form-textarea.is-invalid,
+.form-select.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  color: #dc3545;
+  margin-top: 4px;
+}
+
+// Form layout
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -(math.div($grid-gutter, 2));
+  margin-left: -(math.div($grid-gutter, 2));
+  
+  .form-group {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: math.div($grid-gutter, 2);
+    padding-left: math.div($grid-gutter, 2);
+    
+    @media (min-width: $breakpoint-sm) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}

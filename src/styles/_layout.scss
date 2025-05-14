@@ -1,0 +1,129 @@
+// ==============================================
+// LAYOUT STYLES
+// ==============================================
+// Grid system, containers, and layout structures
+
+@use 'sass:math';
+@use 'variables' as *;
+
+// Grid system
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -(math.div($grid-gutter, 2));
+  margin-right: -(math.div($grid-gutter, 2));
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex: 0 0 math.percentage(math.div($i, $grid-columns));
+    max-width: math.percentage(math.div($i, $grid-columns));
+    padding-left: math.div($grid-gutter, 2);
+    padding-right: math.div($grid-gutter, 2);
+    box-sizing: border-box;
+  }
+}
+
+// Responsive grid classes
+@media (min-width: $breakpoint-sm) {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      flex: 0 0 math.percentage(math.div($i, $grid-columns));
+      max-width: math.percentage(math.div($i, $grid-columns));
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      flex: 0 0 math.percentage(math.div($i, $grid-columns));
+      max-width: math.percentage(math.div($i, $grid-columns));
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      flex: 0 0 math.percentage(math.div($i, $grid-columns));
+      max-width: math.percentage(math.div($i, $grid-columns));
+    }
+  }
+}
+
+// Two column section structure 
+.two-column-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+    
+    .left-column {
+      flex: 0 0 40%;
+    }
+    
+    .right-column {
+      flex: 0 0 60%;
+    }
+  }
+}
+
+// Hero section layout
+.hero {
+  padding: var(--spacing-xl) 0;
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      
+      .hero-column-left {
+        flex: 0 0 50%;
+        padding-right: var(--spacing-lg);
+      }
+      
+      .hero-column-right {
+        flex: 0 0 50%;
+      }
+    }
+  }
+}
+
+// Feature boxes layout
+.feature-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+    
+    .feature-box {
+      flex: 1;
+    }
+  }
+}
+
+// Portfolio grid
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

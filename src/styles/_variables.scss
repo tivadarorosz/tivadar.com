@@ -1,0 +1,29 @@
+// ==============================================
+// SCSS VARIABLES
+// ==============================================
+// These are compile-time variables for layout calculations,
+// breakpoints, and other values not needed at runtime
+
+// Breakpoints (matching the CSS variables for consistency)
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1440px;
+
+// Grid and layout
+$container-max-width: 1440px;
+$grid-columns: 12;
+$grid-gutter: 30px;
+
+// Z-index stack (duplicating CSS vars for SCSS operations)
+$z-index-base: 1;
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
+$z-index-header: 1000;
+$z-index-mobile-menu: 999;

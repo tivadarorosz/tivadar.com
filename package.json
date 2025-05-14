@@ -1,0 +1,27 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Tivadar photography portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:css && concurrently \"npm run watch:css\" \"eleventy --serve --config=eleventy.config.js\"",
+    "build": "npm run build:css && eleventy --config=eleventy.config.js",
+    "debug": "DEBUG=Eleventy* eleventy --config=eleventy.config.js",
+    "build:css": "sass src/styles/main.scss src/css/styles.css --no-source-map --style=compressed",
+    "watch:css": "sass --watch src/styles/main.scss:src/css/styles.css"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "photography",
+    "portfolio"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "concurrently": "^9.1.2",
+    "sass": "^1.88.0"
+  }
+}
