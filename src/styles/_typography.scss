@@ -13,6 +13,26 @@
   max-width: 18ch; // Reduced from 60ch
   line-height: 1;  // Added reduced line height
   letter-spacing: -0.02em; // Reduced character spacing
+  
+  // Animation wrapper in hero text
+  .title-animation-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    
+    // Animated title words in hero text
+    .title-word {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      margin-right: 0.15em; // Custom spacing for hero text
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .hero-link {

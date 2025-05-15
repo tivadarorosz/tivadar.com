@@ -5,6 +5,16 @@
 @use '../variables' as *;
 
 .about-page {
+  padding: var(--spacing-lg) var(--side-padding) var(--spacing-xxl);
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: var(--spacing-xl);
+  }
+}
+
+.about-content {
+  max-width: 1200px; // Slightly narrower than container max-width for better readability
+  margin: 0 auto;
   h1 {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);

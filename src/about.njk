@@ -1,14 +1,17 @@
 ---
 layout: base
-title: About
+title: About Me
+subtitle: Tivadar Orosz
+buttonText: View Portfolio
+buttonUrl: /portfolio
+buttonInverted: false
 ---
 
-<section class="about-page page-section container">
-  <h1>About</h1>
-  
-  <h2>Tivadar Orosz</h2>
-  
-  <p>I'm Tivadar—photographer, creative strategist, and trusted name behind some of the most commanding visuals in the world of luxury escorting and elite personal branding.</p>
+{% include "partials/page-hero.njk" %}
+
+<section class="about-page page-section">
+  <div class="about-content">
+    <p>I'm Tivadar—photographer, creative strategist, and trusted name behind some of the most commanding visuals in the world of luxury escorting and elite personal branding.</p>
   
   <p>My work blends cinematic power with editorial precision. These aren't just photographs—they're declarations. I create imagery that exudes presence, frames you with intention, and positions you as unforgettable.</p>
   
@@ -48,5 +51,6 @@ title: About
     <div class="stars">★ ★ ★ ★ ★</div>
     <p class="quote">"Tivadar didn't just photograph me. He positioned me. Every image is strategy."</p>
     <p class="attribution">— Selene, Private Client</p>
+  </div>
   </div>
 </section>

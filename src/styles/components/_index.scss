@@ -1,3 +1,2 @@
-// Forward all component styles
-@forward 'header';
-@forward 'footer';
+// This index file is not needed anymore as we're forwarding components directly
+// in the _components.scss file
