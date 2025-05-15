@@ -13,7 +13,7 @@
   padding: 0 var(--spacing-lg);
   position: sticky;
   top: 0;
-  z-index: var(--z-index-header);
+  z-index: 1000; // Hard-coded value for higher z-index
   background-color: var(--color-background);
   border: none;
   box-shadow: none !important;
@@ -228,7 +228,7 @@
   width: 100%;
   height: calc(100% - 60px); // Adjust height to account for header
   background-color: var(--color-background-light);
-  z-index: var(--z-index-mobile-menu);
+  z-index: 990; // Hard-coded value instead of using variable
   padding: var(--spacing-lg);
   box-sizing: border-box;
   overflow-y: auto;
