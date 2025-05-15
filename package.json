@@ -7,8 +7,8 @@
     "start": "npm run build:css && concurrently \"npm run watch:css\" \"eleventy --serve --config=eleventy.config.js\"",
     "build": "npm run build:css && eleventy --config=eleventy.config.js",
     "debug": "DEBUG=Eleventy* eleventy --config=eleventy.config.js",
-    "build:css": "sass src/styles/main.scss src/css/styles.css --no-source-map --style=compressed",
-    "watch:css": "sass --watch src/styles/main.scss:src/css/styles.css"
+    "build:css": "sass src/styles/main.scss src/css/style.css --no-source-map --style=compressed",
+    "watch:css": "sass --watch src/styles/main.scss:src/css/style.css"
   },
   "keywords": [
     "eleventy",

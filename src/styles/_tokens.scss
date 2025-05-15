@@ -21,6 +21,7 @@
   --font-size-base: 16px;
   --font-size-small: 14px;
   --font-size-medium: 20px;
+  --font-size-xmedium: 22px;
   --font-size-large: 24px;
   --font-size-xlarge: 32px;
   --font-weight-normal: 400;
@@ -42,6 +43,12 @@
   // Transitions
   --transition-speed: 0.3s;
   --transition-standard: all var(--transition-speed) ease;
+  
+  // Breakpoints
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 992px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1440px;
   
   // Z-index layers
   --z-index-header: 1000;
