@@ -54,6 +54,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  padding-top: 60px;
+}
+@media (min-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
 }
 
 body.page-light-bg {
@@ -1231,12 +1237,13 @@ body.menu-open .logo-slash {
 }
 
 .hero {
-  margin-top: 60px;
-  padding: 0 var(--side-padding);
+  padding-top: var(--spacing-xxl);
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 }
 @media (min-width: 768px) {
   .hero {
-    margin-top: 7.125rem;
+    padding-top: var(--spacing-xxl);
   }
 }
 

@@ -6,11 +6,12 @@
 
 // Hero Section
 .hero {
-  margin-top: 60px;
-  padding: 0 var(--side-padding);
+  padding-top: var(--spacing-xxl); // Using the 80px variable for top padding
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
   
   @media (min-width: $breakpoint-sm) {
-    margin-top: calc(9rem - 1.875rem); // Reduced top padding by 1.875rem
+    padding-top: var(--spacing-xxl); // 80px top padding on desktop
   }
 }
 

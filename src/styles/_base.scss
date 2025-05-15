@@ -13,6 +13,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  padding-top: 60px; // Add padding for fixed header on mobile
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: 80px; // Larger padding for desktop header
+  }
 }
 
 // Light background for pages that need it
