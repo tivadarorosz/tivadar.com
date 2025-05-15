@@ -1124,6 +1124,16 @@ body.menu-open .logo-slash {
 .social-icons {
   display: flex;
   gap: var(--spacing-md);
+  align-items: center;
+}
+.social-icons .social-icon {
+  margin: 0 2px;
+}
+.social-icons .x-icon::after,
+.social-icons .bluesky-icon::after,
+.social-icons .instagram-icon::after,
+.social-icons .linkedin-icon::after {
+  display: none;
 }
 
 .social-icon {
@@ -1149,6 +1159,75 @@ body.menu-open .logo-slash {
   left: 0;
   bottom: -4px;
   transition: background-color var(--transition-speed) ease;
+}
+
+.social-icon-base, .linkedin-icon, .bluesky-icon, .instagram-icon, .x-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+.social-icon-base img, .linkedin-icon img, .bluesky-icon img, .instagram-icon img, .x-icon img {
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: opacity var(--transition-speed) ease;
+}
+.social-icon-base img:first-child, .linkedin-icon img:first-child, .bluesky-icon img:first-child, .instagram-icon img:first-child, .x-icon img:first-child {
+  opacity: 1;
+}
+.social-icon-base img:last-child, .linkedin-icon img:last-child, .bluesky-icon img:last-child, .instagram-icon img:last-child, .x-icon img:last-child {
+  opacity: 0;
+}
+.social-icon-base:hover img:first-child, .linkedin-icon:hover img:first-child, .bluesky-icon:hover img:first-child, .instagram-icon:hover img:first-child, .x-icon:hover img:first-child {
+  opacity: 0;
+}
+.social-icon-base:hover img:last-child, .linkedin-icon:hover img:last-child, .bluesky-icon:hover img:last-child, .instagram-icon:hover img:last-child, .x-icon:hover img:last-child {
+  opacity: 1;
+}
+
+.x-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+.x-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.instagram-icon {
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+.instagram-icon img {
+  width: 18px;
+  height: 18px;
+}
+
+.bluesky-icon {
+  width: 17px;
+  height: 17px;
+  margin-top: 1.5px;
+}
+.bluesky-icon img {
+  width: 17px;
+  height: 17px;
+}
+
+.linkedin-icon {
+  width: 17px;
+  height: 17px;
+  margin-top: 1.5px;
+}
+.linkedin-icon img {
+  width: 17px;
+  height: 17px;
 }
 
 .hero {

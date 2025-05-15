@@ -177,6 +177,20 @@
 .social-icons {
   display: flex;
   gap: var(--spacing-md);
+  align-items: center; // Ensure vertical alignment
+  
+  // Create consistent spacing
+  .social-icon {
+    margin: 0 2px; // Add consistent margin to all icons
+  }
+  
+  // Remove underline from all social icons with images
+  .x-icon::after, 
+  .bluesky-icon::after, 
+  .instagram-icon::after, 
+  .linkedin-icon::after {
+    display: none; // Hide underline for all image-based icons
+  }
 }
 
 .social-icon {
@@ -204,5 +218,98 @@
     left: 0;
     bottom: -4px;
     transition: background-color var(--transition-speed) ease;
+  }
+}
+
+// Base styles for social icons with images
+.social-icon-base {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 16px; // Default width (will be overridden in specific icons)
+  height: 16px; // Default height (will be overridden in specific icons)
+  margin-top: 2px; // Default margin (will be overridden in specific icons)
+  
+  img {
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  // Default state image
+  img:first-child {
+    opacity: 1;
+  }
+  
+  // Hover state image
+  img:last-child {
+    opacity: 0;
+  }
+  
+  &:hover {
+    // Hide default image on hover
+    img:first-child {
+      opacity: 0;
+    }
+    
+    // Show hover image on hover
+    img:last-child {
+      opacity: 1;
+    }
+  }
+}
+
+// X icon specific styles
+.x-icon {
+  @extend .social-icon-base;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// Instagram icon specific styles
+.instagram-icon {
+  @extend .social-icon-base;
+  width: 18px; // Slightly larger to account for Instagram's logo design
+  height: 18px; // Slightly larger to account for Instagram's logo design
+  margin-top: 1px; // Slightly adjusted margin to vertically align with other items
+  
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+// Bluesky icon specific styles
+.bluesky-icon {
+  @extend .social-icon-base;
+  width: 17px; // Size adjusted for Bluesky's logo design
+  height: 17px; // Size adjusted for Bluesky's logo design
+  margin-top: 1.5px; // Adjusted margin to vertically align with other items
+  
+  img {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+// LinkedIn icon specific styles
+.linkedin-icon {
+  @extend .social-icon-base;
+  width: 17px; // Size adjusted for LinkedIn's logo design
+  height: 17px; // Size adjusted for LinkedIn's logo design
+  margin-top: 1.5px; // Adjusted margin to vertically align with other items
+  
+  img {
+    width: 17px; // Adjusted size
+    height: 17px; // Adjusted size
   }
 }
