@@ -13,6 +13,15 @@
             <span class="mobile-title">{{ title }}</span>
           </span>
         </span>
+      {% elif title == "You don't pose. You take the throne" %}
+        {# Multi-line for portfolio title #}
+        <span class="title-animation-wrapper title-multiline title-offset desktop-only-format" data-title="{{ title }}">
+          <span class="title-static">
+            <span class="title-line title-line-1">You don't pose.</span>
+            <span class="title-line title-line-2">You take the throne</span>
+            <span class="mobile-title">{{ title }}</span>
+          </span>
+        </span>
       {% elif title == "Making AI systems you can rely on" %}
         {# Multi-line with offset for 7-word title #}
         <span class="title-animation-wrapper title-multiline title-offset desktop-only-format" data-title="{{ title }}">

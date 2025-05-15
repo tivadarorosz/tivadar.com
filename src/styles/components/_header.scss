@@ -32,7 +32,7 @@
   }
   
   // Make header match the light background on pages with light background
-  body.page-light-bg & {
+  body.page-light-bg:not(.not-page-light-bg) & {
     background-color: var(--color-background-light);
   }
 }

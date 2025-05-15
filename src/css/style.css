@@ -705,7 +705,7 @@ body.menu-open {
     box-shadow: none !important;
   }
 }
-body.page-light-bg .site-header {
+body.page-light-bg:not(.not-page-light-bg) .site-header {
   background-color: var(--color-background-light);
 }
 
