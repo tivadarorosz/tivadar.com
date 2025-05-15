@@ -61,7 +61,7 @@
     }
   </style>
 </head>
-<body>
+<body{% if title != "Home" %} class="page-light-bg"{% endif %}>
   {% include "partials/header.njk" %}
   
   {{ content | safe }}

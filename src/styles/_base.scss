@@ -15,6 +15,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+// Light background for pages that need it
+body.page-light-bg {
+  background-color: var(--color-background-light);
+}
+
 // Global link hover styles
 a:not(.menu a):not(.logo-link) {
   transition: var(--transition-standard);
