@@ -11,10 +11,12 @@
   align-items: center;
   height: 60px; // Smaller height for mobile
   padding: 0 var(--spacing-lg);
-  position: sticky;
+  position: fixed; // Fixed position to ensure it's always on top
   top: 0;
-  z-index: 1000; // Hard-coded value for higher z-index
-  background-color: var(--color-background);
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-header); // Use the variable instead of hardcoded value
+  background-color: var(--color-background); // Default background
   border: none;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -22,11 +24,20 @@
   filter: none !important;
   -webkit-filter: none !important;
   transition: background-color var(--transition-speed) ease;
+  will-change: transform; // Optimize for animations
   
   @media (min-width: $breakpoint-sm) {
     height: 80px; // Larger height for desktop
     box-shadow: none !important; // Force no shadow on desktop
   }
+}
+
+// Logo link
+.logo-link {
+  position: relative;
+  z-index: var(--z-index-mobile-toggle); // Same z-index as toggle button
+  text-decoration: none;
+  color: var(--color-black);
 }
 
 // Logo Styles
@@ -37,6 +48,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: var(--z-index-mobile-toggle); // Ensure the logo stays visible
   
   // Mobile logo style (T/ only)
   @media (max-width: $breakpoint-sm - 1px) {
@@ -50,6 +63,7 @@
   display: inline-flex;
   align-items: center;
   position: relative;
+  z-index: var(--z-index-mobile-toggle);
 }
 
 // Logo text
@@ -59,11 +73,14 @@
   height: 24px;
   line-height: 24px;
   font-weight: 600;
+  z-index: var(--z-index-mobile-toggle);
 }
 
 // Logo animation elements
 .t-letter {
   display: inline-block;
+  position: relative;
+  z-index: var(--z-index-mobile-toggle);
   
   @media (max-width: $breakpoint-sm - 1px) {
     font-size: 1.8rem;
@@ -94,6 +111,8 @@
   font-weight: 900;
   padding-left: 0.12em; // Default padding for desktop
   display: inline-block;
+  position: relative;
+  z-index: var(--z-index-mobile-toggle);
   transition: transform 400ms cubic-bezier(0.25, 0.1, 0.25, 1.0);
   
   // Adjust slash position on mobile with important flag to override
@@ -181,7 +200,7 @@
   padding: 0;
   cursor: pointer;
   position: relative;
-  z-index: 1001;
+  z-index: var(--z-index-mobile-toggle); // Use the variable instead of hardcoded value
   
   @media (min-width: $breakpoint-sm) {
     display: none; // Hide on desktop
@@ -192,11 +211,13 @@
       &:nth-child(1) {
         transform: translateY(4px) rotate(45deg);
         width: 24px; // Slightly wider in X state
+        background-color: var(--color-black); // Ensure visibility
       }
       
       &:nth-child(2) {
         transform: translateY(-4px) rotate(-45deg);
         width: 24px; // Slightly wider in X state
+        background-color: var(--color-black); // Ensure visibility
       }
     }
   }
@@ -223,21 +244,29 @@
 // Mobile Menu
 .mobile-menu {
   position: fixed;
-  top: -100%; // Start off-screen above
+  top: 0; // Start from the very top 
   left: 0;
   width: 100%;
-  height: calc(100% - 60px); // Adjust height to account for header
-  background-color: var(--color-background-light);
-  z-index: 990; // Hard-coded value instead of using variable
-  padding: var(--spacing-lg);
+  height: 100vh; // Full viewport height
+  background-color: var(--color-background); // Default to the regular background
+  z-index: var(--z-index-mobile-menu); // Use the variable instead of hardcoded value
+  padding-top: calc(60px + var(--spacing-md)); // Reduced top padding (from lg to md)
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
   box-sizing: border-box;
   overflow-y: auto;
-  transition: top 0.4s ease-in-out;
+  transform: translateY(-100%); // Start translated up (hidden)
+  transition: transform 0.4s ease-in-out, background-color var(--transition-speed) ease;
   display: flex;
   flex-direction: column;
   
   &.active {
-    top: 60px; // Slide down to below header
+    transform: translateY(0); // Slide down by resetting transform
+  }
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: calc(80px + var(--spacing-md)); // Reduced from lg to md
   }
 }
 
@@ -252,14 +281,14 @@
 .mobile-menu-nav {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-xs); // Reduced gap from --spacing-md to --spacing-xs (8px)
   
   a {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-medium);
     color: var(--color-black);
     text-decoration: none;
-    padding: 18px 0 18px; // Equal padding top and bottom
+    padding: 10px 0; // Reduced from 18px to 10px (almost half)
     border-bottom: 1px solid rgba(20, 20, 19, 0.1);
     transition: color var(--transition-speed) ease;
     display: block;
@@ -276,15 +305,29 @@
   flex-direction: column;
   gap: var(--spacing-sm);
   margin-top: auto;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   
   .feature-cta {
     width: 100%;
   }
 }
 
-// Change header background when mobile menu is open
+// Change header and mobile menu background when mobile menu is open
 body.menu-open .site-header {
-  background-color: var(--color-background-light);
+  background-color: var(--color-background-light); // #faf9f5
+}
+
+body.menu-open .mobile-menu {
+  background-color: var(--color-background-light); // #faf9f5
+}
+
+// Ensure logo is visible when menu is open
+body.menu-open .logo,
+body.menu-open .logo-wrapper,
+body.menu-open .logo-text,
+body.menu-open .t-letter,
+body.menu-open .logo-slash {
+  position: relative;
+  z-index: var(--z-index-mobile-toggle);
 }

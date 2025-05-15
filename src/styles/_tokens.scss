@@ -51,8 +51,9 @@
   --breakpoint-xl: 1440px;
   
   // Z-index layers
+  --z-index-mobile-menu: 900;
   --z-index-header: 1000;
-  --z-index-mobile-menu: 990;
+  --z-index-mobile-toggle: 1005;
 }
 
 // Fluid padding between 768px and 1440px viewport widths
