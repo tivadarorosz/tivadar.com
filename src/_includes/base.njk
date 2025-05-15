@@ -66,7 +66,7 @@
     }
   </style>
 </head>
-<body{% if title != "Home" %} class="page-light-bg"{% endif %}>
+<body class="{% if title != 'Home' and title != 'Making AI systems you can rely on' %}page-light-bg{% endif %}{% if pageBodyClass %} {{ pageBodyClass }}{% endif %}">
   {% include "partials/header.njk" %}
   
   {{ content | safe }}

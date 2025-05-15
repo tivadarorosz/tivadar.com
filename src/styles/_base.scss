@@ -25,6 +25,11 @@ body.page-light-bg {
   background-color: var(--color-background-light);
 }
 
+// Portfolio page background
+body.standard-bg {
+  background-color: var(--color-background);
+}
+
 // Global link hover styles
 a:not(.menu a):not(.logo-link) {
   transition: var(--transition-standard);

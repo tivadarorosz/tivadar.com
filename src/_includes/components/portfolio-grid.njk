@@ -1,0 +1,21 @@
+<section class="portfolio-main">
+  <div class="portfolio-main-grid">
+    {% for item in portfolio.items %}
+    <a href="{{ item.link }}" class="portfolio-card">
+      <div class="portfolio-card-image-wrapper">
+        <img 
+          src="{{ item.image }}" 
+          alt="{{ item.alt }}" 
+          class="portfolio-card-image"
+          loading="lazy"
+        >
+      </div>
+      <div class="portfolio-card-content">
+        <span class="portfolio-card-tag">{{ item.tag | capitalize }}</span>
+        <h3 class="portfolio-card-title">{{ item.title }}</h3>
+        <time class="portfolio-card-date" datetime="{{ item.date }}">{{ item.date | formatPostDate }}</time>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>

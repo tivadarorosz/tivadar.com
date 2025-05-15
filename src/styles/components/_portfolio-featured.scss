@@ -1,0 +1,108 @@
+// ==============================================
+// PORTFOLIO FEATURED COMPONENT
+// ==============================================
+
+@use '../variables' as *;
+
+.portfolio-featured {
+  padding: var(--spacing-lg) calc(var(--side-padding) * 0.25);
+  max-width: 88%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    gap: var(--spacing-xl);
+  }
+}
+
+.portfolio-intro {
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
+  box-sizing: border-box;
+  
+  @media (min-width: $breakpoint-md) {
+    flex: 0 0 33.333%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: var(--spacing-sm);
+  }
+}
+
+.portfolio-intro-quote {
+  display: block;
+  width: 36px;
+  height: auto;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.portfolio-intro-text {
+  font-size: var(--font-size-xmedium);
+  line-height: 1.5;
+}
+
+.portfolio-featured-main {
+  width: 100%;
+  box-sizing: border-box;
+  
+  @media (min-width: $breakpoint-md) {
+    flex: 0 0 calc(66.666% - var(--spacing-xl));
+  }
+}
+
+.portfolio-featured-item {
+  display: block;
+  text-decoration: none;
+  color: var(--color-black);
+  transition: opacity 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+
+.portfolio-featured-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.portfolio-featured-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.portfolio-featured-meta {
+  margin-top: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Removed tag class as it's no longer used */
+
+.portfolio-featured-title {
+  font-size: var(--font-size-lg);
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.portfolio-featured-role {
+  font-size: var(--font-size-sm);
+  color: var(--color-dark-gray);
+  margin: 0;
+}

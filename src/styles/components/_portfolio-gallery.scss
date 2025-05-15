@@ -1,0 +1,104 @@
+// ==============================================
+// PORTFOLIO GALLERY COMPONENT
+// ==============================================
+
+@use '../variables' as *;
+
+.portfolio-gallery {
+  padding: var(--spacing-lg) calc(var(--side-padding) * 0.25);
+  max-width: 88%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.portfolio-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 2fr 1fr; // First row: 2/3 vs 1/3
+  }
+}
+
+.portfolio-second-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr; // Equal width columns
+  }
+}
+
+.portfolio-gallery-item {
+  display: block;
+  text-decoration: none;
+  color: #faf9f5;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.portfolio-gallery-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; // 16:9 aspect ratio for standard images
+  overflow: hidden;
+  border-radius: 12px;
+  
+  @media (min-width: $breakpoint-md) {
+    .portfolio-gallery-item-2 & {
+      padding-bottom: 112%; // Fine-tuned to match first image height exactly
+    }
+  }
+}
+
+.portfolio-gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.portfolio-gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 1rem 1.5rem 1.5rem; /* Increased left and bottom padding */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  opacity: 1;
+}
+
+.portfolio-gallery-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.portfolio-gallery-tag {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  text-transform: capitalize;
+  letter-spacing: 0;
+  margin-bottom: 0.1rem; /* Even smaller gap between tag and title */
+}
+
+.portfolio-gallery-title {
+  font-family: var(--font-primary);
+  font-size: clamp(18px, 2vw, 22px); /* Responsive font size matching cards */
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  line-height: 1.2;
+}

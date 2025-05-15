@@ -1,0 +1,10 @@
+// ==============================================
+// PORTFOLIO PAGE STYLES
+// ==============================================
+
+@use '../variables' as *;
+
+.portfolio-page {
+  background-color: var(--color-background); // Match home page background
+  padding: 0; // Remove padding as components have their own padding
+}

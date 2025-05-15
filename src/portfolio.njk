@@ -1,16 +1,16 @@
 ---
 layout: base
-title: Making AI systems you can rely on
+title: You take the throne
 subtitle: A curated collection of women who own the frame—each one a quiet display of presence, elegance, and intent. Each image is a declaration.
 buttonText: Reserve Your Date
 buttonUrl: /contact
 buttonInverted: false
+pageBodyClass: standard-bg
 ---
 
 {% include "partials/page-hero.njk" %}
 
-<section class="portfolio-page page-section">
-  <div class="portfolio-content">
-    <!-- Portfolio content will go here -->
-  </div>
-</section>
+<main class="portfolio-page page-section">
+  {% include "components/featured.njk" %}
+  {% include "components/portfolio-grid.njk" %}
+</main>
