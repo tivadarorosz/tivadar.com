@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check if we're in the hero section (special handling for links)
     const isHeroText = wrapper.closest('.hero-text') !== null;
+    const isMultiline = wrapper.classList.contains('title-multiline');
+    const isOffset = wrapper.classList.contains('title-offset');
     
     // Split title into words
     const words = title.split(' ');
@@ -71,6 +73,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // This way we keep the original words but randomize the order they appear
     let indices = Array.from(Array(words.length).keys());
     shuffleArray(indices);
+    
+    // For multiline titles, create line containers
+    let line1Container, line2Container;
+    
+    if (isMultiline) {
+      // Clear any existing animated words
+      const existingWords = wrapper.querySelectorAll('.title-word');
+      existingWords.forEach(word => word.remove());
+      
+      // Create line containers for animated words
+      line1Container = document.createElement('div');
+      line1Container.className = 'title-line title-line-1 animated-line';
+      line1Container.style.whiteSpace = 'nowrap'; // Prevent wrapping
+      
+      line2Container = document.createElement('div');
+      line2Container.className = 'title-line title-line-2 animated-line';
+      line2Container.style.whiteSpace = 'nowrap'; // Prevent wrapping
+      
+      // Apply offset styling for all multiline titles
+      line1Container.style.transform = 'translateX(-6%)';
+      line2Container.style.transform = 'translateX(6%)';
+      
+      wrapper.appendChild(line1Container);
+      wrapper.appendChild(line2Container);
+    }
     
     // Create a span for each word and add to wrapper with original order
     words.forEach((word, i) => {
@@ -92,7 +119,49 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Position the word in its correct place for final display
       wordSpan.style.position = 'relative';
-      wrapper.appendChild(wordSpan);
+      
+      // For multiline titles, add words to appropriate line containers
+      if (isMultiline) {
+        // Special handling for known titles to ensure visually balanced splits
+        if (title === "Making AI systems you can rely on") {
+          // First 3 words in first line, rest in second line
+          if (i < 3) {
+            line1Container.appendChild(wordSpan);
+          } else {
+            line2Container.appendChild(wordSpan);
+          }
+        } else if (title === "Command the frame") {
+          // First word in first line, rest in second line
+          if (i < 1) {
+            line1Container.appendChild(wordSpan);
+          } else {
+            line2Container.appendChild(wordSpan);
+          }
+        } else {
+          // Better visual splitting algorithm
+          const totalLength = words.join(' ').length;
+          let runningLength = 0;
+          let splitIndex = 0;
+          
+          // Find the word that gets us closest to the middle of the sentence
+          for (let j = 0; j < words.length; j++) {
+            runningLength += words[j].length + (j > 0 ? 1 : 0); // Add word length + space
+            if (runningLength >= totalLength / 2) {
+              splitIndex = j;
+              break;
+            }
+          }
+          
+          // Use the calculated split point
+          if (i <= splitIndex) {
+            line1Container.appendChild(wordSpan);
+          } else {
+            line2Container.appendChild(wordSpan);
+          }
+        }
+      } else {
+        wrapper.appendChild(wordSpan);
+      }
       
       // Get this word's position in the animation sequence (random)
       const animationIndex = indices.indexOf(i);

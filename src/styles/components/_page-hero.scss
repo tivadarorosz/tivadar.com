@@ -5,28 +5,46 @@
 @use '../variables' as *;
 
 .page-hero {
-  padding: clamp(4rem, 8vw, 6rem) var(--side-padding) 0; // Responsive top padding (64px-96px)
+  padding: clamp(1rem, 2vw, 1.75rem) var(--side-padding) 0; // Reduced top padding for About and Portfolio pages
   overflow: hidden;
 }
 
 .page-hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: clamp(2.5rem, 5vw, 3.75rem); // Responsive bottom padding (40px-60px)
+  padding-bottom: clamp(6.75rem, 12vw, 10.125rem); // Increased gap between button and separator
   text-align: center; // Center align all content
+  
+  // Add a two-column layout for portfolio page
+  .portfolio-page + & {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+    
+    @media (min-width: $breakpoint-md) {
+      flex-wrap: nowrap;
+    }
+  }
 }
 
 .page-hero-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: clamp(2.5rem, 5vw, 4.0625rem); // Responsive font size (40px-65px)
+  font-size: clamp(3.5rem, 7vw, 5.5rem); // Increased font size
   color: var(--color-black);
-  margin: 0 0 0.5rem 0; // Reduced from 1rem to 0.5rem (half the gap)
+  margin: 0 auto 1rem;
   line-height: 1.1;
   text-align: center;
+  padding-left: calc(var(--side-padding) * 0.25); // Reduced side padding
+  padding-right: calc(var(--side-padding) * 0.25); // Reduced side padding
+  max-width: 1100px; // Increased max-width for more space
   
   @media (max-width: $breakpoint-sm - 1px) {
-    margin-bottom: 0.375rem; // Reduced from 0.75rem to 0.375rem (half the gap)
+    margin-bottom: 0.75rem;
+    padding-left: calc(var(--side-padding) * 0.1); // Reduced mobile padding
+    padding-right: calc(var(--side-padding) * 0.1); // Reduced mobile padding
+    font-size: clamp(3rem, 6vw, 4.5rem);
   }
 }
 
@@ -34,15 +52,86 @@
 .title-animation-wrapper {
   display: inline-block;
   position: relative;
+  width: 100%; // Ensure full width
+}
+
+// Multiline title styles (3+ words)
+.title-multiline {
+  display: block;
+  width: 100%;
+  
+  .title-static {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .title-line {
+    display: block;
+    width: 100%;
+    line-height: 0.9; // Extremely tight line spacing for multi-line titles
+    white-space: nowrap; // Prevent words from wrapping to new lines
+  }
+  
+  // Mobile title for smaller screens
+  .mobile-title {
+    display: none;
+  }
+}
+
+// Desktop-only formatting class
+.desktop-only-format {
+  @media (max-width: $breakpoint-sm - 1px) {
+    .title-line {
+      display: none !important;
+    }
+    
+    .mobile-title {
+      display: block !important;
+      text-align: center;
+    }
+    
+    .title-static {
+      display: block !important;
+    }
+  }
+}
+
+// Offset title styles (5+ words)
+.title-offset {
+  .title-line-1 {
+    transform: translateX(-5%); // First line slightly to the left
+    margin-bottom: 0; // No space between lines
+  }
+  
+  .title-line-2 {
+    transform: translateX(5%); // Second line slightly to the right
+  }
+}
+
+// Apply these offsets to all multiline titles, not just for 5+ words
+.title-multiline {
+  .title-line-1 {
+    transform: translateX(-6%); // First line more to the left (increased)
+    margin-bottom: 0; // No space between lines
+    line-height: 1; // Tighter line height
+    white-space: nowrap; // Prevent words from wrapping
+  }
+  
+  .title-line-2 {
+    transform: translateX(6%); // Second line more to the right (increased)
+    line-height: 1; // Tighter line height
+    white-space: nowrap; // Prevent words from wrapping
+  }
 }
 
 // Static title (visible immediately on mobile)
 .title-static {
   @media (min-width: $breakpoint-sm) {
     opacity: 0; // Hidden on desktop until animation completes
-    position: absolute;
-    left: 0;
-    right: 0;
+    position: relative; // Changed from absolute to relative for multiline support
+    width: 100%;
     
     // Show static title immediately if JavaScript is disabled
     .no-js & {
@@ -65,6 +154,11 @@
   @media (max-width: $breakpoint-sm - 1px) {
     display: none;
   }
+  
+  // Special positioning for multiline animated titles
+  .title-multiline & {
+    // We'll handle this in the JS
+  }
 }
 
 .page-hero-subtitle {
@@ -72,14 +166,23 @@
   font-weight: var(--font-weight-normal);
   font-size: clamp(1.25rem, 2vw, 1.375rem); // Responsive font size (20px-22px)
   color: var(--color-black);
-  margin: 0 0 1.5rem 0; // Added bottom margin for button spacing
+  margin: 0 auto 1.5rem; // Added bottom margin for button spacing
   line-height: 1.2;
   text-align: center;
+  padding-left: calc(var(--side-padding) * 2.5); // Dramatically increased side padding
+  padding-right: calc(var(--side-padding) * 2.5);
+  max-width: 800px; // Narrower than title for better visual hierarchy
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    padding-left: calc(var(--side-padding) * 0.75); // Increased mobile padding 
+    padding-right: calc(var(--side-padding) * 0.75);
+    font-size: clamp(1.125rem, 1.75vw, 1.25rem); // Slightly smaller on mobile
+  }
 }
 
 // Button container for alignment
 .page-hero-button-container {
-  margin-top: 2rem;
+  margin-top: 2rem; // Restored to original value
   text-align: center;
 }
 

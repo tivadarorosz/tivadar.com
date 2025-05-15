@@ -2,9 +2,37 @@
 <section class="page-hero">
   <div class="page-hero-content">
     <h1 class="page-hero-title">
-      <span class="title-animation-wrapper" data-title="{{ title }}">
-        <span class="title-static">{{ title }}</span>
-      </span>
+      {# Hard-code based on specific titles we know about #}
+      
+      {% if title == "Command the frame" %}
+        {# Multi-line with offset for 3-word title #}
+        <span class="title-animation-wrapper title-multiline desktop-only-format" data-title="{{ title }}">
+          <span class="title-static">
+            <span class="title-line title-line-1">Command</span>
+            <span class="title-line title-line-2">the frame</span>
+            <span class="mobile-title">{{ title }}</span>
+          </span>
+        </span>
+      {% elif title == "Making AI systems you can rely on" %}
+        {# Multi-line with offset for 7-word title #}
+        <span class="title-animation-wrapper title-multiline title-offset desktop-only-format" data-title="{{ title }}">
+          <span class="title-static">
+            <span class="title-line title-line-1">Making AI systems</span>
+            <span class="title-line title-line-2">you can rely on</span>
+            <span class="mobile-title">{{ title }}</span>
+          </span>
+        </span>
+      {% elif title == "Portfolio Stories" %}
+        {# Regular title with no special formatting #}
+        <span class="title-animation-wrapper" data-title="{{ title }}">
+          <span class="title-static">{{ title }}</span>
+        </span>
+      {% else %}
+        {# Default title handling - single line for unknown cases #}
+        <span class="title-animation-wrapper" data-title="{{ title }}">
+          <span class="title-static">{{ title }}</span>
+        </span>
+      {% endif %}
     </h1>
     {% if subtitle %}
     <h2 class="page-hero-subtitle">{{ subtitle }}</h2>

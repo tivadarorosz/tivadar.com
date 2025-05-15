@@ -9,10 +9,11 @@
 .hero-text {
   font-size: clamp(2rem, 1.3333rem + 3.3333vw, 3.875rem); // Fluid font size (32px to 62px)
   font-weight: var(--font-weight-medium);
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1rem 0; // Reduced bottom margin from 1.25rem to 1rem
   max-width: 18ch; // Reduced from 60ch
   line-height: 1;  // Added reduced line height
   letter-spacing: -0.02em; // Reduced character spacing
+  padding: 0; // Ensure no padding
   
   // Animation wrapper in hero text
   .title-animation-wrapper {

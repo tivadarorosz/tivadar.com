@@ -11,7 +11,7 @@
   padding-right: var(--side-padding);
   
   @media (min-width: $breakpoint-sm) {
-    padding-top: var(--spacing-xxl); // 80px top padding on desktop
+    padding-top: 0; // 80px top padding on desktop
   }
 }
 
@@ -22,7 +22,7 @@
   
   @media (min-width: $breakpoint-md) {
     flex-direction: row;
-    align-items: flex-start; // Back to original flex-start alignment
+    align-items: stretch; // Changed from center to stretch to allow bottom alignment
     gap: 60px;
   }
 }
@@ -30,7 +30,11 @@
 .hero-column-left {
   @media (min-width: $breakpoint-md) {
     flex: 1;
-    padding-top: 1.875rem; // Added the top padding to column 1
+    padding: 0; // Remove all padding
+    margin: 0; // Remove all margins
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; // Align content to top to work with the right column
   }
 }
 
@@ -39,7 +43,12 @@
   
   @media (min-width: $breakpoint-md) {
     width: 405px;
-    padding-top: 0px;
+    align-self: flex-end; // Bottom align vertically
+    padding: 0; // Remove any padding
+    margin: 0; // Remove any margin
+    display: flex; // Use flexbox for better alignment
+    flex-direction: column; // Stack children vertically
+    margin-bottom: 60px; // Match the feature-boxes margin-top
   }
   
   // Layered strokes behind the hero image
@@ -95,7 +104,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 60px;
+  margin-top: 60px; // Restored original margin-top
   
   @media (min-width: $breakpoint-sm) {
     flex-direction: row;
