@@ -1,0 +1,106 @@
+// ==============================================
+// ARTICLES GRID COMPONENT
+// ==============================================
+
+@use '../variables' as *;
+
+.articles-main {
+  padding: var(--spacing-lg) 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.articles-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  grid-auto-flow: dense;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.articles-card {
+  display: block;
+  text-decoration: none;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    // Icon scale effect handled separately
+  }
+  
+}
+
+.articles-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; // 4:3 aspect ratio (same as portfolio)
+  overflow: hidden;
+  border-top-left-radius: var(--border-radius-sm);
+  border-top-right-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articles-card-icon {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  max-height: 80%;
+  object-fit: contain;
+  transition: var(--transition-standard);
+  opacity: 0.9;
+  // Center the icon using transform
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.articles-card:hover .articles-card-icon {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.articles-card-content {
+  padding: var(--spacing-sm);
+  padding-left: 30px; // Between --spacing-md (20px) and --spacing-lg (40px)
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background-color: var(--color-white);
+}
+
+.articles-card-tag {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  text-transform: capitalize;
+  letter-spacing: 0;
+  color: var(--color-black);
+  padding-top: 0.5rem;
+  margin-bottom: -0.25rem; // Reduce space between tag and title
+}
+
+.articles-card-title {
+  font-family: var(--font-primary);
+  font-size: clamp(18px, 2vw, 22px); // Responsive font size
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  line-height: 1.2;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.articles-card-date {
+  font-size: var(--font-size-xs);
+  color: var(--color-footer-text);
+}

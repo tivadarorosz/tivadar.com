@@ -1,7 +1,7 @@
 ---
-title: "Branding Isn't a Logo — It's Power"
-date: 2025-02-27
-tags: ["Brand Strategy"]
+title: "The Escort's Guide to Online Privacy"
+date: 2025-02-10
+tags: ["Privacy"]
 featured: true
 summary: "A quick insight into my approach for creating impactful boudoir photos."
 
@@ -25,7 +25,7 @@ background: "#D87756" # Terracotta, bold and confident
 # - "#CBCADA" # Light purple
 
 # Optional graphic/icon for featured image layering
-icon: "https://cdn.tivadarorosz.com/blog-icons/001.webp"
+icon: "https://cdn.tivadarorosz.com/blog-icons/privacy-lock.svg"
 ---
 
 Markdown content goes here...

@@ -1,15 +1,15 @@
 ---
-title: "Branding Isn't a Logo — It's Power"
-date: 2025-02-27
-tags: ["Brand Strategy"]
-featured: true
+title: "The Escort's Guide test article"
+date: 2025-01-03
+tags: ["Privacy"]
+featured: false
 summary: "A quick insight into my approach for creating impactful boudoir photos."
 
 # Feature image control
-featureImage: true
+featureImage: false
 
 # Background styling
-background: "#D87756" # Terracotta, bold and confident
+background: ""
 
 # Available background options (for reference only, not used programmatically)
 # palette:
@@ -25,7 +25,7 @@ background: "#D87756" # Terracotta, bold and confident
 # - "#CBCADA" # Light purple
 
 # Optional graphic/icon for featured image layering
-icon: "https://cdn.tivadarorosz.com/blog-icons/001.webp"
+icon: "https://cdn.tivadarorosz.com/blog-icons/privacy-lock.svg"
 ---
 
 Markdown content goes here...

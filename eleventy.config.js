@@ -18,6 +18,14 @@ module.exports = function(eleventyConfig) {
       });
   });
 
+  eleventyConfig.addCollection("allPosts", function(collectionApi) {
+    // Get all posts, sorted by date (newest first)
+    return collectionApi.getFilteredByGlob("./src/posts/*.md")
+      .sort((a, b) => {
+        return b.date - a.date;
+      });
+  });
+
   // Format date filter: YYYY-MM-DD to formatted date (e.g., "Apr 12, 2025")
   eleventyConfig.addFilter("formatPostDate", function(dateObj) {
     const date = new Date(dateObj);

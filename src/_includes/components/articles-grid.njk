@@ -1,0 +1,71 @@
+{# Define the color palette for blog post backgrounds #}
+{% set colorPalette = [
+  "var(--color-terracotta)",
+  "var(--color-pale-sage)",
+  "var(--color-soft-stone)",
+  "var(--color-warm-beige)",
+  "var(--color-neutral-cream)",
+  "var(--color-warm-bronze)",
+  "var(--color-sage-green)",
+  "var(--color-soft-blue)",
+  "var(--color-dusty-violet)",
+  "var(--color-light-purple)"
+] %}
+
+{# Get the three most recent featured posts to exclude them #}
+{% set recentFeatured = collections.featuredPosts.slice(0, 3) %}
+
+{# Get all posts and filter out the 3 most recent featured posts #}
+{% set remainingPosts = [] %}
+{% for post in collections.allPosts %}
+  {% set isRecentFeatured = false %}
+  {% for featured in recentFeatured %}
+    {% if post.url == featured.url %}
+      {% set isRecentFeatured = true %}
+    {% endif %}
+  {% endfor %}
+  {% if not isRecentFeatured %}
+    {% set remainingPosts = (remainingPosts.push(post), remainingPosts) %}
+  {% endif %}
+{% endfor %}
+
+<section class="articles-main">
+  <div class="articles-main-grid">
+    {% for item in remainingPosts %}
+    <a href="{{ item.url }}" class="articles-card{% if item.data.featureImage !== true %} articles-card--no-image{% endif %}">
+      {# Only render image wrapper if featureImage is true #}
+      {% if item.data.featureImage === true %}
+        {# Check if background has a hex value #}
+        {% set backgroundColor = item.data.background %}
+        {% if backgroundColor and backgroundColor.trim() !== "" %}
+          {# If background has a value, ensure it has # prefix for hex color #}
+          {% if not backgroundColor.startsWith('#') %}
+            {% set backgroundColor = '#' + backgroundColor %}
+          {% endif %}
+        {% else %}
+          {# If background is empty, select a pseudo-random color from the palette #}
+          {% set randomIndex = item.url.length % colorPalette.length %}
+          {% set backgroundColor = colorPalette[randomIndex] %}
+        {% endif %}
+        
+        <div class="articles-card-image-wrapper" style="background-color: {{ backgroundColor }};">
+          {% if item.data.icon %}
+          <img 
+            src="{{ item.data.icon }}" 
+            alt="" 
+            class="articles-card-icon"
+            loading="lazy"
+          >
+          {% endif %}
+        </div>
+      {% endif %}
+      
+      <div class="articles-card-content">
+        <span class="articles-card-tag">{{ item.data.tags | join(', ') }}</span>
+        <h3 class="articles-card-title">{{ item.data.title }}</h3>
+        <time class="articles-card-date" datetime="{{ item.date }}">{{ item.date | formatPostDate }}</time>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
