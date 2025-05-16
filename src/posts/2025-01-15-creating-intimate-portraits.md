@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Creating Intimate Portraits"
 date: 2025-01-15
 tags: ["Photography"]

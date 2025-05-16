@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "The Escort's Guide to Online Privacy"
 date: 2025-02-10
 tags: ["Privacy"]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "How to Prepare for a Luxury Escort Photoshoot"
 date: 2025-04-12
 tags: ["Photography"]

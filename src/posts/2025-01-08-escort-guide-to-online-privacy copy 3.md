@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "The Escort's Guide test article"
 date: 2025-01-03
 tags: ["Privacy"]

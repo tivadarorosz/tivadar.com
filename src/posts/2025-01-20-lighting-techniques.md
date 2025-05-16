@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Advanced Lighting Techniques"
 date: 2025-01-20
 tags: ["Photography", "Technical"]

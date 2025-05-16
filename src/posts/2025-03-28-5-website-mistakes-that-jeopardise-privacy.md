@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "5 Website Mistakes That Jeopardise Your Privacy"
 date: 2025-03-28
 tags: ["Privacy"]

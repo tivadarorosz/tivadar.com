@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "What Makes an Escort Website Convert?"
 date: 2025-03-15
 tags: ["Design"]

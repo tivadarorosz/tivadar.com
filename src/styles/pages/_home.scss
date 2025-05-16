@@ -273,16 +273,16 @@
 .featured-post {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 0.6fr);
-  padding: 24px 0;
+  padding: 20px 0 24px;
   border-bottom: 1px solid var(--color-border-featured);
   text-decoration: none;
   transition: color var(--transition-speed) ease;
   align-items: center;
   
   &:hover {
-    .post-title,
-    .post-category,
-    .post-date {
+    .featured-post-title,
+    .featured-post-category,
+    .featured-post-date {
       color: var(--color-text-muted);
     }
   }
@@ -298,13 +298,14 @@
   }
 }
 
-.post-title {
+.featured-post-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-base);
   color: var(--color-black);
   transition: color var(--transition-speed) ease;
   padding-right: 20px;
+  line-height: 1.4;
   
   @media (max-width: $breakpoint-md) {
     font-size: 15px;
@@ -319,12 +320,13 @@
   }
 }
 
-.post-category, 
-.post-date {
+.featured-post-category, 
+.featured-post-date {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size-small);
   transition: color var(--transition-speed) ease;
+  line-height: 1.4;
   
   @media (max-width: $breakpoint-md) {
     font-size: 13px;
@@ -338,7 +340,7 @@
   }
 }
 
-.post-category {
+.featured-post-category {
   color: var(--color-black);
   text-align: right;
   padding-right: 20px;
@@ -348,7 +350,7 @@
   }
 }
 
-.post-date {
+.featured-post-date {
   color: var(--color-text-muted);
   text-align: right;
 }

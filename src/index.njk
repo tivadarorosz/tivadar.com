@@ -78,11 +78,11 @@ title: Home
   <div class="featured-content">
     <h3 class="featured-title">Featured</h3>
     <div class="featured-posts">
-      {% for post in collections.featuredPosts %}
+      {% for post in collections.featuredPosts.slice(0, 6) %}
       <a href="/articles/{{ post.fileSlug }}" class="featured-post">
-        <div class="post-title">{{ post.data.title }}</div>
-        <div class="post-category">{{ post.data.tags | formatTags }}</div>
-        <div class="post-date">{{ post.data.date | formatPostDate }}</div>
+        <div class="featured-post-title">{{ post.data.title }}</div>
+        <div class="featured-post-category">{{ post.data.tags | formatTags }}</div>
+        <div class="featured-post-date">{{ post.data.date | formatPostDate }}</div>
       </a>
       {% endfor %}
       <div class="view-all-container">

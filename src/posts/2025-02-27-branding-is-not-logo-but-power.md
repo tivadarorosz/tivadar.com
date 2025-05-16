@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Branding Isn't a Logo — It's Power"
 date: 2025-02-27
 tags: ["Brand Strategy"]

@@ -1,0 +1,131 @@
+---
+layout: base
+pageBodyClass: page-light-bg
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="post-tags">
+      {% for tag in tags %}
+        <span class="post-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <time class="post-date" datetime="{{ date }}">{{ date | formatPostDate }}</time>
+      <span class="post-separator">•</span>
+      <span class="post-reading-time">{{ content | readingTime }}</span>
+    </div>
+    
+    {% if featureImage !== false %}
+      {# Check if background has a hex value #}
+      {% set backgroundColor = background %}
+      {% if backgroundColor and backgroundColor.trim() !== "" %}
+        {# If background has a value, ensure it has # prefix for hex color #}
+        {% if not backgroundColor.startsWith('#') %}
+          {% set backgroundColor = '#' + backgroundColor %}
+        {% endif %}
+      {% else %}
+        {# If no background color provided, use a default #}
+        {% set backgroundColor = "var(--color-terracotta)" %}
+      {% endif %}
+      
+      <div class="post-feature-image" style="background-color: {{ backgroundColor }};">
+        {% if icon %}
+        <img src="{{ icon }}" alt="" class="post-icon" loading="lazy">
+        {% endif %}
+      </div>
+    {% endif %}
+  </header>
+  
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+  
+  <div class="post-separator-line"></div>
+  
+  <footer class="post-footer">
+    <div class="post-social">
+      <span class="social-links">
+        <a href="https://x.com/tivadarorosz" class="articles-social-link">
+          <img src="https://cdn.tivadarorosz.com/icons/x-logo.svg" alt="X" width="24" height="24">
+        </a>
+        <a href="https://instagram.com/tivadarorosz" class="articles-social-link">
+          <img src="https://cdn.tivadarorosz.com/icons/instagram-logo.svg" alt="Instagram" width="24" height="24">
+        </a>
+      </span>
+    </div>
+    
+    <section class="post-related">
+      <div class="articles-main-grid">
+        {# Filter out the current post #}
+        {% set otherPosts = collections.allPosts | reject("equalto", page) %}
+        
+        {# Simple random selection using URL as seed #}
+        {% set postCount = otherPosts.length %}
+        {% if postCount > 0 %}
+          {% set seed = page.url.length %}
+          {% set startIdx = seed % postCount %}
+          
+          {# Select up to 3 posts starting from random index #}
+          {% set selectedPosts = [] %}
+          {% set idx = startIdx %}
+          {% for i in range(0, 3) %}
+            {% if idx < postCount %}
+              {% set selectedPosts = (selectedPosts.push(otherPosts[idx]), selectedPosts) %}
+              {% set idx = idx + 1 %}
+            {% elif idx >= postCount and i < 3 %}
+              {% set idx = 0 %}
+              {% set selectedPosts = (selectedPosts.push(otherPosts[idx]), selectedPosts) %}
+              {% set idx = idx + 1 %}
+            {% endif %}
+          {% endfor %}
+          
+          {# Display selected posts #}
+          {% for post in selectedPosts %}
+          <a href="{{ post.url }}" class="articles-card" aria-label="Read {{ post.data.title }}">
+            {% if post.data.featureImage === true %}
+              {# Handle background color #}
+              {% set backgroundColor = post.data.background %}
+              {% if backgroundColor and backgroundColor.trim() !== "" %}
+                {% if not backgroundColor.startsWith('#') %}
+                  {% set backgroundColor = '#' + backgroundColor %}
+                {% endif %}
+              {% else %}
+                {# Use random color from palette if no background specified #}
+                {% set colorIndex = post.url.length % 10 %}
+                {% set colorPalette = [
+                  "var(--color-terracotta)",
+                  "var(--color-pale-sage)",
+                  "var(--color-soft-stone)",
+                  "var(--color-warm-beige)",
+                  "var(--color-neutral-cream)",
+                  "var(--color-warm-bronze)",
+                  "var(--color-sage-green)",
+                  "var(--color-soft-blue)",
+                  "var(--color-dusty-violet)",
+                  "var(--color-light-purple)"
+                ] %}
+                {% set backgroundColor = colorPalette[colorIndex] %}
+              {% endif %}
+              
+              <div class="articles-card-image-wrapper" style="background-color: {{ backgroundColor }};">
+                {% if post.data.icon %}
+                <img src="{{ post.data.icon }}" alt="" class="articles-card-icon" loading="lazy">
+                {% endif %}
+              </div>
+            {% endif %}
+            
+            <div class="articles-card-content">
+              <span class="articles-card-tag">{{ post.data.tags | join(', ') }}</span>
+              <h3 class="articles-card-title">{{ post.data.title }}</h3>
+              <time class="articles-card-date" datetime="{{ post.data.date }}">{{ post.data.date | formatPostDate }}</time>
+            </div>
+          </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </section>
+  </footer>
+</article>
