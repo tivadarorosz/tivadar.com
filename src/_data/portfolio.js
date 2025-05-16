@@ -84,7 +84,7 @@ module.exports = {
       title: "The Light Daring begins where the rules end.",
       tag: "After Midnight Permission",
       date: "2024-12-12",
-      link: "/stories/the-light-within",
+      link: "/stories/after-midnight",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/permission-after-midnight.jpg",
         alt: "Main gallery image"
@@ -94,7 +94,7 @@ module.exports = {
       title: "She doesn’t pose. She claims the frame.",
       tag: "Obsession",
       date: "2025-01-05",
-      link: "/stories/muse-vi",
+      link: "/stories/obsession",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/she-claims-the-frame.jpg",
         alt: "Natural light portrait"
@@ -104,7 +104,7 @@ module.exports = {
       title: "Hunger. It lingers when she holds something back.",
       tag: "Afterglow",
       date: "2024-12-12",
-      link: "/stories/the-light-within",
+      link: "/stories/afterglow",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/afterglow.jpg",
         alt: "Main gallery image"
@@ -114,7 +114,7 @@ module.exports = {
       title: "She doesn’t strike. She smoulders.",
       tag: "Low Flame",
       date: "2025-01-05",
-      link: "/stories/muse-vi",
+      link: "/stories/low-flame",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/low-flame.jpg",
         alt: "Natural light portrait"
@@ -124,7 +124,7 @@ module.exports = {
       title: "When she moves, everything follows.",
       tag: "Gold Rush",
       date: "2025-01-05",
-      link: "/stories/muse-vi",
+      link: "/stories/gold-rush",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/gold-rush.jpg",
         alt: "Natural light portrait"
@@ -134,7 +134,7 @@ module.exports = {
       title: "The gaze is yours, but she holds the narrative.",
       tag: "Reverie",
       date: "2025-01-05",
-      link: "/models/muse-vi",
+      link: "/stories/the-gaze",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/the-gaze-is-yours.jpg",
         alt: "Natural light portrait"
@@ -144,7 +144,7 @@ module.exports = {
       title: "She doesn’t ask for attention. She edits it.",
       tag: "Control",
       date: "2025-01-05",
-      link: "/stories/muse-vi",
+      link: "/stories/control",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/she-controls-attention.jpg",
         alt: "Natural light portrait"
@@ -154,7 +154,7 @@ module.exports = {
       title: "She bends the rules. And the room.",
       tag: "Power Play",
       date: "2025-01-05",
-      link: "/stories/muse-vi",
+      link: "/stories/power-play",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/she-bends-the-rules.jpg",
         alt: "Natural light portrait"
@@ -164,7 +164,7 @@ module.exports = {
       title: "She doesn’t rise from the water. She owns it.",
       tag: "Siren",
       date: "2025-01-05",
-      link: "/stories/muse-vi",
+      link: "/stories/siren",
       cover: {
         image: "https://tivadarassets.b-cdn.net/portfolio/main/siren-rise-from-water.jpg",
         alt: "Natural light portrait"

@@ -1,0 +1,88 @@
+---
+layout: base
+pageBodyClass: page-light-bg
+---
+
+<article class="story">
+  <header class="story-header">
+    <div class="story-tags">
+      {% if tag %}
+        <span class="story-tag">{{ tag }}</span>
+      {% endif %}
+    </div>
+    
+    <h1 class="story-title">{{ title }}</h1>
+    <div class="story-meta">
+      <time class="story-date" datetime="{{ date }}">{{ date | formatPostDate }}</time>
+      <span class="story-separator">•</span>
+      <span class="story-reading-time">{{ content | readingTime }}</span>
+    </div>
+    
+    {# Feature image using cover.image #}
+    {% if cover %}
+      <div class="story-feature-image">
+        <img src="{{ cover.image }}" alt="{{ cover.alt }}" class="story-feature-img" loading="lazy">
+      </div>
+    {% endif %}
+  </header>
+  
+  <div class="story-content">
+    <p>This is a story page.</p>
+  </div>
+  
+  <div class="story-separator-line"></div>
+  
+  <footer class="story-footer">
+    <div class="story-social">
+      <span class="social-links">
+        <a href="https://x.com/tivadarorosz" class="articles-social-link">
+          <img src="https://cdn.tivadarorosz.com/icons/x-logo.svg" alt="X" width="24" height="24">
+        </a>
+        <a href="https://instagram.com/tivadarorosz" class="articles-social-link">
+          <img src="https://cdn.tivadarorosz.com/icons/instagram-logo.svg" alt="Instagram" width="24" height="24">
+        </a>
+      </span>
+    </div>
+    
+    <section class="story-related">
+      <div class="portfolio-main-grid">
+        {# Get 3 random portfolio items #}
+        {% set portfolioItems = portfolio.items %}
+        {% set itemCount = portfolioItems.length %}
+        {% if itemCount > 0 %}
+          {% set seed = page.url.length %}
+          {% set startIdx = seed % itemCount %}
+          
+          {# Select up to 3 items starting from random index #}
+          {% set selectedItems = [] %}
+          {% set idx = startIdx %}
+          {% for i in range(0, 3) %}
+            {% if idx < itemCount %}
+              {% set selectedItems = (selectedItems.push(portfolioItems[idx]), selectedItems) %}
+              {% set idx = idx + 1 %}
+            {% elif idx >= itemCount and i < 3 %}
+              {% set idx = 0 %}
+              {% set selectedItems = (selectedItems.push(portfolioItems[idx]), selectedItems) %}
+              {% set idx = idx + 1 %}
+            {% endif %}
+          {% endfor %}
+          
+          {# Display selected portfolio items #}
+          {% for item in selectedItems %}
+          <a href="{{ item.link }}" class="portfolio-card" aria-label="View {{ item.title }}">
+            <div class="portfolio-card-image-wrapper">
+              <img src="{{ item.cover.image or item.cover }}" alt="{{ item.cover.alt or item.alt }}" class="portfolio-card-image" loading="lazy">
+            </div>
+            
+            <div class="portfolio-card-content">
+              <span class="portfolio-card-tag">{{ item.tag }}</span>
+              <h3 class="portfolio-card-title">{{ item.title }}</h3>
+              <time class="portfolio-card-date" datetime="{{ item.date }}">{{ item.date | formatPostDate }}</time>
+            </div>
+          </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </section>
+  </footer>
+</article>

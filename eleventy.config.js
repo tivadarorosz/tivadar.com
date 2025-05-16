@@ -26,6 +26,7 @@ module.exports = function(eleventyConfig) {
       });
   });
 
+
   // Format date filter: YYYY-MM-DD to formatted date (e.g., "Apr 12, 2025")
   eleventyConfig.addFilter("formatPostDate", function(dateObj) {
     const date = new Date(dateObj);
