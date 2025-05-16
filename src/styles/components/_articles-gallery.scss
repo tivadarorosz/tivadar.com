@@ -1,4 +1,5 @@
 .articles-gallery {
+  padding-top: var(--spacing-md);
   margin-bottom: var(--spacing-xxl);
 
   &-grid {
@@ -21,18 +22,31 @@
     display: block;
     transition: var(--transition-standard);
 
-    &:hover {
-      transform: translateY(-3px);
+    &:hover .articles-gallery-icon {
+      transform: scale(1.05);
     }
 
     // First item (2/3 width)
     &-1 {
-      aspect-ratio: 2; // 2:1 ratio for acceptable height
+      aspect-ratio: 1.5; // Same as other items on mobile
+      
+      @media (min-width: 769px) {
+        aspect-ratio: 2; // 2:1 ratio on desktop
+      }
     }
 
     // Second item (1/3 width)
     &-2 {
-      aspect-ratio: 1; // Keep square
+      aspect-ratio: 1.5; // Same as other items on mobile
+      cursor: default; // Remove pointer cursor
+      
+      @media (min-width: 769px) {
+        aspect-ratio: 1; // Square on desktop
+      }
+      
+      &:hover .articles-gallery-icon {
+        transform: none; // No icon scaling on hover
+      }
     }
   }
 

@@ -16,12 +16,12 @@
 .articles-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-xxl);
   color: var(--color-black);
   margin: 0;
   text-align: left;
   
   @media (min-width: $breakpoint-md) {
-    font-size: 32px; // Larger size on desktop
+    font-size: 48px; // H1 size on desktop
   }
 }
