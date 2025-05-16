@@ -3,10 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  {% if layout == "post" %}
+  <!-- Open Graph for Articles -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ summary }}">
+  <meta property="og:image" content="{{ icon or 'https://tivadarorosz.com/images/twitter-card.jpg' }}">
+  <meta property="og:url" content="https://tivadarorosz.com{{ page.url }}">
+
+  <!-- Twitter Card for Articles -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ summary }}">
+  <meta name="twitter:image" content="{{ icon or 'https://tivadarorosz.com/images/twitter-card.jpg' }}">
+  {% else %}
+  <!-- Default Meta Tags for Pages -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title or 'Tivadar — Boudoir Photographer' }}">
+  <meta property="og:description" content="Escort and boudoir photography portfolio of Tivadar Orosz in London.">
+  <meta property="og:image" content="https://tivadarorosz.com/images/twitter-card.jpg">
+  <meta property="og:url" content="https://tivadarorosz.com{{ page.url }}">
+  
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tivadar — Boudoir Photographer" />
+  <meta name="twitter:title" content="{{ title or 'Tivadar — Boudoir Photographer' }}" />
   <meta name="twitter:description" content="Escort and boudoir photography portfolio of Tivadar Orosz in London." />
   <meta name="twitter:image" content="https://tivadarorosz.com/images/twitter-card.jpg" />
+  {% endif %}
 
   <title>{{ title }} \ Tivadar</title>
   <link rel="stylesheet" href="/css/style.css" />
