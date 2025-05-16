@@ -4,8 +4,8 @@
     <a href="{{ item.link }}" class="portfolio-card">
       <div class="portfolio-card-image-wrapper">
         <img 
-          src="{{ item.cover }}" 
-          alt="{{ item.alt }}" 
+          src="{{ item.cover.image or item.cover }}" 
+          alt="{{ item.cover.alt or item.alt }}" 
           class="portfolio-card-image"
           loading="lazy"
         >
