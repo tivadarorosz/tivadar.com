@@ -9,7 +9,7 @@ summary: "A quick insight into my approach for creating impactful boudoir photos
 featureImage: true
 
 # Background styling
-background: "#D87756" # Terracotta, bold and confident
+background: "#CBCADA" # Terracotta, bold and confident
 
 # Available background options (for reference only, not used programmatically)
 # palette:
@@ -22,9 +22,10 @@ background: "#D87756" # Terracotta, bold and confident
 # - "#759AC8" # Soft blue (calm, trustworthy)
 # - "#D87756" # Terracotta (bold, confident)
 # - "#8989D7" # Dusty violet (feminine, contemporary)
+# - "#CBCADA" # Light purple
 
 # Optional graphic/icon for featured image layering
-icon: "https://cdn.tivadarorosz.com/blog-icons/privacy-lock.svg"
+icon: "https://cdn.tivadarorosz.com/blog-icons/001.webp"
 ---
 
 Markdown content goes here...

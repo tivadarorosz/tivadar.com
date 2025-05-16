@@ -1,0 +1,67 @@
+{# Get the three most recent featured posts from the collection #}
+{% set recentFeatured = collections.featuredPosts.slice(0, 3) %}
+{% set mostRecent = recentFeatured[0] %}
+{% set secondRecent = recentFeatured[1] %}
+{% set thirdRecent = recentFeatured[2] %}
+
+<section class="articles-gallery">
+  <div class="articles-gallery-grid">
+    {# First row with 2/3 vs 1/3 split #}
+    {% if mostRecent %}
+    <a href="{{ mostRecent.url }}" class="articles-gallery-item articles-gallery-item-1" style="background-color: {{ mostRecent.data.background }};">
+      <div class="articles-gallery-content">
+        {% if mostRecent.data.icon %}
+        <img src="{{ mostRecent.data.icon }}" alt="" class="articles-gallery-icon">
+        {% endif %}
+        <div class="articles-gallery-overlay">
+          <div class="articles-gallery-meta">
+            <span class="articles-gallery-tag">{{ mostRecent.data.tags | join(', ') }}</span>
+            <h3 class="articles-gallery-title">{{ mostRecent.data.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+    
+    <div class="articles-gallery-item articles-gallery-item-2" style="background-color: var(--color-white);">
+      <div class="articles-gallery-content">
+        {# This is a plain white box, not linked to any post #}
+      </div>
+    </div>
+  </div>
+  
+  {# Second row with 50/50 split #}
+  <div class="articles-second-row">
+    {% if secondRecent %}
+    <a href="{{ secondRecent.url }}" class="articles-gallery-item" style="background-color: {{ secondRecent.data.background }};">
+      <div class="articles-gallery-content">
+        {% if secondRecent.data.icon %}
+        <img src="{{ secondRecent.data.icon }}" alt="" class="articles-gallery-icon">
+        {% endif %}
+        <div class="articles-gallery-overlay">
+          <div class="articles-gallery-meta">
+            <span class="articles-gallery-tag">{{ secondRecent.data.tags | join(', ') }}</span>
+            <h3 class="articles-gallery-title">{{ secondRecent.data.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+    
+    {% if thirdRecent %}
+    <a href="{{ thirdRecent.url }}" class="articles-gallery-item" style="background-color: {{ thirdRecent.data.background }};">
+      <div class="articles-gallery-content">
+        {% if thirdRecent.data.icon %}
+        <img src="{{ thirdRecent.data.icon }}" alt="" class="articles-gallery-icon">
+        {% endif %}
+        <div class="articles-gallery-overlay">
+          <div class="articles-gallery-meta">
+            <span class="articles-gallery-tag">{{ thirdRecent.data.tags | join(', ') }}</span>
+            <h3 class="articles-gallery-title">{{ thirdRecent.data.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+  </div>
+</section>

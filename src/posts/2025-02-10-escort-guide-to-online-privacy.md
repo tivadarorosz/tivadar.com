@@ -22,6 +22,7 @@ background: "#D87756" # Terracotta, bold and confident
 # - "#759AC8" # Soft blue (calm, trustworthy)
 # - "#D87756" # Terracotta (bold, confident)
 # - "#8989D7" # Dusty violet (feminine, contemporary)
+# - "#CBCADA" # Light purple
 
 # Optional graphic/icon for featured image layering
 icon: "https://cdn.tivadarorosz.com/blog-icons/privacy-lock.svg"
