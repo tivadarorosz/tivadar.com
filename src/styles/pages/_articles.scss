@@ -25,3 +25,12 @@
     font-size: 48px; // H1 size on desktop
   }
 }
+
+.articles-subtitle {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xlarge);
+  color: var(--color-black);
+  margin: 0;
+  text-align: left;
+}
