@@ -152,6 +152,12 @@
         display: block;
       }
     }
+    
+    // Protected email links
+    .protected-email {
+      min-width: 180px; // Prevent layout shift
+      display: inline-block;
+    }
   }
 }
 
