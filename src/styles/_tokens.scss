@@ -45,8 +45,11 @@
   --spacing-xl: 60px;
   --spacing-xxl: 80px;
   
-  // Border Radius
-  --border-radius: 0.875rem;
+  // Border Radius System
+  --border-radius-sm: 0.5rem;     // 8px - for smaller elements
+  --border-radius: 0.875rem;      // 14px - default
+  --border-radius-md: 0.75rem;    // 12px - for medium elements
+  --border-radius-lg: 1.5rem;     // 24px - for larger elements
   
   // Transitions
   --transition-speed: 0.3s;
