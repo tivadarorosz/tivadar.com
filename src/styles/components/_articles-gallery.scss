@@ -58,6 +58,12 @@
     align-items: center;
     justify-content: center;
   }
+  
+  // Override flexbox for contact container
+  &-item-2 &-content {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
   &-icon {
     width: 60%;
@@ -99,6 +105,53 @@
     font-weight: var(--font-weight-medium);
     line-height: 1.2;
     margin: 0;
+  }
+  
+  &-contact {
+    padding: 1.5rem 0 0 1.8rem;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    color: #141413;
+    
+    p {
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+    
+    // Override global link styles for this section only
+    a:not(.articles-social-link) {
+      color: #141413;
+      text-decoration: underline;
+      transition: color var(--transition-speed) ease;
+      
+      &:hover {
+        color: #878680 !important; // Add !important to ensure it overrides
+      }
+    }
+    
+    .social-links {
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: 0.25rem;
+    }
+    
+    .articles-social-link {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      
+      &:hover {
+        // No hover effect for social icons
+      }
+      
+      img {
+        width: 22px;
+        height: 22px;
+        display: block;
+      }
+    }
   }
 }
 
