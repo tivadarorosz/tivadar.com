@@ -48,7 +48,7 @@
     {% endif %}
     {% if buttonText and buttonUrl %}
     <div class="page-hero-button-container">
-      <a href="{{ buttonUrl }}" class="btn btn--header{% if buttonInverted %} btn--inverted{% endif %}">{{ buttonText }}</a>
+      <a href="{{ buttonUrl }}" class="btn{% if buttonInverted %} btn--inverted{% endif %}">{{ buttonText }}</a>
     </div>
     {% endif %}
   </div>

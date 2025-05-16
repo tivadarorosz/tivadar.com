@@ -1,16 +1,17 @@
 // ==============================================
 // BUTTON STYLES
 // ==============================================
-// Consolidated button system with modifiers
+// Simplified button system with only essential modifiers
 
 // Base button class for all button styles
 .btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  min-width: 9.5rem;
   width: auto;
   height: 2.95rem;
-  padding: 0.025rem 0.025rem;
+  padding: 0 1.5rem;
   border-radius: var(--border-radius);
   text-decoration: none;
   font-family: var(--font-primary);
@@ -19,6 +20,7 @@
   transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
   cursor: pointer;
   border: none;
+  box-sizing: border-box;
   
   // Default primary button (dark background, light text)
   background-color: var(--color-black);
@@ -44,40 +46,7 @@
 // Full-width variant
 .btn--full {
   width: 100%;
-  height: 2.75rem; // Slightly smaller height for full-width buttons
-}
-
-// Header variant - specific size like the book-now-button
-.btn--header {
-  min-width: 9.5rem;
-  width: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-// Legacy class support for backward compatibility
-// These will be gradually phased out
-
-// Feature CTA (full width)
-.feature-cta {
-  @extend .btn;
-  @extend .btn--full;
-}
-
-.feature-cta-inverted {
-  @extend .btn;
-  @extend .btn--full;
-  @extend .btn--inverted;
-}
-
-// Book now button in header
-.book-now-button {
-  @extend .btn;
-  @extend .btn--header;
-}
-
-// Page hero button
-.page-hero-button {
-  @extend .btn;
-  @extend .btn--header;
+  min-width: unset; // Remove min-width for full-width buttons
+  box-sizing: border-box;
+  display: flex; // Override inline-flex to ensure full block behavior
 }
