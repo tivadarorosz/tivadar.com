@@ -27,6 +27,9 @@ background: "#D87756" # Terracotta, bold and confident
 
 # Optional graphic/icon for featured image layering
 icon: "https://cdn.tivadarorosz.com/blog-icons/001.webp"
+
+# Optional to set for OpenGraph and TwitterCard
+coverImage: "https://cdn.tivadarorosz.com/blog-icons/001111.webp"
 ---
 
 A cheap website is costing you money. If you want *elite clients*, premium bookings, and a personal brand that commands attention, [Squarespace](https://squarespace.com) and [Wix](https://wix.com) won’t get you there. You need to consider getting your premium escort website. The game has changed—visibility, SEO, and brand authority define success. Your website is your storefront; if it looks cheap, so do you.

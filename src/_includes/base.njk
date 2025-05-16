@@ -9,14 +9,14 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ summary }}">
-  <meta property="og:image" content="{{ icon or 'https://tivadarorosz.com/images/twitter-card.jpg' }}">
+  <meta property="og:image" content="{{ coverImage or icon or 'https://tivadarorosz.com/images/twitter-card.jpg' }}">
   <meta property="og:url" content="https://tivadarorosz.com{{ page.url }}">
 
   <!-- Twitter Card for Articles -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ summary }}">
-  <meta name="twitter:image" content="{{ icon or 'https://tivadarorosz.com/images/twitter-card.jpg' }}">
+  <meta name="twitter:image" content="{{ coverImage or icon or 'https://tivadarorosz.com/images/twitter-card.jpg' }}">
   {% else %}
   <!-- Default Meta Tags for Pages -->
   <meta property="og:type" content="website">
