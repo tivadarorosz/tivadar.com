@@ -394,3 +394,51 @@
     transition: background-color var(--transition-speed) ease;
   }
 }
+
+// CTA Section
+.cta-section {
+  text-align: center;
+  margin: 6rem auto 8rem;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin: 8rem auto 10rem;
+    max-width: 600px;
+  }
+}
+
+.cta-title {
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight-medium) !important;
+  font-size: 2rem !important;
+  color: var(--color-black) !important;
+  margin: 0 0 2rem !important;
+  line-height: 1.2 !important;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 3rem !important;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  .btn {
+    min-width: 180px;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
