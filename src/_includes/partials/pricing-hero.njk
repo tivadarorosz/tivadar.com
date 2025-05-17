@@ -9,12 +9,13 @@
     {% if subtitle %}
     <h2 class="page-hero-subtitle">{{ subtitle }}</h2>
     {% endif %}
-    {% if buttonText and buttonUrl %}
     <div class="page-hero-button-container">
-      <a href="{{ buttonUrl }}" class="btn{% if buttonInverted %} btn--inverted{% endif %}">{{ buttonText }}</a>
+      <div class="pricing-button-group">
+        <button class="pricing-button active" data-section="photography">Photography</button>
+        <button class="pricing-button" data-section="website">Website</button>
+        <button class="pricing-button" data-section="privacy-seo">Privacy & SEO</button>
+      </div>
     </div>
-    {% endif %}
   </div>
-  <div class="page-hero-separator"></div>
 </section>
 {% endif %}

@@ -51,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function initTitleAnimation(wrapper) {
     const title = wrapper.getAttribute('data-title');
     
+    // Special animation for pricing page
+    if (title === "Pricing") {
+      initPricingTitleAnimation(wrapper);
+      return;
+    }
+    
     // If title is empty or has only one word, don't animate
     if (!title || !title.includes(' ')) {
       wrapper.querySelector('.title-static').style.opacity = 1;
@@ -197,5 +203,44 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.opacity = 1; // Ensure final opacity is exactly 1
       }
     }, interval);
+  }
+  
+  // Pricing page specific animation
+  function initPricingTitleAnimation(wrapper) {
+    const staticTitle = wrapper.querySelector('.title-static');
+    
+    // Add class for CSS animation
+    staticTitle.classList.add('pricing-title-animation');
+    
+    // Trigger the animation after a brief delay
+    setTimeout(() => {
+      staticTitle.classList.add('animate');
+    }, 100);
+  }
+  
+  // Pricing button group functionality
+  const pricingButtons = document.querySelectorAll('.pricing-button');
+  if (pricingButtons.length > 0) {
+    pricingButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        pricingButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Hide all sections
+        document.querySelectorAll('.pricing-section').forEach(section => {
+          section.style.display = 'none';
+        });
+        
+        // Show the corresponding section
+        const sectionId = this.getAttribute('data-section') + '-section';
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.style.display = 'block';
+        }
+      });
+    });
   }
 });

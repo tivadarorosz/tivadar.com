@@ -4,9 +4,46 @@
 
 @use '../variables' as *;
 
+// Pricing-specific hero modifications
 .pricing-page {
   // Remove padding from main container, will use same pattern as page-hero
   padding: 0;
+}
+
+// Pricing-specific hero styles
+body:has(.pricing-page) .page-hero {
+  padding-top: clamp(4rem, 8vw, 7rem); // More top padding for pricing page
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: clamp(5rem, 10vw, 9rem); // Even more on desktop
+  }
+}
+
+body:has(.pricing-page) .page-hero-title {
+  font-size: clamp(3.25rem, 6.5vw, 5rem); // Even bigger title for pricing page
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    font-size: clamp(2.5rem, 5vw, 3.75rem); // Slightly bigger on mobile too
+  }
+}
+
+// Pricing-specific title animation
+.pricing-title-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); // Smooth easing
+  
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  // Disable animation on mobile
+  @media (max-width: $breakpoint-sm - 1px) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .pricing-content {
@@ -26,5 +63,85 @@
     @media (max-width: $breakpoint-sm - 1px) {
       font-size: 16px;
     }
+  }
+}
+
+// Button group styles
+.pricing-button-group {
+  display: inline-flex;
+  background-color: #E8E6DC;
+  border-radius: 30px;
+  padding: 0.5rem 0.75rem;
+  margin: 0 auto;
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  gap: 0.5rem; // Add gap between buttons
+  
+  // When in hero section
+  .page-hero & {
+    // No additional positioning needed
+  }
+  
+  @media (min-width: $breakpoint-sm) {
+    width: auto;
+    max-width: none;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    width: auto;
+    max-width: none;
+  }
+}
+
+.pricing-button {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  font-size: clamp(14px, 1vw, 15px);
+  border: none;
+  padding: 0.675rem 1.25rem;
+  background-color: transparent;
+  color: #5E5D59;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex: 1;
+  height: 2.375rem; // Consistent height
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26px; // Apply to all buttons
+  
+  &:hover:not(.active) {
+    background-color: #FAF9F5;
+    color: #141413;
+  }
+  
+  &.active {
+    background-color: #FAF9F5;
+    color: #141413;
+    cursor: default;
+  }
+  
+  // Responsive padding
+  @media (max-width: $breakpoint-sm - 1px) {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+}
+
+.pricing-section {
+  margin-bottom: var(--spacing-xxl);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  h2 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-black);
   }
 }
