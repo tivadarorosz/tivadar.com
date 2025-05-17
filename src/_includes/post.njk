@@ -62,10 +62,15 @@ pageBodyClass: page-light-bg
         {# Filter out the current post #}
         {% set otherPosts = collections.allPosts | reject("equalto", page) %}
         
-        {# Simple random selection using URL as seed #}
+        {# Improved random selection using URL characteristics #}
         {% set postCount = otherPosts.length %}
         {% if postCount > 0 %}
-          {% set seed = page.url.length %}
+          {# Create randomness using URL characteristics #}
+          {% set urlSum = 0 %}
+          {% for char in page.url %}
+            {% set urlSum = urlSum + loop.index %}
+          {% endfor %}
+          {% set seed = (urlSum * 17 + page.url.length * 31) % 1000 %}
           {% set startIdx = seed % postCount %}
           
           {# Select up to 3 posts starting from random index #}

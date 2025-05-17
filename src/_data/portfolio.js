@@ -1,9 +1,9 @@
 module.exports = {
   featured: {
     intro: {
-      text: "You want people to be completely aware of exactly what they're interacting with, and to kind of be under no illusions. I feel that's really important.",
-      tagline_a: "Amanda Askell",
-      tagline_b: "Researcher, Alignment",
+      text: "Confidence is the sexiest thing a woman can have. It’s much sexier than any body part.",
+      tagline_a: "—Dita Von Teese",
+      tagline_b: "Model: Khrystyana Kazakova",
     },
     main: {
       title: "She Is Soft Glam Defined",
