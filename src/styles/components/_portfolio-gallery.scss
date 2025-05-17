@@ -5,11 +5,8 @@
 @use '../variables' as *;
 
 .portfolio-gallery {
-  padding: var(--spacing-lg) calc(var(--side-padding) * 0.25);
-  max-width: 88%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  width: 100%;
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
 }
 
 .portfolio-gallery-grid {

@@ -1,0 +1,30 @@
+// ==============================================
+// PRICING PAGE STYLES
+// ==============================================
+
+@use '../variables' as *;
+
+.pricing-page {
+  // Remove padding from main container, will use same pattern as page-hero
+  padding: 0;
+}
+
+.pricing-content {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-xxl);
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: var(--spacing-xl);
+  }
+  
+  p {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    
+    @media (max-width: $breakpoint-sm - 1px) {
+      font-size: 16px;
+    }
+  }
+}

@@ -5,7 +5,8 @@
 @use '../variables' as *;
 
 .about-page {
-  padding: var(--spacing-lg) var(--side-padding) var(--spacing-xxl);
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-xxl);
   
   @media (min-width: $breakpoint-sm) {
     padding-top: var(--spacing-xl);
