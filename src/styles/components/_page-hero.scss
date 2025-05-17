@@ -184,6 +184,11 @@
 .page-hero-button-container {
   margin-top: 2rem; // Restored to original value
   text-align: center;
+  
+  // Pricing-specific top margin
+  body:has(.pricing-page) & {
+    margin-top: 2.25rem;
+  }
 }
 
 .page-hero-separator {
