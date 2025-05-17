@@ -117,25 +117,34 @@ pageBodyClass: page-light-bg
         
         {% set itemCount = allPortfolioItems.length %}
         {% if itemCount > 0 %}
-          {# Create randomness using URL characteristics #}
+          {# Create better randomness using URL characteristics #}
           {% set urlSum = 0 %}
           {% for char in page.url %}
-            {% set urlSum = urlSum + loop.index %}
+            {% set urlSum = urlSum + loop.index * loop.index %}
           {% endfor %}
           {% set seed = (urlSum * 17 + page.url.length * 31) % 1000 %}
-          {% set startIdx = seed % itemCount %}
           
-          {# Select up to 3 items starting from random index #}
+          {# Create a shuffled copy of the items for better randomization #}
+          {% set remainingItems = [] %}
+          {% for item in allPortfolioItems %}
+            {% set remainingItems = (remainingItems.push(item), remainingItems) %}
+          {% endfor %}
+          
+          {# Pick 3 random items with better distribution #}
           {% set selectedItems = [] %}
-          {% set idx = startIdx %}
           {% for i in range(0, 3) %}
-            {% if idx < itemCount %}
-              {% set selectedItems = (selectedItems.push(allPortfolioItems[idx]), selectedItems) %}
-              {% set idx = idx + 1 %}
-            {% elif idx >= itemCount and i < 3 %}
-              {% set idx = 0 %}
-              {% set selectedItems = (selectedItems.push(allPortfolioItems[idx]), selectedItems) %}
-              {% set idx = idx + 1 %}
+            {% if remainingItems.length > 0 %}
+              {# Use prime numbers for better distribution #}
+              {% set idx = (seed + i * 137 + i * i * 13) % remainingItems.length %}
+              {% set selectedItems = (selectedItems.push(remainingItems[idx]), selectedItems) %}
+              {# Remove selected item from remaining items #}
+              {% set newRemaining = [] %}
+              {% for j in range(0, remainingItems.length) %}
+                {% if j != idx %}
+                  {% set newRemaining = (newRemaining.push(remainingItems[j]), newRemaining) %}
+                {% endif %}
+              {% endfor %}
+              {% set remainingItems = newRemaining %}
             {% endif %}
           {% endfor %}
           

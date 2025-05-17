@@ -59,31 +59,45 @@ pageBodyClass: page-light-bg
     
     <section class="post-related">
       <div class="articles-main-grid">
-        {# Filter out the current post #}
-        {% set otherPosts = collections.allPosts | reject("equalto", page) %}
+        {# Filter out the current post by URL #}
+        {% set otherPosts = [] %}
+        {% for post in collections.allPosts %}
+          {% if post.url != page.url %}
+            {% set otherPosts = (otherPosts.push(post), otherPosts) %}
+          {% endif %}
+        {% endfor %}
         
-        {# Improved random selection using URL characteristics #}
+        {# Improved random selection with better distribution #}
         {% set postCount = otherPosts.length %}
         {% if postCount > 0 %}
-          {# Create randomness using URL characteristics #}
+          {# Create better randomness using URL characteristics #}
           {% set urlSum = 0 %}
           {% for char in page.url %}
-            {% set urlSum = urlSum + loop.index %}
+            {% set urlSum = urlSum + loop.index * loop.index %}
           {% endfor %}
           {% set seed = (urlSum * 17 + page.url.length * 31) % 1000 %}
-          {% set startIdx = seed % postCount %}
           
-          {# Select up to 3 posts starting from random index #}
+          {# Create a shuffled copy of the posts for better randomization #}
+          {% set remainingPosts = [] %}
+          {% for post in otherPosts %}
+            {% set remainingPosts = (remainingPosts.push(post), remainingPosts) %}
+          {% endfor %}
+          
+          {# Pick 3 random posts with better distribution #}
           {% set selectedPosts = [] %}
-          {% set idx = startIdx %}
           {% for i in range(0, 3) %}
-            {% if idx < postCount %}
-              {% set selectedPosts = (selectedPosts.push(otherPosts[idx]), selectedPosts) %}
-              {% set idx = idx + 1 %}
-            {% elif idx >= postCount and i < 3 %}
-              {% set idx = 0 %}
-              {% set selectedPosts = (selectedPosts.push(otherPosts[idx]), selectedPosts) %}
-              {% set idx = idx + 1 %}
+            {% if remainingPosts.length > 0 %}
+              {# Use prime numbers for better distribution #}
+              {% set idx = (seed + i * 137 + i * i * 13) % remainingPosts.length %}
+              {% set selectedPosts = (selectedPosts.push(remainingPosts[idx]), selectedPosts) %}
+              {# Remove selected post from remaining posts #}
+              {% set newRemaining = [] %}
+              {% for j in range(0, remainingPosts.length) %}
+                {% if j != idx %}
+                  {% set newRemaining = (newRemaining.push(remainingPosts[j]), newRemaining) %}
+                {% endif %}
+              {% endfor %}
+              {% set remainingPosts = newRemaining %}
             {% endif %}
           {% endfor %}
           
