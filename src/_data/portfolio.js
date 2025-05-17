@@ -6,13 +6,13 @@ module.exports = {
       tagline_b: "Researcher, Alignment",
     },
     main: {
-      title: "Muse I",
+      title: "She Is Soft Glam Defined",
       tag: "Signature",
-      date: "2025-01-01",
-      link: "/stories/muse-i",
+      date: "2024-05-19",
+      link: "/stories/khrystyana-kazakova-signature-muse",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/featured/hero.jpg",
-        alt: "Main featured image"
+        image: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/cover.jpg",
+        alt: "Khrystyana Kazakova posing as Signature Muse in a luxury New York boudoir portrait photographed by Tivadar Orosz with creative direction by Lindsay Adler and Cate Scaglione"
       }
     },
     gallery: [
@@ -22,7 +22,7 @@ module.exports = {
         date: "2025-01-05",
         link: "/stories/muse-ii",
         cover: {
-          image: "https://tivadarassets.b-cdn.net/portfolio/featured/grid1.webp",
+          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid1.webp",
           alt: "Gallery image 1"
         }
       },
@@ -32,7 +32,7 @@ module.exports = {
         date: "2025-02-12",
         link: "/stories/muse-iii",
         cover: {
-          image: "https://tivadarassets.b-cdn.net/portfolio/featured/grid2.jpg",
+          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid2.jpg",
           alt: "Gallery image 2"
         }
       },
@@ -42,7 +42,7 @@ module.exports = {
         date: "2025-03-01",
         link: "/stories/muse-iv",
         cover: {
-          image: "https://tivadarassets.b-cdn.net/portfolio/featured/grid3.jpg",
+          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid3.jpg",
           alt: "Gallery image 3"
         }
       },
@@ -52,7 +52,7 @@ module.exports = {
         date: "2025-03-10",
         link: "/stories/muse-v",
         cover: {
-          image: "https://tivadarassets.b-cdn.net/portfolio/featured/grid4.jpg",
+          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid4.jpg",
           alt: "Gallery image 4"
         }
       }
@@ -66,7 +66,7 @@ module.exports = {
       date: "2024-12-12",
       link: "/stories/the-light-within",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/light-loves-her.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/light-loves-her.jpg",
         alt: "Main gallery image"
       }
     },
@@ -76,7 +76,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/muse-vi",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/she-holds-the-narrative.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/she-holds-the-narrative.jpg",
         alt: "Natural light portrait"
       }
     },
@@ -86,7 +86,7 @@ module.exports = {
       date: "2024-12-12",
       link: "/stories/after-midnight",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/permission-after-midnight.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/permission-after-midnight.jpg",
         alt: "Main gallery image"
       }
     },
@@ -96,7 +96,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/obsession",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/she-claims-the-frame.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/she-claims-the-frame.jpg",
         alt: "Natural light portrait"
       }
     },
@@ -106,7 +106,7 @@ module.exports = {
       date: "2024-12-12",
       link: "/stories/afterglow",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/afterglow.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/afterglow.jpg",
         alt: "Main gallery image"
       }
     },
@@ -116,7 +116,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/low-flame",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/low-flame.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/low-flame.jpg",
         alt: "Natural light portrait"
       }
     },
@@ -126,7 +126,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/gold-rush",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/gold-rush.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/gold-rush.jpg",
         alt: "Natural light portrait"
       }
     },
@@ -136,7 +136,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/the-gaze",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/the-gaze-is-yours.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/the-gaze-is-yours.jpg",
         alt: "Natural light portrait"
       }
     },
@@ -146,7 +146,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/control",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/she-controls-attention.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/she-controls-attention.jpg",
         alt: "Natural light portrait"
       }
     },
@@ -156,7 +156,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/power-play",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/she-bends-the-rules.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/she-bends-the-rules.jpg",
         alt: "Natural light portrait"
       }
     },
@@ -166,7 +166,7 @@ module.exports = {
       date: "2025-01-05",
       link: "/stories/siren",
       cover: {
-        image: "https://tivadarassets.b-cdn.net/portfolio/main/siren-rise-from-water.jpg",
+        image: "https://cdn.tivadarorosz.com/portfolio/main/siren-rise-from-water.jpg",
         alt: "Natural light portrait"
       }
     }
