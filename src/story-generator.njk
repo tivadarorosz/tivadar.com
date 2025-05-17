@@ -4,12 +4,5 @@ pagination:
   size: 1
   alias: story
 permalink: "{{ story.link }}/"
-eleventyComputed:
-  title: "{{ story.title }}"
-  tag: "{{ story.tag }}"
-  date: "{{ story.date }}"
-  cover: 
-    image: "{{ story.cover.image }}"
-    alt: "{{ story.cover.alt }}"
 layout: story
 ---

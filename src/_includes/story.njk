@@ -3,31 +3,68 @@ layout: base
 pageBodyClass: page-light-bg
 ---
 
+{# Access story data directly from pagination #}
+{% set currentStory = story %}
+
 <article class="story">
   <header class="story-header">
     <div class="story-tags">
-      {% if tag %}
-        <span class="story-tag">{{ tag }}</span>
+      {% if currentStory.tag %}
+        <span class="story-tag">{{ currentStory.tag }}</span>
       {% endif %}
     </div>
     
-    <h1 class="story-title">{{ title }}</h1>
+    <h1 class="story-title">{{ currentStory.title }}</h1>
     <div class="story-meta">
-      <time class="story-date" datetime="{{ date }}">{{ date | formatPostDate }}</time>
+      <time class="story-date" datetime="{{ currentStory.date }}">{{ currentStory.date | formatPostDate }}</time>
       <span class="story-separator">•</span>
-      <span class="story-reading-time">{{ content | readingTime }}</span>
+      {% set fullText = "" %}
+      {% if currentStory.story and currentStory.story.blocks %}
+        {% for block in currentStory.story.blocks %}
+          {% if block.type == "text" %}
+            {% set fullText = fullText + " " + block.text %}
+            {% if block.title %}
+              {% set fullText = fullText + " " + block.title %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <span class="story-reading-time">{{ fullText | readingTime }}</span>
     </div>
     
     {# Feature image using cover.image #}
-    {% if cover %}
+    {% if currentStory.cover %}
       <div class="story-feature-image">
-        <img src="{{ cover.image }}" alt="{{ cover.alt }}" class="story-feature-img" loading="lazy">
+        <img src="{{ currentStory.cover.image }}" alt="{{ currentStory.cover.alt }}" class="story-feature-img" loading="lazy">
       </div>
     {% endif %}
   </header>
   
   <div class="story-content">
-    <p>This is a story page.</p>
+    {% if currentStory.story and currentStory.story.blocks %}
+      {% for block in currentStory.story.blocks %}
+        {% if block.type == "text" %}
+          {% if block.title %}
+            <h3>{{ block.title }}</h3>
+          {% endif %}
+          <p>{{ block.text }}</p>
+        {% elif block.type == "image" %}
+          <div class="story-feature-image">
+            <img src="{{ block.src }}" alt="{{ block.alt }}" class="story-feature-img" loading="lazy">
+          </div>
+        {% elif block.type == "group" %}
+          <div class="story-image-group" data-layout="{{ block.layout }}">
+            {% for item in block.items %}
+              <div class="story-feature-image">
+                <img src="{{ item.src }}" alt="{{ item.alt }}" class="story-feature-img" loading="lazy">
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <p>This is a story page.</p>
+    {% endif %}
   </div>
   
   <div class="story-separator-line"></div>
