@@ -284,3 +284,38 @@ body:has(.pricing-page) .page-hero-title {
     }
   }
 }
+
+// Pricing footnote styles
+.pricing-footnote {
+  text-align: center;
+  max-width: 700px;
+  margin: 2.5rem auto 0;
+  padding: 0 4rem;
+  
+  p {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-normal);
+    font-size: 0.8125rem;
+    color: #141413;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  a {
+    color: #141413;
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--color-black-light);
+      text-decoration: underline;
+    }
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 2rem;
+    
+    p {
+      font-size: 0.75rem;
+    }
+  }
+}
