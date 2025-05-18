@@ -1,0 +1,444 @@
+// ==============================================
+// HOMEPAGE STYLES
+// ==============================================
+
+@use '../variables' as *;
+
+// Hero Section
+.hero {
+  padding-top: var(--spacing-xxl); // Using the 80px variable for top padding
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: 0; // 80px top padding on desktop
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    align-items: stretch; // Changed from center to stretch to allow bottom alignment
+    gap: 60px;
+  }
+}
+
+.hero-column-left {
+  @media (min-width: $breakpoint-md) {
+    flex: 1;
+    padding: 0; // Remove all padding
+    margin: 0; // Remove all margins
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; // Align content to top to work with the right column
+  }
+}
+
+.hero-column-right {
+  position: relative; // Add positioning context for the brush stroke
+  
+  @media (min-width: $breakpoint-md) {
+    width: 405px;
+    align-self: flex-end; // Bottom align vertically
+    padding: 0; // Remove any padding
+    margin: 0; // Remove any margin
+    display: flex; // Use flexbox for better alignment
+    flex-direction: column; // Stack children vertically
+    margin-bottom: 60px; // Match the feature-boxes margin-top
+  }
+  
+  // Layered strokes behind the hero image
+  // Outer stroke (behind the image)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-stroke-hero-outer); // Swapped with inner stroke color
+    border-radius: var(--border-radius-lg); // Match the image border radius
+    z-index: -1; // Position behind the image
+    display: none; // Hidden by default
+    
+    @media (min-width: $breakpoint-sm) {
+      display: block;
+    }
+  }
+  
+  // Inner stroke (between outer stroke and image)
+  &::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 1px); // Adjusted to show outer stroke
+    height: calc(100% - 1px);
+    background-color: var(--color-stroke-hero-inner); // Swapped with outer stroke color
+    border-radius: calc(var(--border-radius-lg) - 0.125rem); // Slightly smaller radius
+    z-index: -1; // Position behind the image but in front of outer stroke
+    display: none; // Hidden by default
+    
+    @media (min-width: $breakpoint-sm) {
+      display: block;
+    }
+  }
+}
+
+.hero-featured-image {
+  width: 100%;
+  max-width: 1480px;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius-lg);
+  position: relative; // For z-index stacking
+  z-index: 1;
+}
+
+// Feature Boxes
+.feature-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 60px; // Restored original margin-top
+  
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+.feature-box {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: 30px 32px 30px; // Increased left-right and bottom padding
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+// About Section
+.about {
+  padding: 80px var(--side-padding) 20px; // Reduced bottom padding
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 40px auto 0;
+  border-radius: var(--border-radius-lg);
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    border-radius: 0;
+    margin-left: -40px;
+    width: calc(100% + 80px); // Account for side padding
+  }
+}
+
+// Two Column Layout
+.two-column-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+    gap: 60px;
+    
+    .left-column {
+      width: 30%;
+    }
+    
+    .right-column {
+      width: 70%;
+    }
+  }
+}
+
+// Portfolio Section
+.portfolio {
+  padding: 20px var(--side-padding) 80px; // Reduced top padding
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    padding-left: 0;
+    padding-right: 0;
+    
+    h2 {
+      padding: 0 var(--side-padding);
+    }
+  }
+}
+
+// Portfolio grid
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.portfolio-item {
+  position: relative;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: calc(75% + 40px); // 4:3 aspect ratio + space for padding
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    border-radius: 0;
+  }
+}
+
+.stroke-beige {
+  background-color: var(--color-stroke-beige);
+}
+
+.stroke-green {
+  background-color: var(--color-stroke-green);
+}
+
+.stroke-purple {
+  background-color: var(--color-stroke-purple);
+}
+
+.portfolio-image {
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  object-fit: cover;
+  top: 20px;
+  left: 20px;
+  border-radius: var(--border-radius-lg);
+}
+
+// Featured Section
+.featured {
+  padding: 80px 0 60px;
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    padding: 60px 0 40px;
+  }
+}
+
+.featured-content {
+  padding: 0 var(--side-padding);
+  
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.featured-title {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-large);
+  color: var(--color-black);
+  margin: 0;
+  
+  @media (min-width: $breakpoint-md) {
+    width: 25%;
+    margin: 0;
+    padding-right: 20px;
+  }
+}
+
+.featured-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0; // No gap between posts
+  
+  @media (min-width: $breakpoint-md) {
+    width: 75%;
+  }
+}
+
+.featured-post {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 0.6fr);
+  padding: 20px 0 24px;
+  border-bottom: 1px solid var(--color-border-featured);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+  align-items: center;
+  
+  &:hover {
+    .featured-post-title,
+    .featured-post-category,
+    .featured-post-date {
+      color: var(--color-text-muted);
+    }
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1.5fr 1fr 0.8fr;
+  }
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    display: block;
+    padding: 20px 0;
+    position: relative;
+  }
+}
+
+.featured-post-title {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  transition: color var(--transition-speed) ease;
+  padding-right: 20px;
+  line-height: 1.4;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 15px;
+  }
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    font-size: 15px;
+    padding-right: 0;
+    margin-bottom: 6px;
+    display: block;
+    text-align: left;
+  }
+}
+
+.featured-post-category, 
+.featured-post-date {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-small);
+  transition: color var(--transition-speed) ease;
+  line-height: 1.4;
+  
+  @media (max-width: $breakpoint-md) {
+    font-size: 13px;
+  }
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    display: inline-block;
+    font-size: 13px;
+    text-align: left;
+    font-weight: var(--font-weight-normal);
+  }
+}
+
+.featured-post-category {
+  color: var(--color-black);
+  text-align: right;
+  padding-right: 20px;
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    margin-right: 12px;
+  }
+}
+
+.featured-post-date {
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+.view-all-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+}
+
+.view-all-link {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  color: var(--color-black);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-speed) ease;
+  
+  &:hover {
+    color: var(--color-text-muted);
+    
+    &::after {
+      background: var(--color-text-muted);
+    }
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--color-black);
+    left: 0;
+    bottom: -4px;
+    transition: background-color var(--transition-speed) ease;
+  }
+}
+
+// CTA Section
+.cta-section {
+  text-align: center;
+  margin: 6rem auto 8rem;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin: 8rem auto 10rem;
+    max-width: 600px;
+  }
+}
+
+.cta-title {
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight-medium) !important;
+  font-size: 2rem !important;
+  color: var(--color-black) !important;
+  margin: 0 0 2rem !important;
+  line-height: 1.2 !important;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 3rem !important;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  .btn {
+    min-width: 180px;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}

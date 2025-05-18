@@ -3,6 +3,7 @@
 // ==============================================
 
 @use '../variables' as *;
+@use 'sass:color';
 
 // Support both new and existing class names
 .bottom-cta-section,
@@ -133,7 +134,7 @@
   border: 1px solid #faf9f5;
   
   &:hover {
-    background-color: darken(#faf9f5, 5%);
-    border-color: darken(#faf9f5, 5%);
+    background-color: color.adjust(#faf9f5, $lightness: -5%);
+    border-color: color.adjust(#faf9f5, $lightness: -5%);
   }
 }
