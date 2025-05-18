@@ -1,0 +1,174 @@
+// ==============================================
+// COLUMN GRID COMPONENT
+// ==============================================
+
+@use '../variables' as *;
+
+.column-grid-section {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
+  }
+  
+  // Support legacy class names for backward compatibility
+  &.beyond-images-section {
+    // Inherits all styles
+  }
+}
+
+.column-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 0;
+  width: 100%;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  
+  // Support legacy class names
+  &.beyond-images {
+    // Inherits all styles
+  }
+}
+
+.column-grid-title {
+  margin: 0;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex: 0 0 30%;
+  }
+  
+  h3 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: 1.5rem;
+    color: var(--color-black);
+    margin: 0;
+    
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1.875rem;
+    }
+  }
+  
+  // Support legacy class names
+  &.beyond-images-title {
+    h3 {
+      // Inherits all styles
+    }
+  }
+}
+
+.column-grid-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex: 1;
+  }
+  
+  // Support legacy class names
+  &.beyond-images-areas {
+    // Inherits all styles
+  }
+}
+
+.column-grid-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  
+  &:last-child {
+    padding-bottom: 0;
+  }
+  
+  h4 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: 1.5rem;
+    color: var(--color-black);
+    margin: 0;
+    
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1.875rem;
+    }
+  }
+  
+  p {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-medium);
+    color: var(--color-black);
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .btn {
+    align-self: flex-start;
+  }
+  
+  // Personal purpose area
+  &.personal-purpose {
+    // No special styling needed
+  }
+  
+  // Support legacy class names
+  &.beyond-images-area {
+    // Inherits all styles
+  }
+}
+
+// Grid layout for the areas
+.column-grid-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .column-grid-area {
+    padding-bottom: 0;
+  }
+  
+  // Support legacy class names
+  &.beyond-images-grid {
+    .beyond-images-area {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// Support all legacy class names
+.beyond-images-section {
+  @extend .column-grid-section;
+}
+
+.beyond-images {
+  @extend .column-grid;
+}
+
+.beyond-images-title {
+  @extend .column-grid-title;
+}
+
+.beyond-images-areas {
+  @extend .column-grid-areas;
+}
+
+.beyond-images-area {
+  @extend .column-grid-area;
+}
+
+.beyond-images-grid {
+  @extend .column-grid-grid;
+}

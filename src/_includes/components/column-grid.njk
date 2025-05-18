@@ -1,0 +1,26 @@
+{# Column Grid Component #}
+<div class="page-width">
+  <div class="page-separator"></div>
+</div>
+<section class="column-grid-section{% if customClass %} {{ customClass }}{% endif %} page-section">
+  <div class="column-grid page-width">
+    <div class="column-grid-title">
+      <h3>{{ title | default("Beyond Images") }}</h3>
+    </div>
+    <div class="column-grid-areas">
+      {% if introArea %}
+      <div class="column-grid-area personal-purpose">
+        <p>{{ introArea.content }}</p>
+      </div>
+      {% endif %}
+      <div class="column-grid-grid">
+        {% for area in areas %}
+        <div class="column-grid-area">
+          <h4>{{ area.title }}</h4>
+          <p>{{ area.content }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
