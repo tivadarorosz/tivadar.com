@@ -263,4 +263,16 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+  
+  // Mobile submenu functionality
+  const mobileMenuLink = document.querySelector('.mobile-menu-link.has-submenu');
+  const mobileSubmenu = document.querySelector('.mobile-submenu');
+  
+  if (mobileMenuLink && mobileSubmenu) {
+    mobileMenuLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.classList.toggle('active');
+      mobileSubmenu.classList.toggle('active');
+    });
+  }
 });
