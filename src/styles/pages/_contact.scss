@@ -14,11 +14,13 @@
   gap: 3rem;
   flex-direction: column;
   margin-top: var(--spacing-xxl);
+  margin-bottom: calc(var(--spacing-xxl) + 40px);
   
   @media (min-width: 992px) {
     flex-direction: row;
     align-items: flex-start;
     margin-top: calc(var(--spacing-xxl) + 20px);
+    margin-bottom: calc(var(--spacing-xxl) + 60px);
   }
 }
 
@@ -243,5 +245,26 @@
   min-height: 84px; // Regular input is ~56px (18px*2 + 20px font), so 1.5x = 84px
   height: 84px;
   resize: vertical;
+}
+
+// Thank you message styling
+.contact-thankyou-message {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-medium);
+  color: #141413;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+  padding-bottom: var(--spacing-md);
+  
+  a {
+    color: #141413;
+    text-decoration: underline;
+    
+    &:hover {
+      color: #5e5d59;
+    }
+  }
 }
 

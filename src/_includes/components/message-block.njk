@@ -1,0 +1,17 @@
+{# Message Block Component - Two Column Layout #}
+<main class="contact-page page-width">
+  <div class="contact-wrapper">
+    <div class="contact-content">
+      <h1 class="contact-title">{{ leftTitle | default("Thank You") }}</h1>
+      <p class="contact-description">
+        {{ leftDescription | default("Your submission has been received. We appreciate your interest and will respond as soon as possible.") | safe }}
+      </p>
+    </div>
+    
+    <div class="contact-form-wrapper">
+      <div class="contact-form">
+        <p class="contact-thankyou-message">{{ rightMessage | default("We've got your message! Our team will review it and get back to you within 24-48 hours.") | safe }}</p>
+      </div>
+    </div>
+  </div>
+</main>

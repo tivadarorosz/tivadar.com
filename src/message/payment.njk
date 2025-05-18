@@ -1,0 +1,19 @@
+---
+layout: base
+title: Thank You - Payment Confirmed
+eleventyExcludeFromCollections: true
+---
+
+{% set leftTitle = "Payment Confirmed" %}
+{% set leftDescription = "Your booking is secure. Now the real work begins." %}
+{% set rightMessage = "We’ve locked it in. While you prep, here’s how we shape visuals that stop the scroll. Read how we design <a href='/articles'>impact</a>." %}
+{% include "components/message-block.njk" %}
+
+{% set title = "See what’s next." %}
+{% set button1Text = "View Booking" %}
+{% set button1Url = "/index" %}
+{% set button2Text = "Read More" %}
+{% set button2Url = "/index" %}
+{% include "components/bottom-cta-double-inverted.njk" %}
+
+<script src="/js/email-protect.js"></script>

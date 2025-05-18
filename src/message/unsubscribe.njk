@@ -1,0 +1,19 @@
+---
+layout: base
+title: Unsubscribed
+eleventyExcludeFromCollections: true
+---
+
+{% set leftTitle = "Unsubscribed Successfully" %}
+{% set leftDescription = "We get it—quiet is a luxury too." %}
+{% set rightMessage = "You’ve stepped away, but when you’re ready, here’s what luxury communication still looks like. Peek <a href='/articles/latest-insight'>inside</a>." %}
+{% include "components/message-block.njk" %}
+
+{% set title = "Still here if you need us." %}
+{% set button1Text = "Back to Home" %}
+{% set button1Url = "/index" %}
+{% set button2Text = "Re-subscribe" %}
+{% set button2Url = "/newsletter" %}
+{% include "components/bottom-cta-double-inverted.njk" %}
+
+<script src="/js/email-protect.js"></script>

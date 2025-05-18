@@ -138,3 +138,16 @@
     border-color: color.adjust(#faf9f5, $lightness: -5%);
   }
 }
+
+// Transparent button in inverted context
+.btn--transparent-inverted {
+  background-color: transparent;
+  color: #faf9f5;
+  border: 1px solid #faf9f5;
+  
+  &:hover {
+    background-color: rgba(250, 249, 245, 0.1);
+    color: #faf9f5;
+    border-color: #faf9f5;
+  }
+}

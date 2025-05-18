@@ -1,0 +1,19 @@
+---
+layout: base
+title: Thank You - Contact
+eleventyExcludeFromCollections: true
+---
+
+{% set leftTitle = "Message Received" %}
+{% set leftDescription = "We’ll be in touch soon—until then, a few words on how presence becomes power." %}
+{% set rightMessage = "We’ve received your note. While you wait, here’s how we turn presence into power. Read the latest <a href='/articles'>insight</a>." %}
+{% include "components/message-block.njk" %}
+
+{% set title = "Ready when you are." %}
+{% set button1Text = "Back to Home" %}
+{% set button1Url = "/index" %}
+{% set button2Text = "Explore Insights" %}
+{% set button2Url = "/articles" %}
+{% include "components/bottom-cta-double-inverted.njk" %}
+
+<script src="/js/email-protect.js"></script>

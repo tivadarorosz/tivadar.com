@@ -1,0 +1,19 @@
+---
+layout: base
+title: Thank You - Newsletter
+eleventyExcludeFromCollections: true
+---
+
+{% set leftTitle = "You’re In" %}
+{% set leftDescription = "We don’t do noise. Only the rare and real." %}
+{% set rightMessage = "Welcome to the deeper layer. To start, here’s what we believe about visual authority. Start with <a href='/articles'>this</a>." %}
+{% include "components/message-block.njk" %}
+
+{% set title = "Let’s raise the bar." %}
+{% set button1Text = "Back to Home" %}
+{% set button1Url = "/index" %}
+{% set button2Text = "Explore Insights" %}
+{% set button2Url = "/articles" %}
+{% include "components/bottom-cta-double-inverted.njk" %}
+
+<script src="/js/email-protect.js"></script>

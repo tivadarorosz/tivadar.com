@@ -1,0 +1,20 @@
+---
+layout: base
+title: Not Found
+permalink: 404.html
+eleventyExcludeFromCollections: true
+---
+
+{% set leftTitle = "Not Found" %}
+{% set leftDescription = "Either the link expired—or it never belonged here." %}
+{% set rightMessage = "But since you're here, let's show you what legacy-level presence actually means. View the latest <a href='/articles'>insight</a>." %}
+{% include "components/message-block.njk" %}
+
+{% set title = "There's always a way forward." %}
+{% set button1Text = "Start Again" %}
+{% set button1Url = "/index" %}
+{% set button2Text = "Visit Homepage" %}
+{% set button2Url = "/index" %}
+{% include "components/bottom-cta-double-inverted.njk" %}
+
+<script src="/js/email-protect.js"></script>
