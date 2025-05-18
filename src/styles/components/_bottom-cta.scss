@@ -1,0 +1,139 @@
+// ==============================================
+// BOTTOM CTA COMPONENT
+// ==============================================
+
+@use '../variables' as *;
+
+// Support both new and existing class names
+.bottom-cta-section,
+.pricing-cta-section {
+  text-align: center;
+  margin: 6rem auto 4rem;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin: 8rem auto 6rem;
+    max-width: 600px;
+  }
+}
+
+// Homepage CTA has different margins
+.cta-section {
+  text-align: center;
+  margin: 6rem auto 8rem;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin: 8rem auto 10rem;
+    max-width: 600px;
+  }
+}
+
+.bottom-cta-title,
+.pricing-cta-title {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.875rem;
+  color: var(--color-black);
+  margin: 0 0 2rem 0;
+  line-height: 1.2;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 2.25rem;
+  }
+}
+
+// Homepage CTA title has different sizing
+.cta-title {
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight-medium) !important;
+  font-size: 2rem !important;
+  color: var(--color-black) !important;
+  margin: 0 0 2rem !important;
+  line-height: 1.2 !important;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 3rem !important;
+  }
+}
+
+// Container for double button version
+.bottom-cta-buttons,
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  .btn {
+    min-width: 180px;
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    .btn {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+  
+  @media (min-width: $breakpoint-sm) {
+    flex-wrap: nowrap;
+    
+    .btn:first-child {
+      min-width: 180px !important;
+    }
+  }
+}
+
+// Inverted wrapper for full-width background
+.bottom-cta-inverted-wrapper {
+  background-color: #141413;
+  width: 100%;
+  margin: 0;
+}
+
+// Inverted version needs different structure
+.bottom-cta-section.bottom-cta-section--inverted {
+  color: #faf9f5;
+  max-width: 600px;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  margin: 0 auto;
+  text-align: center;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+  }
+  
+  .bottom-cta-title {
+    color: #faf9f5;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: 2rem;  // Matching homepage CTA size
+    margin: 0 0 2rem 0;
+    line-height: 1.2;
+    
+    @media (min-width: $breakpoint-sm) {
+      font-size: 3rem;  // Matching homepage CTA size
+    }
+  }
+}
+
+// Inverted button style
+.btn--cta-inverted {
+  background-color: #faf9f5;
+  color: #141413;
+  border: 1px solid #faf9f5;
+  
+  &:hover {
+    background-color: darken(#faf9f5, 5%);
+    border-color: darken(#faf9f5, 5%);
+  }
+}

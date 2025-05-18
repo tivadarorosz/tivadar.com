@@ -4,90 +4,249 @@
 
 @use '../variables' as *;
 
-.about-page {
-  padding-top: var(--spacing-lg);
-  padding-bottom: var(--spacing-xxl);
+.behind-presence-section {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
   
   @media (min-width: $breakpoint-sm) {
-    padding-top: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-xxl);
   }
 }
 
-.about-content {
-  max-width: 1200px; // Slightly narrower than container max-width for better readability
-  margin: 0 auto;
-  h1 {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-medium);
-    font-size: 42px;
-    margin-bottom: 40px;
-    
-    @media (max-width: $breakpoint-sm - 1px) {
-      font-size: 36px;
-    }
-  }
+.behind-presence {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 0;
+  width: 100%;
   
-  h2 {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-medium);
-    font-size: 32px;
-    margin-bottom: 30px;
-    
-    @media (max-width: $breakpoint-sm - 1px) {
-      font-size: 28px;
-    }
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.behind-presence-title {
+  margin: 0;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex: 0 0 30%;
   }
   
   h3 {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--color-black);
+    margin: 0;
     
-    @media (max-width: $breakpoint-sm - 1px) {
-      font-size: 22px;
-    }
-  }
-  
-  p {
-    font-family: var(--font-secondary);
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    
-    @media (max-width: $breakpoint-sm - 1px) {
-      font-size: 16px;
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1.875rem;
     }
   }
 }
 
-.testimonial {
-  margin-top: 60px;
-  padding: 30px;
-  background-color: var(--color-white);
-  border-radius: var(--border-radius-lg);
-}
-
-.stars {
-  color: #D9A28E;
-  font-size: 22px;
-  margin-bottom: 16px;
-}
-
-.quote {
-  font-family: var(--font-secondary);
-  font-style: italic;
-  font-size: 20px;
-  line-height: 1.4;
-  margin-bottom: 10px;
+.behind-presence-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   
-  @media (max-width: $breakpoint-sm - 1px) {
-    font-size: 18px;
+  @media (min-width: $breakpoint-sm) {
+    flex: 1;
   }
 }
 
-.attribution {
+.behind-presence-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.behind-presence-area h4 {
   font-family: var(--font-primary);
-  font-size: 16px;
-  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.5rem;
+  color: var(--color-black);
+  margin: 0;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1.875rem;
+  }
 }
+
+.behind-presence-area p {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-medium);
+  color: var(--color-black);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.behind-presence-area .btn {
+  align-self: flex-start;
+}
+
+// Personal purpose area has same styling as regular behind-presence area with reduced bottom spacing
+.behind-presence-area.personal-purpose {
+  padding-bottom: 0.5rem;
+}
+
+// Image styling
+.behind-presence-portrait {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+// Grid layout for the four behind-presence areas
+.behind-presence-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .behind-presence-area {
+    padding-bottom: 0;
+  }
+}
+
+.page-separator {
+  height: 1px;
+  background-color: var(--color-black);
+  opacity: 0.9;
+  width: 100%;
+  margin: 0;
+  margin-top: var(--spacing-lg);
+}
+
+.beyond-images-section {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
+  }
+}
+
+.beyond-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 0;
+  width: 100%;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.beyond-images-title {
+  margin: 0;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex: 0 0 30%;
+  }
+  
+  h3 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: 1.5rem;
+    color: var(--color-black);
+    margin: 0;
+    
+    @media (min-width: $breakpoint-sm) {
+      font-size: 1.875rem;
+    }
+  }
+}
+
+.beyond-images-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex: 1;
+  }
+}
+
+.beyond-images-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.beyond-images-area h4 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.5rem;
+  color: var(--color-black);
+  margin: 0;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 1.875rem;
+  }
+}
+
+.beyond-images-area p {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-medium);
+  color: var(--color-black);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.beyond-images-area .btn {
+  align-self: flex-start;
+}
+
+// Personal purpose area has same styling as regular beyond-images area
+.beyond-images-area.personal-purpose {
+  // Inherits all styles from .beyond-images-area
+}
+
+// Image styling
+.beyond-images-portrait {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 2rem;
+}
+
+// Grid layout for the four beyond-images areas
+.beyond-images-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .beyond-images-area {
+    padding-bottom: 0;
+  }
+}
+

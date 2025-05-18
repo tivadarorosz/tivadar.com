@@ -1,0 +1,101 @@
+---
+layout: base
+title: Home
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-column-left">
+      <p class="hero-text">
+        <span class="title-animation-wrapper" data-title="Cinematic branding for escorts, creators, and women of vision.">
+          <span class="title-static">Cinematic <a href="#" class="hero-link">branding</a> for escorts, creators, and women of <a href="#" class="hero-link">vision</a>.</span>
+        </span>
+      </p>
+
+      <div class="feature-boxes">
+        <div class="feature-box">
+          <span class="feature-tag">VISUAL POWER</span>
+          <h3 class="feature-title">Elevated Presence</h3>
+          <p class="feature-description">Editorial photography for women who lead, from creators to escorts building unforgettable personal brands.</p>
+          <a href="/portfolio" class="btn btn--full">View Portfolio</a>
+        </div>
+
+        <div class="feature-box">
+          <span class="feature-tag">YOUR BRAND</span>
+          <h3 class="feature-title">Digital Influence</h3>
+          <p class="feature-description">Minimalist websites that convert. Designed for elegance, built for privacy. Crafted to empower bold personal brands.</p>
+          <a href="/services" class="btn btn--inverted btn--full">Explore Studio Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-column-right">
+      <img src="https://cdn.tivadarorosz.com/images/main.jpg" alt="Featured Image" class="hero-featured-image" />
+      <!-- <img src="/images/main.jpg" alt="Featured Image" class="hero-featured-image" /> -->
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <img src="https://cdn.tivadarorosz.com/images/hero.jpg" alt="About Image" class="about-image">
+  <!-- <img src="/images/hero.jpg" alt="About Image" class="about-image"> -->
+  <div class="separator-line"></div>
+  <div class="two-column-section">
+    <div class="left-column">
+      <h3 class="left-column-title">I craft magnetic brands for escorts, creators, and women who lead with intent.</h3>
+    </div>
+    <div class="right-column">
+      <p class="right-column-text">This is more than beauty — it's visual strategy. I create cinematic images and digital experiences that shape how you're seen, elevate your identity, and protect what matters.
+      <br><br>
+      I work with high-end escorts, muses, and women of influence — those shaping empires without asking permission. Every session is private. Every design, deliberate.</p>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio">
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <div class="image-container stroke-beige">
+        <img src="https://cdn.tivadarorosz.com/images/image01.jpg" alt="Portfolio Image 1" class="portfolio-image">
+        <!-- <img src="/images/image01.jpg" alt="Portfolio Image 1" class="portfolio-image"> -->
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="image-container stroke-green">
+        <img src="https://cdn.tivadarorosz.com/images/image02.jpg" alt="Portfolio Image 2" class="portfolio-image">
+        <!-- <img src="/images/image02.jpg" alt="Portfolio Image 2" class="portfolio-image"> -->
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="image-container stroke-purple">
+        <img src="https://cdn.tivadarorosz.com/images/image03.jpg" alt="Portfolio Image 3" class="portfolio-image">
+        <!-- <img src="/images/image03.jpg" alt="Portfolio Image 3" class="portfolio-image"> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="featured-content">
+    <h3 class="featured-title">Featured</h3>
+    <div class="featured-posts">
+      {% for post in collections.featuredPosts.slice(0, 6) %}
+      <a href="{{ post.url }}" class="featured-post">
+        <div class="featured-post-title">{{ post.data.title }}</div>
+        <div class="featured-post-category">{{ post.data.tags | formatTags }}</div>
+        <div class="featured-post-date">{{ post.data.date | formatPostDate }}</div>
+      </a>
+      {% endfor %}
+      <div class="view-all-container">
+        <a href="/articles" class="view-all-link">View All Articles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="cta-title">Not sure what fits? Let’s find fit together.</h2>
+  <div class="cta-buttons">
+    <a href="/contact" class="btn">Share Your Vision</a>
+    <a href="/portfolio" class="btn btn--transparent">View Portfolio</a>
+  </div>
+</section>

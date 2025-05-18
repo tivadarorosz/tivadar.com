@@ -1,0 +1,8 @@
+{# Bottom CTA Section - Double Button Version #}
+<section class="bottom-cta-section{% if customClass %} {{ customClass }}{% endif %}">
+  <h2 class="bottom-cta-title">{{ title | default("Not sure what fits? Let's find fit together.") }}</h2>
+  <div class="bottom-cta-buttons">
+    <a href="{{ button1Url | default("/contact") }}" class="btn">{{ button1Text | default("Share Your Vision") }}</a>
+    <a href="{{ button2Url | default("/portfolio") }}" class="btn btn--transparent">{{ button2Text | default("View Portfolio") }}</a>
+  </div>
+</section>
