@@ -384,7 +384,7 @@
 
 .mobile-submenu-title {
   font-family: var(--font-primary);
-  font-size: 0.875rem;
+  font-size: 0.9375rem; // Increased from 0.875rem (14px) to 0.9375rem (15px)
   margin: 0 0 0.25rem 0; // Reduced from 0.75rem to 0.25rem
   color: #141413;
   font-weight: var(--font-weight-bold);
@@ -398,10 +398,10 @@
   font-weight: var(--font-weight-normal);
   color: #141413;
   text-decoration: none;
-  padding: 0.2rem 0; // Match desktop padding exactly
+  padding: 0.3rem 0; // Increased from 0.2rem to add a tiny bit more space
   margin: 0;
   transition: text-decoration 0.3s ease;
-  font-size: 0.9375rem; // 15px - slightly bigger than before
+  font-size: 1rem; // Increased from 0.9375rem (15px) to 1rem (16px)
   line-height: 1.2;
   position: relative;
   border: none !important;
@@ -429,9 +429,9 @@
   border-bottom: none !important;
   font-family: var(--font-secondary) !important;
   font-weight: var(--font-weight-normal) !important;
-  font-size: 0.9375rem !important; // 15px
+  font-size: 1rem !important; // 16px
   text-decoration: none !important;
-  padding: 0.2rem 0 !important; // Match desktop padding exactly
+  padding: 0.3rem 0 !important; // Slightly increased padding
   
   &:hover {
     text-decoration: none !important;
