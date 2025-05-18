@@ -10,12 +10,11 @@ eleventyExcludeFromCollections: true
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-US</language>
-    <lastBuildDate>{{ collections.allPosts[0].date | dateToRfc2822 }}</lastBuildDate>
+    <lastBuildDate>{% if collections.allPosts.length > 0 %}{{ collections.allPosts[0].date | dateToRfc2822 }}{% else %}{{ now | dateToRfc2822 }}{% endif %}</lastBuildDate>
     <generator>Eleventy</generator>
-    <author>
-      <name>{{ site.author }}</name>
-    </author>
-    {%- for post in collections.allPosts | head(20) %}
+    <webMaster>{{ site.author }}</webMaster>
+    {%- for post in collections.allPosts -%}
+    {%- if loop.index <= 20 %}
     <item>
       <title>{{ post.data.title | e }}</title>
       <link>{{ site.url }}{{ post.url }}</link>
@@ -32,6 +31,7 @@ eleventyExcludeFromCollections: true
         {{ post.templateContent | safe }}
       ]]></content:encoded>
     </item>
+    {%- endif %}
     {%- endfor %}
   </channel>
 </rss>

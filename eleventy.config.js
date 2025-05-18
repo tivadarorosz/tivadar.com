@@ -38,6 +38,24 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Format date to RFC2822 for RSS feeds
+  eleventyConfig.addFilter("dateToRfc2822", function(dateObj) {
+    const date = new Date(dateObj);
+    return date.toUTCString();
+  });
+
+  // Format date to ISO for structured data
+  eleventyConfig.addFilter("dateToISO", function(dateObj) {
+    const date = new Date(dateObj);
+    return date.toISOString();
+  });
+
+  // Format date for sitemap (W3C format)
+  eleventyConfig.addFilter("htmlDateString", function(dateObj) {
+    const date = new Date(dateObj);
+    return date.toISOString().split('T')[0];
+  });
+
   // Format tags to be displayed as category
   eleventyConfig.addFilter("formatTags", function(tags) {
     if (!tags || !Array.isArray(tags)) return "";

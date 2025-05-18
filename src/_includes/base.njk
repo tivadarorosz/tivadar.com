@@ -126,7 +126,7 @@
     "name": "{{ title or site.title or 'Tivadar — Luxury Photography & Design' }}",
     "url": "https://www.tivadarorosz.com{{ page.url }}"{% if layout == 'post' %},
     "headline": "{{ title }}",
-    "datePublished": "{{ page.date | htmlDateString }}",
+    "datePublished": "{{ page.date | dateToISO }}",
     "author": {
       "@type": "Person",
       "name": "Tivadar Orosz"
