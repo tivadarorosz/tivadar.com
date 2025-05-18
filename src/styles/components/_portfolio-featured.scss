@@ -5,10 +5,12 @@
 @use '../variables' as *;
 
 .portfolio-featured {
+  margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
   
   @media (min-width: $breakpoint-md) {
+    margin-top: var(--spacing-xl);
     display: flex;
     gap: var(--spacing-xl);
   }
