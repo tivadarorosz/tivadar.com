@@ -1,0 +1,38 @@
+# Robots.txt for www.tivadarorosz.com
+
+User-agent: *
+Allow: /
+
+# Disallow message pages and other utility pages
+Disallow: /message/
+Disallow: /404.html
+
+# Allow search engines to crawl CSS and JS files
+Allow: /css/
+Allow: /js/
+
+# Sitemap location
+Sitemap: https://www.tivadarorosz.com/sitemap.xml
+
+# Crawl delay (optional - uncomment if needed)
+# Crawl-delay: 1
+
+# Specific rules for major search engines (optional)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots (add more as needed)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
