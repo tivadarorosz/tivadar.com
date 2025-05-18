@@ -1,0 +1,199 @@
+---
+layout: base
+title: Contact
+---
+
+<main class="contact-page page-width">
+  <div class="contact-wrapper">
+    <div class="contact-content">
+      <h1 class="contact-title">Start Here</h1>
+      <p class="contact-description">
+        Every collaboration begins with a quiet introduction. Tell us your vision, and we'll shape what follows.
+      </p>
+    </div>
+    
+    <div class="contact-form-wrapper">
+      <!-- Form will integrate with web3forms.com -->
+      <form class="contact-form" action="#" method="POST" id="contact-form">
+        <!-- Name field -->
+        <div class="form-group">
+          <label for="name" class="form-label">How should we address you?</label>
+          <div class="form-placeholder">First name, stage name, or preferred name</div>
+          <input type="text" id="name" name="name" class="form-input">
+        </div>
+        
+        <!-- Email field (required) -->
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Your email<span class="required">*</span>
+          </label>
+          <input type="email" id="email" name="email" class="form-input" required>
+          <div class="form-error" id="email-error"></div>
+        </div>
+        
+        <!-- Services checkboxes (first group) -->
+        <div class="form-group">
+          <label class="form-label">Which services are you interested in?</label>
+          <div class="form-checkbox-group">
+            <div class="form-checkbox">
+              <input type="checkbox" id="photography" name="services" value="Photography">
+              <label for="photography">Photography</label>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="website-design" name="services" value="Website Design">
+              <label for="website-design">Website Design</label>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="seo-mastery" name="services" value="SEO Mastery">
+              <label for="seo-mastery">SEO Mastery</label>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="privacy-audit" name="services" value="Privacy Audit">
+              <label for="privacy-audit">Privacy Audit</label>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="not-sure" name="services" value="Not sure yet">
+              <label for="not-sure">Not sure yet</label>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Location field -->
+        <div class="form-group">
+          <label for="location" class="form-label">Where are you currently based or traveling?</label>
+          <input type="text" id="location" name="location" class="form-input">
+        </div>
+        
+        <!-- Vision/Support field -->
+        <div class="form-group">
+          <label for="vision" class="form-label">What kind of shoot or support are you envisioning?</label>
+          <div class="form-placeholder">Just a few words or a vibe.</div>
+          <textarea id="vision" name="vision" class="form-input form-textarea"></textarea>
+        </div>
+        
+        <!-- Visual inspiration field (conditional on Photography selection) -->
+        <div class="form-group" id="visual-inspiration-group" style="display: none;">
+          <label for="visual-inspiration" class="form-label">Visual inspiration</label>
+          <div class="form-placeholder">Pinterest, outfits, a dream vibe—drop anything you'd like to share</div>
+          <input type="text" id="visual-inspiration" name="visual-inspiration" class="form-input">
+        </div>
+        
+        <!-- Website/Brand presence field -->
+        <div class="form-group">
+          <label for="website-presence" class="form-label">Do you already have a brand or website?</label>
+          <select id="website-presence" name="website-presence" class="form-input form-select">
+            <option value="">Select One</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="in-progress">In progress</option>
+            <option value="not-relevant">Not relevant</option>
+          </select>
+        </div>
+        
+        <!-- Time-sensitive field -->
+        <div class="form-group">
+          <label for="time-sensitive" class="form-label">Is this inquiry time-sensitive?</label>
+          <select id="time-sensitive" name="time-sensitive" class="form-input form-select">
+            <option value="">Choose an option</option>
+            <option value="just-exploring">Just exploring</option>
+            <option value="hoping-soon">Hoping to book soon</option>
+            <option value="urgent">Urgent / deadline coming up</option>
+          </select>
+        </div>
+        
+        <!-- Contact preference field -->
+        <div class="form-group">
+          <label class="form-label">How would you like us to contact you?</label>
+          <div class="form-checkbox-group">
+            <div class="form-checkbox">
+              <input type="checkbox" id="contact-email" name="contact-preference" value="Email">
+              <label for="contact-email">Email</label>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="contact-encrypted" name="contact-preference" value="Encrypted message">
+              <label for="contact-encrypted">Encrypted message (Proton, Signal, etc.)</label>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="contact-other" name="contact-preference" value="Other">
+              <label for="contact-other">Other</label>
+            </div>
+          </div>
+          <div class="form-encrypted-input" id="contact-encrypted-input" style="display: none;">
+            <input type="text" id="contact-encrypted-details" name="contact-encrypted-details" class="form-input" placeholder="Your ProtonMail address or Signal number">
+          </div>
+          <div class="form-other-input" id="contact-other-input" style="display: none;">
+            <input type="text" id="contact-other-details" name="contact-other-details" class="form-input" placeholder="Tell us what works best for you">
+          </div>
+        </div>
+        
+        <!-- Public profile field -->
+        <div class="form-group">
+          <label for="public-profile" class="form-label">Public profile (if you'd like to share)</label>
+          <div class="form-placeholder">Twitter, Tryst, website, or anything you feel represents you</div>
+          <input type="text" id="public-profile" name="public-profile" class="form-input">
+        </div>
+        
+        <!-- Comfort level field (conditional on Photography selection) -->
+        <div class="form-group form-comfort-level" id="comfort-level-group" style="display: none;">
+          <label for="face-in-frame" class="form-label">Face in Frame?</label>
+          <select id="face-in-frame" name="face-in-frame" class="form-input form-select">
+            <option value="">Your comfort comes first—how visible would you like to be?</option>
+            <option value="fully-visible">Fully visible</option>
+            <option value="semi-anonymous">Semi-anonymous</option>
+            <option value="anonymous">Anonymous</option>
+            <option value="not-sure-yet">Not sure yet</option>
+          </select>
+        </div>
+        
+        <!-- Shoot location preference field (conditional on Photography selection) -->
+        <div class="form-group" id="shoot-location-group" style="display: none;">
+          <label for="shoot-location" class="form-label">Preferred shoot location</label>
+          <div class="form-placeholder">Studios, villas, even castles—we've got you.</div>
+          <select id="shoot-location" name="shoot-location" class="form-input form-select">
+            <option value="">Choose an option</option>
+            <option value="studio">Studio (we provide)</option>
+            <option value="hotel-apartment">Your hotel or apartment</option>
+            <option value="outdoor">Outdoor / nature</option>
+            <option value="luxurious">Luxurious location (castle, villa, designer home)</option>
+            <option value="undecided">Undecided</option>
+            <option value="not-relevant">Not relevant</option>
+          </select>
+        </div>
+        
+        <!-- Availability field -->
+        <div class="form-group">
+          <label for="availability" class="form-label">What's your availability like?</label>
+          <div class="form-placeholder">Next month, weekends only, or a specific date range</div>
+          <input type="text" id="availability" name="availability" class="form-input">
+        </div>
+        
+        <!-- How found us field -->
+        <div class="form-group">
+          <label for="how-found" class="form-label">How did you find us?</label>
+          <select id="how-found" name="how-found" class="form-input form-select">
+            <option value="">Choose an option</option>
+            <option value="instagram">Instagram</option>
+            <option value="twitter">Twitter / X</option>
+            <option value="reddit">Reddit</option>
+            <option value="referral">Referral</option>
+            <option value="google">Google</option>
+            <option value="work-found-me">Your work found me</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <!-- Anything else field -->
+        <div class="form-group">
+          <label for="anything-else" class="form-label">Is there anything else you'd like us to know?</label>
+          <textarea id="anything-else" name="anything-else" class="form-input form-textarea form-textarea-small"></textarea>
+        </div>
+        
+        <!-- Submit button -->
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script src="/js/email-protect.js"></script>
+<script src="/js/contact-form.js"></script>
