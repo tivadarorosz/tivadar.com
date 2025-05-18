@@ -6,6 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
   const titleWrapper = document.querySelector('.title-animation-wrapper');
   let scrollTimer;
   
+  // Dropdown menu functionality
+  const dropdownWrapper = document.querySelector('.dropdown-wrapper');
+  const offeringsLink = document.querySelector('.offerings-link');
+  
+  if (offeringsLink && dropdownWrapper) {
+    // Handle click on offerings link
+    offeringsLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdownWrapper.classList.toggle('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!dropdownWrapper.contains(e.target)) {
+        dropdownWrapper.classList.remove('active');
+      }
+    });
+  }
+  
   // Initialize title animations for all wrappers if we're on desktop
   if (window.innerWidth >= 768) {
     // Find all title animation wrappers

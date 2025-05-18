@@ -171,7 +171,7 @@
   display: flex;
   align-items: center;
   
-  a {
+  > a, .dropdown-wrapper > a {
     margin-left: var(--spacing-md);
     text-decoration: none;
     font-weight: var(--font-weight-normal);
@@ -333,4 +333,175 @@ body.menu-open .t-letter,
 body.menu-open .logo-slash {
   position: relative;
   z-index: var(--z-index-mobile-toggle);
+}
+
+// Dropdown Menu Styles
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  background-color: #FAF9F5;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s ease, opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1000;
+  width: 480px;
+  padding: 1.5rem;
+  
+  // Reset all inherited link styles
+  a {
+    border: none !important;
+    border-bottom: none !important;
+  }
+}
+
+.dropdown-content {
+  display: flex;
+  gap: 0;
+  height: 100%;
+}
+
+.dropdown-column {
+  &.dropdown-left {
+    width: 45%;
+    padding: 0;
+    background-color: #FAF9F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    h5 {
+      font-family: var(--font-primary);
+      font-size: 0.875rem;
+      margin: 0 0 0.75rem 0;
+      color: #141413;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: 0;
+    }
+    
+    .dropdown-link {
+      display: block;
+      font-family: var(--font-secondary);
+      font-weight: var(--font-weight-normal);
+      color: #141413;
+      text-decoration: none;
+      padding: 0.2rem 0;
+      margin: 0;
+      transition: text-decoration 0.3s ease;
+      font-size: 1rem;
+      line-height: 1.2;
+      position: relative;
+      border: none !important;
+      border-bottom: none !important;
+      border-top: none !important;
+      outline: none;
+      
+      &:hover {
+        color: #141413;
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
+      }
+      
+      &:first-of-type {
+        margin-top: -0.1rem;
+      }
+      
+      &:last-of-type {
+        margin-bottom: 0.25rem;
+      }
+    }
+    
+    .dropdown-main-section {
+      flex-grow: 1;
+    }
+    
+    .dropdown-bottom-section {
+      padding-bottom: 0.25rem;
+      
+      .dropdown-link {
+        // Same styling as main dropdown links
+        display: block;
+        font-family: var(--font-secondary);
+        font-weight: var(--font-weight-normal);
+        color: #141413;
+        text-decoration: none;
+        padding: 0.2rem 0;
+        margin: 0;
+        transition: text-decoration 0.3s ease;
+        font-size: 1rem;
+        line-height: 1.2;
+        
+        &:hover {
+          color: #141413;
+          text-decoration: underline;
+          text-underline-offset: 0.2rem;
+        }
+        
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  &.dropdown-right {
+    width: 55%;
+    height: 260px;
+    background-color: #CC7C5E;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    
+    .dropdown-icon {
+      width: 80%;
+      height: auto;
+      max-width: 200px;
+      transition: transform 0.3s ease;
+      padding-bottom: 1.5rem;
+    }
+    
+    &:hover .dropdown-icon {
+      transform: scale(1.05);
+    }
+    
+    .dropdown-insights-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-size-base);
+      color: #141413;
+      letter-spacing: 0;
+    }
+  }
+}
+
+// Show dropdown on hover or when active
+.dropdown-wrapper:hover .dropdown-menu,
+.dropdown-wrapper.active .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+// Add hover state for offerings link
+.offerings-link {
+  cursor: pointer;
+  
+  &:hover {
+    color: var(--color-black);
+  }
 }
