@@ -36,14 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize location hero animation
     initLocationHeroAnimation();
-    
-    // Fallback: If the animation hasn't started after 1 second, try again
-    setTimeout(() => {
-      const locationTitle = document.querySelector('.location-title-static');
-      if (locationTitle && !locationTitle.classList.contains('animate')) {
-        initLocationHeroAnimation();
-      }
-    }, 1000);
   }
 
   // Mobile menu toggle
@@ -249,34 +241,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
   }
   
-  // Location hero animation
+  // Location hero animation (same as pricing)
   function initLocationHeroAnimation() {
-    try {
-      const locationWrapper = document.querySelector('.location-title-animation-wrapper');
-      if (locationWrapper) {
-        const staticTitle = locationWrapper.querySelector('.location-title-static');
-        
-        if (staticTitle) {
-          // Force reflow to ensure CSS is loaded
-          void staticTitle.offsetHeight;
-          
-          // Add class for CSS animation
-          staticTitle.classList.add('location-title-animation');
-          
-          // Trigger the animation after a brief delay
-          requestAnimationFrame(() => {
-            setTimeout(() => {
-              staticTitle.classList.add('animate');
-            }, 100);
-          });
-        }
-      }
-    } catch (error) {
-      // Fallback: just show the title if there's an error
-      const staticTitle = document.querySelector('.location-title-static');
-      if (staticTitle) {
-        staticTitle.style.opacity = '1';
-      }
+    const locationWrapper = document.querySelector('.location-title-animation-wrapper');
+    if (locationWrapper) {
+      const staticTitle = locationWrapper.querySelector('.location-title-static');
+      
+      // Add class for CSS animation
+      staticTitle.classList.add('location-title-animation');
+      
+      // Trigger the animation after a brief delay
+      setTimeout(() => {
+        staticTitle.classList.add('animate');
+      }, 100);
     }
   }
   
