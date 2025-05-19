@@ -125,20 +125,7 @@
     "@type": "{% if layout == 'post' or layout == 'story' %}Article{% else %}WebSite{% endif %}",
     {% if layout != 'post' and layout != 'story' %}"@id": "{{ site.url }}/#website",{% endif %}
     "name": "{% if layout == 'post' or layout == 'story' %}{{ title }}{% else %}{{ site.seo.defaults.schemaName }}{% endif %}",
-    "url": "{% if layout == 'post' or layout == 'story' %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}"{% if layout == 'post' or layout == 'story' %},
-    "headline": "{{ title }}",
-    "description": "{{ summary or description or site.seo.fallbacks.article.description }}",
-    "datePublished": "{{ page.date | dateToISO }}",
-    "author": {
-      "@type": "Person",
-      "name": "{{ site.author }}"
-    }{% if layout == 'story' and location %},
-    "contentLocation": {
-      "@type": "Place",
-      "name": "{{ location }}"
-    }{% endif %}{% if layout == 'story' and cover.image %},
-    "image": "{{ cover.image }}"{% elif coverImage %},
-    "image": "{{ coverImage }}"{% endif %}{% endif %},
+    "url": "{% if layout == 'post' or layout == 'story' %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}",
     "publisher": {
       "@type": "Person",
       "name": "{{ site.author }}",
@@ -147,7 +134,40 @@
         "@type": "ImageObject",
         "url": "{{ site.assets.images.socialCard }}"
       }
-    }
+    }{% if layout == 'post' or layout == 'story' %},
+    "headline": "{{ title }}",
+    "description": "{{ summary or description or site.seo.fallbacks.article.description }}",
+    "datePublished": "{{ page.date | dateToISO }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author }}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}"
+    },
+    "isPartOf": {
+      "@id": "{{ site.url }}/#website"
+    }{% if layout == 'story' and location %},
+    "contentLocation": {
+      "@type": "Place",
+      "name": "{{ location }}"
+    }{% endif %}{% if layout == 'story' and cover.image or coverImage %},
+    "image": {
+      "@type": "ImageObject",
+      "url": "{% if layout == 'story' and cover.image %}{{ cover.image }}{% else %}{{ coverImage }}{% endif %}",
+      {% if layout == 'story' and cover.width and cover.height %}
+      "width": {{ cover.width }},
+      "height": {{ cover.height }},
+      {% endif %}
+      {% if layout == 'story' and cover.caption %}
+      "caption": "{{ cover.caption }}",
+      {% endif %}
+      "creator": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+      }
+    }{% endif %}{% endif %}
   }
   </script>
 
@@ -204,11 +224,21 @@
     "datePublished": "{{ post.data.date | dateToISO }}",
     "url": "{{ site.url }}{{ post.url }}",
     {% if post.data.coverImage or post.data.icon %}
-    "image": "{{ post.data.coverImage or post.data.icon }}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ post.data.coverImage or post.data.icon }}",
+      "creator": {
+        "@type": "Person",
+        "name": "{{ site.author }}"
+      }
+    },
     {% endif %}
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "{{ site.url }}{{ post.url }}"
+    },
+    "isPartOf": {
+      "@id": "{{ site.url }}/#website"
     }
   }
   </script>
@@ -216,36 +246,61 @@
   {% endif %}
 
   {% if layout == 'post' or page.url == '/insights/' or layout == 'story' or page.url == '/portfolio/' %}
-  <!-- Breadcrumb Schema -->
+  <!-- Enhanced Breadcrumb Schema nested in WebPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "{{ site.url }}/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "{% if layout == 'post' or page.url == '/insights/' %}Insights{% else %}Portfolio{% endif %}",
-        "item": "{% if layout == 'post' or page.url == '/insights/' %}{{ site.url }}/insights/{% else %}{{ site.url }}/portfolio/{% endif %}"
-      }{% if layout == 'post' or layout == 'story' %},
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "{{ title }}",
-        "item": "{{ site.url }}{{ page.url }}"
-      }{% endif %}
-    ]
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    "name": "{{ title }} — {{ site.author }}",
+    "isPartOf": {
+      "@id": "{{ site.url }}/#website"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{% if layout == 'post' or page.url == '/insights/' %}Insights{% else %}Portfolio{% endif %}",
+          "item": "{% if layout == 'post' or page.url == '/insights/' %}{{ site.url }}/insights/{% else %}{{ site.url }}/portfolio/{% endif %}"
+        }{% if layout == 'post' or layout == 'story' %},
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ title }}",
+          "item": "{{ site.url }}{{ page.url }}"
+        }{% endif %}
+      ]
+    }
+  }
+  </script>
+  {% endif %}
+
+  {% if layout != 'post' and layout != 'story' and title != 'Home' and page.url != '/feed.xml' and page.url != '/sitemap.xml' %}
+  <!-- WebPage Schema for Static Pages -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    "name": "{{ title }} — {{ site.author }}",
+    "isPartOf": {
+      "@id": "{{ site.url }}/#website"
+    }
   }
   </script>
   {% endif %}
 </head>
-<body class="{% if title != 'Home' and title != 'Making AI systems you can rely on' %}page-light-bg{% endif %}{% if pageBodyClass %} {{ pageBodyClass }}{% endif %}">
+<body class="{% if title != 'Home' %}page-light-bg{% endif %}{% if pageBodyClass %} {{ pageBodyClass }}{% endif %}">
   {% include "partials/header.njk" %}
   
   {{ content | safe }}
