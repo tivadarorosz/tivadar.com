@@ -8,7 +8,7 @@
   {% if layout == "post" %}
   <!-- Open Graph for Articles -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ site.seo.defaults.schemaName }}">
+  <meta property="og:title" content="{{ title }} — {{ site.author }}">
   <meta property="og:description" content="{{ summary }}">
   <meta property="og:image" content="{{ coverImage or icon or site.seo.defaults.image }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -16,13 +16,13 @@
 
   <!-- Twitter Card for Articles -->
   <meta name="twitter:card" content="{{ site.seo.twitter.card }}">
-  <meta name="twitter:title" content="{{ site.seo.defaults.schemaName }}">
+  <meta name="twitter:title" content="{{ title }} — {{ site.author }}">
   <meta name="twitter:description" content="{{ summary }}">
   <meta name="twitter:image" content="{{ coverImage or icon or site.seo.defaults.image }}">
   {% elif layout == "story" %}
   <!-- Open Graph for Stories -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ site.seo.defaults.schemaName }}">
+  <meta property="og:title" content="{{ title }} — {{ site.author }}">
   <meta property="og:description" content="{{ summary or site.seo.fallbacks.story.description }}">
   <meta property="og:image" content="{{ cover.image or site.seo.defaults.image }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -30,21 +30,21 @@
 
   <!-- Twitter Card for Stories -->
   <meta name="twitter:card" content="{{ site.seo.twitter.card }}">
-  <meta name="twitter:title" content="{{ site.seo.defaults.schemaName }}">
+  <meta name="twitter:title" content="{{ title }} — {{ site.author }}">
   <meta name="twitter:description" content="{{ summary or site.seo.fallbacks.story.description }}">
   <meta name="twitter:image" content="{{ cover.image or site.seo.defaults.image }}">
   {% else %}
   <!-- Default Meta Tags for Pages -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ site.seo.defaults.schemaName }}">
-  <meta property="og:description" content="{{ site.seo.defaults.description }}">
+  <meta property="og:title" content="{% if title == 'Home' %}{{ site.seo.defaults.schemaName }}{% else %}{{ title }} — {{ site.author }}{% endif %}">
+  <meta property="og:description" content="{{ description or site.seo.defaults.description }}">
   <meta property="og:image" content="{{ site.seo.defaults.image }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:locale" content="{{ site.seo.openGraph.locale }}">
   
   <meta name="twitter:card" content="{{ site.seo.twitter.card }}" />
-  <meta name="twitter:title" content="{{ site.seo.defaults.schemaName }}" />
-  <meta name="twitter:description" content="{{ site.seo.defaults.description }}" />
+  <meta name="twitter:title" content="{% if title == 'Home' %}{{ site.seo.defaults.schemaName }}{% else %}{{ title }} — {{ site.author }}{% endif %}" />
+  <meta name="twitter:description" content="{{ description or site.seo.defaults.description }}" />
   <meta name="twitter:image" content="{{ site.seo.defaults.image }}" />
   {% endif %}
 
@@ -148,10 +148,10 @@
     },
     "isPartOf": {
       "@id": "{{ site.url }}/#website"
-    }{% if layout == 'story' and location %},
+    }{% if layout == 'story' and story.location %},
     "contentLocation": {
       "@type": "Place",
-      "name": "{{ location }}"
+      "name": "{{ story.location }}"
     }{% endif %}{% if layout == 'story' and cover.image or coverImage %},
     "image": {
       "@type": "ImageObject",
@@ -285,14 +285,26 @@
   {% endif %}
 
   {% if layout != 'post' and layout != 'story' and title != 'Home' and page.url != '/feed.xml' and page.url != '/sitemap.xml' %}
-  <!-- WebPage Schema for Static Pages -->
+  <!-- Schema for Static Pages -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    {% if page.url == '/insights/' or page.url == '/portfolio/' %}
+    "@type": "CollectionPage",
+    "@id": "{{ site.url }}{{ page.url }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    "name": "{{ title }} — {{ site.author }}",
+    "mainEntity": {
+      "@type": "CollectionPage",
+      "name": "{{ title }}",
+      "url": "{{ site.url }}{{ page.url }}"
+    },
+    {% else %}
     "@type": "WebPage",
     "@id": "{{ site.url }}{{ page.url }}",
     "url": "{{ site.url }}{{ page.url }}",
     "name": "{{ title }} — {{ site.author }}",
+    {% endif %}
     "isPartOf": {
       "@id": "{{ site.url }}/#website"
     }
