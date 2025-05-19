@@ -36,11 +36,12 @@
 // Styles for specific pages
 @use 'pages/home';
 @use 'pages/about';
-@use 'pages/articles';
+@use 'pages/insights';
 @use 'pages/post';
 @use 'pages/story';
 @use 'pages/pricing';
 @use 'pages/contact';
+@use 'pages/newsletter';
 
 // 7. Utilities
 // -----------

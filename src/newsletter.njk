@@ -1,0 +1,49 @@
+---
+layout: base
+title: Newsletter
+---
+
+<main class="newsletter-page page-width">
+  <div class="newsletter-wrapper">
+    <div class="newsletter-content">
+      <h1 class="newsletter-title">The Signal</h1>
+      <p class="newsletter-description">
+        We don’t do updates. We deliver signals—rare insights on image, identity, and visibility.
+      </p>
+    </div>
+    
+    <div class="newsletter-form-wrapper">
+      <!-- Newsletter subscription form -->
+      <form class="newsletter-form" action="#" method="POST" id="newsletter-form">
+        <!-- Name field -->
+        <div class="form-group">
+          <label for="name" class="form-label">Your name</label>
+          <div class="form-placeholder">Only if you'd like to be known.</div>
+          <input type="text" id="name" name="name" class="form-input">
+        </div>
+        
+        <!-- Email field (required) -->
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Your email<span class="required">*</span>
+          </label>
+          <input type="email" id="email" name="email" class="form-input" required>
+          <div class="form-error" id="email-error"></div>
+        </div>
+        
+        <!-- Submit button -->
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% set title = "Ready to go deeper?" %}
+{% set button1Text = "Subscribe Now" %}
+{% set button1Url = "#newsletter-form" %}
+{% set button2Text = "Read Insights" %}
+{% set button2Url = "/insights" %}
+{% include "components/bottom-cta-double-inverted.njk" %}
+
+<script src="/js/email-protect.js"></script>
+<script src="/js/newsletter-form.js"></script>

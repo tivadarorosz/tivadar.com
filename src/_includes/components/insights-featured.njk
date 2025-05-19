@@ -1,0 +1,87 @@
+{# Get the three most recent featured posts from the collection #}
+{% set recentFeatured = collections.featuredPosts.slice(0, 3) %}
+{% set mostRecent = recentFeatured[0] %}
+{% set secondRecent = recentFeatured[1] %}
+{% set thirdRecent = recentFeatured[2] %}
+
+<section class="insights-gallery">
+  <div class="insights-gallery-grid">
+    {# First row with 2/3 vs 1/3 split #}
+    {% if mostRecent %}
+    <a href="{{ mostRecent.url }}" class="insights-gallery-item insights-gallery-item-1" style="background-color: var(--color-terracotta);">
+      <div class="insights-gallery-content">
+        {% if mostRecent.data.icon %}
+        <img src="{{ mostRecent.data.icon }}" alt="" class="insights-gallery-icon">
+        {% endif %}
+        <div class="insights-gallery-overlay">
+          <div class="insights-gallery-meta">
+            <span class="insights-gallery-tag">{{ mostRecent.data.tags | join(', ') }}</span>
+            <h3 class="insights-gallery-title">{{ mostRecent.data.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+    
+    <div class="insights-gallery-item insights-gallery-item-2" style="background-color: var(--color-white);">
+      <div class="insights-gallery-content">
+        <div class="insights-gallery-contact">
+          <p>Photoshoot inquiries:<br>
+          <a href="#" id="studio-email" class="protected-email">Loading...</a></p>
+          
+          <p>Other inquiries:<br>
+          <a href="#" id="hello-email" class="protected-email">Loading...</a></p>
+          
+          <p>Share your vision:<br>
+          <a href="/contact">Contact Me</a></p>
+          
+          <p class="follow-tivadar">Follow Tivadar<br>
+          <span class="social-links">
+            <a href="https://x.com/tivadarorosz" class="insights-social-link">
+              <img src="https://cdn.tivadarorosz.com/icons/x-logo.svg" alt="X" width="16" height="16">
+            </a>
+            <a href="https://instagram.com/tivadarorosz" class="insights-social-link">
+              <img src="https://cdn.tivadarorosz.com/icons/instagram-logo.svg" alt="Instagram" width="16" height="16">
+            </a>
+          </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {# Second row with 50/50 split #}
+  <div class="insights-second-row">
+    {% if secondRecent %}
+    <a href="{{ secondRecent.url }}" class="insights-gallery-item" style="background-color: var(--color-pale-sage);">
+      <div class="insights-gallery-content">
+        {% if secondRecent.data.icon %}
+        <img src="{{ secondRecent.data.icon }}" alt="" class="insights-gallery-icon">
+        {% endif %}
+        <div class="insights-gallery-overlay">
+          <div class="insights-gallery-meta">
+            <span class="insights-gallery-tag">{{ secondRecent.data.tags | join(', ') }}</span>
+            <h3 class="insights-gallery-title">{{ secondRecent.data.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+    
+    {% if thirdRecent %}
+    <a href="{{ thirdRecent.url }}" class="insights-gallery-item" style="background-color: var(--color-light-purple);">
+      <div class="insights-gallery-content">
+        {% if thirdRecent.data.icon %}
+        <img src="{{ thirdRecent.data.icon }}" alt="" class="insights-gallery-icon">
+        {% endif %}
+        <div class="insights-gallery-overlay">
+          <div class="insights-gallery-meta">
+            <span class="insights-gallery-tag">{{ thirdRecent.data.tags | join(', ') }}</span>
+            <h3 class="insights-gallery-title">{{ thirdRecent.data.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endif %}
+  </div>
+</section>

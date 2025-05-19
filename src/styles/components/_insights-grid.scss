@@ -4,13 +4,13 @@
 
 @use '../variables' as *;
 
-.articles-main {
+.insights-main {
   padding: var(--spacing-lg) 0;
   box-sizing: border-box;
   width: 100%;
 }
 
-.articles-main-grid {
+.insights-main-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
@@ -25,7 +25,7 @@
   }
 }
 
-.articles-card {
+.insights-card {
   display: block;
   text-decoration: none;
   color: var(--color-black);
@@ -40,7 +40,7 @@
   
 }
 
-.articles-card-image-wrapper {
+.insights-card-image-wrapper {
   position: relative;
   width: 100%;
   padding-bottom: 75%; // 4:3 aspect ratio (same as portfolio)
@@ -52,7 +52,7 @@
   justify-content: center;
 }
 
-.articles-card-icon {
+.insights-card-icon {
   position: absolute;
   width: 70%;
   height: 70%;
@@ -66,11 +66,11 @@
   transform: translate(-50%, -50%);
 }
 
-.articles-card:hover .articles-card-icon {
+.insights-card:hover .insights-card-icon {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-.articles-card-content {
+.insights-card-content {
   padding: var(--spacing-sm);
   padding-left: 30px; // Between --spacing-md (20px) and --spacing-lg (40px)
   display: flex;
@@ -79,7 +79,7 @@
   background-color: var(--color-white);
 }
 
-.articles-card-tag {
+.insights-card-tag {
   font-family: var(--font-primary);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-normal);
@@ -90,7 +90,7 @@
   margin-bottom: -0.25rem; // Reduce space between tag and title
 }
 
-.articles-card-title {
+.insights-card-title {
   font-family: var(--font-primary);
   font-size: clamp(18px, 2vw, 22px); // Responsive font size
   font-weight: var(--font-weight-medium);
@@ -100,7 +100,7 @@
   padding-bottom: 2rem;
 }
 
-.articles-card-date {
+.insights-card-date {
   font-size: var(--font-size-xs);
   color: var(--color-footer-text);
 }

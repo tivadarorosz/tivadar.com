@@ -1,4 +1,4 @@
-.articles-gallery {
+.insights-gallery {
   padding-top: var(--spacing-md);
   padding-bottom: var(--spacing-lg);
   margin-bottom: var(--spacing-xxl);
@@ -23,7 +23,7 @@
     display: block;
     transition: var(--transition-standard);
 
-    &:hover .articles-gallery-icon {
+    &:hover .insights-gallery-icon {
       transform: scale(1.05);
     }
 
@@ -45,7 +45,7 @@
         aspect-ratio: 1; // Square on desktop
       }
       
-      &:hover .articles-gallery-icon {
+      &:hover .insights-gallery-icon {
         transform: none; // No icon scaling on hover
       }
     }
@@ -121,7 +121,7 @@
     }
     
     // Override global link styles for this section only
-    a:not(.articles-social-link) {
+    a:not(.insights-social-link) {
       color: #141413;
       text-decoration: underline;
       transition: color var(--transition-speed) ease;
@@ -138,7 +138,7 @@
       margin-top: 0.25rem;
     }
     
-    .articles-social-link {
+    .insights-social-link {
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -163,7 +163,7 @@
 }
 
 // Second row styles
-.articles-second-row {
+.insights-second-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
@@ -172,7 +172,7 @@
     grid-template-columns: 1fr;
   }
 
-  .articles-gallery-item {
+  .insights-gallery-item {
     aspect-ratio: 1.5; // Mobile default
     
     @media (min-width: 769px) {

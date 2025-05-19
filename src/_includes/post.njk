@@ -48,17 +48,17 @@ pageBodyClass: page-light-bg
   <footer class="post-footer">
     <div class="post-social">
       <span class="social-links">
-        <a href="https://x.com/tivadarorosz" class="articles-social-link">
+        <a href="https://x.com/tivadarorosz" class="insights-social-link">
           <img src="https://cdn.tivadarorosz.com/icons/x-logo.svg" alt="X" width="24" height="24">
         </a>
-        <a href="https://instagram.com/tivadarorosz" class="articles-social-link">
+        <a href="https://instagram.com/tivadarorosz" class="insights-social-link">
           <img src="https://cdn.tivadarorosz.com/icons/instagram-logo.svg" alt="Instagram" width="24" height="24">
         </a>
       </span>
     </div>
     
     <section class="post-related">
-      <div class="articles-main-grid">
+      <div class="insights-main-grid">
         {# Filter out the current post by URL #}
         {% set otherPosts = [] %}
         {% for post in collections.allPosts %}
@@ -103,7 +103,7 @@ pageBodyClass: page-light-bg
           
           {# Display selected posts #}
           {% for post in selectedPosts %}
-          <a href="{{ post.url }}" class="articles-card" aria-label="Read {{ post.data.title }}">
+          <a href="{{ post.url }}" class="insights-card" aria-label="Read {{ post.data.title }}">
             {% if post.data.featureImage === true %}
               {# Handle background color #}
               {% set backgroundColor = post.data.background %}
@@ -129,17 +129,17 @@ pageBodyClass: page-light-bg
                 {% set backgroundColor = colorPalette[colorIndex] %}
               {% endif %}
               
-              <div class="articles-card-image-wrapper" style="background-color: {{ backgroundColor }};">
+              <div class="insights-card-image-wrapper" style="background-color: {{ backgroundColor }};">
                 {% if post.data.icon %}
-                <img src="{{ post.data.icon }}" alt="" class="articles-card-icon" loading="lazy">
+                <img src="{{ post.data.icon }}" alt="" class="insights-card-icon" loading="lazy">
                 {% endif %}
               </div>
             {% endif %}
             
-            <div class="articles-card-content">
-              <span class="articles-card-tag">{{ post.data.tags | join(', ') }}</span>
-              <h3 class="articles-card-title">{{ post.data.title }}</h3>
-              <time class="articles-card-date" datetime="{{ post.data.date }}">{{ post.data.date | formatPostDate }}</time>
+            <div class="insights-card-content">
+              <span class="insights-card-tag">{{ post.data.tags | join(', ') }}</span>
+              <h3 class="insights-card-title">{{ post.data.title }}</h3>
+              <time class="insights-card-date" datetime="{{ post.data.date }}">{{ post.data.date | formatPostDate }}</time>
             </div>
           </a>
           {% endfor %}

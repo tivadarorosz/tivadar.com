@@ -1,16 +1,16 @@
 // ==============================================
-// ARTICLES PAGE STYLES
+// INSIGHTS PAGE STYLES
 // ==============================================
 
 @use '../variables' as *;
 
-.articles-page {
+.insights-page {
   background-color: var(--color-background); // Same as home page background
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
 }
 
-.articles-title {
+.insights-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xxl);
@@ -23,7 +23,7 @@
   }
 }
 
-.articles-subtitle {
+.insights-subtitle {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-xlarge);

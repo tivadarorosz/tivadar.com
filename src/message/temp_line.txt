@@ -1,0 +1,1 @@
+{% set rightMessage = "Welcome to the deeper layer. To start, here’s what we believe about visual authority. Start with <a href='/articles'>this</a>." %}
