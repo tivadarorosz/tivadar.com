@@ -71,7 +71,8 @@ body:has(.cities-page) .pricing-title-animation {
 }
 
 // CSS fallback for when JavaScript is blocked or fails
-body:has(.cities-page) .title-static {
+// Only apply animation when JavaScript hasn't added the animation class
+.no-js body:has(.cities-page) .title-static:not(.pricing-title-animation) {
   // Ensure visibility after 1 second even without JS
   animation: fadeInCitiesTitle 1s ease-out forwards;
   animation-delay: 0.5s;
@@ -84,6 +85,13 @@ body:has(.cities-page) .title-static {
     opacity: 1;
     animation: none;
   }
+}
+
+// Also ensure the static title is centered when JS runs successfully
+body:has(.cities-page) .title-static {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
 }
 
 @keyframes fadeInCitiesTitle {
