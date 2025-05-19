@@ -123,6 +123,7 @@
   {
     "@context": "https://schema.org",
     "@type": "{% if layout == 'post' or layout == 'story' %}Article{% else %}WebSite{% endif %}",
+    {% if title == 'Home' and layout != 'post' and layout != 'story' %}"@id": "{{ site.url }}/#website",{% endif %}
     "name": "{% if layout == 'post' or layout == 'story' %}{{ title }}{% else %}{{ site.seo.defaults.schemaName }}{% endif %}",
     "url": "{{ site.url }}{{ page.url }}"{% if layout == 'post' or layout == 'story' %},
     "headline": "{{ title }}",
@@ -155,6 +156,7 @@
   {
     "@context": "https://schema.org",
     "@type": [{% for type in site.business.types %}"{{ type }}"{% if not loop.last %}, {% endif %}{% endfor %}],
+    {% if title == 'Home' %}"@id": "{{ site.url }}/#studio",{% endif %}
     "name": "{{ site.author }}",
     "url": "{{ site.url }}",
     "description": "{{ site.seo.defaults.description }}",
