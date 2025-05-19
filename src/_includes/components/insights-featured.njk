@@ -56,7 +56,7 @@
     <a href="{{ secondRecent.url }}" class="insights-gallery-item" style="background-color: var(--color-pale-sage);">
       <div class="insights-gallery-content">
         {% if secondRecent.data.icon %}
-        <img src="{{ secondRecent.data.icon }}" alt="" class="insights-gallery-icon">
+        <img src="{{ secondRecent.data.icon }}" alt="" class="insights-gallery-icon" loading="lazy">
         {% endif %}
         <div class="insights-gallery-overlay">
           <div class="insights-gallery-meta">
@@ -72,7 +72,7 @@
     <a href="{{ thirdRecent.url }}" class="insights-gallery-item" style="background-color: var(--color-light-purple);">
       <div class="insights-gallery-content">
         {% if thirdRecent.data.icon %}
-        <img src="{{ thirdRecent.data.icon }}" alt="" class="insights-gallery-icon">
+        <img src="{{ thirdRecent.data.icon }}" alt="" class="insights-gallery-icon" loading="lazy">
         {% endif %}
         <div class="insights-gallery-overlay">
           <div class="insights-gallery-meta">
