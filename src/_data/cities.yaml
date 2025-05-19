@@ -1,0 +1,59 @@
+- city: Dubai
+  region: UAE
+  dates:
+    start: 2025-06-04
+    end: 2025-06-11
+  status: accepting-requests
+  nearby: true
+  description: "Limited availability. Hotel-based sessions only."
+  headline: "Heat and velvet, with skyline silhouettes."
+
+- city: New York
+  region: USA
+  dates:
+    start: 2025-08-15
+    end: 2025-08-20
+  status: tentative
+  nearby: true
+  description: "Tentative visit — early interest encouraged."
+  headline: "A skyline never sleeps."
+
+- city: Los Angeles
+  region: USA
+  dates:
+    start: 2025-09-05
+    end: 2025-09-10
+  status: accepting-requests
+  nearby: false
+  description: "Studio availability only. Coastal light and cinematic tone."
+  headline: "Where curves meet contrast."
+
+- city: Milan
+  region: Italy
+  dates:
+    start: 2025-10-12
+    end: 2025-10-17
+  status: final-booking
+  nearby: true
+  description: "Final dates for autumn."
+  headline: "Fashion capital, framed."
+
+- city: Paris
+  region: France
+  dates:
+    start: 2025-11-03
+    end: 2025-11-08
+  status: accepting-requests
+  nearby: true
+  description: "Chic interiors and Haussmannian balconies."
+  headline: "Elegance in every shadow."
+
+- city: Frankfurt
+  region: Germany
+  dates:
+    start: 2025-12-01
+    end: 2025-12-06
+  status: tentative
+  nearby: false
+  description: "Tentative dates — discreet requests welcome."
+  headline: "Precision and light. Quiet presence."

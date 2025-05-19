@@ -1,100 +1,186 @@
 {
-  "title": "Tivadar Orosz",
-  "description": "Luxury escort and boudoir photography in London and Dubai, by Tivadar Orosz.",
-  "url": "https://www.tivadarorosz.com",
-  "author": "Tivadar Orosz",
-  "copyright": "© 2025 Tivadar Orosz. All rights reserved.",
+  "identity": {
+    "name": "Tivadar Orosz",
+    "title": "Tivadar Orosz",
+    "description": "Luxury escort and boudoir photography in London and Dubai, by Tivadar Orosz.",
+    "url": "https://www.tivadarorosz.com",
+    "copyright": "© 2025 Tivadar Orosz. All rights reserved."
+  },
   
-  "social": {
-    "twitter": "https://x.com/tivadarorosz",
-    "instagram": "https://instagram.com/tivadarorosz",
-    "bluesky": "https://bsky.app/profile/tivadarorosz.com",
-    "linkedin": "https://linkedin.com/in/tivadarorosz"
+  "pages": {
+    "about": {
+      "description": "Command the frame. Photography and strategy for women who lead, influence, and own their space."
+    },
+    "portfolio": {
+      "description": "Exclusive stories and portraits from luxury boudoir sessions."
+    },
+    "contact": {
+      "description": "Start your journey with Tivadar Orosz. Discrete luxury photography."
+    },
+    "pricing": {
+      "description": "Photography packages and investment details for discerning clients."
+    },
+    "insights": {
+      "description": "Expert insights on escort photography, privacy, and luxury branding."
+    },
+    "newsletter": {
+      "description": "Exclusive updates and insights from Tivadar Orosz."
+    }
   },
   
   "seo": {
-    "defaults": {
-      "title": "Tivadar Orosz — Escort & Boudoir Photographer",
-      "description": "Luxury escort and boudoir photography for high-end clients in London, Dubai, and worldwide. Discreet, elegant, unforgettable.",
-      "keywords": "escort photography, boudoir photographer, sw friendly, luxury escort branding, high-end portraits, london boudoir, dubai escort photographer, sex worker photography, discreet photography",
-      "image": "https://tivadarorosz.com/images/twitter-card.jpg",
-      "type": "website",
-      "schemaName": "Tivadar Orosz — Escort & Boudoir Photographer"
-    },
-    
-    "fallbacks": {
-      "article": {
-        "description": "Latest insights on escort photography, privacy, and luxury branding."
+    "meta": {
+      "defaults": {
+        "title": "Tivadar Orosz — Escort & Boudoir Photographer",
+        "description": "Luxury escort and boudoir photography for high-end clients in London, Dubai, and worldwide. Discreet, elegant, unforgettable.",
+        "keywords": "escort photography, boudoir photographer, sw friendly, luxury escort branding, high-end portraits, london boudoir, dubai escort photographer, sex worker photography, discreet photography",
+        "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg",
+        "type": "website",
+        "schemaName": "Tivadar Orosz — Escort & Boudoir Photographer"
       },
-      "story": {
-        "description": "View this exclusive story from Tivadar Orosz's escort and boudoir portfolio."
+      "fallbacks": {
+        "article": {
+          "description": "Latest insights on escort photography, privacy, and luxury branding.",
+          "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg"
+        },
+        "story": {
+          "description": "View this exclusive story from Tivadar Orosz's escort and boudoir portfolio.",
+          "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg"
+        },
+        "page": {
+          "description": "Luxury escort and boudoir photography for high-end clients in London, Dubai, and worldwide. Discreet, elegant, unforgettable."
+        }
       }
     },
-    
-    "openGraph": {
-      "siteName": "Tivadar Orosz",
-      "locale": "en_GB",
-      "image": {
-        "width": "1200",
-        "height": "630",
-        "alt": "Tivadar Orosz - Luxury Escort & Boudoir Photographer"
+    "social": {
+      "openGraph": {
+        "siteName": "Tivadar Orosz",
+        "locale": "en_GB",
+        "image": {
+          "width": "1200",
+          "height": "630",
+          "alt": "Tivadar Orosz - Luxury Escort & Boudoir Photographer",
+          "defaultWidth": 1200,
+          "defaultHeight": 630,
+          "twitterWidth": 1200,
+          "twitterHeight": 675
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "site": "@tivadarorosz",
+        "creator": "@tivadarorosz"
       }
     },
-    
-    "twitter": {
-      "card": "summary_large_image",
-      "site": "@tivadarorosz",
-      "creator": "@tivadarorosz"
+    "technical": {
+      "sitemap": {
+        "changeFrequency": {
+          "home": "weekly",
+          "primary": "weekly",
+          "posts": "monthly",
+          "default": "monthly"
+        },
+        "priority": {
+          "home": 1.0,
+          "primary": 0.8,
+          "posts": 0.6,
+          "default": 0.5
+        }
+      },
+      "feed": {
+        "title": "Tivadar Orosz - Insights",
+        "language": "en-US",
+        "maxItems": 20,
+        "generator": "Eleventy"
+      }
     }
   },
   
   "assets": {
-    "cdn": "https://cdn.tivadarorosz.com",
-    "images": {
-      "socialCard": "https://tivadarorosz.com/images/twitter-card.jpg",
-      "favicon32": "https://cdn.tivadarorosz.com/icons/favicon-32x32.png",
-      "favicon16": "https://cdn.tivadarorosz.com/icons/favicon-16x16.png",
-      "appleTouchIcon": "https://cdn.tivadarorosz.com/icons/apple-touch-icon.png"
-    },
-    
-    "fonts": {
-      "styreneA": {
-        "bold": {
-          "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff2",
-          "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff"
+    "cdn": {
+      "base": "https://cdn.tivadarorosz.com",
+      "images": {
+        "socialCard": "https://cdn.tivadarorosz.com/images/twitter-card.jpg",
+        "favicon32": "https://cdn.tivadarorosz.com/icons/favicon-32x32.png",
+        "favicon16": "https://cdn.tivadarorosz.com/icons/favicon-16x16.png",
+        "appleTouchIcon": "https://cdn.tivadarorosz.com/icons/apple-touch-icon.png"
+      },
+      "fonts": [
+        {
+          "family": "Styrene A",
+          "weight": "bold",
+          "formats": {
+            "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff2",
+            "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff"
+          }
         },
-        "medium": {
-          "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff2",
-          "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff"
+        {
+          "family": "Styrene A",
+          "weight": "medium",
+          "formats": {
+            "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff2",
+            "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff"
+          }
         },
-        "regular": {
-          "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff2",
-          "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff"
+        {
+          "family": "Styrene A",
+          "weight": "regular",
+          "formats": {
+            "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff2",
+            "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff"
+          }
+        },
+        {
+          "family": "Tiempos Text",
+          "weight": "regular",
+          "formats": {
+            "woff2": "https://cdn.tivadarorosz.com/fonts/tiempos-text-regular.woff2"
+          }
+        },
+        {
+          "family": "Tiempos Text",
+          "weight": "medium",
+          "formats": {
+            "woff2": "https://cdn.tivadarorosz.com/fonts/tiempos-text-medium.woff2"
+          }
         }
-      }
+      ]
     }
-  },
-  
-  "analytics": {
-    "fathom": {
-      "siteId": "VNVXUDQT",
-      "script": "https://cdn.usefathom.com/script.js"
-    }
-  },
-  
-  "locations": {
-    "primary": "London",
-    "country": "United Kingdom",
-    "availability": [
-      {
-        "city": "Dubai",
-        "dates": "June 4-11, 2025"
-      }
-    ]
   },
   
   "business": {
-    "types": ["Photographer", "LocalBusiness"],
-    "areaServed": ["London", "Dubai", "Budapest", "Berlin", "Europe"]
+    "entity": {
+      "name": "Mirelle Studio Ltd",
+      "types": ["Photographer", "LocalBusiness"],
+      "sameAs": [
+        "https://x.com/tivadarorosz",
+        "https://instagram.com/tivadarorosz",
+        "https://bsky.app/profile/tivadarorosz.com",
+        "https://linkedin.com/in/tivadarorosz"
+      ]
+    },
+    "service": {
+      "areas": ["London", "Dubai", "Budapest", "Berlin", "Europe"],
+      "locations": {
+        "primary": "London",
+        "country": "United Kingdom",
+        "defaultAvailabilityMessage": "Dubai by appointment"
+      }
+    }
+  },
+  
+  "integrations": {
+    "analytics": {
+      "fathom": {
+        "siteId": "VNVXUDQT",
+        "script": "https://cdn.usefathom.com/script.js"
+      }
+    },
+    "social": {
+      "twitter": "https://x.com/tivadarorosz",
+      "instagram": "https://instagram.com/tivadarorosz",
+      "bluesky": "https://bsky.app/profile/tivadarorosz.com",
+      "linkedin": "https://linkedin.com/in/tivadarorosz"
+    }
   }
 }

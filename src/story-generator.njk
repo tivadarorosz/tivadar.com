@@ -5,4 +5,8 @@ pagination:
   alias: story
 permalink: "{{ story.link }}/"
 layout: story
+eleventyComputed:
+  title: "{{ story.title }}"
+  cover: "{{ story.cover }}"
+  summary: "{{ story.summary }}"
 ---

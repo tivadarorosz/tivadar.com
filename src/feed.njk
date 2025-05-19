@@ -5,22 +5,22 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>{{ site.title }} - Insights</title>
-    <description>{{ site.description }}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
-    <language>en-US</language>
+    <title>{{ site.seo.technical.feed.title }}</title>
+    <description>{{ site.identity.description }}</description>
+    <link>{{ site.identity.url }}</link>
+    <atom:link href="{{ site.identity.url }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>{{ site.seo.technical.feed.language }}</language>
     <lastBuildDate>{% if collections.allPosts.length > 0 %}{{ collections.allPosts[0].date | dateToRfc2822 }}{% else %}{{ now | dateToRfc2822 }}{% endif %}</lastBuildDate>
-    <generator>Eleventy</generator>
-    <webMaster>{{ site.author }}</webMaster>
+    <generator>{{ site.seo.technical.feed.generator }}</generator>
+    <webMaster>{{ site.identity.name }}</webMaster>
     {%- for post in collections.allPosts -%}
-    {%- if loop.index <= 20 %}
+    {%- if loop.index <= site.feed.maxItems %}
     <item>
       <title>{{ post.data.title | e }}</title>
-      <link>{{ site.url }}{{ post.url }}</link>
-      <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      <link>{{ site.identity.url }}{{ post.url }}</link>
+      <guid isPermaLink="true">{{ site.identity.url }}{{ post.url }}</guid>
       <pubDate>{{ post.date | dateToRfc2822 }}</pubDate>
-      <author>{{ site.author }}</author>
+      <author>{{ site.identity.name }}</author>
       <description>{{ post.data.summary | e }}</description>
       {%- if post.data.categories %}
       {%- for category in post.data.categories %}

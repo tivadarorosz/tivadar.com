@@ -7,20 +7,20 @@ eleventyExcludeFromCollections: true
 {%- for page in collections.all %}
   {%- if not page.data.eleventyExcludeFromCollections and page.url and not page.url.includes('message/') %}
   <url>
-    <loc>{{ site.url }}{{ page.url }}</loc>
+    <loc>{{ site.identity.url }}{{ page.url }}</loc>
     <lastmod>{{ page.date | htmlDateString }}</lastmod>
     {%- if page.url == "/" %}
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    {%- elif page.url == "/portfolio/" or page.url == "/articles/" or page.url == "/contact/" %}
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    {%- elif page.url.includes('/posts/') %}
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>{{ site.seo.technical.sitemap.changeFrequency.home }}</changefreq>
+    <priority>{{ site.seo.technical.sitemap.priority.home }}</priority>
+    {%- elif page.url == "/portfolio/" or page.url == "/insights/" or page.url == "/contact/" or page.url == "/about/" or page.url == "/pricing/" %}
+    <changefreq>{{ site.seo.technical.sitemap.changeFrequency.primary }}</changefreq>
+    <priority>{{ site.seo.technical.sitemap.priority.primary }}</priority>
+    {%- elif page.url.includes('/posts/') or page.url.includes('/stories/') %}
+    <changefreq>{{ site.seo.technical.sitemap.changeFrequency.posts }}</changefreq>
+    <priority>{{ site.seo.technical.sitemap.priority.posts }}</priority>
     {%- else %}
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>{{ site.seo.technical.sitemap.changeFrequency.default }}</changefreq>
+    <priority>{{ site.seo.technical.sitemap.priority.default }}</priority>
     {%- endif %}
   </url>
   {%- endif %}

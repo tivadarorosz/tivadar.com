@@ -3,100 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="{{ description or summary or site.seo.defaults.description }}">
+  <meta name="description" content="{{ description or site.pages[page.fileSlug].description or site.seo.meta.fallbacks.page.description or site.seo.meta.defaults.description }}">
   
   {% if layout == "post" %}
   <!-- Open Graph for Articles -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ title }} — {{ site.author }}">
+  <meta property="og:title" content="{{ title }} — {{ site.identity.name }}">
   <meta property="og:description" content="{{ summary }}">
   <meta property="og:image" content="{{ coverImage or icon or site.seo.defaults.image }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:locale" content="{{ site.seo.openGraph.locale }}">
+  <meta property="og:url" content="{{ site.identity.url }}{{ page.url }}">
+  <meta property="og:locale" content="{{ site.seo.social.openGraph.locale }}">
 
   <!-- Twitter Card for Articles -->
-  <meta name="twitter:card" content="{{ site.seo.twitter.card }}">
-  <meta name="twitter:title" content="{{ title }} — {{ site.author }}">
+  <meta name="twitter:card" content="{{ site.seo.social.twitter.card }}">
+  <meta name="twitter:title" content="{{ title }} — {{ site.identity.name }}">
   <meta name="twitter:description" content="{{ summary }}">
   <meta name="twitter:image" content="{{ coverImage or icon or site.seo.defaults.image }}">
   {% elif layout == "story" %}
   <!-- Open Graph for Stories -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ title }} — {{ site.author }}">
+  <meta property="og:title" content="{{ title }} — {{ site.identity.name }}">
   <meta property="og:description" content="{{ summary or site.seo.fallbacks.story.description }}">
   <meta property="og:image" content="{{ cover.image or site.seo.defaults.image }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:locale" content="{{ site.seo.openGraph.locale }}">
+  <meta property="og:url" content="{{ site.identity.url }}{{ page.url }}">
+  <meta property="og:locale" content="{{ site.seo.social.openGraph.locale }}">
 
   <!-- Twitter Card for Stories -->
-  <meta name="twitter:card" content="{{ site.seo.twitter.card }}">
-  <meta name="twitter:title" content="{{ title }} — {{ site.author }}">
+  <meta name="twitter:card" content="{{ site.seo.social.twitter.card }}">
+  <meta name="twitter:title" content="{{ title }} — {{ site.identity.name }}">
   <meta name="twitter:description" content="{{ summary or site.seo.fallbacks.story.description }}">
   <meta name="twitter:image" content="{{ cover.image or site.seo.defaults.image }}">
   {% else %}
   <!-- Default Meta Tags for Pages -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{% if title == 'Home' %}{{ site.seo.defaults.schemaName }}{% else %}{{ title }} — {{ site.author }}{% endif %}">
-  <meta property="og:description" content="{{ description or site.seo.defaults.description }}">
-  <meta property="og:image" content="{{ site.seo.defaults.image }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:locale" content="{{ site.seo.openGraph.locale }}">
+  <meta property="og:title" content="{% if title == 'Home' %}{{ site.seo.meta.defaults.schemaName }}{% else %}{{ title }} — {{ site.identity.name }}{% endif %}">
+  <meta property="og:description" content="{{ description or site.pages[page.fileSlug].description or site.seo.fallbacks.page.description or site.seo.defaults.description }}">
+  <meta property="og:image" content="{{ site.seo.meta.defaults.image }}">
+  <meta property="og:url" content="{{ site.identity.url }}{{ page.url }}">
+  <meta property="og:locale" content="{{ site.seo.social.openGraph.locale }}">
   
-  <meta name="twitter:card" content="{{ site.seo.twitter.card }}" />
-  <meta name="twitter:title" content="{% if title == 'Home' %}{{ site.seo.defaults.schemaName }}{% else %}{{ title }} — {{ site.author }}{% endif %}" />
-  <meta name="twitter:description" content="{{ description or site.seo.defaults.description }}" />
-  <meta name="twitter:image" content="{{ site.seo.defaults.image }}" />
+  <meta name="twitter:card" content="{{ site.seo.social.twitter.card }}" />
+  <meta name="twitter:title" content="{% if title == 'Home' %}{{ site.seo.meta.defaults.schemaName }}{% else %}{{ title }} — {{ site.identity.name }}{% endif %}" />
+  <meta name="twitter:description" content="{{ description or site.pages[page.fileSlug].description or site.seo.fallbacks.page.description or site.seo.defaults.description }}" />
+  <meta name="twitter:image" content="{{ site.seo.meta.defaults.image }}" />
   {% endif %}
 
-  <title>{{ title }} \ {{ site.title }}</title>
+  <title>{{ title }} \ {{ site.identity.title }}</title>
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="canonical" href="{{ site.identity.url }}{{ page.url }}">
   
   <!-- RSS Feed -->
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.identity.title }} RSS Feed" href="/feed.xml">
   
   <!-- Favicons -->
-  <link rel="icon" type="image/png" href="{{ site.assets.images.favicon32 }}" sizes="32x32">
-  <link rel="icon" type="image/png" href="{{ site.assets.images.favicon16 }}" sizes="16x16">
-  <link rel="apple-touch-icon" href="{{ site.assets.images.appleTouchIcon }}">
+  <link rel="icon" type="image/png" href="{{ site.assets.cdn.images.favicon32 }}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ site.assets.cdn.images.favicon16 }}" sizes="16x16">
+  <link rel="apple-touch-icon" href="{{ site.assets.cdn.images.appleTouchIcon }}">
   
   <link rel="stylesheet" href="/css/style.css" />
   <script src="/js/main.js"></script>
   <script>document.documentElement.classList.remove('no-js');</script>
 
   <!-- Fathom - beautiful, simple website analytics -->
-  <script src="{{ site.analytics.fathom.script }}" data-site="{{ site.analytics.fathom.siteId }}" defer></script>
+  <script src="{{ site.integrations.analytics.fathom.script }}" data-site="{{ site.integrations.analytics.fathom.siteId }}" defer></script>
   <!-- / Fathom -->
 
   <!-- Font Faces -->
   <style>
     @font-face {
       font-family: 'Styrene A';
-      src: url('{{ site.assets.fonts.styreneA.bold.woff2 }}') format('woff2'),
-           url('{{ site.assets.fonts.styreneA.bold.woff }}') format('woff');
-      /* src: url('/fonts/StyreneA-Bold-Web.woff2') format('woff2'),
-           url('/fonts/StyreneA-Bold-Web.woff') format('woff'); */
+      src: url('https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff2') format('woff2'),
+           url('https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff') format('woff');
       font-weight: 700;
       font-style: normal;
     }
 
     @font-face {
       font-family: 'Styrene A';
-      src: url('{{ site.assets.fonts.styreneA.medium.woff2 }}') format('woff2'),
-           url('{{ site.assets.fonts.styreneA.medium.woff }}') format('woff');
-      /* src: url('/fonts/StyreneA-Medium-Web.woff2') format('woff2'),
-           url('/fonts/StyreneA-Medium-Web.woff') format('woff'); */
+      src: url('https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff2') format('woff2'),
+           url('https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff') format('woff');
       font-weight: 500;
       font-style: normal;
     }
 
     @font-face {
       font-family: 'Styrene A';
-      src: url('{{ site.assets.fonts.styreneA.regular.woff2 }}') format('woff2'),
-           url('{{ site.assets.fonts.styreneA.regular.woff }}') format('woff');
-      /* src: url('/fonts/StyreneA-Regular-Web.woff2') format('woff2'),
-           url('/fonts/StyreneA-Regular-Web.woff') format('woff'); */
+      src: url('https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff2') format('woff2'),
+           url('https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff') format('woff');
       font-weight: 400;
       font-style: normal;
     }
@@ -123,16 +117,16 @@
   {
     "@context": "https://schema.org",
     "@type": "{% if layout == 'post' or layout == 'story' %}Article{% else %}WebSite{% endif %}",
-    {% if layout != 'post' and layout != 'story' %}"@id": "{{ site.url }}/#website",{% endif %}
-    "name": "{% if layout == 'post' or layout == 'story' %}{{ title }}{% else %}{{ site.seo.defaults.schemaName }}{% endif %}",
-    "url": "{% if layout == 'post' or layout == 'story' %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}",
+    {% if layout != 'post' and layout != 'story' %}"@id": "{{ site.identity.url }}/#website",{% endif %}
+    "name": "{% if layout == 'post' or layout == 'story' %}{{ title }}{% else %}{{ site.seo.meta.defaults.schemaName }}{% endif %}",
+    "url": "{% if layout == 'post' or layout == 'story' %}{{ site.identity.url }}{{ page.url }}{% else %}{{ site.identity.url }}{% endif %}",
     "publisher": {
       "@type": "Person",
-      "name": "{{ site.author }}",
-      "url": "{{ site.url }}",
+      "name": "{{ site.identity.name }}",
+      "url": "{{ site.identity.url }}",
       "image": {
         "@type": "ImageObject",
-        "url": "{{ site.assets.images.socialCard }}"
+        "url": "{{ site.assets.cdn.images.socialCard }}"
       }
     }{% if layout == 'post' or layout == 'story' %},
     "headline": "{{ title }}",
@@ -140,32 +134,37 @@
     "datePublished": "{{ page.date | dateToISO }}",
     "author": {
       "@type": "Person",
-      "name": "{{ site.author }}"
+      "name": "{{ site.identity.name }}"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "{{ site.url }}{{ page.url }}"
+      "@id": "{{ site.identity.url }}{{ page.url }}"
     },
     "isPartOf": {
-      "@id": "{{ site.url }}/#website"
+      "@id": "{{ site.identity.url }}/#website"
     }{% if layout == 'story' and story.location %},
     "contentLocation": {
       "@type": "Place",
       "name": "{{ story.location }}"
-    }{% endif %}{% if layout == 'story' and cover.image or coverImage %},
+    }{% endif %}{% if (layout == 'story' and cover.image) or (layout == 'post' and (coverImage or icon)) %},
     "image": {
       "@type": "ImageObject",
-      "url": "{% if layout == 'story' and cover.image %}{{ cover.image }}{% else %}{{ coverImage }}{% endif %}",
+      "url": "{% if layout == 'story' and cover.image %}{{ cover.image }}{% elif layout == 'post' and coverImage %}{{ coverImage }}{% elif layout == 'post' and icon %}{{ icon }}{% endif %}",
       {% if layout == 'story' and cover.width and cover.height %}
       "width": {{ cover.width }},
       "height": {{ cover.height }},
+      {% elif layout == 'post' and imageWidth and imageHeight %}
+      "width": {{ imageWidth }},
+      "height": {{ imageHeight }},
       {% endif %}
       {% if layout == 'story' and cover.caption %}
       "caption": "{{ cover.caption }}",
+      {% elif layout == 'post' and imageCaption %}
+      "caption": "{{ imageCaption }}",
       {% endif %}
       "creator": {
         "@type": "Person",
-        "name": "{{ site.author }}"
+        "name": "{{ site.identity.name }}"
       }
     }{% endif %}{% endif %}
   }
@@ -176,18 +175,18 @@
   {
     "@context": "https://schema.org",
     "@type": [{% for type in site.business.types %}"{{ type }}"{% if not loop.last %}, {% endif %}{% endfor %}],
-    {% if title == 'Home' %}"@id": "{{ site.url }}/#studio",{% endif %}
-    "name": "{{ site.author }}",
-    "url": "{{ site.url }}",
-    "description": "{{ site.seo.defaults.description }}",
-    "image": "{{ site.seo.defaults.image }}",
+    {% if title == 'Home' %}"@id": "{{ site.identity.url }}/#studio",{% endif %}
+    "name": "{{ site.identity.name }}",
+    "url": "{{ site.identity.url }}",
+    "description": "{{ site.seo.meta.defaults.description }}",
+    "image": "{{ site.seo.meta.defaults.image }}",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "{{ site.locations.primary }}",
-      "addressCountry": "{{ site.locations.country }}"
+      "addressLocality": "{{ site.business.service.locations.primary }}",
+      "addressCountry": "{{ site.business.service.locations.country }}"
     },
     "sameAs": [
-      {%- for social, url in site.social %}
+      {%- for url in site.business.entity.sameAs %}
       "{{ url }}"{% if not loop.last %},{% endif %}
       {%- endfor %}
     ],
@@ -210,35 +209,35 @@
     "description": "{{ post.data.summary or post.data.description or site.seo.fallbacks.article.description }}",
     "author": {
       "@type": "Person",
-      "name": "{{ site.author }}"
+      "name": "{{ site.identity.name }}"
     },
     "publisher": {
       "@type": "Person",
-      "name": "{{ site.author }}",
-      "url": "{{ site.url }}",
+      "name": "{{ site.identity.name }}",
+      "url": "{{ site.identity.url }}",
       "image": {
         "@type": "ImageObject",
-        "url": "{{ site.assets.images.socialCard }}"
+        "url": "{{ site.assets.cdn.images.socialCard }}"
       }
     },
     "datePublished": "{{ post.data.date | dateToISO }}",
-    "url": "{{ site.url }}{{ post.url }}",
+    "url": "{{ site.identity.url }}{{ post.url }}",
     {% if post.data.coverImage or post.data.icon %}
     "image": {
       "@type": "ImageObject",
       "url": "{{ post.data.coverImage or post.data.icon }}",
       "creator": {
         "@type": "Person",
-        "name": "{{ site.author }}"
+        "name": "{{ site.identity.name }}"
       }
     },
     {% endif %}
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "{{ site.url }}{{ post.url }}"
+      "@id": "{{ site.identity.url }}{{ post.url }}"
     },
     "isPartOf": {
-      "@id": "{{ site.url }}/#website"
+      "@id": "{{ site.identity.url }}/#website"
     }
   }
   </script>
@@ -251,11 +250,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "{{ site.url }}{{ page.url }}",
-    "url": "{{ site.url }}{{ page.url }}",
-    "name": "{{ title }} — {{ site.author }}",
+    "@id": "{{ site.identity.url }}{{ page.url }}",
+    "url": "{{ site.identity.url }}{{ page.url }}",
+    "name": "{{ title }} — {{ site.identity.name }}",
     "isPartOf": {
-      "@id": "{{ site.url }}/#website"
+      "@id": "{{ site.identity.url }}/#website"
     },
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -264,22 +263,71 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "{{ site.url }}/"
+          "item": "{{ site.identity.url }}/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "{% if layout == 'post' or page.url == '/insights/' %}Insights{% else %}Portfolio{% endif %}",
-          "item": "{% if layout == 'post' or page.url == '/insights/' %}{{ site.url }}/insights/{% else %}{{ site.url }}/portfolio/{% endif %}"
+          "item": "{% if layout == 'post' or page.url == '/insights/' %}{{ site.identity.url }}/insights/{% else %}{{ site.identity.url }}/portfolio/{% endif %}"
         }{% if layout == 'post' or layout == 'story' %},
         {
           "@type": "ListItem",
           "position": 3,
           "name": "{{ title }}",
-          "item": "{{ site.url }}{{ page.url }}"
+          "item": "{{ site.identity.url }}{{ page.url }}"
         }{% endif %}
       ]
     }
+  }
+  </script>
+  {% endif %}
+
+  {% if title == 'Home' %}
+  <!-- HomePage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "{{ site.identity.url }}/",
+    "url": "{{ site.identity.url }}/",
+    "name": "Home — {{ site.identity.name }}",
+    "mainEntityOfPage": {
+      "@id": "{{ site.identity.url }}/"
+    },
+    "isPartOf": {
+      "@id": "{{ site.identity.url }}/#website"
+    }
+  }
+  </script>
+  {% endif %}
+
+  {% if page.url == '/about/' %}
+  <!-- Person Schema for About Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "{{ site.identity.url }}/#person",
+    "name": "{{ site.identity.name }}",
+    "jobTitle": "Photographer",
+    "url": "{{ site.identity.url }}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ site.assets.cdn.images.socialCard }}"
+    },
+    "sameAs": [
+      {%- for url in site.business.entity.sameAs %}
+      "{{ url }}"{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "{{ site.business.entity.name }}"
+    },
+    "description": "{{ site.seo.meta.defaults.description }}",
+    "knowsAbout": ["Photography", "Escort Photography", "Boudoir Photography", "Web Design", "Privacy"],
+    "nationality": "{{ site.business.service.locations.country }}"
   }
   </script>
   {% endif %}
@@ -291,22 +339,25 @@
     "@context": "https://schema.org",
     {% if page.url == '/insights/' or page.url == '/portfolio/' %}
     "@type": "CollectionPage",
-    "@id": "{{ site.url }}{{ page.url }}",
-    "url": "{{ site.url }}{{ page.url }}",
-    "name": "{{ title }} — {{ site.author }}",
+    "@id": "{{ site.identity.url }}{{ page.url }}",
+    "url": "{{ site.identity.url }}{{ page.url }}",
+    "name": "{{ title }} — {{ site.identity.name }}",
     "mainEntity": {
       "@type": "CollectionPage",
       "name": "{{ title }}",
-      "url": "{{ site.url }}{{ page.url }}"
+      "url": "{{ site.identity.url }}{{ page.url }}",
+      "isPartOf": {
+        "@id": "{{ site.identity.url }}/#website"
+      }
     },
     {% else %}
     "@type": "WebPage",
-    "@id": "{{ site.url }}{{ page.url }}",
-    "url": "{{ site.url }}{{ page.url }}",
-    "name": "{{ title }} — {{ site.author }}",
+    "@id": "{{ site.identity.url }}{{ page.url }}",
+    "url": "{{ site.identity.url }}{{ page.url }}",
+    "name": "{{ title }} — {{ site.identity.name }}",
     {% endif %}
     "isPartOf": {
-      "@id": "{{ site.url }}/#website"
+      "@id": "{{ site.identity.url }}/#website"
     }
   }
   </script>

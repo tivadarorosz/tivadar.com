@@ -1,4 +1,7 @@
 module.exports = function(eleventyConfig) {
+  // Add YAML support
+  eleventyConfig.addDataExtension("yaml", contents => require("js-yaml").load(contents));
+  
   // Watch CSS files for changes
   eleventyConfig.addWatchTarget("./src/css/");
   
@@ -9,6 +12,68 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addPassthroughCopy("./src/robots.txt");
 
+  // Add date formatting filter
+  eleventyConfig.addFilter("formatAvailabilityDate", function(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    
+    const startMonth = start.toLocaleDateString('en-US', { month: 'long' });
+    const startDay = start.getDate();
+    const endDay = end.getDate();
+    const endYear = end.getFullYear();
+    
+    return `${startMonth} ${startDay}-${endDay}, ${endYear}`;
+  });
+
+  // Check if availability dates have passed
+  eleventyConfig.addFilter("isAvailabilityExpired", function(endDate) {
+    const end = new Date(endDate);
+    const today = new Date();
+    return today > end;
+  });
+
+  // Get next upcoming city tour
+  eleventyConfig.addFilter("getNextCityTour", function(cities) {
+    if (!cities || !Array.isArray(cities)) {
+      return null;
+    }
+    
+    const today = new Date();
+    const sixMonthsFromNow = new Date();
+    sixMonthsFromNow.setMonth(sixMonthsFromNow.getMonth() + 6);
+    
+    // Filter and sort cities by start date
+    const upcomingCities = cities
+      .filter(city => {
+        if (!city || !city.dates || !city.dates.start) return false;
+        const startDate = new Date(city.dates.start);
+        return startDate > today && startDate <= sixMonthsFromNow;
+      })
+      .sort((a, b) => new Date(a.dates.start) - new Date(b.dates.start));
+    
+    // Get the first upcoming city
+    return upcomingCities.length > 0 ? upcomingCities[0] : null;
+  });
+
+  // Format city tour dates
+  eleventyConfig.addFilter("formatCityTourDates", function(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    
+    const monthYear = start.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    const startDay = start.getDate();
+    const endDay = end.getDate();
+    
+    // If same month, format as "Month D–D, YYYY"
+    if (start.getMonth() === end.getMonth()) {
+      return `${monthYear.split(' ')[0]} ${startDay}–${endDay}, ${monthYear.split(' ')[1]}`;
+    } else {
+      // If different months, format as "Month D – Month D, YYYY"
+      const endMonth = end.toLocaleDateString('en-US', { month: 'long' });
+      return `${monthYear.split(' ')[0]} ${startDay} – ${endMonth} ${endDay}, ${end.getFullYear()}`;
+    }
+  });
+  
   // Add collections
   eleventyConfig.addCollection("featuredPosts", function(collectionApi) {
     // Get all posts with featured: true, sorted by date (newest first)
@@ -84,7 +149,8 @@ module.exports = function(eleventyConfig) {
       input: "src",
       output: "_site",
       includes: "_includes",
-      layouts: "_includes"
+      layouts: "_includes",
+      data: "_data"
     }
   };
 };
