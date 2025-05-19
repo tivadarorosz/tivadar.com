@@ -12,8 +12,13 @@
 
 // Cities-specific hero styles (exact same as pricing)
 body:has(.cities-page) .page-hero {
-  padding-top: clamp(4rem, 8vw, 7rem); // Same top padding as pricing page
+  // Override default padding to match pricing exactly
+  padding-top: clamp(4rem, 8vw, 7rem); // Same as pricing
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+  padding-bottom: 0;
   text-align: center; // Ensure hero is centered
+  overflow: hidden;
   
   @media (min-width: $breakpoint-sm) {
     padding-top: clamp(5rem, 10vw, 9rem); // Same desktop padding as pricing
