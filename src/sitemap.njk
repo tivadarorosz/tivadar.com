@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 {%- for page in collections.all %}
   {%- if not page.data.eleventyExcludeFromCollections and page.url and not page.url.includes('message/') %}
   <url>
-    <loc>https://www.tivadarorosz.com{{ page.url }}</loc>
+    <loc>{{ site.url }}{{ page.url }}</loc>
     <lastmod>{{ page.date | htmlDateString }}</lastmod>
     {%- if page.url == "/" %}
     <changefreq>weekly</changefreq>

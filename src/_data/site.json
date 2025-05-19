@@ -3,9 +3,90 @@
   "description": "Escort and boudoir photography portfolio of Tivadar Orosz in London.",
   "url": "https://www.tivadarorosz.com",
   "author": "Tivadar Orosz",
+  "copyright": "© 2025 Tivadar Orosz. All rights reserved.",
+  
   "social": {
     "twitter": "https://x.com/tivadarorosz",
     "instagram": "https://instagram.com/tivadarorosz",
-    "bluesky": "https://bsky.app/profile/tivadarorosz.com"
+    "bluesky": "https://bsky.app/profile/tivadarorosz.com",
+    "linkedin": "https://linkedin.com/in/tivadarorosz"
+  },
+  
+  "seo": {
+    "defaults": {
+      "title": "Tivadar — Boudoir Photographer",
+      "description": "Escort and boudoir photography portfolio of Tivadar Orosz in London.",
+      "keywords": "escort photography, boudoir photographer, luxury branding, london photographer, intimate portraits",
+      "image": "https://tivadarorosz.com/images/twitter-card.jpg",
+      "type": "website"
+    },
+    
+    "fallbacks": {
+      "article": {
+        "description": "Latest insights on escort photography and luxury branding."
+      },
+      "story": {
+        "description": "View this exclusive story from Tivadar's portfolio."
+      }
+    },
+    
+    "openGraph": {
+      "siteName": "Tivadar",
+      "locale": "en_US",
+      "image": {
+        "width": "1200",
+        "height": "630",
+        "alt": "Tivadar - Luxury Escort & Boudoir Photographer"
+      }
+    },
+    
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@tivadarorosz",
+      "creator": "@tivadarorosz"
+    }
+  },
+  
+  "assets": {
+    "cdn": "https://cdn.tivadarorosz.com",
+    "images": {
+      "socialCard": "https://tivadarorosz.com/images/twitter-card.jpg",
+      "favicon32": "https://cdn.tivadarorosz.com/icons/favicon-32x32.png",
+      "favicon16": "https://cdn.tivadarorosz.com/icons/favicon-16x16.png",
+      "appleTouchIcon": "https://cdn.tivadarorosz.com/icons/apple-touch-icon.png"
+    },
+    "fonts": {
+      "styreneA": {
+        "bold": {
+          "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff2",
+          "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff"
+        },
+        "medium": {
+          "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff2",
+          "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff"
+        },
+        "regular": {
+          "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff2",
+          "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff"
+        }
+      }
+    }
+  },
+  
+  "analytics": {
+    "fathom": {
+      "siteId": "VNVXUDQT",
+      "script": "https://cdn.usefathom.com/script.js"
+    }
+  },
+  
+  "locations": {
+    "primary": "London",
+    "availability": [
+      {
+        "city": "Dubai",
+        "dates": "June 4-11, 2025"
+      }
+    ]
   }
 }

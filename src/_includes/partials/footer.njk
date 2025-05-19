@@ -6,8 +6,8 @@
         <div class="footer-menu-group">
           <h4 class="footer-menu-title">Location</h4>
           <div class="footer-menu-items">
-            <p>Based in London</p>
-            <p>Dubai: June 4-11, 2025</p>
+            <p>Based in {{ site.locations.primary }}</p>
+            <p>{{ site.locations.availability[0].city }}: {{ site.locations.availability[0].dates }}</p>
             <p>Available Worldwide</p>
           </div>
         </div>
@@ -46,21 +46,21 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="copyright">&copy; {{ currentYear }} <a href="https://tivadarorosz.com" class="footer-link">Mirelle Studio Ltd</a></div>
+      <div class="copyright">&copy; {{ currentYear }} <a href="{{ site.url }}" class="footer-link">Mirelle Studio Ltd</a></div>
       <div class="social-icons">
-        <a href="https://x.com/tivadarorosz" target="_blank" class="social-icon x-icon">
+        <a href="{{ site.social.twitter }}" target="_blank" class="social-icon x-icon">
           <img src="https://cdn.tivadarorosz.com/icons/x-icon.png" alt="X (Twitter)" class="x-icon-img">
           <img src="https://cdn.tivadarorosz.com/icons/x-icon-hover.png" alt="X (Twitter)" class="x-icon-hover">
         </a>
-        <a href="https://bsky.app/profile/tivadarorosz.com" target="_blank" class="social-icon bluesky-icon">
+        <a href="{{ site.social.bluesky }}" target="_blank" class="social-icon bluesky-icon">
           <img src="https://cdn.tivadarorosz.com/icons/bluesky-icon.png" alt="Bluesky" class="bluesky-icon-img">
           <img src="https://cdn.tivadarorosz.com/icons/bluesky-icon-hover.png" alt="Bluesky" class="bluesky-icon-hover">
         </a>
-        <a href="https://instagram.com/tivadarorosz" target="_blank" class="social-icon instagram-icon">
+        <a href="{{ site.social.instagram }}" target="_blank" class="social-icon instagram-icon">
           <img src="https://cdn.tivadarorosz.com/icons/instagram-icon.png" alt="Instagram" class="instagram-icon-img">
           <img src="https://cdn.tivadarorosz.com/icons/instagram-icon-hover.png" alt="Instagram" class="instagram-icon-hover">
         </a>
-        <a href="https://linkedin.com/in/tivadarorosz" target="_blank" class="social-icon linkedin-icon">
+        <a href="{{ site.social.linkedin }}" target="_blank" class="social-icon linkedin-icon">
           <img src="https://cdn.tivadarorosz.com/icons/linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-img">
           <img src="https://cdn.tivadarorosz.com/icons/linkedin-icon-hover.png" alt="LinkedIn" class="linkedin-icon-hover">
         </a>
