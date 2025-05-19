@@ -44,6 +44,7 @@ This document explains the purpose of each parameter in `src/_data/site.json` fo
 - **`keywords`**: Keywords for SEO (less important for modern SEO but still useful)
 - **`image`**: Default image for social media cards (Twitter, Facebook, LinkedIn)
 - **`type`**: Schema.org type for regular pages
+- **`schemaName`**: Site name for JSON-LD WebSite schema (describes the site as a whole, not individual pages)
 
 ### `seo.fallbacks`
 - **Purpose**: Fallback descriptions when specific content types don't have descriptions

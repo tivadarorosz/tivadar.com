@@ -8,7 +8,7 @@
   {% if layout == "post" %}
   <!-- Open Graph for Articles -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ title }}">
+  <meta property="og:title" content="{{ site.seo.defaults.schemaName }}">
   <meta property="og:description" content="{{ summary }}">
   <meta property="og:image" content="{{ coverImage or icon or site.seo.defaults.image }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -16,13 +16,13 @@
 
   <!-- Twitter Card for Articles -->
   <meta name="twitter:card" content="{{ site.seo.twitter.card }}">
-  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:title" content="{{ site.seo.defaults.schemaName }}">
   <meta name="twitter:description" content="{{ summary }}">
   <meta name="twitter:image" content="{{ coverImage or icon or site.seo.defaults.image }}">
   {% elif layout == "story" %}
   <!-- Open Graph for Stories -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ title }}">
+  <meta property="og:title" content="{{ site.seo.defaults.schemaName }}">
   <meta property="og:description" content="{{ summary or site.seo.fallbacks.story.description }}">
   <meta property="og:image" content="{{ cover.image or site.seo.defaults.image }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -30,20 +30,20 @@
 
   <!-- Twitter Card for Stories -->
   <meta name="twitter:card" content="{{ site.seo.twitter.card }}">
-  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:title" content="{{ site.seo.defaults.schemaName }}">
   <meta name="twitter:description" content="{{ summary or site.seo.fallbacks.story.description }}">
   <meta name="twitter:image" content="{{ cover.image or site.seo.defaults.image }}">
   {% else %}
   <!-- Default Meta Tags for Pages -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title or site.seo.defaults.title }}">
+  <meta property="og:title" content="{{ site.seo.defaults.schemaName }}">
   <meta property="og:description" content="{{ site.seo.defaults.description }}">
   <meta property="og:image" content="{{ site.seo.defaults.image }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:locale" content="{{ site.seo.openGraph.locale }}">
   
   <meta name="twitter:card" content="{{ site.seo.twitter.card }}" />
-  <meta name="twitter:title" content="{{ title or site.seo.defaults.title }}" />
+  <meta name="twitter:title" content="{{ site.seo.defaults.schemaName }}" />
   <meta name="twitter:description" content="{{ site.seo.defaults.description }}" />
   <meta name="twitter:image" content="{{ site.seo.defaults.image }}" />
   {% endif %}
@@ -123,7 +123,7 @@
   {
     "@context": "https://schema.org",
     "@type": "{% if layout == 'post' or layout == 'story' %}Article{% else %}WebSite{% endif %}",
-    "name": "{{ title or site.title or 'Tivadar — Luxury Photography & Design' }}",
+    "name": "{% if layout == 'post' or layout == 'story' %}{{ title }}{% else %}{{ site.seo.defaults.schemaName }}{% endif %}",
     "url": "{{ site.url }}{{ page.url }}"{% if layout == 'post' or layout == 'story' %},
     "headline": "{{ title }}",
     "description": "{{ summary or description or site.seo.fallbacks.article.description }}",
@@ -156,6 +156,9 @@
     "@context": "https://schema.org",
     "@type": [{% for type in site.business.types %}"{{ type }}"{% if not loop.last %}, {% endif %}{% endfor %}],
     "name": "{{ site.author }}",
+    "url": "{{ site.url }}",
+    "description": "{{ site.seo.defaults.description }}",
+    "image": "{{ site.seo.defaults.image }}",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "{{ site.locations.primary }}",
@@ -173,6 +176,42 @@
     ]
   }
   </script>
+
+  {% if title == 'Home' %}
+  <!-- Structured Data for Featured Articles on Homepage -->
+  {% for post in collections.featuredPosts.slice(0, 6) %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ post.data.title }}",
+    "description": "{{ post.data.summary or post.data.description or site.seo.fallbacks.article.description }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author }}"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "{{ site.author }}",
+      "url": "{{ site.url }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.assets.images.socialCard }}"
+      }
+    },
+    "datePublished": "{{ post.data.date | dateToISO }}",
+    "url": "{{ site.url }}{{ post.url }}",
+    {% if post.data.coverImage or post.data.icon %}
+    "image": "{{ post.data.coverImage or post.data.icon }}",
+    {% endif %}
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ post.url }}"
+    }
+  }
+  </script>
+  {% endfor %}
+  {% endif %}
 </head>
 <body class="{% if title != 'Home' and title != 'Making AI systems you can rely on' %}page-light-bg{% endif %}{% if pageBodyClass %} {{ pageBodyClass }}{% endif %}">
   {% include "partials/header.njk" %}
