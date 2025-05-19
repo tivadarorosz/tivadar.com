@@ -34,8 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       initTitleAnimation(wrapper);
     });
     
-    // Initialize location hero animation
-    initLocationHeroAnimation();
+    // Location page will be handled by the standard title animation function above
   }
 
   // Mobile menu toggle
@@ -74,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function initTitleAnimation(wrapper) {
     const title = wrapper.getAttribute('data-title');
     
-    // Special animation for pricing page
-    if (title === "Pricing") {
+    // Special animation for pricing page and cities page
+    if (title === "Pricing" || title === "On Location") {
       initPricingTitleAnimation(wrapper);
       return;
     }
@@ -241,21 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
   }
   
-  // Location hero animation (same as pricing)
-  function initLocationHeroAnimation() {
-    const locationWrapper = document.querySelector('.location-title-animation-wrapper');
-    if (locationWrapper) {
-      const staticTitle = locationWrapper.querySelector('.location-title-static');
-      
-      // Add class for CSS animation
-      staticTitle.classList.add('location-title-animation');
-      
-      // Trigger the animation after a brief delay
-      setTimeout(() => {
-        staticTitle.classList.add('animate');
-      }, 100);
-    }
-  }
   
   // Pricing button group functionality
   const pricingButtons = document.querySelectorAll('.pricing-button');

@@ -4,6 +4,37 @@
 
 @use '../variables' as *;
 
+// Cities-specific hero modifications (matching pricing page)
+.cities-page {
+  // Remove padding from main container, will use same pattern as page-hero
+  padding: 0;
+}
+
+// Cities-specific hero styles (exact same as pricing)
+body:has(.cities-page) .page-hero {
+  padding-top: clamp(4rem, 8vw, 7rem); // Same top padding as pricing page
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: clamp(5rem, 10vw, 9rem); // Same desktop padding as pricing
+  }
+}
+
+body:has(.cities-page) .page-hero-content {
+  padding-bottom: 5.5rem; // Same bottom padding as pricing page
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-bottom: 7rem;
+  }
+}
+
+body:has(.cities-page) .page-hero-title {
+  font-size: clamp(3.25rem, 6.5vw, 5rem); // Same title size as pricing page
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    font-size: clamp(2.5rem, 5vw, 3.75rem); // Same mobile size as pricing
+  }
+}
+
 // Cities page specific styles
 // Match fmty section's top spacing for upcoming-presence-section
 .upcoming-presence-section {

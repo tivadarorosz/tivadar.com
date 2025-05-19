@@ -1,16 +1,16 @@
 {% if title %}
-<section class="location-hero">
-  <div class="location-hero-content">
-    <h1 class="location-hero-title">
-      <span class="location-title-animation-wrapper" data-title="{{ title }}">
-        <span class="location-title-static">{{ title }}</span>
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1 class="page-hero-title">
+      <span class="title-animation-wrapper" data-title="{{ title }}">
+        <span class="title-static">{{ title }}</span>
       </span>
     </h1>
     {% if subtitle %}
-    <h2 class="location-hero-subtitle">{{ subtitle }}</h2>
+    <p class="page-hero-subtitle">{{ subtitle }}</p>
     {% endif %}
     {% if buttonText and buttonUrl %}
-    <div class="location-hero-button-container">
+    <div class="page-hero-button-container">
       <a href="{{ buttonUrl }}" class="btn{% if buttonInverted %} btn--inverted{% endif %}">{{ buttonText }}</a>
     </div>
     {% endif %}
