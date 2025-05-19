@@ -13,6 +13,7 @@
 // Cities-specific hero styles (exact same as pricing)
 body:has(.cities-page) .page-hero {
   padding-top: clamp(4rem, 8vw, 7rem); // Same top padding as pricing page
+  text-align: center; // Ensure hero is centered
   
   @media (min-width: $breakpoint-sm) {
     padding-top: clamp(5rem, 10vw, 9rem); // Same desktop padding as pricing
@@ -29,9 +30,66 @@ body:has(.cities-page) .page-hero-content {
 
 body:has(.cities-page) .page-hero-title {
   font-size: clamp(3.25rem, 6.5vw, 5rem); // Same title size as pricing page
+  text-align: center !important; // Force center alignment
   
   @media (max-width: $breakpoint-sm - 1px) {
     font-size: clamp(2.5rem, 5vw, 3.75rem); // Same mobile size as pricing
+  }
+  
+  // Ensure animation wrapper is centered
+  .title-animation-wrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  // Ensure static title is centered
+  .title-static {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// Cities-specific title animation (matching pricing)
+body:has(.cities-page) .pricing-title-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); // Smooth easing
+  
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  // Disable animation on mobile
+  @media (max-width: $breakpoint-sm - 1px) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// CSS fallback for when JavaScript is blocked or fails
+body:has(.cities-page) .title-static {
+  // Ensure visibility after 1 second even without JS
+  animation: fadeInCitiesTitle 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@keyframes fadeInCitiesTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
