@@ -55,11 +55,30 @@
     opacity: 0;
     position: relative;
     width: 100%;
+    transition: none; // Disable transitions initially
+    // Fallback animation if JS fails
+    animation: locationTitleFallback 3s forwards;
     
     // Show static title immediately if JavaScript is disabled
     .no-js & {
       opacity: 1;
+      animation: none;
     }
+    
+    // When JS adds the animation class, disable the fallback
+    &.location-title-animation {
+      animation: none;
+    }
+  }
+}
+
+// Fallback keyframes
+@keyframes locationTitleFallback {
+  0%, 80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
