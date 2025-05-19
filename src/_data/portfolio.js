@@ -9,6 +9,7 @@ module.exports = {
       title: "She Is Soft Glam Defined",
       tag: "Signature",
       date: "2024-05-19",
+      location: "London",
       link: "/stories/khrystyana-kazakova-signature-muse",
       cover: {
         image: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/cover.jpg",
@@ -119,6 +120,7 @@ module.exports = {
         title: "A slow burn wrapped in something soft.",
         tag: "Velvet Edge",
         date: "2025-01-05",
+        location: "London",
         link: "/stories/muse-ii",
         cover: {
           image: "https://cdn.tivadarorosz.com/portfolio/featured/grid1.webp",
@@ -228,6 +230,7 @@ module.exports = {
         title: "She lingers in thought but never in doubt.",
         tag: "Reverie",
         date: "2025-02-12",
+        location: "London",
         link: "/stories/muse-iii",
         cover: {
           image: "https://cdn.tivadarorosz.com/portfolio/featured/grid2.jpg",
@@ -337,6 +340,7 @@ module.exports = {
         title: "She never rushes—she peels back the moment.",
         tag: "Undone",
         date: "2025-03-01",
+        location: "London",
         link: "/stories/muse-iv",
         cover: {
           image: "https://cdn.tivadarorosz.com/portfolio/featured/grid3.jpg",
@@ -446,6 +450,7 @@ module.exports = {
         title: "The room doesn’t quiet. She does.",
         tag: "Still Power",
         date: "2025-03-10",
+        location: "London",
         link: "/stories/muse-v",
         cover: {
           image: "https://cdn.tivadarorosz.com/portfolio/featured/grid4.jpg",
@@ -559,6 +564,7 @@ module.exports = {
       title: "Daring begins where the rules end.",
       tag: "Guilded",
       date: "2024-12-12",
+      location: "London",
       link: "/stories/the-light-within",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/light-loves-her.jpg",
@@ -668,6 +674,7 @@ module.exports = {
       title: "The gaze is yours, but she holds the narrative.",
       tag: "Possession",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/muse-vi",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/she-holds-the-narrative.jpg",
@@ -777,6 +784,7 @@ module.exports = {
       title: "The Light Daring begins where the rules end.",
       tag: "After Midnight Permission",
       date: "2024-12-12",
+      location: "London",
       link: "/stories/after-midnight",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/permission-after-midnight.jpg",
@@ -886,6 +894,7 @@ module.exports = {
       title: "She doesn’t pose. She claims the frame.",
       tag: "Obsession",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/obsession",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/she-claims-the-frame.jpg",
@@ -995,6 +1004,7 @@ module.exports = {
       title: "Hunger. It lingers when she holds something back.",
       tag: "Afterglow",
       date: "2024-12-12",
+      location: "London",
       link: "/stories/afterglow",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/afterglow.jpg",
@@ -1104,6 +1114,7 @@ module.exports = {
       title: "She doesn’t strike. She smoulders.",
       tag: "Low Flame",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/low-flame",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/low-flame.jpg",
@@ -1213,6 +1224,7 @@ module.exports = {
       title: "When she moves, everything follows.",
       tag: "Gold Rush",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/gold-rush",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/gold-rush.jpg",
@@ -1322,6 +1334,7 @@ module.exports = {
       title: "The gaze is yours, but she holds the narrative.",
       tag: "Reverie",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/the-gaze",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/the-gaze-is-yours.jpg",
@@ -1431,6 +1444,7 @@ module.exports = {
       title: "She doesn’t ask for attention. She edits it.",
       tag: "Control",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/control",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/she-controls-attention.jpg",
@@ -1540,6 +1554,7 @@ module.exports = {
       title: "She bends the rules. And the room.",
       tag: "Power Play",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/power-play",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/she-bends-the-rules.jpg",
@@ -1649,6 +1664,7 @@ module.exports = {
       title: "She doesn’t rise from the water. She owns it.",
       tag: "Siren",
       date: "2025-01-05",
+      location: "London",
       link: "/stories/siren",
       cover: {
         image: "https://cdn.tivadarorosz.com/portfolio/main/siren-rise-from-water.jpg",

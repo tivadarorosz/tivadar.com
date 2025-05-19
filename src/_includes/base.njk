@@ -122,20 +122,55 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "{% if layout == 'post' %}Article{% else %}WebSite{% endif %}",
+    "@type": "{% if layout == 'post' or layout == 'story' %}Article{% else %}WebSite{% endif %}",
     "name": "{{ title or site.title or 'Tivadar — Luxury Photography & Design' }}",
-    "url": "https://www.tivadarorosz.com{{ page.url }}"{% if layout == 'post' %},
+    "url": "{{ site.url }}{{ page.url }}"{% if layout == 'post' or layout == 'story' %},
     "headline": "{{ title }}",
+    "description": "{{ summary or description or site.seo.fallbacks.article.description }}",
     "datePublished": "{{ page.date | dateToISO }}",
     "author": {
       "@type": "Person",
-      "name": "Tivadar Orosz"
-    }{% endif %},
+      "name": "{{ site.author }}"
+    }{% if layout == 'story' and location %},
+    "contentLocation": {
+      "@type": "Place",
+      "name": "{{ location }}"
+    }{% endif %}{% if layout == 'story' and cover.image %},
+    "image": "{{ cover.image }}"{% elif coverImage %},
+    "image": "{{ coverImage }}"{% endif %}{% endif %},
     "publisher": {
       "@type": "Person",
-      "name": "Tivadar Orosz",
-      "url": "https://www.tivadarorosz.com"
+      "name": "{{ site.author }}",
+      "url": "{{ site.url }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.assets.images.socialCard }}"
+      }
     }
+  }
+  </script>
+
+  <!-- Additional Business Schema for all pages -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": {{ site.business.types | jsonify | safe }},
+    "name": "{{ site.author }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ site.locations.primary }}",
+      "addressCountry": "{{ site.locations.country }}"
+    },
+    "sameAs": [
+      {%- for social, url in site.social %}
+      "{{ url }}"{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ],
+    "areaServed": [
+      {%- for location in site.business.areaServed %}
+      { "@type": "Place", "name": "{{ location }}" }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ]
   }
   </script>
 </head>

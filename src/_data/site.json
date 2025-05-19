@@ -1,10 +1,20 @@
 {
-  "title": "Tivadar",
-  "description": "Escort and boudoir photography portfolio of Tivadar Orosz in London.",
+  // Main site identity - used in page titles, meta tags, and JSON-LD Schema
+  "title": "Tivadar Orosz",
+  
+  // Default meta description for SEO - shows in search results when page doesn't have specific description
+  "description": "Luxury escort and boudoir photography in London and Dubai, by Tivadar Orosz.",
+  
+  // Full site URL - used for canonical URLs, sitemap, and social media cards
   "url": "https://www.tivadarorosz.com",
+  
+  // Author name - used in JSON-LD Schema, RSS feed, and copyright notices
   "author": "Tivadar Orosz",
+  
+  // Copyright text - displayed in footers
   "copyright": "© 2025 Tivadar Orosz. All rights reserved.",
   
+  // Social media links - used in footer, JSON-LD sameAs property, and contact sections
   "social": {
     "twitter": "https://x.com/tivadarorosz",
     "instagram": "https://instagram.com/tivadarorosz",
@@ -12,49 +22,74 @@
     "linkedin": "https://linkedin.com/in/tivadarorosz"
   },
   
+  // SEO configuration - centralized metadata for search engines and social media
   "seo": {
+    // Default values used when specific pages don't override them
     "defaults": {
-      "title": "Tivadar — Boudoir Photographer",
-      "description": "Escort and boudoir photography portfolio of Tivadar Orosz in London.",
-      "keywords": "escort photography, boudoir photographer, luxury branding, london photographer, intimate portraits",
+      // Page title for browser tabs and search results
+      "title": "Tivadar Orosz — Escort & Boudoir Photographer",
+      // Meta description for search engine results pages (SERP)
+      "description": "Luxury escort and boudoir photography for high-end clients in London, Dubai, and worldwide. Discreet, elegant, unforgettable.",
+      // Keywords for SEO (note: less important for modern SEO but still useful)
+      "keywords": "escort photography, boudoir photographer, sw friendly, luxury escort branding, high-end portraits, london boudoir, dubai escort photographer, sex worker photography, discreet photography",
+      // Default image for social media cards (Twitter, Facebook, LinkedIn)
       "image": "https://tivadarorosz.com/images/twitter-card.jpg",
+      // Schema.org type for regular pages
       "type": "website"
     },
     
+    // Fallback descriptions when specific content types don't have descriptions
     "fallbacks": {
       "article": {
-        "description": "Latest insights on escort photography and luxury branding."
+        "description": "Latest insights on escort photography, privacy, and luxury branding."
       },
       "story": {
-        "description": "View this exclusive story from Tivadar's portfolio."
+        "description": "View this exclusive story from Tivadar Orosz's escort and boudoir portfolio."
       }
     },
     
+    // Facebook/LinkedIn OpenGraph protocol settings
     "openGraph": {
-      "siteName": "Tivadar",
-      "locale": "en_US",
+      // Site name displayed in social shares
+      "siteName": "Tivadar Orosz",
+      // Language/region setting for content
+      "locale": "en_GB",
+      // Default social media image dimensions and alt text
       "image": {
         "width": "1200",
         "height": "630",
-        "alt": "Tivadar - Luxury Escort & Boudoir Photographer"
+        "alt": "Tivadar Orosz - Luxury Escort & Boudoir Photographer"
       }
     },
     
+    // Twitter/X specific metadata
     "twitter": {
+      // Card type - summary_large_image shows big preview image
       "card": "summary_large_image",
+      // Twitter handle for the website
       "site": "@tivadarorosz",
+      // Content creator handle (usually same as site)
       "creator": "@tivadarorosz"
     }
   },
   
+  // Asset URLs - centralized CDN and resource paths
   "assets": {
+    // Base CDN URL for all static assets
     "cdn": "https://cdn.tivadarorosz.com",
+    
+    // Image paths used across the site
     "images": {
+      // Social media preview image
       "socialCard": "https://tivadarorosz.com/images/twitter-card.jpg",
+      // Browser favicon icons
       "favicon32": "https://cdn.tivadarorosz.com/icons/favicon-32x32.png",
       "favicon16": "https://cdn.tivadarorosz.com/icons/favicon-16x16.png",
+      // Apple device home screen icon
       "appleTouchIcon": "https://cdn.tivadarorosz.com/icons/apple-touch-icon.png"
     },
+    
+    // Web font files - used in CSS @font-face declarations
     "fonts": {
       "styreneA": {
         "bold": {
@@ -73,20 +108,37 @@
     }
   },
   
+  // Analytics configuration
   "analytics": {
+    // Fathom Analytics - privacy-focused analytics service
     "fathom": {
+      // Site ID for tracking
       "siteId": "VNVXUDQT",
+      // Script URL for analytics code
       "script": "https://cdn.usefathom.com/script.js"
     }
   },
   
+  // Location information - used in footer and JSON-LD Schema
   "locations": {
+    // Primary business location
     "primary": "London",
+    // Country for address in JSON-LD Schema
+    "country": "United Kingdom",
+    // Travel schedule - displayed in footer
     "availability": [
       {
         "city": "Dubai",
         "dates": "June 4-11, 2025"
       }
     ]
+  },
+  
+  // Business information for JSON-LD structured data - helps Google understand your business
+  "business": {
+    // Schema.org types - tells search engines what kind of business this is
+    "types": ["Photographer", "LocalBusiness"],
+    // Service areas - locations where services are available (used in JSON-LD)
+    "areaServed": ["London", "Dubai", "Budapest", "Berlin", "Europe"]
   }
 }
