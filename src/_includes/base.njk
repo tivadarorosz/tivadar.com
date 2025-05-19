@@ -154,7 +154,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": {{ site.business.types | jsonify | safe }},
+    "@type": [{% for type in site.business.types %}"{{ type }}"{% if not loop.last %}, {% endif %}{% endfor %}],
     "name": "{{ site.author }}",
     "address": {
       "@type": "PostalAddress",
