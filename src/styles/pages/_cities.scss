@@ -1,0 +1,25 @@
+// ==============================================
+// CITIES PAGE STYLES
+// ==============================================
+
+@use '../variables' as *;
+
+// Cities page specific styles
+// Match fmty section's top spacing for upcoming-presence-section
+.upcoming-presence-section {
+  margin-top: var(--spacing-lg);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin-top: var(--spacing-xl);
+  }
+}
+
+// Page separator (still needed for the separator between sections)
+.page-separator {
+  height: 1px;
+  background-color: var(--color-black);
+  opacity: 0.9;
+  width: 100%;
+  margin: 0;
+  margin-top: var(--spacing-lg);
+}

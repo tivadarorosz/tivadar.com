@@ -74,6 +74,26 @@ module.exports = function(eleventyConfig) {
     }
   });
   
+  // Format city dates with short month (e.g., "Sept 5-10, 2025")
+  eleventyConfig.addFilter("formatCityDates", function(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    
+    const startMonth = start.toLocaleDateString('en-US', { month: 'short' });
+    const startDay = start.getDate();
+    const endDay = end.getDate();
+    const year = end.getFullYear();
+    
+    // If same month, format as "Sept 5-10, 2025"
+    if (start.getMonth() === end.getMonth()) {
+      return `${startMonth} ${startDay}-${endDay}, ${year}`;
+    } else {
+      // If different months, format as "Sept 29 - Oct 4, 2025"
+      const endMonth = end.toLocaleDateString('en-US', { month: 'short' });
+      return `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${year}`;
+    }
+  });
+  
   // Add collections
   eleventyConfig.addCollection("featuredPosts", function(collectionApi) {
     // Get all posts with featured: true, sorted by date (newest first)

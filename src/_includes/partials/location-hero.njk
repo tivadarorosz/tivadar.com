@@ -1,0 +1,19 @@
+{% if title %}
+<section class="location-hero">
+  <div class="location-hero-content">
+    <h1 class="location-hero-title">
+      <span class="location-title-animation-wrapper" data-title="{{ title }}">
+        <span class="location-title-static">{{ title }}</span>
+      </span>
+    </h1>
+    {% if subtitle %}
+    <h2 class="location-hero-subtitle">{{ subtitle }}</h2>
+    {% endif %}
+    {% if buttonText and buttonUrl %}
+    <div class="location-hero-button-container">
+      <a href="{{ buttonUrl }}" class="btn{% if buttonInverted %} btn--inverted{% endif %}">{{ buttonText }}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

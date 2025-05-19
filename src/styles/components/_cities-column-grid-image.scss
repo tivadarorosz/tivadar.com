@@ -1,0 +1,101 @@
+// ==============================================
+// CITIES-SPECIFIC COLUMN GRID IMAGE COMPONENT
+// ==============================================
+// This is a cities-page-only variant of the column-grid-image component
+
+@use '../variables' as *;
+@use 'column-grid-image' as *;
+
+// Extend from the base component
+.cities-column-grid-image-section {
+  @extend .column-grid-image-section;
+  
+  // Cities-specific overrides can go here
+}
+
+.cities-column-grid-image {
+  @extend .column-grid-image;
+  
+  // Style for city images
+  .column-grid-image-city {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 22px;
+    margin-bottom: 1rem;
+    
+    @media (min-width: $breakpoint-sm) {
+      height: 250px;
+    }
+  }
+  
+  // Style for city dates and cities
+  .column-grid-image-grid {
+    .column-grid-image-area {
+      .column-grid-image-date {
+        font-family: var(--font-primary);
+        font-weight: var(--font-weight-medium);
+        font-size: 0.875rem;
+        color: #141413;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 0 0 -0.5rem 0;  // Increased negative margin to cut gap in half
+        line-height: 1;
+        display: block;
+      }
+      
+      h4 {
+        margin: 0;
+        line-height: 1.1;  // Tighter line height
+      }
+      
+      // Title wrapper to contain city name and tag
+      .column-grid-image-title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        
+        h4 {
+          margin: 0;
+          line-height: 1.1;
+        }
+      }
+      
+      // Tag styling - matches blog post tag style
+      .column-grid-image-tag {
+        font-family: var(--font-primary);
+        font-size: var(--font-size-small);
+        font-weight: var(--font-weight-normal);
+        text-transform: capitalize;
+        padding: 0.125rem 0.75rem;
+        background-color: transparent;
+        border: 1px solid #141413;
+        border-radius: var(--border-radius-lg);
+        white-space: nowrap;
+      }
+    }
+  }
+  
+  // Add more spacing between rows in the grid
+  .column-grid-image-grid {
+    .column-grid-image-area {
+      // Add margin-top to 3rd and 4th items (second row)
+      &:nth-child(n+3) {
+        margin-top: 1.5rem;
+        
+        @media (min-width: $breakpoint-sm) {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// Example: You can add cities-specific styling here
+// .cities-column-grid-image {
+//   .column-grid-image-title {
+//     h3 {
+//       color: var(--color-primary);
+//     }
+//   }
+// }

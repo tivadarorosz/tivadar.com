@@ -1,0 +1,76 @@
+---
+layout: base
+title: On Location
+subtitle: Some cities ask for presence. Others insist on it. These are the ones I’ve said yes to.
+buttonText: Request a Session
+buttonUrl: /contact
+buttonInverted: false
+---
+
+{% include "partials/location-hero.njk" %}
+
+{% set upcomingPresenceTitle = "Upcoming Presence" %}
+{% set upcomingPresenceIntro = {
+  title: "Some cities ask for presence. Others insist on it. These are the ones I’ve said yes to—deliberately, without compromise. Nothing here is promised twice. If a city calls to you, don’t wait for a second chance. It rarely returns.",
+  content: ""
+} %}
+{% set cityDescriptions = [
+  "Dubai draws clarity from heat. I’ll be accepting a few sessions in private spaces shaped by light and quiet intention. Think hotel views, early evenings, and presence that doesn’t ask permission.",
+  "Where most boudoir photography leans into softness and romantic tones, I take a different route. I don't create visuals that whisper vulnerability—I build imagery that commands admiration. It's luxury without compromise, confidence without apology. This is photography as visual influence—crafted to convert attention into impact.",
+  "Consider how luxury yacht ads don't just showcase the vessel—they sell a lifestyle. My work operates the same way. You're not simply seen in my frames—you become the presence. From light against silk drapes to the gleam of designer heels, every detail is deliberate. Every backdrop is a stage for dominance.",
+  "I come from a background where strategy and design intersect. My career began in high-level tech and luxury ventures—but art was always the destination. Now, I shoot with the precision of a strategist and the instinct of a creative director. The result? Imagery that's visually magnetic and commercially intelligent."
+] %}
+
+{# Create the areas array with upcoming city names as titles and images #}
+{% set sortedCities = cities | sort(false, false, 'dates.start') %}
+{% set upcomingPresenceAreas = [] %}
+{% for city in sortedCities %}
+  {% if loop.index0 < 4 %}
+    {% set upcomingPresenceAreas = (upcomingPresenceAreas.push({
+      title: city.city,
+      content: city.description,
+      image: city.image,
+      imageAlt: city.imageAlt,
+      dates: city.dates,
+      tag: city.tag
+    }), upcomingPresenceAreas) %}
+  {% endif %}
+{% endfor %}
+{% set title = upcomingPresenceTitle %}
+{% set introArea = upcomingPresenceIntro %}
+{% set areas = upcomingPresenceAreas %}
+{% set customClass = "upcoming-presence-section" %}
+{% include "components/cities-column-grid-image.njk" %}
+
+{% set fmtyTitle = "Private Commissions" %}
+{% set fmtyIntro = {
+  content: "Some clients don’t wait for cities to be listed. They create the moment instead. If your location isn’t above, it’s not off the table. Fly Me To You commissions are considered for those who move with intent, not convenience. If your proposal is clear and aligned, I’ll make the trip."
+} %}
+{% set fmtyAreas = [
+  {
+    title: "Anywhere Else",
+    content: "Zurich, Vienna, Oslo, Lisbon. These are not listed, but I’ve been there before and I return when the reason is right. If your city carries the right energy, you don’t need a tour. You need a reason for me to arrive."
+  },
+  {
+    title: "Right Timing",
+    content: "I don’t move on impulse. I move with purpose. If the window aligns and your request is clear, a last-minute session may happen. Time moves differently. No guarantees. Only moments taken."
+  },
+  {
+    title: "Private Always",
+    content: "Privacy is not an extra. It’s how this works. I don’t share travel, I don’t announce bookings, and nothing leaves our frame unless agreed. No noise, no performance. Just presence."
+  },
+  {
+    title: "Intent Required",
+    content: "This isn’t about where. It’s about why. If you want a private commission, be direct. The city is background. What matters is your clarity, your vision, and your reason. If it’s right, I’ll respond. If not, I won’t."
+  }
+] %}
+{% set title = fmtyTitle %}
+{% set introArea = fmtyIntro %}
+{% set areas = fmtyAreas %}
+{% set customClass = "fmty-section" %}
+{% include "components/column-grid.njk" %}
+
+{% set title = "Not sure what fits? Let's find fit together." %}
+{% set buttonText = "Read More" %}
+{% set buttonUrl = "/portfolio" %}
+{% include "components/bottom-cta-single-inverted.njk" %}

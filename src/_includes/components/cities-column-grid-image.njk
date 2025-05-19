@@ -1,0 +1,39 @@
+{# Cities-specific Column Grid with Image Component #}
+{# This is a cities-specific variant of the column-grid-image component #}
+<div class="page-width">
+  <div class="page-separator"></div>
+</div>
+<section class="column-grid-image-section cities-column-grid-image{% if customClass %} {{ customClass }}{% endif %} page-section">
+  <div class="column-grid-image page-width">
+    <div class="column-grid-image-title">
+      <h3>{{ title | default("Cities We Serve") }}</h3>
+    </div>
+    <div class="column-grid-image-areas">
+      {% if introArea %}
+      <div class="column-grid-image-area personal-purpose">
+        <h4>{{ introArea.title }}</h4>
+        <p>{{ introArea.content }}</p>
+      </div>
+      {% endif %}
+      <div class="column-grid-image-grid">
+        {% for area in areas %}
+        <div class="column-grid-image-area">
+          {% if area.image %}
+          <img src="{{ area.image }}" alt="{{ area.imageAlt or area.title }}" class="column-grid-image-city">
+          {% endif %}
+          {% if area.dates %}
+          <div class="column-grid-image-date">{{ area.dates.start | formatCityDates(area.dates.end) }}</div>
+          {% endif %}
+          <div class="column-grid-image-title-wrapper">
+            <h4>{{ area.title }}</h4>
+            {% if area.tag and area.tag != "" %}
+            <span class="column-grid-image-tag">{{ area.tag }}</span>
+            {% endif %}
+          </div>
+          <p>{{ area.content }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

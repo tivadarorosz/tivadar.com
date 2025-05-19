@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
     titleWrappers.forEach(wrapper => {
       initTitleAnimation(wrapper);
     });
+    
+    // Initialize location hero animation
+    initLocationHeroAnimation();
   }
 
   // Mobile menu toggle
@@ -236,6 +239,22 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
       staticTitle.classList.add('animate');
     }, 100);
+  }
+  
+  // Location hero animation
+  function initLocationHeroAnimation() {
+    const locationWrapper = document.querySelector('.location-title-animation-wrapper');
+    if (locationWrapper) {
+      const staticTitle = locationWrapper.querySelector('.location-title-static');
+      
+      // Add class for CSS animation
+      staticTitle.classList.add('location-title-animation');
+      
+      // Trigger the animation after a brief delay
+      setTimeout(() => {
+        staticTitle.classList.add('animate');
+      }, 100);
+    }
   }
   
   // Pricing button group functionality
