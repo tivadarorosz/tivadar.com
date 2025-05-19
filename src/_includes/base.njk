@@ -123,9 +123,9 @@
   {
     "@context": "https://schema.org",
     "@type": "{% if layout == 'post' or layout == 'story' %}Article{% else %}WebSite{% endif %}",
-    {% if title == 'Home' and layout != 'post' and layout != 'story' %}"@id": "{{ site.url }}/#website",{% endif %}
+    {% if layout != 'post' and layout != 'story' %}"@id": "{{ site.url }}/#website",{% endif %}
     "name": "{% if layout == 'post' or layout == 'story' %}{{ title }}{% else %}{{ site.seo.defaults.schemaName }}{% endif %}",
-    "url": "{{ site.url }}{{ page.url }}"{% if layout == 'post' or layout == 'story' %},
+    "url": "{% if layout == 'post' or layout == 'story' %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}"{% if layout == 'post' or layout == 'story' %},
     "headline": "{{ title }}",
     "description": "{{ summary or description or site.seo.fallbacks.article.description }}",
     "datePublished": "{{ page.date | dateToISO }}",
@@ -213,6 +213,36 @@
   }
   </script>
   {% endfor %}
+  {% endif %}
+
+  {% if layout == 'post' or page.url == '/insights/' or layout == 'story' or page.url == '/portfolio/' %}
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ site.url }}/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{% if layout == 'post' or page.url == '/insights/' %}Insights{% else %}Portfolio{% endif %}",
+        "item": "{% if layout == 'post' or page.url == '/insights/' %}{{ site.url }}/insights/{% else %}{{ site.url }}/portfolio/{% endif %}"
+      }{% if layout == 'post' or layout == 'story' %},
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{ title }}",
+        "item": "{{ site.url }}{{ page.url }}"
+      }{% endif %}
+    ]
+  }
+  </script>
   {% endif %}
 </head>
 <body class="{% if title != 'Home' and title != 'Making AI systems you can rely on' %}page-light-bg{% endif %}{% if pageBodyClass %} {{ pageBodyClass }}{% endif %}">
