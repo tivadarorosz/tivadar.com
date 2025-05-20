@@ -75,14 +75,14 @@
 .form-input.is-invalid,
 .form-textarea.is-invalid,
 .form-select.is-invalid {
-  border-color: #dc3545;
+  border-color: var(--color-error);
 }
 
 .invalid-feedback {
   display: block;
   font-family: var(--font-primary);
   font-size: var(--font-size-small);
-  color: #dc3545;
+  color: var(--color-error);
   margin-top: 4px;
 }
 

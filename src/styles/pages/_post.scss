@@ -37,7 +37,7 @@
   text-transform: capitalize;
   padding: 0.125rem 0.75rem;
   background-color: transparent;
-  border: 1px solid #141413;
+  border: 1px solid var(--color-black);
   border-radius: var(--tag-radius);
 }
 
@@ -146,6 +146,7 @@
   a {
     color: var(--color-link);
     text-decoration: underline;
+    transition: var(--transition-standard);
     
     &:hover {
       color: var(--color-link-hover);
@@ -164,21 +165,21 @@
   blockquote {
     margin: var(--spacing-lg) 0;
     padding-left: var(--spacing-md);
-    border-left: 4px solid var(--color-grey-300);
+    border-left: 4px solid var(--color-border-featured); // Using border color from tokens
     font-style: italic;
   }
   
   code {
-    background-color: #f1f1f1; // Hardcoded value since variable seems missing
+    background-color: var(--color-code-bg); // Using code background from tokens
     padding: 0.2rem 0.4rem;
-    border-radius: var(--radius-sm); // Updated to use standard radius
+    border-radius: var(--radius-sm); // Using standard radius
     font-size: 0.9em;
   }
   
   pre {
-    background-color: #f1f1f1; // Hardcoded value since variable seems missing
+    background-color: var(--color-code-bg); // Using code background from tokens
     padding: var(--spacing-md);
-    border-radius: var(--radius-md); // Updated to use standard radius
+    border-radius: var(--radius-md); // Using standard radius
     overflow-x: auto;
     margin-bottom: var(--spacing-md);
     
@@ -193,7 +194,7 @@
 .post-separator-line {
   width: calc(100% + 200px); // Same width as feature image
   height: 1px;
-  background-color: #141413;
+  background-color: var(--color-black);
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
   margin-left: -100px;
