@@ -6,12 +6,15 @@ Welcome to the documentation for the Tivadar Orosz website. This documentation p
 
 ### Core Systems
 
-1. [**Color System**](./colors/index.md)
+1. [**Design Tokens**](./tokens/index.md)
+   - [Token Reference](./tokens/tokens-reference.md) - Complete reference of all design tokens
+   
+2. [**Color System**](./colors/index.md)
    - [Color System Overview](./colors/color-system.md)
    - [Current Color Catalog](./colors/current-color-catalog.md)
    - [Color Usage Guide](./colors/color-usage-guide.md)
 
-2. [**Typography**](./typography/index.md)
+3. [**Typography**](./typography/index.md)
    - [Typography System](./typography/typography-system.md)
    - [Current Typography Catalog](./typography/current-typography-catalog.md)
    - [Typography System Updates](./typography/typography-updates.md)
@@ -19,7 +22,7 @@ Welcome to the documentation for the Tivadar Orosz website. This documentation p
    - [Data Attribute Migration](./typography/data-attribute-migration.md)
    - [Font Weight System](./typography/font-weight-system.md)
 
-3. [**Spacing & Layout**](./spacing/index.md)
+4. [**Spacing & Layout**](./spacing/index.md)
    - [Border Radius System](./spacing/border-radius-system.md)
    - Spacing System (Coming Soon)
    - Layout Principles (Coming Soon)
@@ -47,7 +50,10 @@ Welcome to the documentation for the Tivadar Orosz website. This documentation p
 
 ## Recent Updates
 
-- **May 2025**: Standardized color system, removing all hardcoded color values
+- **May 2025**: Created comprehensive token reference documentation
+- **May 2025**: Added fluid typography system with intentional scaling
+- **May 2025**: Added `--radius-pill` token for pill-shaped elements
+- **May 2025**: Standardized color system with clear functional/theme distinction
 - **May 2025**: Standardized border radius system
 - **May 2025**: Updated typography system
 - **May 2025**: Renamed typography variable `--font-size-body-secondary` to `--font-size-body-serif` for clarity

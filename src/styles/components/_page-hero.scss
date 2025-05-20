@@ -49,10 +49,18 @@
 
 // Large page hero title variant (used for pricing pages)
 .page-hero--large .page-hero-title {
-  font-size: clamp(2.75rem, 6vw, 5rem); // Fluid font size for large hero titles (44px to 80px)
+  // Apply the fluid-hero-title class instead of inline clamp
+  &.fluid-hero-title {
+    // Class will be applied in HTML
+  }
   
-  @media (max-width: $breakpoint-sm - 1px) {
-    font-size: clamp(2.5rem, 5vw, 3.75rem); // Fluid font size for mobile (40px to 60px)
+  // For backward compatibility
+  &:not(.fluid-hero-title) {
+    font-size: clamp(2.75rem, 6vw, 5rem);
+    
+    @media (max-width: $breakpoint-sm - 1px) {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+    }
   }
 }
 

@@ -35,14 +35,27 @@
 .pricing-cta-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-h2);
   color: var(--color-black);
   margin: 0 0 2rem 0;
   line-height: var(--line-height-subheading);
   
-  // Large title variant for homepage & inverted CTAs
-  &--large {
-    font-size: var(--font-size-h1);
+  // Default font size (non-fluid)
+  font-size: var(--font-size-h2);
+  
+  // When fluid classes are applied, they will override the font size
+  &.fluid-cta-title, &.fluid-h2 {
+    // Font size will be set by the utility class
+  }
+}
+
+// Large variant (non-fluid)
+.bottom-cta-title--large,
+.pricing-cta-title--large {
+  font-size: var(--font-size-h1) !important;
+  
+  // When fluid classes are applied, they will override the font size
+  &.fluid-cta-title, &.fluid-h1 {
+    // Font size will be set by the utility class
   }
 }
 
@@ -50,10 +63,17 @@
 .cta-title {
   font-family: var(--font-primary) !important;
   font-weight: var(--font-weight-medium) !important;
-  font-size: var(--font-size-h1) !important;
   color: var(--color-black) !important;
   margin: 0 0 2rem !important;
-  line-height: var(--line-height-subheading);
+  line-height: var(--line-height-subheading) !important;
+  
+  // Default size (non-fluid)
+  font-size: var(--font-size-h1) !important;
+  
+  // When fluid classes are applied, they will override the font size
+  &.fluid-cta-title, &.fluid-h1 {
+    // !important not needed here as the utility class will have higher specificity
+  }
 }
 
 // Container for double button version

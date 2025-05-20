@@ -1,0 +1,72 @@
+// ==============================================
+// FLUID TYPOGRAPHY UTILITIES
+// ==============================================
+// Fluid typography using clamp() to smoothly scale between viewport sizes
+// These should be applied to specific components only, not globally
+
+// Fluid heading classes based on our typography scale
+// Each class creates a smooth transition between the mobile and desktop size
+// defined in our typography tokens
+
+// Fluid H1: Scales from 2.25rem (36px) at mobile to 3.5rem (56px) at desktop
+.fluid-h1 {
+  font-size: clamp(
+    var(--font-size-h1), // 2.25rem minimum (mobile)
+    calc(1.5rem + 2.5vw), // Fluid scaling based on viewport width
+    3.5rem // Desktop size maximum
+  );
+  line-height: var(--line-height-heading);
+}
+
+// Fluid H2: Scales from 1.875rem (30px) at mobile to 2.5rem (40px) at desktop
+.fluid-h2 {
+  font-size: clamp(
+    var(--font-size-h2), // 1.875rem minimum (mobile)
+    calc(1.5rem + 1.25vw), // Fluid scaling based on viewport width
+    2.5rem // Desktop size maximum
+  );
+  line-height: var(--line-height-heading);
+}
+
+// Fluid H3: Scales from 1.5rem (24px) at mobile to 2rem (32px) at desktop
+.fluid-h3 {
+  font-size: clamp(
+    var(--font-size-h3), // 1.5rem minimum (mobile)
+    calc(1.25rem + 0.9375vw), // Fluid scaling based on viewport width
+    2rem // Desktop size maximum
+  );
+  line-height: var(--line-height-heading);
+}
+
+// Hero title - Large variant for page heroes with emphasis
+// Scales from 2.5rem (40px) at small screens to 4.5rem (72px) at large screens
+.fluid-hero-title {
+  font-size: clamp(
+    2.5rem, // 40px minimum
+    calc(1.5rem + 3.75vw), // Fluid scaling formula
+    4.5rem // 72px maximum
+  );
+  line-height: var(--line-height-heading);
+}
+
+// CTA title - For call to action sections
+// Scales from 2.25rem (36px) at small screens to 3.25rem (52px) at large screens
+.fluid-cta-title {
+  font-size: clamp(
+    2.25rem, // 36px minimum
+    calc(1.5rem + 2.25vw), // Fluid scaling formula
+    3.25rem // 52px maximum
+  );
+  line-height: var(--line-height-subheading);
+}
+
+// Lead paragraph - For intro text
+// Scales from 1.25rem (20px) at small screens to 1.5rem (24px) at large screens
+.fluid-lead {
+  font-size: clamp(
+    var(--font-size-lead), // 1.25rem minimum (mobile) 
+    calc(1.125rem + 0.5vw), // Fluid scaling
+    1.5rem // 24px maximum (desktop)
+  );
+  line-height: var(--line-height-tight);
+}

@@ -30,6 +30,68 @@
 | `--font-size-lead` | 1.5rem | 24px | Lead paragraphs |
 | `--font-size-small` | 0.875rem | 14px | Small text, labels - unchanged |
 
+## Fluid Typography
+
+Fluid typography allows text to scale smoothly between minimum and maximum sizes based on the viewport width, rather than jumping between fixed sizes at breakpoints. This creates a more harmonious visual experience across different device sizes.
+
+### Implementation Using CSS Clamp
+
+The `clamp()` function is used to create fluid typography. The syntax is:
+
+```scss
+clamp(minimum-value, preferred-value, maximum-value)
+```
+
+Where:
+- **minimum-value**: The smallest the font will ever be (typically mobile size)
+- **preferred-value**: A viewport-relative calculation (with vw units)
+- **maximum-value**: The largest the font will ever be (typically desktop size)
+
+### Example: Hero Text
+
+The hero text uses fluid typography to scale smoothly from 32px on mobile to 62px on desktop:
+
+```scss
+.hero-text {
+  font-size: clamp(2rem, 1.3333rem + 3.3333vw, 3.875rem); // Fluid font size (32px to 62px)
+  // Other properties...
+}
+```
+
+This approach:
+- Sets minimum font size of 2rem (32px)
+- Scales fluidly using viewport width
+- Caps at maximum of 3.875rem (62px)
+
+### When to Use Fluid Typography
+
+Use fluid typography for:
+
+1. **Hero elements** and main headings
+2. **Key UI components** that need to maintain proportions across different viewports
+3. **Section headers** that should scale naturally with the layout
+4. **Featured elements** where precise size control enhances the design
+
+For standard text and UI components, the mobile/desktop breakpoint approach is typically sufficient.
+
+### Fluid Spacing Example
+
+The fluid approach is also applied to spacing, such as the side padding:
+
+```scss
+@media (min-width: 768px) {
+  :root {
+    --side-padding: clamp(
+      40px, /* minimum value */
+      calc(40px + (180 - 40) * ((100vw - 768px) / (1440 - 768))), /* fluid scaling formula */
+      120px /* maximum value */
+    );
+  }
+}
+```
+
+This creates a responsive padding that smoothly scales between 40px and 120px based on the viewport width.
+
 ## Legacy Font Variables (Maintained for Backward Compatibility)
 
 | Variable Name | Value | Description |
@@ -72,9 +134,22 @@ The system includes a comprehensive set of font weights to cover all design need
 - `--font-weight-bold`: Primary call-to-action elements and major headings
 - `--font-weight-black`: Special typographic treatments and maximum emphasis
 
+### Line Heights
+
+The typography system includes line height variables optimized for different types of content:
+
+```scss
+--line-height-heading: 1.1;    // For H1-H3 where tight leading enhances visual impact
+--line-height-subheading: 1.2;  // For H4-H5 or hero subtitles with slightly more open spacing
+--line-height-body: 1.6;        // For long-form content (paragraphs, post bodies)
+--line-height-tight: 1.4;       // For shorter paragraphs or intro blurbs
+--line-height-loose: 1.75;      // For footer, labels, or small body text needing more openness
+--line-height-tag: 1.2;         // For tags, metadata, dates and other small text elements
+```
+
 ## Implementation
 
-The new typography scale is implement in the `_tokens.scss` file with mobile-first variables and desktop overrides using media queries. The complete implementation looks like this:
+The new typography scale is implemented in the `_tokens.scss` file with mobile-first variables and desktop overrides using media queries. The complete implementation looks like this:
 
 ```scss
 // Mobile-first (default)
@@ -104,3 +179,12 @@ The new typography scale is implement in the `_tokens.scss` file with mobile-fir
   }
 }
 ```
+
+## Best Practices
+
+1. **Use semantic variables**: Choose typography variables based on their semantic purpose (e.g., `--font-size-h1` for main headings)
+2. **Maintain hierarchy**: Ensure proper visual hierarchy by following the established type scale
+3. **Consider fluid typography** for hero elements and key components
+4. **Test across devices**: Verify readability and visual harmony across all viewport sizes
+5. **Use appropriate line heights**: Match line height to content type and reading context
+6. **Apply consistent font weights**: Follow weight guidelines to maintain consistent emphasis across the site

@@ -73,9 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
   function initTitleAnimation(wrapper) {
     const title = wrapper.getAttribute('data-title');
     
-    // Special animation for pricing page and cities page
-    if (title === "Pricing" || title === "On Location") {
-      initPricingTitleAnimation(wrapper);
+    // Special animation for pricing page
+    // Note: We've removed the cities page handling as it now has its own component
+    if (title === "Pricing") {
+      initSimpleHeroTitleAnimation(wrapper);
       return;
     }
     
@@ -227,12 +228,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }, interval);
   }
   
-  // Pricing page specific animation
-  function initPricingTitleAnimation(wrapper) {
+  // Simple hero title animation (used by pricing page and others)
+  function initSimpleHeroTitleAnimation(wrapper) {
     const staticTitle = wrapper.querySelector('.title-static');
     
     // Add class for CSS animation
-    staticTitle.classList.add('pricing-title-animation');
+    staticTitle.classList.add('hero-title-animation');
     
     // Trigger the animation after a brief delay
     setTimeout(() => {
@@ -277,5 +278,33 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.toggle('active');
       mobileSubmenu.classList.toggle('active');
     });
+  }
+  
+  // Cities hero title animation
+  const citiesTitleWrapper = document.querySelector('.cities-title-wrapper');
+  
+  if (citiesTitleWrapper) {
+    // Get the title text from the data attribute
+    const titleText = citiesTitleWrapper.getAttribute('data-title');
+    const staticTitle = citiesTitleWrapper.querySelector('.cities-title-static');
+    
+    // For mobile: Just show the static title immediately
+    if (window.innerWidth < 768) {
+      if (staticTitle) {
+        staticTitle.style.opacity = '1';
+      }
+      return;
+    }
+    
+    // For desktop: Add the animation class and trigger the animation
+    if (staticTitle) {
+      // Use the generic hero-title-animation class
+      staticTitle.classList.add('hero-title-animation');
+      
+      // Delay the animation slightly, matching pricing animation delay (100ms)
+      setTimeout(() => {
+        staticTitle.classList.add('animate');
+      }, 100);
+    }
   }
 });

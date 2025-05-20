@@ -4,112 +4,10 @@
 
 @use '../variables' as *;
 
-// Cities-specific hero modifications (matching pricing page)
+// Cities page layout
 .cities-page {
-  // Remove padding from main container, will use same pattern as page-hero
+  // Remove padding from main container to match other pages
   padding: 0;
-}
-
-// Cities-specific hero styles (exact same as pricing)
-body:has(.cities-page) .page-hero {
-  // Override default padding to match pricing exactly
-  padding-top: clamp(4rem, 8vw, 7rem); // Same as pricing
-  padding-left: var(--side-padding);
-  padding-right: var(--side-padding);
-  padding-bottom: 0;
-  text-align: center; // Ensure hero is centered
-  overflow: hidden;
-  
-  @media (min-width: $breakpoint-sm) {
-    padding-top: clamp(5rem, 10vw, 9rem); // Same desktop padding as pricing
-  }
-}
-
-body:has(.cities-page) .page-hero-content {
-  padding-bottom: 5.5rem; // Same bottom padding as pricing page
-  
-  @media (min-width: $breakpoint-sm) {
-    padding-bottom: 7rem;
-  }
-}
-
-// Using page-hero--large class in the template for standardized hero styling
-body:has(.cities-page) .page-hero-title {
-  text-align: center !important; // Force center alignment
-  
-  // Ensure animation wrapper is centered
-  .title-animation-wrapper {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-  }
-  
-  // Ensure static title is centered
-  .title-static {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-// Cities-specific title animation (matching pricing)
-body:has(.cities-page) .pricing-title-animation {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); // Smooth easing
-  
-  &.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  // Disable animation on mobile
-  @media (max-width: $breakpoint-sm - 1px) {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-// CSS fallback for when JavaScript is blocked or fails
-// Only apply animation when JavaScript hasn't added the animation class
-.no-js body:has(.cities-page) .title-static:not(.pricing-title-animation) {
-  // Ensure visibility after 1 second even without JS
-  animation: fadeInCitiesTitle 1s ease-out forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  
-  @media (max-width: $breakpoint-sm - 1px) {
-    opacity: 1;
-    animation: none;
-  }
-}
-
-// Also ensure the static title is centered when JS runs successfully
-body:has(.cities-page) .title-static {
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-}
-
-@keyframes fadeInCitiesTitle {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Cities page specific styles
-// Match fmty section's top spacing for upcoming-presence-section
-.upcoming-presence-section {
-  margin-top: var(--spacing-lg);
-  
-  @media (min-width: $breakpoint-sm) {
-    margin-top: var(--spacing-xl);
-  }
 }
 
 // Page separator (still needed for the separator between sections)
@@ -120,4 +18,14 @@ body:has(.cities-page) .title-static {
   width: 100%;
   margin: 0;
   margin-top: var(--spacing-lg);
+}
+
+// Cities page specific styles
+// Match fmty section's top spacing for upcoming-presence-section
+.upcoming-presence-section {
+  margin-top: var(--spacing-lg);
+  
+  @media (min-width: $breakpoint-sm) {
+    margin-top: var(--spacing-xl);
+  }
 }

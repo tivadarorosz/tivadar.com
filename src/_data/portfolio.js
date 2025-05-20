@@ -673,42 +673,64 @@ module.exports = {
     {
       title: "The gaze is yours, but she holds the narrative.",
       tag: "Possession",
-      date: "2025-01-05",
+      date: "2024-08-13",
       location: "London",
-      link: "/stories/muse-vi",
+      link: "/stories/the-narrative-gaze",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/she-holds-the-narrative.jpg",
-        alt: "Natural light portrait"
+        image: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/cover.jpg",
+        alt: "Blonde woman in lace lingerie gazing through glass, commanding attention in a quiet, intimate moment"
       },
       story: {
         blocks: [
           // Paragraph 1 (no title)
           {
             type: "text",
-            text: "This is not about performance. It is about presence. With Izabelle, every image becomes a portrait of intention—where strength meets stillness, and elegance is shaped with clarity. She does not just step into the frame; she owns it."
+            text: "She doesn’t enter the frame. She anchors it. From the kitchen island to the edge of the pool, every corner of this villa became a stage for her quiet authority. Draped in light and lingerie, she invites you into her atmosphere — not to perform, but to possess. There’s no performance here. Only presence. Her body curves like sculpture, but it’s the stare — cool, calculating, unforgettable — that truly owns the lens."
           },
 
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
-            alt: "Izabelle standing tall in a clean frame of light",
+            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/01.jpg",
+            alt: "Blonde woman in black bodysuit arching her back on a modern kitchen island, framed by soft morning light",
             orientation: "horizontal"
           },
 
-          // Image 3 (horizontal)
+          // Paragraph 1b
+          {
+            type: "text",
+            title: "Undeniable",
+            text: "She doesn’t need movement to make an entrance. Even in stillness, she dominates. The curve of her spine. The sharp line of her jaw. Every detail whispers: you’re not just watching — you’ve already surrendered."
+          },
+
+          // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
-            alt: "Eyes fixed on the lens with total command",
+            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/02.jpg",
+            alt: "Boudoir portrait of a woman reclining on a cream bench, back arched in soft natural light near sheer curtains",
             orientation: "horizontal"
           },
 
           // Paragraph 2
           {
             type: "text",
-            title: "Composure",
-            text: "There is no need to prove anything. Her silence carries more weight than words. Each photograph is a mark of distinction. A reminder that elegance is not decoration. It is identity."
+            title: "The Eyes That Hold Stillness",
+            text: "They say the camera captures the soul. But in this case, the camera simply tried to keep up. Her gaze isn’t loud — it’s lethal. There’s no seduction in it, only certainty. She doesn’t ask to be seen; she expects it. One look and you understand: she isn’t searching for attention. She already has it, and she decides how long you can stay."
+          },
+
+          // Image 3 (horizontal)
+          {
+            type: "image",
+            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/03.jpg",
+            alt: "Elegant woman in black lace bodysuit standing by floor-length curtains with ocean view in the background",
+            orientation: "horizontal"
+          },
+
+          // Paragraph 3
+          {
+            type: "text",
+            title: "Fire, Not Heat",
+            text: "Shot in a villa with stone, firewood, and long shadows, the session plays with contrasts. Warmth without softness. Elegance without fragility. She leans into the angles of the room like they were drawn to support her — the fireplace, the walls, even the air seem to orbit her. There is heat, yes. But it is not given. It is controlled."
           },
 
           // Group of 5 verticals (3 top, 2 bottom)
@@ -718,64 +740,57 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
-                alt: "Izabelle in profile, paused mid-turn",
+                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/04.jpg",
+                alt: "Rear view of a woman lifting a knit sweater, revealing black lace lingerie and tousled blonde hair in front of soft curtains",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
-                alt: "Silhouette at the edge of the curtain",
+                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/05.jpg",
+                alt: "Blonde woman seated on the floor in pale blue lace lingerie, gazing directly into the lens with piercing intensity",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
-                alt: "Izabelle seated, gaze lowered",
+                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/06.jpg",
+                alt: "Side profile of a woman stretching against a wall in black lace lingerie and white tied shirt, legs elongated on pointe",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
-                alt: "Arms crossed, light falling gently",
+                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/07.jpg",
+                alt: "Woman in sheer black bodysuit leaning back against a wall, holding trowels with a subtle, defiant posture",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
-                alt: "Back to the lens, shoulders framed in gold",
+                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/08.jpg",
+                alt: "Lingerie-clad woman draped across a grey velvet sofa, one heel discarded on the floor, caught mid-turn",
                 orientation: "vertical"
               }
             ]
           },
 
-          // Paragraph 3
-          {
-            type: "text",
-            title: "Precision in Grace",
-            text: "With Izabelle, nothing is accidental. Every gesture is placed, every glance held just long enough. She moves like someone who knows herself, fully aware of her angles, space, and light. This session is not styled to impress. It is crafted to reveal. Iza shows how power and softness can coexist without contradiction through quiet posture and measured movement."
-          },
-
           // Paragraph 4
           {
             type: "text",
-            title: "Presence, Unspoken",
-            text: "She does not enter to be noticed. She is already known. The room adjusts to her. The light finds her. There is no announcement. Just a presence that cannot be ignored."
+            title: "Body as Architecture",
+            text: "Her body language speaks in silhouettes. Legs that stretch like golden lines. A back arched with intent. A frame that doesn’t ask for permission to be admired — it simply exists in command. Whether draped across marble, framed in floor-length curtains, or bent at the perfect angle on velvet, she makes the setting feel designed for her, not the other way around."
           },
 
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
-            alt: "Final portrait with direct, decisive gaze",
+            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/09.jpg",
+            alt: "Close crop of a woman sunbathing by the pool in white bikini bottoms, skin glistening with water",
             orientation: "horizontal"
           },
 
           // Paragraph 5
           {
             type: "text",
-            title: "Stillness with Intent",
-            text: "In front of the lens, she never tries. She decides. There is no seeking approval, only control. The gaze is hers. The image follows."
+            title: "The Villa Was Just a Witness",
+            text: "There are shoots where the location does the work. And then there are moments like this — where the location becomes irrelevant, a silent observer to something more magnetic. She could be anywhere and still hold gravity. This wasn’t a photoshoot. It was a takeover. And the villa, luxurious as it was, knew better than to compete."
           }
         ]
       }
@@ -1113,11 +1128,11 @@ module.exports = {
     {
       title: "She doesn’t strike. She smoulders.",
       tag: "Low Flame",
-      date: "2025-01-05",
-      location: "London",
-      link: "/stories/low-flame",
+      date: "2024-05-15",
+      location: "Milan",
+      link: "/stories/forestis-dolomites-low-flame",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/low-flame.jpg",
+        image: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/cover.jpg",
         alt: "Natural light portrait"
       },
       story: {

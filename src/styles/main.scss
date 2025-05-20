@@ -60,4 +60,5 @@
 // -----------
 // Utility classes come last so they can override other styles
 @use 'utilities';
+@use 'fluid-typography'; // Fluid typography utilities
 @use 'custom-classes';
