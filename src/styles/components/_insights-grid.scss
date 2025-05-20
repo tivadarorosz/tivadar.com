@@ -81,7 +81,7 @@
 
 .insights-card-tag {
   font-family: var(--font-primary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-small);
   font-weight: var(--font-weight-normal);
   text-transform: capitalize;
   letter-spacing: 0;
@@ -92,7 +92,7 @@
 
 .insights-card-title {
   font-family: var(--font-primary);
-  font-size: clamp(18px, 2vw, 22px); // Responsive font size
+  font-size: var(--font-size-h4); // Using h4 token
   font-weight: var(--font-weight-medium);
   margin: 0;
   line-height: 1.2;
@@ -101,6 +101,6 @@
 }
 
 .insights-card-date {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-small);
   color: var(--color-footer-text);
 }

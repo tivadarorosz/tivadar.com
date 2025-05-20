@@ -47,13 +47,9 @@
   h3 {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
     color: var(--color-black);
     margin: 0;
-    
-    @media (min-width: $breakpoint-sm) {
-      font-size: 1.875rem;
-    }
   }
   
   // Support legacy class names
@@ -92,19 +88,15 @@
   h4 {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
     color: var(--color-black);
     margin: 0;
-    
-    @media (min-width: $breakpoint-sm) {
-      font-size: 1.875rem;
-    }
   }
   
   p {
     font-family: var(--font-secondary);
     font-weight: var(--font-weight-normal);
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-body-secondary);
     color: var(--color-black);
     line-height: 1.6;
     margin: 0;

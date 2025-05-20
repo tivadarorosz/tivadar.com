@@ -11,7 +11,7 @@
 }
 
 // Pricing-specific hero styles
-body:has(.pricing-page) .page-hero {
+.page-hero--pricing {
   padding-top: clamp(4rem, 8vw, 7rem); // More top padding for pricing page
   
   @media (min-width: $breakpoint-sm) {
@@ -19,7 +19,7 @@ body:has(.pricing-page) .page-hero {
   }
 }
 
-body:has(.pricing-page) .page-hero-content {
+.page-hero--pricing .page-hero-content {
   padding-bottom: 5.5rem; // Much less bottom padding for pricing page
   
   @media (min-width: $breakpoint-sm) {
@@ -27,13 +27,7 @@ body:has(.pricing-page) .page-hero-content {
   }
 }
 
-body:has(.pricing-page) .page-hero-title {
-  font-size: clamp(3.25rem, 6.5vw, 5rem); // Even bigger title for pricing page
-  
-  @media (max-width: $breakpoint-sm - 1px) {
-    font-size: clamp(2.5rem, 5vw, 3.75rem); // Slightly bigger on mobile too
-  }
-}
+// Pricing page uses the large page hero title variant (defined in _page-hero.scss)
 
 // Pricing-specific title animation
 .pricing-title-animation {
@@ -77,7 +71,7 @@ body:has(.pricing-page) .page-hero-title {
 // Button group styles
 .pricing-button-group {
   display: inline-flex;
-  background-color: var(--color-stroke-beige);
+  background-color: var(--color-beige-light);
   border-radius: 30px;
   padding: 0.5rem 0.5rem;
   margin: 0 auto;
@@ -105,7 +99,7 @@ body:has(.pricing-page) .page-hero-title {
 .pricing-button {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
-  font-size: clamp(14px, 1vw, 15px);
+  font-size: var(--font-size-small);
   border: none;
   padding: 0.675rem 1.25rem;
   background-color: transparent;
@@ -131,10 +125,14 @@ body:has(.pricing-page) .page-hero-title {
     cursor: default;
   }
   
+  &:not(.active) {
+    // Inactive buttons match the container background
+    background-color: var(--color-beige-light);
+  }
+  
   // Responsive padding
   @media (max-width: $breakpoint-sm - 1px) {
     padding: 0.5rem 1rem;
-    font-size: 14px;
   }
 }
 
@@ -148,7 +146,7 @@ body:has(.pricing-page) .page-hero-title {
   h2 {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    font-size: var(--font-size-h2);
     margin-bottom: var(--spacing-lg);
     color: var(--color-black);
   }
@@ -198,7 +196,7 @@ body:has(.pricing-page) .page-hero-title {
   .pricing-tier-title {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 2rem;
+    font-size: var(--font-size-h3);
     color: var(--color-black);
     margin-top: 1rem;
     margin-bottom: 0.2rem;
@@ -207,7 +205,7 @@ body:has(.pricing-page) .page-hero-title {
   .pricing-tier-subtitle {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-normal);
-    font-size: 0.925rem;
+    font-size: var(--font-size-small);
     color: var(--color-black);
     margin-top: 0.125rem;
     margin-bottom: 1.5rem;
@@ -216,7 +214,7 @@ body:has(.pricing-page) .page-hero-title {
   .pricing-tier-price {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 1.5rem;
+    font-size: var(--font-size-h4);
     color: var(--color-black);
     margin-top: 2.5rem;
     margin-bottom: 0.2rem;
@@ -225,7 +223,7 @@ body:has(.pricing-page) .page-hero-title {
   .pricing-tier-description {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-normal);
-    font-size: 0.925rem;
+    font-size: var(--font-size-small);
     color: var(--color-black);
     margin-top: 0.2rem;
     margin-bottom: 2rem;
@@ -256,9 +254,8 @@ body:has(.pricing-page) .page-hero-title {
     
     .pricing-features-header {
       font-family: var(--font-primary);
-      font-weight: var(--font-weight-normal);
-      font-size: 0.975rem;
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-size-body);
       color: var(--color-black);
       margin-bottom: 1rem;
       text-align: left;
@@ -267,7 +264,7 @@ body:has(.pricing-page) .page-hero-title {
     li, > li {
       font-family: var(--font-secondary);
       font-weight: var(--font-weight-normal);
-      font-size: 1.1rem;
+      font-size: var(--font-size-body-secondary);
       color: var(--color-black);
       margin-bottom: 0.75rem;
       display: flex;
@@ -295,7 +292,7 @@ body:has(.pricing-page) .page-hero-title {
   p {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-normal);
-    font-size: 0.8125rem;
+    font-size: var(--font-size-small);
     color: var(--color-black);
     line-height: 1.4;
     margin: 0;
@@ -313,10 +310,6 @@ body:has(.pricing-page) .page-hero-title {
   
   @media (max-width: $breakpoint-sm) {
     padding: 0 2rem;
-    
-    p {
-      font-size: 0.75rem;
-    }
   }
 }
 
@@ -350,13 +343,9 @@ body:has(.pricing-page) .page-hero-title {
   h3 {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
     color: var(--color-black);
     margin: 0;
-    
-    @media (min-width: $breakpoint-sm) {
-      font-size: 1.875rem;
-    }
   }
 }
 
@@ -384,19 +373,15 @@ body:has(.pricing-page) .page-hero-title {
 .pricing-research-area h4 {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: 1.5rem;
+  font-size: var(--font-size-h3);
   color: var(--color-black);
   margin: 0;
-  
-  @media (min-width: $breakpoint-sm) {
-    font-size: 1.875rem;
-  }
 }
 
 .pricing-research-area p {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-body-secondary);
   color: var(--color-black);
   line-height: 1.6;
   margin: 0;
@@ -419,14 +404,10 @@ body:has(.pricing-page) .page-hero-title {
 }
 
 .pricing-cta-title {
-  font-family: var(--font-primary) !important;
-  font-weight: var(--font-weight-medium) !important;
-  font-size: 2rem !important;
-  color: var(--color-black) !important;
-  margin: 0 0 2rem !important;
-  line-height: 1.2 !important;
-  
-  @media (min-width: $breakpoint-sm) {
-    font-size: 3rem !important;
-  }
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-h1);
+  color: var(--color-black);
+  margin: 0 0 2rem;
+  line-height: 1.2;
 }

@@ -31,7 +31,7 @@
 .page-hero-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: clamp(3.5rem, 7vw, 5.5rem); // Increased font size
+  font-size: var(--font-size-h1); // Using h1 token
   color: var(--color-black);
   margin: 0 auto 1rem;
   line-height: 1.1;
@@ -44,7 +44,15 @@
     margin-bottom: 0.75rem;
     padding-left: calc(var(--side-padding) * 0.1); // Reduced mobile padding
     padding-right: calc(var(--side-padding) * 0.1); // Reduced mobile padding
-    font-size: clamp(3rem, 6vw, 4.5rem);
+  }
+}
+
+// Large page hero title variant (used for pricing pages)
+.page-hero--large .page-hero-title {
+  font-size: clamp(2.75rem, 6vw, 5rem); // Fluid font size for large hero titles (44px to 80px)
+  
+  @media (max-width: $breakpoint-sm - 1px) {
+    font-size: clamp(2.5rem, 5vw, 3.75rem); // Fluid font size for mobile (40px to 60px)
   }
 }
 
