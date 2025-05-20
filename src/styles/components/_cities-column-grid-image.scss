@@ -78,6 +78,16 @@
   
   // Add more spacing between rows in the grid
   .column-grid-image-grid {
+    // Ensure equal column widths in tablet view
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md - 1) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      
+      .column-grid-image-area {
+        min-width: 0; // Reset any min-width that might be causing issues
+        width: 100%; // Force full width within grid cell
+      }
+    }
+    
     .column-grid-image-area {
       // Add margin-top to 3rd and 4th items (second row)
       &:nth-child(n+3) {
