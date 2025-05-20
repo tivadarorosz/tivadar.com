@@ -65,10 +65,11 @@
 .newsletter-form {
   background-color: #f0eee7;
   padding: calc(var(--spacing-lg) + 10px) 50px;
-  border-radius: 2rem;
+  border-radius: var(--card-border-radius-mobile);
   
   @media (min-width: 992px) {
     max-width: 560px;
+    border-radius: var(--card-border-radius-desktop);
   }
   
   .form-group {

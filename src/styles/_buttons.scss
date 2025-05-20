@@ -14,7 +14,7 @@
   width: auto;
   height: 2.95rem;
   padding: 0 1.5rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--btn-border-radius-desktop);
   text-decoration: none;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
@@ -30,7 +30,7 @@
   
   // Smaller border radius for iPad and mobile
   @media (max-width: $breakpoint-md - 1px) {
-    border-radius: 0.5rem; // 8px in rem
+    border-radius: var(--btn-border-radius-mobile);
   }
   
   &:hover {
