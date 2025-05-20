@@ -365,7 +365,7 @@
 </head>
 <body 
 class="{% if layout == 'post' or layout == 'story' %}page-post{% elif page.fileSlug == 'contact' or page.fileSlug == 'newsletter' or page.fileSlug == '404' or page.fileSlug.startsWith('message/') %}page-form{% else %}page-default{% endif %}"
-data-bg="{% if title == 'Home' or page.fileSlug == 'portfolio' or page.fileSlug == 'insights' %}default{% else %}light{% endif %}"
+data-bg="{% if title == 'Home' or page.fileSlug == 'portfolio' or page.fileSlug == 'insights' or layout == 'story' %}default{% else %}light{% endif %}"
 >
   {% include "partials/header.njk" %}
   

@@ -1133,37 +1133,59 @@ module.exports = {
       link: "/stories/forestis-dolomites-low-flame",
       cover: {
         image: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/cover.jpg",
-        alt: "Natural light portrait"
+        alt: "Elegant woman behind glass wearing green bikini, hand lifted to shield the light, eyes steady with presence"
       },
       story: {
         blocks: [
           // Paragraph 1 (no title)
           {
             type: "text",
-            text: "This is not about performance. It is about presence. With Izabelle, every image becomes a portrait of intention—where strength meets stillness, and elegance is shaped with clarity. She does not just step into the frame; she owns it."
+            text: "She doesn’t announce herself. She arrives in gradients. A slow reveal. A held breath. Her presence is all restraint and radiance, like mountain light filtering through linen. Framed by the pines of the Dolomites, she draws you in — not with force, but with finesse. You look. You linger. And then you realise: she never needed to ask for your attention. She already had it."
+          },
+
+          // Image 1 (horizontal)
+          {
+            type: "image",
+            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/01.jpg",
+            alt: "Woman in soft green activewear gazing through the window, light streaks casting reflection",
+            orientation: "horizontal"
+          },
+
+          // Paragraph 2 (no title)
+          {
+            type: "text",
+            title: "Measured Heat",
+            text: "There’s nothing urgent in her movements, and that’s what makes them dangerous. Each gesture — precise, held, elegant. A hand on the window. A stretch on the terrace. A moment by the glass. She doesn’t burn. She simmers. And every frame becomes a quiet question: who’s really in control?"
           },
 
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
-            alt: "Izabelle standing tall in a clean frame of light",
+            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/02.jpg",
+            alt: "Blonde woman in white yoga outfit seated beside a window, forest reflections in the glass",
             orientation: "horizontal"
+          },
+
+          // Paragraph 3 (no title)
+          {
+            type: "text",
+            title: "Altitude and Intention",
+            text: "Photographed at Forestis Dolomites in Italy, one of the world’s most revered alpine sanctuaries, she feels perfectly at home among stone, wood, and sky. These are not just luxury surroundings — they are an extension of her stillness. The space echoes her calm. She doesn’t compete with the view. She reflects it."
           },
 
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
-            alt: "Eyes fixed on the lens with total command",
+            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/03.jpg",
+            alt: "Woman floating effortlessly in a calm spa pool, eyes closed, body in perfect stillness",
             orientation: "horizontal"
           },
 
           // Paragraph 2
           {
             type: "text",
-            title: "Composure",
-            text: "There is no need to prove anything. Her silence carries more weight than words. Each photograph is a mark of distinction. A reminder that elegance is not decoration. It is identity."
+            title: "Elemental Ease",
+            text: "Whether floating in still water or lounging in filtered sun, she moves like someone who trusts the world to catch her. Every scene — bathtub, spa bed, shadowed corridor — holds a softness that is earned. There is no posing here. No effort. Just quiet ownership of space."
           },
 
           // Group of 5 verticals (3 top, 2 bottom)
@@ -1173,32 +1195,32 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
-                alt: "Izabelle in profile, paused mid-turn",
+                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/04.jpg",
+                alt: "Soft-shouldered woman half-hidden behind a book, playful gaze peeking over the page",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
-                alt: "Silhouette at the edge of the curtain",
+                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/05.jpg",
+                alt: "Long-haired woman reclining nude in a minimalist stone bathtub, holding a cup upward",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
-                alt: "Izabelle seated, gaze lowered",
+                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/06.jpg",
+                alt: "Woman in black activewear sitting on the floor with eyes closed, sunlight tracing her cheek",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
-                alt: "Arms crossed, light falling gently",
+                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/07.jpg",
+                alt: "Woman turning over her shoulder at a wooden desk, soft smile and open-back top revealing grace",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
-                alt: "Back to the lens, shoulders framed in gold",
+                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/08.jpg",
+                alt: "Woman holding a doorway handstand, framed by glass and the snowy Dolomite mountains",
                 orientation: "vertical"
               }
             ]
@@ -1207,30 +1229,22 @@ module.exports = {
           // Paragraph 3
           {
             type: "text",
-            title: "Precision in Grace",
-            text: "With Izabelle, nothing is accidental. Every gesture is placed, every glance held just long enough. She moves like someone who knows herself, fully aware of her angles, space, and light. This session is not styled to impress. It is crafted to reveal. Iza shows how power and softness can coexist without contradiction through quiet posture and measured movement."
-          },
-
-          // Paragraph 4
-          {
-            type: "text",
-            title: "Presence, Unspoken",
-            text: "She does not enter to be noticed. She is already known. The room adjusts to her. The light finds her. There is no announcement. Just a presence that cannot be ignored."
+            title: "Distraction With Depth",
+            text: "You think she’s reading. She is. But she’s also aware. Aware of the light, the lens, the possibility that you’re watching. And somehow, that awareness doesn’t break the moment — it completes it. You’re not part of her world. You’re observing from the edge of it. And that edge is intoxicating."
           },
 
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
-            alt: "Final portrait with direct, decisive gaze",
+            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/09.jpg",
+            alt: "Woman in sage yoga set holding a side stretch pose on a mountain deck under a clear sky",
             orientation: "horizontal"
           },
 
           // Paragraph 5
           {
             type: "text",
-            title: "Stillness with Intent",
-            text: "In front of the lens, she never tries. She decides. There is no seeking approval, only control. The gaze is hers. The image follows."
+            text: "At the edge of a mountain, inverted in a doorway, she holds herself with impossible ease. Her strength is silent. Her elegance unshaken. You could call it yoga. But here, it’s something else entirely. Something more primal. Something that makes you wonder: if stillness can feel like this… what else have you underestimated?"
           }
         ]
       }
