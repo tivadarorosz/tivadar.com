@@ -5,8 +5,13 @@
 @use '../variables' as *;
 
 .page-hero {
-  padding: clamp(1rem, 2vw, 1.75rem) var(--side-padding) 0; // Reduced top padding for About and Portfolio pages
+  padding: 0 var(--side-padding) 0;
+  padding-top: clamp(4rem, 8vw, 7rem); // Increased top padding to match Cities page
   overflow: hidden;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding-top: clamp(5rem, 10vw, 9rem); // More top padding on desktop
+  }
 }
 
 .page-hero-content {
@@ -31,10 +36,11 @@
 .page-hero-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-h1); // Using h1 token
+  font-size: var(--font-size-hero); // Using new hero token
   color: var(--color-black);
   margin: 0 auto 1rem;
   line-height: var(--line-height-heading);
+  letter-spacing: -0.02em; // Slightly tighter character spacing
   text-align: center;
   padding-left: calc(var(--side-padding) * 0.25); // Reduced side padding
   padding-right: calc(var(--side-padding) * 0.25); // Reduced side padding
@@ -49,18 +55,12 @@
 
 // Large page hero title variant (used for pricing pages)
 .page-hero--large .page-hero-title {
-  // Apply the fluid-hero-title class instead of inline clamp
-  &.fluid-hero-title {
-    // Class will be applied in HTML
-  }
+  // Using the same font-size-hero token for consistency across all hero titles
+  font-size: var(--font-size-hero);
   
-  // For backward compatibility
-  &:not(.fluid-hero-title) {
-    font-size: clamp(2.75rem, 6vw, 5rem);
-    
-    @media (max-width: $breakpoint-sm - 1px) {
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
-    }
+  // For backward compatibility (older components that might explicitly use these classes)
+  &.fluid-hero-title {
+    font-size: var(--font-size-hero);
   }
 }
 
@@ -178,7 +178,7 @@
 }
 
 .page-hero-subtitle {
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size-lead);
   color: var(--color-black);

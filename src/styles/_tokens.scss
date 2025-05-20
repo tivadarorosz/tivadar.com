@@ -140,6 +140,7 @@
   
   // Mobile-first (default)
   --font-size-h1: 2.25rem;   // 36px
+  --font-size-hero: clamp(2.5rem, 5vw, 3.25rem); // 40px-52px - Larger than h1 on mobile
   --font-size-h2: 1.875rem;  // 30px
   --font-size-h3: 1.5rem;    // 24px
   --font-size-h4: 1.25rem;   // 20px
@@ -218,6 +219,7 @@
   :root {
     // Desktop typography scale override
     --font-size-h1: 3.5rem;    // 56px
+    --font-size-hero: clamp(3.5rem, 7vw, 5.5rem); // 56px-88px fluid hero size
     --font-size-h2: 2.5rem;    // 40px
     --font-size-h3: 2rem;      // 32px
     --font-size-h4: 1.5rem;    // 24px
