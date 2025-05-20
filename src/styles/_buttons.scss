@@ -3,6 +3,8 @@
 // ==============================================
 // Simplified button system with only essential modifiers
 
+@use 'variables' as *;
+
 // Base button class for all button styles
 .btn {
   display: inline-flex;
@@ -17,7 +19,7 @@
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
   font-size: 15px;
-  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-radius var(--transition-speed) ease;
   cursor: pointer;
   border: none;
   box-sizing: border-box;
@@ -25,6 +27,11 @@
   // Default primary button (dark background, light text)
   background-color: var(--color-black);
   color: var(--color-background-light);
+  
+  // Smaller border radius for iPad and mobile
+  @media (max-width: $breakpoint-md - 1px) {
+    border-radius: 0.5rem; // 8px in rem
+  }
   
   &:hover {
     background-color: var(--color-black-light);
