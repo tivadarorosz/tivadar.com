@@ -8,7 +8,7 @@
   <div class="insights-gallery-grid">
     {# First row with 2/3 vs 1/3 split #}
     {% if mostRecent %}
-    <a href="{{ mostRecent.url }}" class="insights-gallery-item insights-gallery-item-1" style="background-color: var(--color-terracotta);">
+    <a href="{{ mostRecent.url }}" class="insights-gallery-item insights-gallery-item-1" style="background-color: var(--theme-terracotta);">
       <div class="insights-gallery-content">
         {% if mostRecent.data.icon %}
         <img src="{{ mostRecent.data.icon }}" alt="" class="insights-gallery-icon">
@@ -53,7 +53,7 @@
   {# Second row with 50/50 split #}
   <div class="insights-second-row">
     {% if secondRecent %}
-    <a href="{{ secondRecent.url }}" class="insights-gallery-item" style="background-color: var(--color-pale-sage);">
+    <a href="{{ secondRecent.url }}" class="insights-gallery-item" style="background-color: var(--theme-pale-sage);">
       <div class="insights-gallery-content">
         {% if secondRecent.data.icon %}
         <img src="{{ secondRecent.data.icon }}" alt="" class="insights-gallery-icon" loading="lazy">
@@ -69,7 +69,7 @@
     {% endif %}
     
     {% if thirdRecent %}
-    <a href="{{ thirdRecent.url }}" class="insights-gallery-item" style="background-color: var(--color-light-purple);">
+    <a href="{{ thirdRecent.url }}" class="insights-gallery-item" style="background-color: var(--theme-light-purple);">
       <div class="insights-gallery-content">
         {% if thirdRecent.data.icon %}
         <img src="{{ thirdRecent.data.icon }}" alt="" class="insights-gallery-icon" loading="lazy">

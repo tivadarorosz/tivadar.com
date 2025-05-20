@@ -36,17 +36,17 @@
         font-family: var(--font-primary);
         font-weight: var(--font-weight-medium);
         font-size: var(--font-size-small);
-        color: #141413;
+        color: var(--color-black);
         text-transform: uppercase;
         letter-spacing: 0.05em;
         margin: 0 0 -0.5rem 0;  // Increased negative margin to cut gap in half
-        line-height: 1;
+        line-height: var(--line-height-tag);
         display: block;
       }
       
       h4 {
         margin: 0;
-        line-height: 1.1;  // Tighter line height
+        line-height: var(--line-height-heading);  // Using heading token for tighter spacing
       }
       
       // Title wrapper to contain city name and tag
@@ -57,7 +57,7 @@
         
         h4 {
           margin: 0;
-          line-height: 1.1;
+          line-height: var(--line-height-heading);
         }
       }
       
@@ -69,9 +69,10 @@
         text-transform: capitalize;
         padding: 0.125rem 0.75rem;
         background-color: transparent;
-        border: 1px solid #141413;
+        border: 1px solid var(--color-black);
         border-radius: var(--tag-radius);
         white-space: nowrap;
+        line-height: var(--line-height-tag);
       }
     }
   }

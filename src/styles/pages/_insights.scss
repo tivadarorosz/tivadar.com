@@ -19,14 +19,14 @@
   text-align: left;
   
   @media (min-width: $breakpoint-md) {
-    font-size: 48px; // H1 size on desktop
+    font-size: var(--font-size-h1); // H1 size on desktop
   }
 }
 
 .insights-subtitle {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-xlarge);
+  font-size: var(--font-size-h2); // Replaced from --font-size-xlarge
   color: var(--color-black);
   margin: 0;
   text-align: left;

@@ -36,7 +36,7 @@ a:not(.menu a):not(.logo-link) {
 
 // For normal links (those without classes)
 a:not([class]):not(.menu a):not(.logo-link):hover {
-  color: var(--color-black-light);
+  color: var(--color-text-secondary);
 }
 
 // Logo link style

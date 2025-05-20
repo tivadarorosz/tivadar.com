@@ -1,7 +1,12 @@
+# Phase 2 Implementation: Clean Typography Theming
+
+This document shows the clean implementation of the typography theming system after removing legacy data attributes. This is intended for implementation in Fall 2025 after confirming there are no dependencies on the legacy attributes.
+
+```scss
 // ==============================================
-// TYPOGRAPHY THEMING SYSTEM
+// TYPOGRAPHY THEMING SYSTEM (FINAL VERSION)
 // ==============================================
-// Standardized typography theming based on data attributes
+// Standardized typography theming based on semantic data attributes
 
 // Create a heading color system that can be applied at the section level
 [data-heading-theme="default"] {
@@ -32,57 +37,34 @@
   --text-accent-color: var(--color-white);
 }
 
-// Size variants - Semantic naming aligned with typography system
-// Legacy variants maintained with comments for backward compatibility
-
-// Small - Unchanged
+// Size variants - Clean, semantic naming
 [data-text-size="small"] {
   --component-text-size: var(--font-size-small);
-}
-
-// Base → Body 
-[data-text-size="base"] {
-  --component-text-size: var(--font-size-body);
-  // DEPRECATED: Use data-text-size="body" instead
 }
 
 [data-text-size="body"] {
   --component-text-size: var(--font-size-body);
 }
 
-// Medium → Body-serif
-[data-text-size="medium"] {
-  --component-text-size: var(--font-size-body-serif);
-  // DEPRECATED: Use data-text-size="body-serif" instead
-}
-
 [data-text-size="body-serif"] {
   --component-text-size: var(--font-size-body-serif);
 }
 
-// Large → h3
-[data-text-size="large"] {
-  --component-text-size: var(--font-size-h3);
-  // DEPRECATED: Use data-text-size="h3" instead
+[data-text-size="lead"] {
+  --component-text-size: var(--font-size-lead);
 }
 
-[data-text-size="h3"] {
-  --component-text-size: var(--font-size-h3);
-}
-
-// XLarge → h2
-[data-text-size="xlarge"] {
-  --component-text-size: var(--font-size-h2);
-  // DEPRECATED: Use data-text-size="h2" instead  
+// Heading sizes
+[data-text-size="h1"] {
+  --component-text-size: var(--font-size-h1);
 }
 
 [data-text-size="h2"] {
   --component-text-size: var(--font-size-h2);
 }
 
-// Additional heading sizes for completeness
-[data-text-size="h1"] {
-  --component-text-size: var(--font-size-h1);
+[data-text-size="h3"] {
+  --component-text-size: var(--font-size-h3);
 }
 
 [data-text-size="h4"] {
@@ -93,10 +75,6 @@
   --component-text-size: var(--font-size-h5);
 }
 
-[data-text-size="lead"] {
-  --component-text-size: var(--font-size-lead);
-}
-
 // Set default values to match current styling
 :root {
   --heading-color: var(--color-black);
@@ -104,7 +82,7 @@
   --text-color: var(--color-black);
   --text-muted-color: var(--color-text-muted);
   --text-accent-color: var(--color-black-light);
-  --component-text-size: var(--font-size-body); // Replaced from --font-size-base
+  --component-text-size: var(--font-size-body);
 }
 
 // Utility classes that consume these variables
@@ -125,3 +103,24 @@
   color: var(--text-muted-color);
   font-size: var(--component-text-size);
 }
+```
+
+## Removed Legacy Attributes
+
+The following legacy attributes have been removed in this clean implementation:
+
+- `[data-text-size="base"]` - Replaced with `[data-text-size="body"]`
+- `[data-text-size="medium"]` - Replaced with `[data-text-size="body-serif"]`
+- `[data-text-size="large"]` - Replaced with `[data-text-size="h3"]`
+- `[data-text-size="xlarge"]` - Replaced with `[data-text-size="h2"]`
+
+## New Semantic Attributes
+
+The following new semantic attributes were added to complete the typography system:
+
+- `[data-text-size="h1"]` - For primary headings
+- `[data-text-size="h4"]` - For quaternary headings
+- `[data-text-size="h5"]` - For quinary headings
+- `[data-text-size="lead"]` - For lead paragraphs
+
+This final implementation provides a complete, semantically-named set of typography controls that align perfectly with our font size token system.

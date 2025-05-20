@@ -40,8 +40,8 @@
 }
 
 .portfolio-intro-text {
-  font-size: var(--font-size-xmedium);
-  line-height: 1.5;
+  font-size: var(--font-size-h4); // Replaced from --font-size-xmedium
+  line-height: var(--line-height-tight);
 }
 
 .portfolio-featured-main {

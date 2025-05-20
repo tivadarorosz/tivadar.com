@@ -29,7 +29,7 @@
   border-radius: var(--form-radius);
   background-color: var(--color-white);
   font-family: var(--font-primary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-body); // Replaced from --font-size-base
   color: var(--color-black);
   transition: border-color var(--transition-speed) ease;
   
@@ -66,7 +66,7 @@
   
   label {
     font-family: var(--font-primary);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-body); // Replaced from --font-size-base
     color: var(--color-black);
   }
 }

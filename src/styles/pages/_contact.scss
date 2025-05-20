@@ -13,12 +13,12 @@
 
 .contact-wrapper {
   display: flex;
-  gap: 3rem;
+  gap: var(--spacing-lg);
   flex-direction: column;
   margin-top: var(--spacing-xxl);
   margin-bottom: calc(var(--spacing-xxl) + 40px);
   
-  @media (min-width: 992px) {
+  @media (min-width: $breakpoint-md) {
     flex-direction: row;
     align-items: flex-start;
     margin-top: calc(var(--spacing-xxl) + 20px);
@@ -29,7 +29,7 @@
 .contact-content {
   width: 100%;
   
-  @media (min-width: 992px) {
+  @media (min-width: $breakpoint-md) {
     width: 40%;
     padding-right: var(--spacing-sm);
   }
@@ -42,16 +42,16 @@
   color: var(--color-black);
   margin: 0 0 var(--spacing-md) 0;
   
-  @media (min-width: 992px) {
-    font-size: 48px;
+  @media (min-width: $breakpoint-md) {
+    font-size: var(--font-size-h1);
   }
 }
 
 .contact-description {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-medium);
-  line-height: 1.6;
+  font-size: var(--font-size-body-serif); // Replaced from --font-size-medium
+  line-height: var(--line-height-body);
   color: var(--color-black);
   margin: 0;
 }
@@ -59,18 +59,18 @@
 .contact-form-wrapper {
   width: 100%;
   
-  @media (min-width: 992px) {
+  @media (min-width: $breakpoint-md) {
     width: 60%;
   }
 }
 
 .contact-form {
   background-color: var(--color-background);
-  padding: calc(var(--spacing-lg) + 10px) 50px;
+  padding: calc(var(--spacing-lg) + 10px) var(--spacing-lg);
   border-radius: var(--card-radius);
   
-  @media (min-width: 992px) {
-    max-width: 560px;
+  @media (min-width: $breakpoint-md) {
+    max-width: calc(var(--spacing-lg) * 14); // 560px equivalent
   }
 }
 
@@ -86,14 +86,14 @@
   display: block;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-body); // Replaced from --font-size-base
   color: var(--color-black);
-  margin-bottom: 6px;
+  margin-bottom: var(--spacing-xs);
   
   .required {
     color: var(--color-link);
     vertical-align: top;
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-body); // Replaced from --font-size-base
     margin-left: 0;
   }
 }
@@ -103,19 +103,19 @@
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size-small);
   color: var(--color-black);
-  margin-bottom: 6px;
+  margin-bottom: var(--spacing-xs);
 }
 
 .form-input {
   width: 100%;
-  padding: 18px 20px;
-  margin-top: 4px;
-  border: 1.5px solid var(--color-border-light-alt);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-top: calc(var(--spacing-xs) / 2); // 4px equivalent
+  border: var(--border-width) solid var(--color-border-medium);
   border-radius: var(--form-radius);
   background-color: var(--color-background-light);
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-body); // Replaced from --font-size-base
   color: var(--color-black);
   transition: border-color var(--transition-speed) ease, background-color var(--transition-speed) ease;
   box-sizing: border-box;
@@ -148,8 +148,8 @@
 .form-checkbox-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 4px;
+  gap: var(--spacing-xs);
+  margin-top: calc(var(--spacing-xs) / 2); // 4px equivalent
 }
 
 .form-checkbox {
@@ -159,9 +159,9 @@
   
   input[type="checkbox"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 1.5px solid var(--color-border-light-alt);
+    width: calc(var(--spacing-sm) + 4px); // 20px
+    height: calc(var(--spacing-sm) + 4px); // 20px
+    border: var(--border-width) solid var(--color-border-medium);
     border-radius: var(--radius-sm);
     background-color: var(--color-background-light);
     margin-right: var(--spacing-xs);
@@ -191,8 +191,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 8px;
-        height: 8px;
+        width: var(--spacing-xs); // 8px
+        height: var(--spacing-xs); // 8px
         background-color: var(--color-black);
         border-radius: calc(var(--radius-sm) / 4);
       }
@@ -202,7 +202,7 @@
   label {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-normal);
-    font-size: 17px;
+    font-size: var(--font-size-body);
     color: var(--color-black);
     cursor: pointer;
   }
@@ -211,9 +211,9 @@
 .form-error {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
-  font-size: 13px;
+  font-size: var(--font-size-small);
   color: var(--color-link);
-  margin-top: 4px;
+  margin-top: calc(var(--spacing-xs) / 2); // 4px equivalent
   display: none;
   
   &.show {
@@ -237,15 +237,15 @@
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='var(--color-black)' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 12px;
-  padding-right: 2.5rem;
+  background-position: right var(--spacing-sm) center;
+  background-size: calc(var(--spacing-sm) - 4px); // 12px
+  padding-right: calc(var(--spacing-md) + 4px); // 2.5rem
 }
 
 // Small textarea - 50% taller than regular input
 .form-textarea-small {
-  min-height: 84px; // Regular input is ~56px (18px*2 + 20px font), so 1.5x = 84px
-  height: 84px;
+  min-height: calc(var(--spacing-lg) * 2.1); // 84px
+  height: calc(var(--spacing-lg) * 2.1); // 84px
   resize: vertical;
 }
 
@@ -253,11 +253,11 @@
 .contact-thankyou-message {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-body-serif); // Replaced from --font-size-medium
   color: var(--color-black);
   text-align: center;
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-body);
   padding-bottom: var(--spacing-md);
   
   a {

@@ -44,8 +44,8 @@
 
 // Logo Styles
 .logo {
-  font-weight: 600; // Bold weight
-  font-size: var(--font-size-xmedium);
+  font-weight: var(--font-weight-semibold); // Semi-bold weight for logo
+  font-size: var(--font-size-h4); // Replaced from --font-size-xmedium
   white-space: nowrap;
   overflow: hidden;
   display: flex;
@@ -55,7 +55,7 @@
   
   // Mobile logo style (T/ only)
   @media (max-width: $breakpoint-sm - 1px) {
-    font-weight: 700; // Bolder on mobile
+    font-weight: var(--font-weight-bold); // Bolder on mobile
     font-size: 1.8rem; // Even larger size on mobile
   }
 }
@@ -74,7 +74,7 @@
   position: relative;
   height: 24px;
   line-height: 24px;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   z-index: var(--z-index-mobile-toggle);
 }
 
@@ -110,7 +110,7 @@
 
 // Bold slash with padding
 .logo-slash {
-  font-weight: 900;
+  font-weight: var(--font-weight-black);
   padding-left: 0.12em; // Default padding for desktop
   display: inline-block;
   position: relative;
@@ -286,7 +286,7 @@
   gap: var(--spacing-xs); // Reduced gap from --spacing-md to --spacing-xs (8px)
   
   a {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-h3); // Replaced from --font-size-large
     font-weight: var(--font-weight-medium);
     color: var(--color-black);
     text-decoration: none;
@@ -324,7 +324,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-h3); // Replaced from --font-size-large
   font-weight: var(--font-weight-medium);
   color: var(--color-black);
   text-decoration: none;
@@ -522,7 +522,7 @@ body.menu-open .logo-slash {
       outline: none;
       
       &:hover {
-        color: #141413;
+        color: var(--color-text-primary);
         text-decoration: underline;
         text-underline-offset: 0.2rem;
       }
@@ -548,7 +548,7 @@ body.menu-open .logo-slash {
         display: block;
         font-family: var(--font-secondary);
         font-weight: var(--font-weight-normal);
-        color: #141413;
+        color: var(--color-text-primary);
         text-decoration: none;
         padding: 0.2rem 0;
         margin: 0;
@@ -557,7 +557,7 @@ body.menu-open .logo-slash {
         line-height: 1.2;
         
         &:hover {
-          color: #141413;
+          color: var(--color-text-primary);
           text-decoration: underline;
           text-underline-offset: 0.2rem;
         }
@@ -572,7 +572,7 @@ body.menu-open .logo-slash {
   &.dropdown-right {
     width: 55%;
     height: 260px;
-    background-color: var(--color-stroke-hero-inner);
+    background-color: var(--theme-stroke-hero-inner);
     border-radius: var(--card-radius);
     display: flex;
     align-items: center;
@@ -599,7 +599,7 @@ body.menu-open .logo-slash {
       left: 1rem;
       font-family: var(--font-primary);
       font-weight: var(--font-weight-medium);
-      font-size: var(--font-size-base);
+      font-size: var(--font-size-body); // Replaced from --font-size-base
       color: #141413;
       letter-spacing: 0;
     }

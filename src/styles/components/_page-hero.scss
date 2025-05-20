@@ -34,7 +34,7 @@
   font-size: var(--font-size-h1); // Using h1 token
   color: var(--color-black);
   margin: 0 auto 1rem;
-  line-height: 1.1;
+  line-height: var(--line-height-heading);
   text-align: center;
   padding-left: calc(var(--side-padding) * 0.25); // Reduced side padding
   padding-right: calc(var(--side-padding) * 0.25); // Reduced side padding
@@ -78,7 +78,7 @@
   .title-line {
     display: block;
     width: 100%;
-    line-height: 0.9; // Extremely tight line spacing for multi-line titles
+    line-height: var(--line-height-heading); // Heading line height for multi-line titles
     white-space: nowrap; // Prevent words from wrapping to new lines
   }
   
@@ -123,13 +123,13 @@
   .title-line-1 {
     transform: translateX(-6%); // First line more to the left (increased)
     margin-bottom: 0; // No space between lines
-    line-height: 1; // Tighter line height
+    line-height: var(--line-height-heading); // Heading line height
     white-space: nowrap; // Prevent words from wrapping
   }
   
   .title-line-2 {
     transform: translateX(6%); // Second line more to the right (increased)
-    line-height: 1; // Tighter line height
+    line-height: var(--line-height-heading); // Heading line height
     white-space: nowrap; // Prevent words from wrapping
   }
 }
@@ -175,7 +175,7 @@
   font-size: var(--font-size-lead);
   color: var(--color-black);
   margin: 0 auto 1.5rem; // Added bottom margin for button spacing
-  line-height: 1.2;
+  line-height: var(--line-height-subheading);
   text-align: center;
   padding-left: calc(var(--side-padding) * 2.5); // Dramatically increased side padding
   padding-right: calc(var(--side-padding) * 2.5);

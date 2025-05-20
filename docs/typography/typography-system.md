@@ -12,7 +12,7 @@
 | `--font-size-h4` | 1.25rem | 20px | Quaternary headings |
 | `--font-size-h5` | 1rem | 16px | Quinary headings |
 | `--font-size-body` | 1rem | 16px | Primary body text (Styrene) |
-| `--font-size-body-secondary` | 1.25rem | 20px | Secondary body text (Tiempos) |
+| `--font-size-body-serif` | 1.25rem | 20px | Secondary body text (Tiempos) |
 | `--font-size-lead` | 1.25rem | 20px | Lead paragraphs |
 | `--font-size-small` | 0.875rem | 14px | Small text, labels |
 
@@ -26,7 +26,7 @@
 | `--font-size-h4` | 1.5rem | 24px | Quaternary headings |
 | `--font-size-h5` | 1.125rem | 18px | Quinary headings |
 | `--font-size-body` | 1rem | 16px | Primary body text (Styrene) - unchanged |
-| `--font-size-body-secondary` | 1.25rem | 20px | Secondary body text (Tiempos) - unchanged |
+| `--font-size-body-serif` | 1.25rem | 20px | Secondary body text (Tiempos) - unchanged |
 | `--font-size-lead` | 1.5rem | 24px | Lead paragraphs |
 | `--font-size-small` | 0.875rem | 14px | Small text, labels - unchanged |
 
@@ -43,13 +43,34 @@
 
 ## Font Families and Weights
 
+### Font Families
+
 | Variable Name | Value | Description |
 |---------------|-------|-------------|
 | `--font-primary` | 'Styrene A', sans-serif | Primary font for headings and UI |
 | `--font-secondary` | 'Tiempos Text', "Georgia", serif | Secondary font for body copy |
-| `--font-weight-normal` | 400 | Normal font weight |
-| `--font-weight-medium` | 500 | Medium font weight |
-| `--font-weight-bold` | 700 | Bold font weight |
+
+### Font Weights
+
+The system includes a comprehensive set of font weights to cover all design needs:
+
+| Variable Name | Value | Description |
+|---------------|-------|-------------|
+| `--font-weight-light` | 300 | Light weight - for less emphasis |
+| `--font-weight-normal` | 400 | Normal weight - default body text |
+| `--font-weight-medium` | 500 | Medium weight - slight emphasis |
+| `--font-weight-semibold` | 600 | Semi-bold weight - used in logo and UI elements |
+| `--font-weight-bold` | 700 | Bold weight - headings and strong emphasis |
+| `--font-weight-black` | 900 | Black weight - extreme emphasis, used in logo slash |
+
+### Usage Guidelines
+
+- `--font-weight-light`: Use sparingly for de-emphasized text or stylistic variation
+- `--font-weight-normal`: Default for body text and general content
+- `--font-weight-medium`: Primary weight for headings and emphasized UI elements
+- `--font-weight-semibold`: Logo elements and important UI components
+- `--font-weight-bold`: Primary call-to-action elements and major headings
+- `--font-weight-black`: Special typographic treatments and maximum emphasis
 
 ## Implementation
 
@@ -64,7 +85,7 @@ The new typography scale is implement in the `_tokens.scss` file with mobile-fir
 --font-size-h5: 1rem;      // 16px
 
 --font-size-body: 1rem;    // 16px - Primary body text (Styrene)
---font-size-body-secondary: 1.25rem; // 20px - Secondary body text (Tiempos)
+--font-size-body-serif: 1.25rem; // 20px - Secondary body text (Tiempos)
 --font-size-lead: 1.25rem; // 20px - Lead paragraphs
 --font-size-small: 0.875rem; // 14px
 
@@ -78,7 +99,7 @@ The new typography scale is implement in the `_tokens.scss` file with mobile-fir
     --font-size-h4: 1.5rem;    // 24px
     --font-size-h5: 1.125rem;  // 18px
     
-    --font-size-body-secondary: 1.25rem; // 20px - Maintaining consistent size for Tiempos body text
+    --font-size-body-serif: 1.25rem; // 20px - Maintaining consistent size for Tiempos body text
     --font-size-lead: 1.5rem;  // 24px
   }
 }

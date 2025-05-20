@@ -11,7 +11,7 @@
   font-weight: var(--font-weight-medium);
   margin: 0 0 1rem 0; // Reduced bottom margin from 1.25rem to 1rem
   max-width: 18ch; // Reduced from 60ch
-  line-height: 1;  // Added reduced line height
+  line-height: var(--line-height-heading);  // Tight heading line height
   letter-spacing: -0.02em; // Reduced character spacing
   padding: 0; // Ensure no padding
   
@@ -43,7 +43,7 @@
   transition: color var(--transition-speed) ease;
   
   &:hover {
-    color: var(--color-black-light);
+    color: var(--color-text-secondary);
   }
   
   &::after {
@@ -78,6 +78,7 @@
   letter-spacing: 0.05em;
   margin-bottom: var(--spacing-xs);
   color: var(--color-black);
+  line-height: var(--line-height-tag);
 }
 
 .feature-title {
@@ -89,9 +90,9 @@
 
 .feature-description {
   font-family: var(--font-secondary);
-  font-size: var(--font-size-body-secondary);
-  font-weight: 300;
-  line-height: 1.4;
+  font-size: var(--font-size-body-serif);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
   margin: 0 0 var(--spacing-md) 0;
   color: var(--color-black);
   flex-grow: 1;
@@ -102,7 +103,7 @@
   p:not(.right-column-text) {
     font-family: var(--font-secondary);
     font-size: var(--font-size-body);
-    line-height: 1.6;
+    line-height: var(--line-height-body);
   }
   
   a {
@@ -110,7 +111,7 @@
     text-decoration: none;
     
     &:hover {
-      color: var(--color-black-light);
+      color: var(--color-text-secondary);
     }
   }
 }
@@ -121,14 +122,14 @@
   font-weight: var(--font-weight-medium);
   margin: 0;
   color: var(--color-black);
-  line-height: 1.1; // Added for better line spacing with larger text
+  line-height: var(--line-height-heading); // Heading line height
 }
 
 .right-column-text {
   font-family: var(--font-secondary);
-  font-size: var(--font-size-body-secondary);
-  font-weight: 300;
-  line-height: 1.4;
+  font-size: var(--font-size-body-serif);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
   margin: 0;
   color: var(--color-black);
 }

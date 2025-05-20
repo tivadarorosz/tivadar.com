@@ -60,7 +60,7 @@
     left: 12px;
     width: 100%;
     height: 100%;
-    background-color: var(--color-stroke-hero-outer); // Swapped with inner stroke color
+    background-color: var(--theme-stroke-hero-outer); // Outer decorative stroke
     border-radius: var(--image-radius); // Border radius for hero image
     z-index: -1; // Position behind the image
     display: none; // Hidden by default
@@ -78,7 +78,7 @@
     left: 8px;
     width: calc(100% - 1px); // Adjusted to show outer stroke
     height: calc(100% - 1px);
-    background-color: var(--color-stroke-hero-inner); // Swapped with outer stroke color
+    background-color: var(--theme-stroke-hero-inner); // Inner decorative stroke
     border-radius: calc(var(--image-radius) - 0.125rem); // Slightly smaller radius
     z-index: -1; // Position behind the image but in front of outer stroke
     display: none; // Hidden by default
@@ -207,15 +207,15 @@
 }
 
 .stroke-beige {
-  background-color: var(--color-stroke-beige);
+  background-color: var(--theme-stroke-beige);
 }
 
 .stroke-green {
-  background-color: var(--color-stroke-green);
+  background-color: var(--theme-stroke-green);
 }
 
 .stroke-purple {
-  background-color: var(--color-stroke-purple);
+  background-color: var(--theme-stroke-purple);
 }
 
 .portfolio-image {
@@ -305,7 +305,7 @@
   color: var(--color-black);
   transition: color var(--transition-speed) ease;
   padding-right: 20px;
-  line-height: 1.4;
+  line-height: var(--line-height-tight);
   
   @media (max-width: $breakpoint-md) {
     font-size: var(--font-size-body);
@@ -326,7 +326,7 @@
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size-small);
   transition: color var(--transition-speed) ease;
-  line-height: 1.4;
+  line-height: var(--line-height-tight);
   
   @media (max-width: $breakpoint-md) {
     font-size: var(--font-size-small);
@@ -414,7 +414,7 @@
   font-size: var(--font-size-h1) !important;
   color: var(--color-black) !important;
   margin: 0 0 2rem !important;
-  line-height: 1.2 !important;
+  line-height: var(--line-height-subheading) !important;
 }
 
 .cta-buttons {

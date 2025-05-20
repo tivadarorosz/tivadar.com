@@ -33,13 +33,9 @@ body:has(.cities-page) .page-hero-content {
   }
 }
 
+// Using page-hero--large class in the template for standardized hero styling
 body:has(.cities-page) .page-hero-title {
-  font-size: clamp(3.25rem, 6.5vw, 5rem); // Same title size as pricing page
   text-align: center !important; // Force center alignment
-  
-  @media (max-width: $breakpoint-sm - 1px) {
-    font-size: clamp(2.5rem, 5vw, 3.75rem); // Same mobile size as pricing
-  }
   
   // Ensure animation wrapper is centered
   .title-animation-wrapper {

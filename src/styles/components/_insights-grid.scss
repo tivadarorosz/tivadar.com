@@ -88,6 +88,7 @@
   color: var(--color-black);
   padding-top: 0.5rem;
   margin-bottom: -0.25rem; // Reduce space between tag and title
+  line-height: var(--line-height-tag);
 }
 
 .insights-card-title {
@@ -95,7 +96,7 @@
   font-size: var(--font-size-h4); // Using h4 token
   font-weight: var(--font-weight-medium);
   margin: 0;
-  line-height: 1.2;
+  line-height: var(--line-height-subheading);
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
@@ -103,4 +104,5 @@
 .insights-card-date {
   font-size: var(--font-size-small);
   color: var(--color-footer-text);
+  line-height: var(--line-height-tag);
 }

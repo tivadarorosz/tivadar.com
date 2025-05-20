@@ -18,7 +18,7 @@
   text-decoration: none;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
-  font-size: 15px;
+  font-size: var(--font-size-small);
   transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-radius var(--transition-speed) ease;
   cursor: pointer;
   border: none;
@@ -34,7 +34,7 @@
   }
   
   &:hover {
-    background-color: var(--color-black-light);
+    background-color: var(--color-text-secondary);
   }
 }
 
@@ -57,7 +57,7 @@
   border: 1px solid var(--color-black);
   
   &:hover {
-    background-color: var(--color-black-light);
+    background-color: var(--color-text-secondary);
     color: var(--color-background-light);
   }
 }
@@ -89,7 +89,7 @@
   border: 1px solid var(--color-background-light);
   
   &:hover {
-    background-color: rgba(250, 249, 245, 0.1);
+    background-color: var(--color-overlay-light);
     color: var(--color-background-light);
     border-color: var(--color-background-light);
   }

@@ -36,9 +36,12 @@ These are the foundational typography variables defined in `_tokens.scss`:
 ### Font Weights
 
 ```scss
---font-weight-normal: 400;
---font-weight-medium: 500;
---font-weight-bold: 700;
+--font-weight-light: 300;    // Light weight - for less emphasis
+--font-weight-normal: 400;   // Normal weight - default body text
+--font-weight-medium: 500;   // Medium weight - slight emphasis
+--font-weight-semibold: 600; // Semi-bold weight - used in logo and UI elements
+--font-weight-bold: 700;     // Bold weight - headings and strong emphasis
+--font-weight-black: 900;    // Black weight - extreme emphasis, used in logo slash
 ```
 
 ### Font Sizes - Legacy (maintained for backward compatibility)
@@ -62,7 +65,7 @@ These are the foundational typography variables defined in `_tokens.scss`:
 --font-size-h5: 1rem;      // 16px
 
 --font-size-body: 1rem;    // 16px - Primary body text (Styrene)
---font-size-body-secondary: 1.25rem; // 20px - Secondary body text (Tiempos)
+--font-size-body-serif: 1.25rem; // 20px - Secondary body text (Tiempos)
 --font-size-lead: 1.25rem; // 20px - Lead paragraphs
 --font-size-small: 0.875rem; // 14px
 ```
@@ -78,7 +81,7 @@ These are the foundational typography variables defined in `_tokens.scss`:
     --font-size-h4: 1.5rem;    // 24px
     --font-size-h5: 1.125rem;  // 18px
     
-    --font-size-body-secondary: 1.25rem; // 20px - Maintaining consistent size for Tiempos body text
+    --font-size-body-serif: 1.25rem; // 20px - Maintaining consistent size for Tiempos body text
     --font-size-lead: 1.5rem;  // 24px
   }
 }
@@ -171,14 +174,14 @@ Core typography styles from `_typography.scss`:
 |---------|-------------|-----------|-------------|-------|----------------|------------|
 | `.feature-tag` | (inherited) | `var(--font-size-small)` | `var(--font-weight-medium)` | `var(--color-black)` | `0.05em` | (inherited) |
 | `.feature-title` | (inherited) | `var(--font-size-h4)` | `var(--font-weight-medium)` | `var(--color-black)` | (inherited) | (inherited) |
-| `.feature-description` | `var(--font-secondary)` | `var(--font-size-body-secondary)` | `300` | `var(--color-black)` | (inherited) | `1.4` |
+| `.feature-description` | `var(--font-secondary)` | `var(--font-size-body-serif)` | `300` | `var(--color-black)` | (inherited) | `1.4` |
 
 ### Two Column Section Typography
 
 | Element | Font Family | Font Size | Font Weight | Color | Line Height |
 |---------|-------------|-----------|-------------|-------|------------|
 | `.left-column-title` | (inherited) | `var(--font-size-h2)` | `var(--font-weight-medium)` | `var(--color-black)` | `1.1` |
-| `.right-column-text` | `var(--font-secondary)` | `var(--font-size-body-secondary)` | `300` | `var(--color-black)` | `1.4` |
+| `.right-column-text` | `var(--font-secondary)` | `var(--font-size-body-serif)` | `300` | `var(--color-black)` | `1.4` |
 
 ### About and Portfolio Text
 
@@ -262,7 +265,7 @@ Blog post typography from `pages/_post.scss`:
 | `.post-tag` | `var(--font-primary)` | `var(--font-size-small)` | `var(--font-weight-normal)` | (inherited) | (inherited) |
 | `.post-title` | `var(--font-primary)` | `clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem)` | `var(--font-weight-medium)` | (inherited) | `1.2` |
 | `.post-meta`, `.post-date`, `.post-reading-time` | `var(--font-primary)` | `var(--font-size-md)` | `var(--font-weight-normal)` | `var(--color-grey-600)` | (inherited) |
-| `.post-content` | `var(--font-secondary)` | `var(--font-size-body-secondary)` | `var(--font-weight-normal)` | (inherited) | `1.6` |
+| `.post-content` | `var(--font-secondary)` | `var(--font-size-body-serif)` | `var(--font-weight-normal)` | (inherited) | `1.6` |
 | `.post-content h2`, `.post-content h3`, `.post-content h4`, `.post-content h5`, `.post-content h6` | `var(--font-primary)` | (varies) | `var(--font-weight-medium)` | (inherited) | (inherited) |
 | `.post-content h4` | `var(--font-primary)` | `clamp(1.25rem, 1rem + 1.25vw, 1.75rem)` | `var(--font-weight-medium)` | (inherited) | (inherited) |
 | `.post-related-title` | `var(--font-primary)` | `var(--font-size-h3)` | `var(--font-weight-medium)` | (inherited) | (inherited) |
@@ -285,7 +288,7 @@ Feature box typography:
 |---------|-------------|-----------|-------------|-------------|---------------|
 | `.feature-tag` | (inherited) | `var(--font-size-small)` | `var(--font-weight-medium)` | (inherited) | `0.05em` |
 | `.feature-title` | (inherited) | `var(--font-size-h4)` | `var(--font-weight-medium)` | (inherited) | (inherited) |
-| `.feature-description` | `var(--font-secondary)` | `var(--font-size-body-secondary)` | `300` | `1.4` | (inherited) |
+| `.feature-description` | `var(--font-secondary)` | `var(--font-size-body-serif)` | `300` | `1.4` | (inherited) |
 
 ### Page Hero Component
 

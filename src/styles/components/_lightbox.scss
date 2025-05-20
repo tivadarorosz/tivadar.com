@@ -1,5 +1,5 @@
 // ==============================================
-// LIGHTBOX STYLES - Desktop only (> 992px)
+// LIGHTBOX STYLES - Desktop only (> $breakpoint-md)
 // ==============================================
 
 @use '../variables' as *;
@@ -19,7 +19,7 @@
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
     
     &.active {
       opacity: 1;
@@ -41,19 +41,19 @@
     max-height: 90vh;
     object-fit: contain;
     display: block;
-    box-shadow: 0 0 50px var(--color-shadow);
+    box-shadow: 0 0 var(--spacing-lg) var(--color-shadow); // 50px shadow
   }
   
   .lightbox-caption {
     position: absolute;
-    bottom: -40px;
+    bottom: calc(var(--spacing-lg) * -1); // -40px
     left: 50%;
     transform: translateX(-50%);
     color: var(--color-white);
     font-family: var(--font-secondary);
     font-size: var(--font-size-base);
     text-align: center;
-    padding: 10px 20px;
+    padding: var(--spacing-xs) var(--spacing-md);
     background-color: var(--color-overlay-dark);
     border-radius: var(--radius-sm);
     white-space: nowrap;
@@ -62,21 +62,21 @@
   
   .lightbox-close {
     position: absolute;
-    top: 20px;
-    right: 40px;
+    top: var(--spacing-md); // 20px
+    right: var(--spacing-lg); // 40px
     background: none;
     border: none;
     color: var(--color-white);
-    font-size: 40px;
-    line-height: 1;
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-tag);
     cursor: pointer;
     padding: 0;
-    width: 50px;
-    height: 50px;
+    width: calc(var(--spacing-lg) * 1.25); // 50px
+    height: calc(var(--spacing-lg) * 1.25); // 50px
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
     opacity: 0.7;
     z-index: 10;
     
@@ -94,11 +94,11 @@
     background: var(--color-overlay-light);
     border: none;
     color: var(--color-white);
-    font-size: 60px;
-    line-height: 1;
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-tag);
     cursor: pointer;
-    padding: 20px 15px;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    padding: var(--spacing-md) var(--spacing-sm);
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
     z-index: 10;
     border-radius: var(--radius-sm);
     
@@ -109,11 +109,11 @@
   }
   
   .lightbox-prev {
-    left: 40px;
+    left: var(--spacing-lg); // 40px
   }
   
   .lightbox-next {
-    right: 40px;
+    right: var(--spacing-lg); // 40px
   }
   
   // Prevent body scroll when lightbox is open
@@ -127,7 +127,7 @@
     cursor: pointer;
     
     .story-feature-img {
-      transition: opacity 0.3s ease;
+      transition: opacity var(--transition-speed) ease;
       
       &:hover {
         opacity: 0.9;

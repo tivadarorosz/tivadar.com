@@ -1,7 +1,8 @@
 // ==============================================
-// TYPOGRAPHY THEMING SYSTEM
+// TYPOGRAPHY THEMING SYSTEM (MIGRATION VERSION)
 // ==============================================
-// Standardized typography theming based on data attributes
+// This is a transitional file that supports both legacy and new data attributes
+// To be merged into _typography-theme.scss after appropriate testing
 
 // Create a heading color system that can be applied at the section level
 [data-heading-theme="default"] {
@@ -32,15 +33,16 @@
   --text-accent-color: var(--color-white);
 }
 
-// Size variants - Semantic naming aligned with typography system
-// Legacy variants maintained with comments for backward compatibility
+// =============================================
+// SIZE VARIANTS - DUAL SUPPORT IMPLEMENTATION
+// =============================================
 
-// Small - Unchanged
+// Small - Unchanged, so keep the same name
 [data-text-size="small"] {
   --component-text-size: var(--font-size-small);
 }
 
-// Base → Body 
+// Base → Body
 [data-text-size="base"] {
   --component-text-size: var(--font-size-body);
   // DEPRECATED: Use data-text-size="body" instead
@@ -73,14 +75,14 @@
 // XLarge → h2
 [data-text-size="xlarge"] {
   --component-text-size: var(--font-size-h2);
-  // DEPRECATED: Use data-text-size="h2" instead  
+  // DEPRECATED: Use data-text-size="h2" instead
 }
 
 [data-text-size="h2"] {
   --component-text-size: var(--font-size-h2);
 }
 
-// Additional heading sizes for completeness
+// Add new heading sizes to complete the system
 [data-text-size="h1"] {
   --component-text-size: var(--font-size-h1);
 }
@@ -104,7 +106,7 @@
   --text-color: var(--color-black);
   --text-muted-color: var(--color-text-muted);
   --text-accent-color: var(--color-black-light);
-  --component-text-size: var(--font-size-body); // Replaced from --font-size-base
+  --component-text-size: var(--font-size-body);
 }
 
 // Utility classes that consume these variables

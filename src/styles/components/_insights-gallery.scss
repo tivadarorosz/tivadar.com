@@ -88,7 +88,7 @@
   }
 
   &-meta {
-    color: #141413;
+    color: var(--color-text-primary);
     transition: var(--transition-standard);
   }
 
@@ -104,7 +104,7 @@
   &-title {
     font-size: var(--font-size-large);
     font-weight: var(--font-weight-medium);
-    line-height: 1.2;
+    line-height: var(--line-height-subheading);
     margin: 0;
   }
   
@@ -113,21 +113,21 @@
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-base);
-    color: #141413;
+    color: var(--color-text-primary);
     
     p {
       margin: 0 0 1rem 0;
-      line-height: 1.5;
+      line-height: var(--line-height-tight);
     }
     
     // Override global link styles for this section only
     a:not(.insights-social-link) {
-      color: #141413;
+      color: var(--color-text-primary);
       text-decoration: underline;
       transition: color var(--transition-speed) ease;
       
       &:hover {
-        color: #878680 !important; // Add !important to ensure it overrides
+        color: var(--color-text-muted-light) !important; // Add !important to ensure it overrides
       }
     }
     

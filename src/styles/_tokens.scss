@@ -5,28 +5,76 @@
 // features like dark mode and component-scoped overrides
 
 :root {
-  // Core Colors
-  --color-black: #141413;
-  --color-black-light: #3d3d3a;
-  --color-text-muted: #6c6b68;
-  --color-background: #f0eee7;
-  --color-background-light: #faf9f5;
-  --color-white: #ffffff;
-  --color-footer-text: #b0aea6;
-  --color-highlight: rgba(205, 152, 131, 0.7);
+  // ==============================================
+  // COLOR SYSTEM
+  // ==============================================
   
-  // Page background colors
+  // 1. RAW COLOR VALUES
+  // Base colors that can be used by both functional and theme variables
+  
+  // Neutral foundations
+  --raw-black: #141413;
+  --raw-black-light: #3d3d3a;
+  --raw-gray-dark: #6c6b68;
+  --raw-gray-medium: #878680;
+  --raw-gray-light: #b0aea6;
+  --raw-border-alt: #cccbc8;
+  --raw-beige-dark: #c4c2bd;
+  --raw-beige-medium: #e1dacd;
+  --raw-beige-light: #E8E6DD;
+  --raw-cream-dark: #f0eee7;
+  --raw-cream-light: #faf9f5;
+  --raw-white: #ffffff;
+  
+  // Warm tones
+  --raw-terracotta-primary: #cc7c5e;
+  --raw-terracotta-secondary: #D9A28E;
+  --raw-terracotta-bright: #D87756;
+  --raw-bronze: #CCA584;
+  --raw-warm-beige: #EEE6D3;
+  
+  // Cool tones
+  --raw-sage-dark: #7C8D62;
+  --raw-sage-light: #C0D0CA;
+  --raw-soft-stone: #BFC0BB;
+  --raw-soft-blue: #759AC8;
+  --raw-violet-dark: #8989D7;
+  --raw-violet-light: #CBCADA;
+  
+  // 2. FUNCTIONAL COLORS (--color-*)
+  // Colors used for UI elements and functional components
+  
+  // Core colors
+  --color-black: var(--raw-black);
+  --color-white: var(--raw-white);
+  
+  // Text colors
+  --color-text-primary: var(--raw-black);
+  --color-text-secondary: var(--raw-black-light);
+  --color-text-muted: var(--raw-gray-dark);
+  --color-text-muted-light: var(--raw-gray-medium);
+  --color-footer-text: var(--raw-gray-light);
+  
+  // Background colors
+  --color-background: var(--raw-cream-dark);
+  --color-background-light: var(--raw-cream-light);
   --color-default-bg: var(--color-background);
   --color-light-bg: var(--color-background-light);
   --page-bg: var(--color-default-bg); // Default fallback
   
-  // Semantic UI Colors
+  // Interactive states
   --color-error: #dc3545;
-  --color-link: #cc7c5e; // Using the hero inner stroke color for links
-  --color-link-hover: #D9A28E; // Using the hero outer stroke color for link hover
-  --color-code-bg: #f0eee7; // Using background color for code elements
+  --color-link: var(--raw-terracotta-primary);
+  --color-link-hover: var(--raw-terracotta-secondary);
+  --color-highlight: rgba(205, 152, 131, 0.7);
+  --color-code-bg: var(--color-background);
   
-  // Overlay & Special Effects
+  // Border colors
+  --color-border-light: rgba(20, 20, 19, 0.1);
+  --color-border-medium: var(--raw-border-alt);
+  --color-border-featured: var(--raw-beige-dark);
+  
+  // Overlay and special effects
   --color-overlay-dark: rgba(0, 0, 0, 0.7);
   --color-overlay-light: rgba(255, 255, 255, 0.1);
   --color-overlay-lighter: rgba(255, 255, 255, 0.2);
@@ -34,45 +82,57 @@
   --color-backdrop-dark: rgba(0, 0, 0, 0.95);
   --color-shadow: rgba(0, 0, 0, 0.5);
   --color-shadow-light: rgba(0, 0, 0, 0.12);
-  --color-border-light: rgba(20, 20, 19, 0.1);
-  --color-border-light-alt: #cccbc8;
-  --color-text-muted-light: #878680;
   
-  // Decorative colors
-  --color-stroke-hero-outer: #D9A28E;
-  --color-stroke-hero-inner: #cc7c5e;
-  --color-stroke-beige: #e1dacd;
-  --color-stroke-green: #c0d0ca;
-  --color-stroke-purple: #cbcada;
-  --color-border-featured: #c4c2bd;
-  --color-beige-light: #E8E6DD;
+  // 3. THEME COLORS (--theme-*)
+  // Colors used for decorative purposes, theming, and visual interest
   
-  // Article palette colors
-  --color-terracotta: #D87756;
-  --color-pale-sage: #C0D0CA;
-  --color-soft-stone: #BFC0BB;
-  --color-warm-beige: #EEE6D3;
-  --color-neutral-cream: #E1DACD;
-  --color-warm-bronze: #CCA584;
-  --color-sage-green: #7C8D62;
-  --color-soft-blue: #759AC8;
-  --color-dusty-violet: #8989D7;
-  --color-light-purple: #CBCADA;
+  // Brand themes
+  --theme-primary: var(--raw-terracotta-primary);
+  --theme-secondary: var(--raw-terracotta-secondary);
+  --theme-accent: var(--raw-terracotta-bright);
+  
+  // Hero image strokes
+  --theme-stroke-hero-outer: var(--raw-terracotta-secondary);
+  --theme-stroke-hero-inner: var(--raw-terracotta-primary);
+  --theme-stroke-beige: var(--raw-beige-medium);
+  --theme-stroke-green: var(--raw-sage-light);
+  --theme-stroke-purple: var(--raw-violet-light);
+  
+  // Article/post colors - direct color values for clarity
+  --theme-terracotta: #D87756;
+  --theme-pale-sage: #C0D0CA;
+  --theme-soft-stone: #BFC0BB;
+  --theme-warm-beige: #EEE6D3;
+  --theme-neutral-cream: #e1dacd;
+  --theme-warm-bronze: #CCA584;
+  --theme-sage-green: #7C8D62;
+  --theme-soft-blue: #759AC8;
+  --theme-dusty-violet: #8989D7;
+  --theme-light-purple: #CBCADA;
+  
+  // 4. THEME EXTENSIONS
+  // Add any additional theme-specific color variations here
   
   // Typography - Fonts
   --font-primary: 'Styrene A', sans-serif;
   --font-secondary: 'Tiempos Text', "Georgia", serif;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
   
-  // Legacy font sizes - maintained for backward compatibility
-  --font-size-base: 16px;
-  --font-size-small: 14px;
-  --font-size-medium: 20px;
-  --font-size-xmedium: 22px;
-  --font-size-large: 24px;
-  --font-size-xlarge: 32px;
+  // Complete font weight system
+  --font-weight-light: 300;    // Light weight - for less emphasis
+  --font-weight-normal: 400;   // Normal weight - default body text
+  --font-weight-medium: 500;   // Medium weight - slight emphasis
+  --font-weight-semibold: 600; // Semi-bold weight - used in logo and UI elements
+  --font-weight-bold: 700;     // Bold weight - headings and strong emphasis
+  --font-weight-black: 900;    // Black weight - extreme emphasis, used in logo slash
+  
+  // Legacy font sizes - DEPRECATED: Use the typography scale variables below instead
+  // These will be maintained only for backward compatibility
+  --font-size-base: 16px;      // DEPRECATED: Use --font-size-body instead (1rem)
+  --font-size-small: 14px;     // Matches --font-size-small in new system (0.875rem)
+  --font-size-medium: 20px;    // DEPRECATED: Use --font-size-body-serif or --font-size-lead instead (1.25rem)
+  --font-size-xmedium: 22px;   // DEPRECATED: Use --font-size-h4 instead (mobile: 1.25rem, desktop: 1.5rem)
+  --font-size-large: 24px;     // DEPRECATED: Use --font-size-h3 instead (mobile: 1.5rem, desktop: 2rem)
+  --font-size-xlarge: 32px;    // DEPRECATED: Use --font-size-h2 instead (mobile: 1.875rem, desktop: 2.5rem)
   
   // ==============================================
   // TYPOGRAPHY SCALE
@@ -86,9 +146,20 @@
   --font-size-h5: 1rem;      // 16px
 
   --font-size-body: 1rem;    // 16px - Primary body text (Styrene)
-  --font-size-body-secondary: 1.25rem; // 20px - Secondary body text (Tiempos)
+  --font-size-body-serif: 1.25rem; // 20px - Secondary body text (Tiempos)
   --font-size-lead: 1.25rem; // 20px - Lead paragraphs
   --font-size-small: 0.875rem; // 14px
+  
+  // ==============================================
+  // TYPOGRAPHY LINE HEIGHTS
+  // ==============================================
+  
+  --line-height-heading: 1.1;    // For H1-H3 where tight leading enhances visual impact
+  --line-height-subheading: 1.2;  // For H4-H5 or hero subtitles with slightly more open spacing
+  --line-height-body: 1.6;        // For long-form content (paragraphs, post bodies)
+  --line-height-tight: 1.4;       // For shorter paragraphs or intro blurbs
+  --line-height-loose: 1.75;      // For footer, labels, or small body text needing more openness
+  --line-height-tag: 1.2;         // For tags, metadata, dates and other small text elements
   
   // Spacing
   --side-padding: 40px;
@@ -99,10 +170,12 @@
   --spacing-xl: 60px;
   --spacing-xxl: 80px;
   
-  // Core Border Radius Scale
-  --radius-sm: 0.5rem;   // 8px - for smaller elements
-  --radius-md: 0.75rem;  // 12px - for medium elements
-  --radius-lg: 1.5rem;   // 24px - for larger elements
+  // Core Border Properties
+  --radius-sm: 0.5rem;     // 8px - for smaller elements
+  --radius-md: 0.75rem;    // 12px - for medium elements
+  --radius-lg: 1.5rem;     // 24px - for larger elements
+  --radius-pill: 9999px;   // Pill/capsule shaped elements (fully rounded)
+  --border-width: 1.5px;   // Standard border width
   
   // No legacy variables needed
   
@@ -150,7 +223,7 @@
     --font-size-h4: 1.5rem;    // 24px
     --font-size-h5: 1.125rem;  // 18px
     
-    --font-size-body-secondary: 1.25rem; // 20px - Maintaining consistent size for Tiempos body text
+    --font-size-body-serif: 1.25rem; // 20px - Maintaining consistent size for Tiempos body text
     --font-size-lead: 1.5rem;  // 24px
   }
 }
