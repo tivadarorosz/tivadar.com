@@ -164,7 +164,7 @@
 .page-hero-subtitle {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
-  font-size: clamp(1.25rem, 2vw, 1.375rem); // Responsive font size (20px-22px)
+  font-size: var(--font-size-lead);
   color: var(--color-black);
   margin: 0 auto 1.5rem; // Added bottom margin for button spacing
   line-height: 1.2;
@@ -176,7 +176,6 @@
   @media (max-width: $breakpoint-sm - 1px) {
     padding-left: calc(var(--side-padding) * 0.75); // Increased mobile padding 
     padding-right: calc(var(--side-padding) * 0.75);
-    font-size: clamp(1.125rem, 1.75vw, 1.25rem); // Slightly smaller on mobile
   }
 }
 

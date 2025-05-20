@@ -81,7 +81,7 @@
 }
 
 .feature-title {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-h4);
   font-weight: var(--font-weight-medium);
   margin: 0 0 var(--spacing-xs) 0;
   color: var(--color-black);
@@ -89,7 +89,7 @@
 
 .feature-description {
   font-family: var(--font-secondary);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-body-secondary);
   font-weight: 300;
   line-height: 1.4;
   margin: 0 0 var(--spacing-md) 0;
@@ -101,7 +101,7 @@
 .about, .portfolio {
   p:not(.right-column-text) {
     font-family: var(--font-secondary);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-body);
     line-height: 1.6;
   }
   
@@ -117,7 +117,7 @@
 
 // Two column section typography
 .left-column-title {
-  font-size: var(--font-size-xlarge);
+  font-size: var(--font-size-h2);
   font-weight: var(--font-weight-medium);
   margin: 0;
   color: var(--color-black);
@@ -126,7 +126,7 @@
 
 .right-column-text {
   font-family: var(--font-secondary);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-body-secondary);
   font-weight: 300;
   line-height: 1.4;
   margin: 0;

@@ -58,18 +58,36 @@
   --color-dusty-violet: #8989D7;
   --color-light-purple: #CBCADA;
   
-  // Typography
+  // Typography - Fonts
   --font-primary: 'Styrene A', sans-serif;
   --font-secondary: 'Tiempos Text', "Georgia", serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  // Legacy font sizes - maintained for backward compatibility
   --font-size-base: 16px;
   --font-size-small: 14px;
   --font-size-medium: 20px;
   --font-size-xmedium: 22px;
   --font-size-large: 24px;
   --font-size-xlarge: 32px;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+  
+  // ==============================================
+  // TYPOGRAPHY SCALE
+  // ==============================================
+  
+  // Mobile-first (default)
+  --font-size-h1: 2.25rem;   // 36px
+  --font-size-h2: 1.875rem;  // 30px
+  --font-size-h3: 1.5rem;    // 24px
+  --font-size-h4: 1.25rem;   // 20px
+  --font-size-h5: 1rem;      // 16px
+
+  --font-size-body: 1rem;    // 16px - Primary body text (Styrene)
+  --font-size-body-secondary: 1.25rem; // 20px - Secondary body text (Tiempos)
+  --font-size-lead: 1.25rem; // 20px - Lead paragraphs
+  --font-size-small: 0.875rem; // 14px
   
   // Spacing
   --side-padding: 40px;
@@ -118,6 +136,21 @@
       calc(40px + (180 - 40) * ((100vw - 768px) / (1440 - 768))), /* fluid scaling formula */
       120px /* maximum value */
     );
+  }
+}
+
+// Desktop typography scale
+@media (min-width: 768px) {
+  :root {
+    // Desktop typography scale override
+    --font-size-h1: 3.5rem;    // 56px
+    --font-size-h2: 2.5rem;    // 40px
+    --font-size-h3: 2rem;      // 32px
+    --font-size-h4: 1.5rem;    // 24px
+    --font-size-h5: 1.125rem;  // 18px
+    
+    --font-size-body-secondary: 1.25rem; // 20px - Maintaining consistent size for Tiempos body text
+    --font-size-lead: 1.5rem;  // 24px
   }
 }
 

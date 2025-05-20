@@ -35,22 +35,14 @@
 .pricing-cta-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
-  font-size: 1.875rem;
+  font-size: var(--font-size-h2);
   color: var(--color-black);
   margin: 0 0 2rem 0;
   line-height: 1.2;
   
-  @media (min-width: $breakpoint-sm) {
-    font-size: 2.25rem;
-  }
-  
   // Large title variant for homepage & inverted CTAs
   &--large {
-    font-size: 2rem;
-    
-    @media (min-width: $breakpoint-sm) {
-      font-size: 3rem;
-    }
+    font-size: var(--font-size-h1);
   }
 }
 
@@ -58,14 +50,10 @@
 .cta-title {
   font-family: var(--font-primary) !important;
   font-weight: var(--font-weight-medium) !important;
-  font-size: 2rem !important;
+  font-size: var(--font-size-h1) !important;
   color: var(--color-black) !important;
   margin: 0 0 2rem !important;
   line-height: 1.2 !important;
-  
-  @media (min-width: $breakpoint-sm) {
-    font-size: 3rem !important;
-  }
 }
 
 // Container for double button version
@@ -125,12 +113,8 @@
     color: var(--color-background-light);
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
-    font-size: 2rem;  // Matching homepage CTA size
+    font-size: var(--font-size-h1);  // Using new typography scale
     margin: 0 0 2rem 0;
     line-height: 1.2;
-    
-    @media (min-width: $breakpoint-sm) {
-      font-size: 3rem;  // Matching homepage CTA size
-    }
   }
 }
