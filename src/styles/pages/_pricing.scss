@@ -184,13 +184,9 @@ body:has(.pricing-page) .page-hero-title {
 
 .pricing-column {
   background: white;
-  border-radius: var(--card-border-radius-mobile);
+  border-radius: var(--card-radius);
   padding: 2rem;
   text-align: left;
-  
-  @media (min-width: $breakpoint-md) {
-    border-radius: var(--card-border-radius-desktop);
-  }
   
   .pricing-tier-icon {
     width: 64px;

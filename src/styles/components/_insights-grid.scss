@@ -30,7 +30,7 @@
   text-decoration: none;
   color: var(--color-black);
   background-color: var(--color-white);
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--card-radius);
   overflow: hidden;
   transition: opacity 0.3s ease;
   
@@ -45,8 +45,8 @@
   width: 100%;
   padding-bottom: 75%; // 4:3 aspect ratio (same as portfolio)
   overflow: hidden;
-  border-top-left-radius: var(--border-radius-sm);
-  border-top-right-radius: var(--border-radius-sm);
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
   display: flex;
   align-items: center;
   justify-content: center;

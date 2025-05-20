@@ -1,7 +1,7 @@
 {# Bottom CTA Section - Single Button Inverted Version #}
 <section class="bottom-cta-inverted-wrapper">
   <div class="bottom-cta-section bottom-cta-section--inverted{% if customClass %} {{ customClass }}{% endif %}">
-    <h2 class="bottom-cta-title">{{ title | default("Not sure what fits? Let's find fit together.") }}</h2>
+    <h2 class="bottom-cta-title bottom-cta-title--large">{{ title | default("Not sure what fits? Let's find fit together.") }}</h2>
     <a href="{{ buttonUrl | default("/contact") }}" class="btn btn--cta-inverted">{{ buttonText | default("Share Your Vision") }}</a>
   </div>
 </section>

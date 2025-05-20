@@ -38,7 +38,7 @@
   padding: 0.125rem 0.75rem;
   background-color: transparent;
   border: 1px solid #141413;
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--tag-radius);
 }
 
 .story-title {
@@ -92,7 +92,7 @@
   padding-bottom: 65%; // Increased height more (was 61.875%)
   position: relative;
   overflow: hidden;
-  border-radius: var(--border-radius-md);
+  border-radius: var(--image-radius);
   
   // On mobile, don't extend beyond viewport
   @media (max-width: $breakpoint-md) {
@@ -269,14 +269,14 @@
   code {
     background-color: var(--color-grey-100);
     padding: 0.2rem 0.4rem;
-    border-radius: var(--border-radius-xs);
+    border-radius: var(--radius-sm);
     font-size: 0.9em;
   }
   
   pre {
     background-color: var(--color-grey-100);
     padding: var(--spacing-md);
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--radius-sm);
     overflow-x: auto;
     margin-bottom: var(--spacing-md);
     

@@ -65,11 +65,10 @@
 .contact-form {
   background-color: #f0eee7;
   padding: calc(var(--spacing-lg) + 10px) 50px;
-  border-radius: var(--card-border-radius-mobile);
+  border-radius: var(--card-radius);
   
   @media (min-width: 992px) {
     max-width: 560px;
-    border-radius: var(--card-border-radius-desktop);
   }
 }
 
@@ -110,7 +109,7 @@
   padding: 18px 20px;
   margin-top: 4px;
   border: 1.5px solid #cccbc8;
-  border-radius: var(--border-radius);
+  border-radius: var(--form-radius);
   background-color: #faf9f5;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
@@ -161,7 +160,7 @@
     width: 20px;
     height: 20px;
     border: 1.5px solid #cccbc8;
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--radius-sm);
     background-color: #faf9f5;
     margin-right: var(--spacing-xs);
     cursor: pointer;
@@ -193,7 +192,7 @@
         width: 8px;
         height: 8px;
         background-color: #141413;
-        border-radius: calc(var(--border-radius-sm) / 4);
+        border-radius: calc(var(--radius-sm) / 4);
       }
     }
   }

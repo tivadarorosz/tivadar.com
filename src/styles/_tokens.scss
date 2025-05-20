@@ -57,32 +57,19 @@
   --spacing-xl: 60px;
   --spacing-xxl: 80px;
   
-  // Border Radius System
-  --border-radius-sm: 0.5rem;     // 8px - for smaller elements
-  --border-radius-md: 0.75rem;    // 12px - for medium elements
-  --border-radius-lg: 1.5rem;     // 24px - for larger elements
+  // Core Border Radius Scale
+  --radius-sm: 0.5rem;   // 8px - for smaller elements
+  --radius-md: 0.75rem;  // 12px - for medium elements
+  --radius-lg: 1.5rem;   // 24px - for larger elements
   
-  // For compatibility with existing code
-  --border-radius: 0.875rem;      // 14px - default
+  // No legacy variables needed
   
-  // Component-specific Default Styling
-  // These variables define the default styling for components by device type
-  
-  // Default button border radius
-  --btn-border-radius-desktop: var(--border-radius-md);  // 12px
-  --btn-border-radius-mobile: var(--border-radius-sm);   // 8px
-  
-  // Default card border radius
-  --card-border-radius-desktop: var(--border-radius-lg); // 24px
-  --card-border-radius-mobile: var(--border-radius-md);  // 12px
-  
-  // Default tag border radius
-  --tag-border-radius-desktop: var(--border-radius-sm);  // 8px
-  --tag-border-radius-mobile: var(--border-radius-sm);   // 8px
-  
-  // Default image border radius
-  --image-border-radius-desktop: var(--border-radius-lg); // 24px
-  --image-border-radius-mobile: var(--border-radius-md);  // 12px
+  // Component-specific radius values (mobile-first)
+  --btn-radius: var(--radius-sm);    // 8px on mobile
+  --card-radius: var(--radius-md);   // 12px on mobile
+  --tag-radius: var(--radius-lg);    // 24px on mobile and desktop
+  --image-radius: var(--radius-md);  // 12px on mobile
+  --form-radius: var(--radius-md);   // 12px for form controls
   
   // Transitions
   --transition-speed: 0.3s;
@@ -108,5 +95,16 @@
       calc(40px + (180 - 40) * ((100vw - 768px) / (1440 - 768))), /* fluid scaling formula */
       120px /* maximum value */
     );
+  }
+}
+
+// Desktop border radius values
+@media (min-width: 992px) {
+  :root {
+    --btn-radius: var(--radius-md);    // 12px on desktop
+    --card-radius: var(--radius-lg);   // 24px on desktop
+    --tag-radius: var(--radius-lg);    // 24px on desktop (unchanged)
+    --image-radius: var(--radius-lg);  // 24px on desktop
+    --form-radius: var(--radius-md);   // 12px on desktop (unchanged)
   }
 }

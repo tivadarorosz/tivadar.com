@@ -1,5 +1,5 @@
 {# Bottom CTA Section - Single Button Version #}
 <section class="bottom-cta-section{% if customClass %} {{ customClass }}{% endif %}">
-  <h2 class="bottom-cta-title">{{ title | default("Not sure what fits? Let's find fit together.") }}</h2>
+  <h2 class="bottom-cta-title bottom-cta-title--large">{{ title | default("Not sure what fits? Let's find fit together.") }}</h2>
   <a href="{{ buttonUrl | default("/contact") }}" class="btn">{{ buttonText | default("Share Your Vision") }}</a>
 </section>

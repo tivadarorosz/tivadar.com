@@ -467,7 +467,7 @@ body.menu-open .logo-slash {
   left: 50%;
   transform: translateX(-50%) translateY(-5px);
   background-color: #FAF9F5;
-  border-radius: var(--card-border-radius-mobile);
+  border-radius: var(--card-radius);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06);
   visibility: hidden;
   opacity: 0;
@@ -475,10 +475,6 @@ body.menu-open .logo-slash {
   z-index: 1000;
   width: $dropdown-width;
   padding: 1.5rem;
-  
-  @media (min-width: $breakpoint-md) {
-    border-radius: var(--card-border-radius-desktop);
-  }
   
   // Reset all inherited link styles
   a {
@@ -580,17 +576,13 @@ body.menu-open .logo-slash {
     width: 55%;
     height: 260px;
     background-color: #CC7C5E;
-    border-radius: var(--card-border-radius-mobile);
+    border-radius: var(--card-radius);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
     position: relative;
-    
-    @media (min-width: $breakpoint-md) {
-      border-radius: var(--card-border-radius-desktop);
-    }
     
     .dropdown-icon {
       width: 80%;

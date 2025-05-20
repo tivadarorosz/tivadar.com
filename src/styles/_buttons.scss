@@ -14,7 +14,7 @@
   width: auto;
   height: 2.95rem;
   padding: 0 1.5rem;
-  border-radius: var(--btn-border-radius-desktop);
+  border-radius: var(--radius-md);
   text-decoration: none;
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
@@ -30,7 +30,7 @@
   
   // Smaller border radius for iPad and mobile
   @media (max-width: $breakpoint-md - 1px) {
-    border-radius: var(--btn-border-radius-mobile);
+    border-radius: var(--radius-sm);
   }
   
   &:hover {
@@ -68,4 +68,29 @@
   min-width: unset; // Remove min-width for full-width buttons
   box-sizing: border-box;
   display: flex; // Override inline-flex to ensure full block behavior
+}
+
+// Light-on-dark inverted button (for dark backgrounds)
+.btn--cta-inverted {
+  background-color: var(--color-background-light);
+  color: var(--color-black);
+  border: 1px solid var(--color-background-light);
+  
+  &:hover {
+    background-color: rgba(250, 249, 245, 0.9);
+    border-color: rgba(250, 249, 245, 0.9);
+  }
+}
+
+// Transparent-on-dark button (for dark backgrounds)
+.btn--transparent-inverted {
+  background-color: transparent;
+  color: var(--color-background-light);
+  border: 1px solid var(--color-background-light);
+  
+  &:hover {
+    background-color: rgba(250, 249, 245, 0.1);
+    color: var(--color-background-light);
+    border-color: var(--color-background-light);
+  }
 }
