@@ -7,6 +7,8 @@
 .contact-page {
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
+  padding-left: var(--page-padding-inline-start);
+  padding-right: var(--page-padding-inline-end);
 }
 
 .contact-wrapper {

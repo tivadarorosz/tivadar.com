@@ -53,6 +53,15 @@
   }
 }
 
+// Page container layout wrapper
+// Used as a root layout container that consumes the standardized variables
+.page-container {
+  background-color: var(--page-bg, white);
+  padding-inline: var(--page-padding-inline, 24px);
+  padding-inline-start: var(--page-padding-inline-start, var(--page-padding-inline, 24px));
+  padding-inline-end: var(--page-padding-inline-end, var(--page-padding-inline, 24px));
+}
+
 // Two column section structure 
 .two-column-section {
   display: flex;

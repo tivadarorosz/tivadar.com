@@ -1,0 +1,139 @@
+// ==============================================
+// SECTION SPACING SYSTEM
+// ==============================================
+// Standardized section spacing based on data attributes
+
+// Define section spacing based on data attributes
+[data-section-spacing="none"] {
+  --section-spacing-top: 0;
+  --section-spacing-bottom: 0;
+}
+
+[data-section-spacing="small"] {
+  --section-spacing-top: var(--spacing-md);    // 20px
+  --section-spacing-bottom: var(--spacing-md); // 20px
+}
+
+[data-section-spacing="medium"] {
+  --section-spacing-top: var(--spacing-lg);    // 40px
+  --section-spacing-bottom: var(--spacing-lg); // 40px
+}
+
+[data-section-spacing="large"] {
+  --section-spacing-top: var(--spacing-xl);    // 60px
+  --section-spacing-bottom: var(--spacing-xl); // 60px
+}
+
+[data-section-spacing="xlarge"] {
+  --section-spacing-top: var(--spacing-xxl);    // 80px
+  --section-spacing-bottom: var(--spacing-xxl); // 80px
+}
+
+// Allow for asymmetric top/bottom spacing
+[data-section-spacing-top="none"] {
+  --section-spacing-top: 0;
+}
+
+[data-section-spacing-top="small"] {
+  --section-spacing-top: var(--spacing-md); // 20px
+}
+
+[data-section-spacing-top="medium"] {
+  --section-spacing-top: var(--spacing-lg); // 40px
+}
+
+[data-section-spacing-top="large"] {
+  --section-spacing-top: var(--spacing-xl); // 60px
+}
+
+[data-section-spacing-top="xlarge"] {
+  --section-spacing-top: var(--spacing-xxl); // 80px
+}
+
+[data-section-spacing-bottom="none"] {
+  --section-spacing-bottom: 0;
+}
+
+[data-section-spacing-bottom="small"] {
+  --section-spacing-bottom: var(--spacing-md); // 20px
+}
+
+[data-section-spacing-bottom="medium"] {
+  --section-spacing-bottom: var(--spacing-lg); // 40px
+}
+
+[data-section-spacing-bottom="large"] {
+  --section-spacing-bottom: var(--spacing-xl); // 60px
+}
+
+[data-section-spacing-bottom="xlarge"] {
+  --section-spacing-bottom: var(--spacing-xxl); // 80px
+}
+
+// Set default values that match current styling
+:root {
+  --section-spacing-top: var(--spacing-lg);    // 40px default top spacing
+  --section-spacing-bottom: var(--spacing-lg); // 40px default bottom spacing
+}
+
+// Responsive overrides for desktop
+@media (min-width: 992px) {
+  [data-section-spacing="small"] {
+    --section-spacing-top: var(--spacing-lg);    // 40px on desktop
+    --section-spacing-bottom: var(--spacing-lg); // 40px on desktop
+  }
+  
+  [data-section-spacing="medium"] {
+    --section-spacing-top: var(--spacing-xl);    // 60px on desktop
+    --section-spacing-bottom: var(--spacing-xl); // 60px on desktop
+  }
+  
+  [data-section-spacing="large"] {
+    --section-spacing-top: var(--spacing-xxl);    // 80px on desktop
+    --section-spacing-bottom: var(--spacing-xxl); // 80px on desktop
+  }
+  
+  [data-section-spacing="xlarge"] {
+    --section-spacing-top: calc(var(--spacing-xxl) * 1.5);    // 120px on desktop
+    --section-spacing-bottom: calc(var(--spacing-xxl) * 1.5); // 120px on desktop
+  }
+  
+  // Override individual top/bottom values for desktop
+  [data-section-spacing-top="small"] {
+    --section-spacing-top: var(--spacing-lg); // 40px on desktop
+  }
+  
+  [data-section-spacing-top="medium"] {
+    --section-spacing-top: var(--spacing-xl); // 60px on desktop
+  }
+  
+  [data-section-spacing-top="large"] {
+    --section-spacing-top: var(--spacing-xxl); // 80px on desktop
+  }
+  
+  [data-section-spacing-top="xlarge"] {
+    --section-spacing-top: calc(var(--spacing-xxl) * 1.5); // 120px on desktop
+  }
+  
+  [data-section-spacing-bottom="small"] {
+    --section-spacing-bottom: var(--spacing-lg); // 40px on desktop
+  }
+  
+  [data-section-spacing-bottom="medium"] {
+    --section-spacing-bottom: var(--spacing-xl); // 60px on desktop
+  }
+  
+  [data-section-spacing-bottom="large"] {
+    --section-spacing-bottom: var(--spacing-xxl); // 80px on desktop
+  }
+  
+  [data-section-spacing-bottom="xlarge"] {
+    --section-spacing-bottom: calc(var(--spacing-xxl) * 1.5); // 120px on desktop
+  }
+}
+
+// Utility class to easily consume these variables
+.has-section-spacing {
+  padding-top: var(--section-spacing-top);
+  padding-bottom: var(--section-spacing-bottom);
+}

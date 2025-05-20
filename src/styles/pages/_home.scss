@@ -7,8 +7,8 @@
 // Hero Section
 .hero {
   padding-top: var(--spacing-xxl); // Using the 80px variable for top padding
-  padding-left: var(--side-padding);
-  padding-right: var(--side-padding);
+  padding-left: var(--page-padding-inline);
+  padding-right: var(--page-padding-inline);
   
   @media (min-width: $breakpoint-sm) {
     padding-top: 0; // 80px top padding on desktop
@@ -123,7 +123,7 @@
 
 // About Section
 .about {
-  padding: 80px var(--side-padding) 20px; // Reduced bottom padding
+  padding: 80px var(--page-padding-inline) 20px; // Reduced bottom padding
 }
 
 .about-image {
@@ -163,14 +163,14 @@
 
 // Portfolio Section
 .portfolio {
-  padding: 20px var(--side-padding) 80px; // Reduced top padding
+  padding: 20px var(--page-padding-inline) 80px; // Reduced top padding
   
   @media (max-width: $breakpoint-sm - 1px) {
     padding-left: 0;
     padding-right: 0;
     
     h2 {
-      padding: 0 var(--side-padding);
+      padding: 0 var(--page-padding-inline);
     }
   }
 }
@@ -238,7 +238,7 @@
 }
 
 .featured-content {
-  padding: 0 var(--side-padding);
+  padding: 0 var(--page-padding-inline);
   
   @media (min-width: $breakpoint-md) {
     display: flex;
@@ -399,8 +399,8 @@
 .cta-section {
   text-align: center;
   margin: 6rem auto 8rem;
-  padding-left: var(--side-padding);
-  padding-right: var(--side-padding);
+  padding-left: var(--page-padding-inline);
+  padding-right: var(--page-padding-inline);
   
   @media (min-width: $breakpoint-sm) {
     margin: 8rem auto 10rem;

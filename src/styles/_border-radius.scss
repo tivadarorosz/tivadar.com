@@ -1,0 +1,60 @@
+// ==============================================
+// BORDER RADIUS SYSTEM
+// ==============================================
+// Standardized border radius system based on data attributes
+
+// Default values are already defined in _tokens.scss:
+// --radius-sm: 0.5rem;   // 8px - for smaller elements
+// --radius-md: 0.75rem;  // 12px - for medium elements
+// --radius-lg: 1.5rem;   // 24px - for larger elements
+
+// Create a component-level data attribute system
+[data-radius="none"] {
+  --component-radius: 0;
+}
+
+[data-radius="small"] {
+  --component-radius: var(--radius-sm);
+}
+
+[data-radius="medium"] {
+  --component-radius: var(--radius-md);
+}
+
+[data-radius="large"] {
+  --component-radius: var(--radius-lg);
+}
+
+// Create a fallback value that matches the current system
+:root {
+  --component-radius: var(--radius-md); // Default match to current medium radius
+}
+
+// Border radius utilities that consume the variable
+.has-radius {
+  border-radius: var(--component-radius);
+}
+
+// You can extend this with more specific border radius utilities if needed
+.has-radius-top {
+  border-top-left-radius: var(--component-radius);
+  border-top-right-radius: var(--component-radius);
+}
+
+.has-radius-bottom {
+  border-bottom-left-radius: var(--component-radius);
+  border-bottom-right-radius: var(--component-radius);
+}
+
+// Responsive border radius system
+@media (min-width: 992px) {
+  [data-radius="small"] {
+    --component-radius: var(--radius-md); // 12px on desktop (matches current btn-radius)
+  }
+  
+  [data-radius="medium"] {
+    --component-radius: var(--radius-lg); // 24px on desktop (matches current card-radius)
+  }
+  
+  // Large stays the same on desktop
+}

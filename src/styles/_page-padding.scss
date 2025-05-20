@@ -1,0 +1,43 @@
+// ==============================================
+// PAGE PADDING VARIABLES
+// ==============================================
+// Standardized padding system based on page types
+
+// Mobile defaults (smaller devices)
+body.page-default {
+  --page-padding-inline: 40px; // Same as existing --side-padding
+}
+
+body.page-post {
+  --page-padding-inline: 20px; // Same as existing var(--spacing-md)
+}
+
+body.page-form {
+  --page-padding-inline: 30px; // Standard padding for form pages
+  --page-padding-inline-start: 30px;
+  --page-padding-inline-end: 30px;
+}
+
+// Desktop overrides
+@media (min-width: 992px) {
+  body.page-default {
+    --page-padding-inline: calc(40px + (120 - 40) * ((100vw - 768px) / (1440 - 768))); // Fluid same as --side-padding
+  }
+  
+  body.page-post {
+    --page-padding-inline: 40px; // Same as existing var(--spacing-lg)
+  }
+  
+  body.page-form {
+    --page-padding-inline: 40px; 
+    --page-padding-inline-start: 40px;
+    --page-padding-inline-end: 60px; // More space on the right for forms
+  }
+}
+
+// Global fallback for all page types
+body {
+  --page-padding-inline: 40px; // Default if no page type class is applied
+  --page-padding-inline-start: var(--page-padding-inline);
+  --page-padding-inline-end: var(--page-padding-inline);
+}

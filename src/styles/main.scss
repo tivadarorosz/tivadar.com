@@ -11,6 +11,18 @@
 // Tokens are CSS variables available at runtime
 @use 'tokens';
 
+// Page padding variables based on page types
+@use 'page-padding';
+
+// Border radius system
+@use 'border-radius';
+
+// Typography theming system
+@use 'typography-theme';
+
+// Section spacing system
+@use 'section-spacing';
+
 // 2. Base styles
 // -------------
 // Normalize, resets, and base element styles

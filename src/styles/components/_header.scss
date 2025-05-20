@@ -16,7 +16,7 @@
   left: 0;
   right: 0;
   z-index: var(--z-index-header); // Use the variable instead of hardcoded value
-  background-color: var(--color-background); // Default background (#f0eee7)
+  background-color: var(--page-bg); // Uses the variable from data-bg
   border: none;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -31,10 +31,7 @@
     box-shadow: none !important; // Force no shadow on desktop
   }
   
-  // Make header match the light background on pages with light background
-  body.page-light-bg:not(.not-page-light-bg) & {
-    background-color: var(--color-background-light);
-  }
+  // Background color is now controlled by --page-bg variable
 }
 
 // Logo link

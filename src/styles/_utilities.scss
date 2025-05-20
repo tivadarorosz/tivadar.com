@@ -268,8 +268,9 @@ $breakpoint-map: (
 
 // Page width utilities
 .page-width {
-  padding-left: calc(var(--side-padding) * 0.25);
-  padding-right: calc(var(--side-padding) * 0.25);
+  // Use a factor of the padding inline to maintain previous proportions
+  padding-left: calc(var(--page-padding-inline-start, var(--page-padding-inline)) * 0.25);
+  padding-right: calc(var(--page-padding-inline-end, var(--page-padding-inline)) * 0.25);
   max-width: 88%;
   margin-left: auto;
   margin-right: auto;

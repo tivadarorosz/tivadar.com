@@ -15,6 +15,11 @@
   --color-footer-text: #b0aea6;
   --color-highlight: rgba(205, 152, 131, 0.7);
   
+  // Page background colors
+  --color-default-bg: var(--color-background);
+  --color-light-bg: var(--color-background-light);
+  --page-bg: var(--color-default-bg); // Default fallback
+  
   // Semantic UI Colors
   --color-error: #dc3545;
   --color-link: #cc7c5e; // Using the hero inner stroke color for links

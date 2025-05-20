@@ -1,0 +1,83 @@
+// ==============================================
+// TYPOGRAPHY THEMING SYSTEM
+// ==============================================
+// Standardized typography theming based on data attributes
+
+// Create a heading color system that can be applied at the section level
+[data-heading-theme="default"] {
+  --heading-color: var(--color-black);
+  --heading-accent-color: var(--color-black-light);
+}
+
+[data-heading-theme="light"] {
+  --heading-color: var(--color-white);
+  --heading-accent-color: rgba(255, 255, 255, 0.85);
+}
+
+[data-heading-theme="muted"] {
+  --heading-color: var(--color-text-muted);
+  --heading-accent-color: var(--color-text-muted-light);
+}
+
+// Text theme for paragraph and body text
+[data-text-theme="default"] {
+  --text-color: var(--color-black);
+  --text-muted-color: var(--color-text-muted);
+  --text-accent-color: var(--color-black-light);
+}
+
+[data-text-theme="light"] {
+  --text-color: var(--color-white);
+  --text-muted-color: rgba(255, 255, 255, 0.7);
+  --text-accent-color: var(--color-white);
+}
+
+// Size variants
+[data-text-size="small"] {
+  --component-text-size: var(--font-size-small);
+}
+
+[data-text-size="base"] {
+  --component-text-size: var(--font-size-base);
+}
+
+[data-text-size="medium"] {
+  --component-text-size: var(--font-size-medium);
+}
+
+[data-text-size="large"] {
+  --component-text-size: var(--font-size-large);
+}
+
+[data-text-size="xlarge"] {
+  --component-text-size: var(--font-size-xlarge);
+}
+
+// Set default values to match current styling
+:root {
+  --heading-color: var(--color-black);
+  --heading-accent-color: var(--color-black-light);
+  --text-color: var(--color-black);
+  --text-muted-color: var(--color-text-muted);
+  --text-accent-color: var(--color-black-light);
+  --component-text-size: var(--font-size-base);
+}
+
+// Utility classes that consume these variables
+.themed-heading {
+  color: var(--heading-color);
+  
+  &:hover {
+    color: var(--heading-accent-color);
+  }
+}
+
+.themed-text {
+  color: var(--text-color);
+  font-size: var(--component-text-size);
+}
+
+.themed-text-muted {
+  color: var(--text-muted-color);
+  font-size: var(--component-text-size);
+}

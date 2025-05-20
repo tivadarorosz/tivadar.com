@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: var(--font-primary);
-  background-color: var(--color-background);
+  background-color: var(--page-bg);
   color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,14 +20,13 @@ body {
   }
 }
 
-// Light background for pages that need it
-body.page-light-bg {
-  background-color: var(--color-background-light);
+// Data attribute background selectors
+body[data-bg="default"] {
+  --page-bg: var(--color-default-bg);
 }
 
-// Portfolio page background
-body.standard-bg {
-  background-color: var(--color-background);
+body[data-bg="light"] {
+  --page-bg: var(--color-light-bg);
 }
 
 // Global link hover styles
