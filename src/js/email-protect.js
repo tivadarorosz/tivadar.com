@@ -2,8 +2,8 @@
 window.addEventListener('DOMContentLoaded', function() {
   // Define the email addresses in an encoded format
   const emails = {
-    studio: ['studio', 'tivadarorosz', 'com'],
-    hello: ['hello', 'tivadarorosz', 'com']
+    studio: ['studio', 'tivadar', 'com'],
+    hello: ['hello', 'tivadar', 'com']
   };
   
   // Function to decode and set email

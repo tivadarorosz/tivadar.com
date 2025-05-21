@@ -152,6 +152,7 @@
     "entity": {
       "name": "Mirelle Studio Ltd",
       "types": ["Photographer", "LocalBusiness"],
+      "url": "https://www.hellomirelle.com",
       "sameAs": [
         "https://x.com/tivadarorosz",
         "https://instagram.com/tivadarorosz",
