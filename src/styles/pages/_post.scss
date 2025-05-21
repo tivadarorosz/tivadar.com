@@ -26,6 +26,11 @@
   margin-bottom: var(--spacing-xl);
   // Allow feature image to extend beyond container
   overflow: visible;
+  
+  // Align left on mobile
+  @media (max-width: $breakpoint-md) {
+    text-align: left;
+  }
 }
 
 .post-tags {
@@ -33,6 +38,11 @@
   justify-content: center;
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
+  
+  // Align left on mobile
+  @media (max-width: $breakpoint-md) {
+    justify-content: flex-start;
+  }
 }
 
 .post-tag {
@@ -66,6 +76,11 @@
   font-weight: var(--font-weight-normal);
   color: var(--color-text-muted);
   line-height: var(--line-height-tag);
+  
+  // Align left on mobile
+  @media (max-width: $breakpoint-md) {
+    justify-content: flex-start;
+  }
 }
 
 .post-date {
