@@ -3,7 +3,7 @@
     "name": "Tivadar Orosz",
     "title": "Tivadar Orosz",
     "description": "Luxury escort and boudoir photography in London and Dubai, by Tivadar Orosz.",
-    "url": "https://www.tivadarorosz.com",
+    "url": "https://www.tivadar.com",
     "copyright": "© 2025 Tivadar Orosz. All rights reserved."
   },
   
@@ -98,50 +98,50 @@
   
   "assets": {
     "cdn": {
-      "base": "https://cdn.tivadarorosz.com",
+      "base": "https://cdn.tivadar.com",
       "images": {
-        "socialCard": "https://cdn.tivadarorosz.com/images/twitter-card.jpg",
-        "favicon32": "https://cdn.tivadarorosz.com/icons/favicon-32x32.png",
-        "favicon16": "https://cdn.tivadarorosz.com/icons/favicon-16x16.png",
-        "appleTouchIcon": "https://cdn.tivadarorosz.com/icons/apple-touch-icon.png"
+        "socialCard": "https://cdn.tivadar.com/images/twitter-card.jpg",
+        "favicon32": "https://cdn.tivadar.com/icons/favicon-32x32.png",
+        "favicon16": "https://cdn.tivadar.com/icons/favicon-16x16.png",
+        "appleTouchIcon": "https://cdn.tivadar.com/icons/apple-touch-icon.png"
       },
       "fonts": [
         {
           "family": "Styrene A",
           "weight": "bold",
           "formats": {
-            "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff2",
-            "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff"
+            "woff2": "https://cdn.tivadar.com/fonts/StyreneA-Bold-Web.woff2",
+            "woff": "https://cdn.tivadar.com/fonts/StyreneA-Bold-Web.woff"
           }
         },
         {
           "family": "Styrene A",
           "weight": "medium",
           "formats": {
-            "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff2",
-            "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Medium-Web.woff"
+            "woff2": "https://cdn.tivadar.com/fonts/StyreneA-Medium-Web.woff2",
+            "woff": "https://cdn.tivadar.com/fonts/StyreneA-Medium-Web.woff"
           }
         },
         {
           "family": "Styrene A",
           "weight": "regular",
           "formats": {
-            "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff2",
-            "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Regular-Web.woff"
+            "woff2": "https://cdn.tivadar.com/fonts/StyreneA-Regular-Web.woff2",
+            "woff": "https://cdn.tivadar.com/fonts/StyreneA-Regular-Web.woff"
           }
         },
         {
           "family": "Tiempos Text",
           "weight": "regular",
           "formats": {
-            "woff2": "https://cdn.tivadarorosz.com/fonts/tiempos-text-regular.woff2"
+            "woff2": "https://cdn.tivadar.com/fonts/tiempos-text-regular.woff2"
           }
         },
         {
           "family": "Tiempos Text",
           "weight": "medium",
           "formats": {
-            "woff2": "https://cdn.tivadarorosz.com/fonts/tiempos-text-medium.woff2"
+            "woff2": "https://cdn.tivadar.com/fonts/tiempos-text-medium.woff2"
           }
         }
       ]
@@ -155,7 +155,7 @@
       "sameAs": [
         "https://x.com/tivadarorosz",
         "https://instagram.com/tivadarorosz",
-        "https://bsky.app/profile/tivadarorosz.com",
+        "https://bsky.app/profile/tivadar.com",
         "https://linkedin.com/in/tivadarorosz"
       ]
     },
@@ -179,7 +179,7 @@
     "social": {
       "twitter": "https://x.com/tivadarorosz",
       "instagram": "https://instagram.com/tivadarorosz",
-      "bluesky": "https://bsky.app/profile/tivadarorosz.com",
+      "bluesky": "https://bsky.app/profile/tivadar.com",
       "linkedin": "https://linkedin.com/in/tivadarorosz"
     }
   }

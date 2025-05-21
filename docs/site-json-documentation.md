@@ -1,6 +1,6 @@
 # Site.json Configuration Documentation
 
-This document explains the complete structure and purpose of each parameter in `src/_data/site.json` for the Tivadar Orosz website.
+This document explains the complete structure and purpose of each parameter in `src/_data/site.json` for the Tivadar website.
 
 ## Table of Contents
 1. [Core Identity](#core-identity)
@@ -26,7 +26,7 @@ The root identity object contains fundamental site information.
   "name": "Tivadar Orosz",
   "title": "Tivadar Orosz",
   "description": "Luxury escort and boudoir photography...",
-  "url": "https://www.tivadarorosz.com",
+  "url": "https://www.tivadar.com",
   "copyright": "© 2025 Tivadar Orosz. All rights reserved."
 }
 ```
@@ -88,18 +88,18 @@ Core SEO metadata and fallbacks.
       "title": "Tivadar Orosz — Escort & Boudoir Photographer",
       "description": "Luxury escort and boudoir photography...",
       "keywords": "escort photography, boudoir photographer...",
-      "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg",
+      "image": "https://cdn.tivadar.com/images/twitter-card.jpg",
       "type": "website",
       "schemaName": "Tivadar Orosz — Escort & Boudoir Photographer"
     },
     "fallbacks": {
       "article": {
         "description": "Latest insights...",
-        "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg"
+        "image": "https://cdn.tivadar.com/images/twitter-card.jpg"
       },
       "story": {
         "description": "View this exclusive story...",
-        "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg"
+        "image": "https://cdn.tivadar.com/images/twitter-card.jpg"
       },
       "page": {
         "description": "Luxury escort and boudoir photography..."
@@ -210,20 +210,20 @@ All CDN-hosted assets are centralized here.
 ```json
 "assets": {
   "cdn": {
-    "base": "https://cdn.tivadarorosz.com",
+    "base": "https://cdn.tivadar.com",
     "images": {
-      "socialCard": "https://cdn.tivadarorosz.com/images/twitter-card.jpg",
-      "favicon32": "https://cdn.tivadarorosz.com/icons/favicon-32x32.png",
-      "favicon16": "https://cdn.tivadarorosz.com/icons/favicon-16x16.png",
-      "appleTouchIcon": "https://cdn.tivadarorosz.com/icons/apple-touch-icon.png"
+      "socialCard": "https://cdn.tivadar.com/images/twitter-card.jpg",
+      "favicon32": "https://cdn.tivadar.com/icons/favicon-32x32.png",
+      "favicon16": "https://cdn.tivadar.com/icons/favicon-16x16.png",
+      "appleTouchIcon": "https://cdn.tivadar.com/icons/apple-touch-icon.png"
     },
     "fonts": [
       {
         "family": "Styrene A",
         "weight": "bold",
         "formats": {
-          "woff2": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff2",
-          "woff": "https://cdn.tivadarorosz.com/fonts/StyreneA-Bold-Web.woff"
+          "woff2": "https://cdn.tivadar.com/fonts/StyreneA-Bold-Web.woff2",
+          "woff": "https://cdn.tivadar.com/fonts/StyreneA-Bold-Web.woff"
         }
       }
     ]
@@ -318,7 +318,7 @@ External service configurations.
   "social": {
     "twitter": "https://x.com/tivadarorosz",
     "instagram": "https://instagram.com/tivadarorosz",
-    "bluesky": "https://bsky.app/profile/tivadarorosz.com",
+    "bluesky": "https://bsky.app/profile/tivadar.com",
     "linkedin": "https://linkedin.com/in/tivadarorosz"
   }
 }

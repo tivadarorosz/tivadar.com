@@ -6,7 +6,7 @@
   tag: "Fully booked"
   description: >
     Dubai holds presence like it holds heat. Expect clean interiors, sharp light, and silence that speaks. These sessions happen in private, and only if you ask early.
-  image: "https://cdn.tivadarorosz.com/images/cities/dubai.jpg"
+  image: "https://cdn.tivadar.com/images/cities/dubai.jpg"
   alt: "Dubai skyline at sunset"
 
 - city: Amalfi
@@ -17,7 +17,7 @@
   tag: "Tentative"
   description: >
     Amalfi curves and softens. These sessions lean into warmth and quiet strength. Think linen, light, and a mood that doesn’t chase attention. It owns it.
-  image: "https://cdn.tivadarorosz.com/images/cities/amalfi-coast.jpg"
+  image: "https://cdn.tivadar.com/images/cities/amalfi-coast.jpg"
   alt: "View over the Amalfi Coast with sea and villas"
 
 - city: Dolomites
@@ -28,7 +28,7 @@
   tag: "Accepting"
   description: >
     The Dolomites offer space, quiet, and air that edits everything down to what matters. These sessions are grounded, cinematic, and entirely off-grid.
-  image: "https://cdn.tivadarorosz.com/images/cities/dolomites.jpg"
+  image: "https://cdn.tivadar.com/images/cities/dolomites.jpg"
   alt: "Dolomites mountains with soft mist and morning light"
 
 - city: Los Angeles
@@ -39,7 +39,7 @@
   tag: "Nearby ok"
   description: >
     LA is contrast without noise. Studio-based sessions only. Clean light, soft edges, and confidence shaped in silhouette. Think clarity, not chaos.
-  image: "https://cdn.tivadarorosz.com/images/cities/los-angeles.jpg"
+  image: "https://cdn.tivadar.com/images/cities/los-angeles.jpg"
   alt: "Palm trees and sunset light in Los Angeles"
 
 - city: Dubrovnik
@@ -50,7 +50,7 @@
   tag: "Final booking"
   description: >
     Stone, sea, and quiet tension. Dubrovnik brings light with edge. Shoots here are bold and shaped by natural structure. Not too soft. Never rushed.
-  image: "https://cdn.tivadarorosz.com/images/cities/croatia.jpg"
+  image: "https://cdn.tivadar.com/images/cities/croatia.jpg"
   alt: "Old town rooftops and sea in Dubrovnik"
 
 - city: New York
@@ -61,7 +61,7 @@
   tag: "Final booking"
   description: >
     New York doesn’t wait. Shoots here are sharp, bold, and fast-moving. You’ll know if it’s for you. And if you don’t move now, you’ll miss it.
-  image: "https://cdn.tivadarorosz.com/images/cities/new-york.jpg"
+  image: "https://cdn.tivadar.com/images/cities/new-york.jpg"
   alt: "New York skyline with dusk light"
 
 - city: Paris
@@ -72,7 +72,7 @@
   tag: "Accepting"
   description: >
     Paris is performance without volume. The intimacy is real. Every gesture counts. These sessions are quiet, cinematic, and built around mood.
-  image: "https://cdn.tivadarorosz.com/images/cities/paris.jpg"
+  image: "https://cdn.tivadar.com/images/cities/paris.jpg"
   alt: "Parisian balcony with warm interior light"
 
 - city: Frankfurt
@@ -83,5 +83,5 @@
   tag: "Tentative"
   description: >
     Frankfurt is about precision. It’s a shoot built around intention. Interiors only. No distractions. You bring the presence. I’ll frame it.
-  image: "https://cdn.tivadarorosz.com/images/cities/frankfurt.jpg"
+  image: "https://cdn.tivadar.com/images/cities/frankfurt.jpg"
   alt: "Modern skyline and soft fog in Frankfurt"

@@ -12,7 +12,7 @@ module.exports = {
       location: "London",
       link: "/stories/khrystyana-kazakova-signature-muse",
       cover: {
-        image: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/cover.jpg",
+        image: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/cover.jpg",
         alt: "Khrystyana Kazakova posing as Signature Muse in a luxury New York boudoir portrait photographed by Tivadar Orosz with creative direction by Lindsay Adler and Cate Scaglione"
       },
       story: {
@@ -26,7 +26,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -41,7 +41,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -60,31 +60,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -101,7 +101,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -123,7 +123,7 @@ module.exports = {
         location: "London",
         link: "/stories/muse-ii",
         cover: {
-          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid1.webp",
+          image: "https://cdn.tivadar.com/portfolio/featured/grid1.webp",
           alt: "Gallery image 1"
         },
         story: {
@@ -137,7 +137,7 @@ module.exports = {
             // Image 2 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
               alt: "Izabelle standing tall in a clean frame of light",
               orientation: "horizontal"
             },
@@ -145,7 +145,7 @@ module.exports = {
             // Image 3 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
               alt: "Eyes fixed on the lens with total command",
               orientation: "horizontal"
             },
@@ -164,31 +164,31 @@ module.exports = {
               items: [
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                   alt: "Izabelle in profile, paused mid-turn",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                   alt: "Silhouette at the edge of the curtain",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                   alt: "Izabelle seated, gaze lowered",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                   alt: "Arms crossed, light falling gently",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                   alt: "Back to the lens, shoulders framed in gold",
                   orientation: "vertical"
                 }
@@ -212,7 +212,7 @@ module.exports = {
             // Image 9 (final horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
               alt: "Final portrait with direct, decisive gaze",
               orientation: "horizontal"
             },
@@ -233,7 +233,7 @@ module.exports = {
         location: "London",
         link: "/stories/muse-iii",
         cover: {
-          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid2.jpg",
+          image: "https://cdn.tivadar.com/portfolio/featured/grid2.jpg",
           alt: "Gallery image 2"
         },
         story: {
@@ -247,7 +247,7 @@ module.exports = {
             // Image 2 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
               alt: "Izabelle standing tall in a clean frame of light",
               orientation: "horizontal"
             },
@@ -255,7 +255,7 @@ module.exports = {
             // Image 3 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
               alt: "Eyes fixed on the lens with total command",
               orientation: "horizontal"
             },
@@ -274,31 +274,31 @@ module.exports = {
               items: [
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                   alt: "Izabelle in profile, paused mid-turn",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                   alt: "Silhouette at the edge of the curtain",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                   alt: "Izabelle seated, gaze lowered",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                   alt: "Arms crossed, light falling gently",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                   alt: "Back to the lens, shoulders framed in gold",
                   orientation: "vertical"
                 }
@@ -322,7 +322,7 @@ module.exports = {
             // Image 9 (final horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
               alt: "Final portrait with direct, decisive gaze",
               orientation: "horizontal"
             },
@@ -343,7 +343,7 @@ module.exports = {
         location: "London",
         link: "/stories/muse-iv",
         cover: {
-          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid3.jpg",
+          image: "https://cdn.tivadar.com/portfolio/featured/grid3.jpg",
           alt: "Gallery image 3"
         },
         story: {
@@ -357,7 +357,7 @@ module.exports = {
             // Image 2 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
               alt: "Izabelle standing tall in a clean frame of light",
               orientation: "horizontal"
             },
@@ -365,7 +365,7 @@ module.exports = {
             // Image 3 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
               alt: "Eyes fixed on the lens with total command",
               orientation: "horizontal"
             },
@@ -384,31 +384,31 @@ module.exports = {
               items: [
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                   alt: "Izabelle in profile, paused mid-turn",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                   alt: "Silhouette at the edge of the curtain",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                   alt: "Izabelle seated, gaze lowered",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                   alt: "Arms crossed, light falling gently",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                   alt: "Back to the lens, shoulders framed in gold",
                   orientation: "vertical"
                 }
@@ -432,7 +432,7 @@ module.exports = {
             // Image 9 (final horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
               alt: "Final portrait with direct, decisive gaze",
               orientation: "horizontal"
             },
@@ -453,7 +453,7 @@ module.exports = {
         location: "London",
         link: "/stories/muse-v",
         cover: {
-          image: "https://cdn.tivadarorosz.com/portfolio/featured/grid4.jpg",
+          image: "https://cdn.tivadar.com/portfolio/featured/grid4.jpg",
           alt: "Gallery image 4"
         },
         story: {
@@ -467,7 +467,7 @@ module.exports = {
             // Image 2 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
               alt: "Izabelle standing tall in a clean frame of light",
               orientation: "horizontal"
             },
@@ -475,7 +475,7 @@ module.exports = {
             // Image 3 (horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
               alt: "Eyes fixed on the lens with total command",
               orientation: "horizontal"
             },
@@ -494,31 +494,31 @@ module.exports = {
               items: [
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                   alt: "Izabelle in profile, paused mid-turn",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                   alt: "Silhouette at the edge of the curtain",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                   alt: "Izabelle seated, gaze lowered",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                   alt: "Arms crossed, light falling gently",
                   orientation: "vertical"
                 },
                 {
                   type: "image",
-                  src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                  src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                   alt: "Back to the lens, shoulders framed in gold",
                   orientation: "vertical"
                 }
@@ -542,7 +542,7 @@ module.exports = {
             // Image 9 (final horizontal)
             {
               type: "image",
-              src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+              src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
               alt: "Final portrait with direct, decisive gaze",
               orientation: "horizontal"
             },
@@ -567,7 +567,7 @@ module.exports = {
       location: "London",
       link: "/stories/the-light-within",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/light-loves-her.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/light-loves-her.jpg",
         alt: "Main gallery image"
       },
       story: {
@@ -581,7 +581,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -589,7 +589,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -608,31 +608,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -656,7 +656,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -677,7 +677,7 @@ module.exports = {
       location: "London",
       link: "/stories/the-narrative-gaze",
       cover: {
-        image: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/cover.jpg",
+        image: "https://cdn.tivadar.com/stories/the-narrative-gaze/cover.jpg",
         alt: "Blonde woman in lace lingerie gazing through glass, commanding attention in a quiet, intimate moment"
       },
       story: {
@@ -691,7 +691,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/01.jpg",
+            src: "https://cdn.tivadar.com/stories/the-narrative-gaze/01.jpg",
             alt: "Blonde woman in black bodysuit arching her back on a modern kitchen island, framed by soft morning light",
             orientation: "horizontal"
           },
@@ -706,7 +706,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/02.jpg",
+            src: "https://cdn.tivadar.com/stories/the-narrative-gaze/02.jpg",
             alt: "Boudoir portrait of a woman reclining on a cream bench, back arched in soft natural light near sheer curtains",
             orientation: "horizontal"
           },
@@ -721,7 +721,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/03.jpg",
+            src: "https://cdn.tivadar.com/stories/the-narrative-gaze/03.jpg",
             alt: "Elegant woman in black lace bodysuit standing by floor-length curtains with ocean view in the background",
             orientation: "horizontal"
           },
@@ -740,31 +740,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/04.jpg",
+                src: "https://cdn.tivadar.com/stories/the-narrative-gaze/04.jpg",
                 alt: "Rear view of a woman lifting a knit sweater, revealing black lace lingerie and tousled blonde hair in front of soft curtains",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/05.jpg",
+                src: "https://cdn.tivadar.com/stories/the-narrative-gaze/05.jpg",
                 alt: "Blonde woman seated on the floor in pale blue lace lingerie, gazing directly into the lens with piercing intensity",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/06.jpg",
+                src: "https://cdn.tivadar.com/stories/the-narrative-gaze/06.jpg",
                 alt: "Side profile of a woman stretching against a wall in black lace lingerie and white tied shirt, legs elongated on pointe",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/07.jpg",
+                src: "https://cdn.tivadar.com/stories/the-narrative-gaze/07.jpg",
                 alt: "Woman in sheer black bodysuit leaning back against a wall, holding trowels with a subtle, defiant posture",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/08.jpg",
+                src: "https://cdn.tivadar.com/stories/the-narrative-gaze/08.jpg",
                 alt: "Lingerie-clad woman draped across a grey velvet sofa, one heel discarded on the floor, caught mid-turn",
                 orientation: "vertical"
               }
@@ -781,7 +781,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/the-narrative-gaze/09.jpg",
+            src: "https://cdn.tivadar.com/stories/the-narrative-gaze/09.jpg",
             alt: "Close crop of a woman sunbathing by the pool in white bikini bottoms, skin glistening with water",
             orientation: "horizontal"
           },
@@ -802,7 +802,7 @@ module.exports = {
       location: "London",
       link: "/stories/after-midnight",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/permission-after-midnight.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/permission-after-midnight.jpg",
         alt: "Main gallery image"
       },
       story: {
@@ -816,7 +816,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -824,7 +824,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -843,31 +843,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -891,7 +891,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -912,7 +912,7 @@ module.exports = {
       location: "London",
       link: "/stories/obsession",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/she-claims-the-frame.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/she-claims-the-frame.jpg",
         alt: "Natural light portrait"
       },
       story: {
@@ -926,7 +926,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -934,7 +934,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -953,31 +953,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -1001,7 +1001,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -1022,7 +1022,7 @@ module.exports = {
       location: "London",
       link: "/stories/afterglow",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/afterglow.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/afterglow.jpg",
         alt: "Main gallery image"
       },
       story: {
@@ -1036,7 +1036,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -1044,7 +1044,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -1063,31 +1063,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -1111,7 +1111,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -1132,7 +1132,7 @@ module.exports = {
       location: "Milan",
       link: "/stories/forestis-dolomites-low-flame",
       cover: {
-        image: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/cover.jpg",
+        image: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/cover.jpg",
         alt: "Elegant woman behind glass wearing green bikini, hand lifted to shield the light, eyes steady with presence"
       },
       story: {
@@ -1146,7 +1146,7 @@ module.exports = {
           // Image 1 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/01.jpg",
+            src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/01.jpg",
             alt: "Woman in soft green activewear gazing through the window, light streaks casting reflection",
             orientation: "horizontal"
           },
@@ -1161,7 +1161,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/02.jpg",
+            src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/02.jpg",
             alt: "Blonde woman in white yoga outfit seated beside a window, forest reflections in the glass",
             orientation: "horizontal"
           },
@@ -1176,7 +1176,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/03.jpg",
+            src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/03.jpg",
             alt: "Woman floating effortlessly in a calm spa pool, eyes closed, body in perfect stillness",
             orientation: "horizontal"
           },
@@ -1195,31 +1195,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/04.jpg",
+                src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/04.jpg",
                 alt: "Soft-shouldered woman half-hidden behind a book, playful gaze peeking over the page",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/05.jpg",
+                src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/05.jpg",
                 alt: "Long-haired woman reclining nude in a minimalist stone bathtub, holding a cup upward",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/06.jpg",
+                src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/06.jpg",
                 alt: "Woman in black activewear sitting on the floor with eyes closed, sunlight tracing her cheek",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/07.jpg",
+                src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/07.jpg",
                 alt: "Woman turning over her shoulder at a wooden desk, soft smile and open-back top revealing grace",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/08.jpg",
+                src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/08.jpg",
                 alt: "Woman holding a doorway handstand, framed by glass and the snowy Dolomite mountains",
                 orientation: "vertical"
               }
@@ -1236,7 +1236,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/forestis-dolomites-low-flame/09.jpg",
+            src: "https://cdn.tivadar.com/stories/forestis-dolomites-low-flame/09.jpg",
             alt: "Woman in sage yoga set holding a side stretch pose on a mountain deck under a clear sky",
             orientation: "horizontal"
           },
@@ -1256,7 +1256,7 @@ module.exports = {
       location: "London",
       link: "/stories/gold-rush",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/gold-rush.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/gold-rush.jpg",
         alt: "Natural light portrait"
       },
       story: {
@@ -1270,7 +1270,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -1278,7 +1278,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -1297,31 +1297,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -1345,7 +1345,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -1366,7 +1366,7 @@ module.exports = {
       location: "London",
       link: "/stories/the-gaze",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/the-gaze-is-yours.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/the-gaze-is-yours.jpg",
         alt: "Natural light portrait"
       },
       story: {
@@ -1380,7 +1380,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -1388,7 +1388,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -1407,31 +1407,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -1455,7 +1455,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -1476,7 +1476,7 @@ module.exports = {
       location: "London",
       link: "/stories/control",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/she-controls-attention.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/she-controls-attention.jpg",
         alt: "Natural light portrait"
       },
       story: {
@@ -1490,7 +1490,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -1498,7 +1498,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -1517,31 +1517,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -1565,7 +1565,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -1586,7 +1586,7 @@ module.exports = {
       location: "London",
       link: "/stories/power-play",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/she-bends-the-rules.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/she-bends-the-rules.jpg",
         alt: "Natural light portrait"
       },
       story: {
@@ -1600,7 +1600,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -1608,7 +1608,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -1627,31 +1627,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -1675,7 +1675,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
@@ -1696,7 +1696,7 @@ module.exports = {
       location: "London",
       link: "/stories/siren",
       cover: {
-        image: "https://cdn.tivadarorosz.com/portfolio/main/siren-rise-from-water.jpg",
+        image: "https://cdn.tivadar.com/portfolio/main/siren-rise-from-water.jpg",
         alt: "Natural light portrait"
       },
       story: {
@@ -1710,7 +1710,7 @@ module.exports = {
           // Image 2 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/01.jpg",
             alt: "Izabelle standing tall in a clean frame of light",
             orientation: "horizontal"
           },
@@ -1718,7 +1718,7 @@ module.exports = {
           // Image 3 (horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/02.jpg",
             alt: "Eyes fixed on the lens with total command",
             orientation: "horizontal"
           },
@@ -1737,31 +1737,31 @@ module.exports = {
             items: [
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/03.jpg",
                 alt: "Izabelle in profile, paused mid-turn",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/04.jpg",
                 alt: "Silhouette at the edge of the curtain",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/05.jpg",
                 alt: "Izabelle seated, gaze lowered",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/06.jpg",
                 alt: "Arms crossed, light falling gently",
                 orientation: "vertical"
               },
               {
                 type: "image",
-                src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
+                src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/07.jpg",
                 alt: "Back to the lens, shoulders framed in gold",
                 orientation: "vertical"
               }
@@ -1785,7 +1785,7 @@ module.exports = {
           // Image 9 (final horizontal)
           {
             type: "image",
-            src: "https://cdn.tivadarorosz.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
+            src: "https://cdn.tivadar.com/stories/khrystyana-kazakova-signature-muse/08.jpg",
             alt: "Final portrait with direct, decisive gaze",
             orientation: "horizontal"
           },
