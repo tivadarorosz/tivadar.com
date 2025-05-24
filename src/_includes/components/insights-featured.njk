@@ -4,11 +4,36 @@
 {% set secondRecent = recentFeatured[1] %}
 {% set thirdRecent = recentFeatured[2] %}
 
+{# If less than 3 featured posts, fill remaining slots with non-featured posts #}
+{% if recentFeatured.length < 3 %}
+  {% set remainingSlots = 3 - recentFeatured.length %}
+  {% set nonFeaturedPosts = [] %}
+  {% for post in collections.allPosts %}
+    {% if not post.data.featured %}
+      {% set nonFeaturedPosts = (nonFeaturedPosts.push(post), nonFeaturedPosts) %}
+    {% endif %}
+  {% endfor %}
+  
+  {% if not secondRecent and nonFeaturedPosts.length > 0 %}
+    {% set secondRecent = nonFeaturedPosts[0] %}
+  {% endif %}
+  
+  {% if not thirdRecent and nonFeaturedPosts.length > 1 %}
+    {% set thirdRecent = nonFeaturedPosts[1] %}
+  {% endif %}
+{% endif %}
+
 <section class="insights-gallery">
   <div class="insights-gallery-grid">
     {# First row with 2/3 vs 1/3 split #}
     {% if mostRecent %}
-    <a href="{{ mostRecent.url }}" class="insights-gallery-item insights-gallery-item-1" style="background-color: var(--theme-terracotta);">
+    {# First position always gets terracotta if it's a featured post #}
+    {% if mostRecent.data.featured %}
+      {% set firstBgColor = "var(--theme-terracotta)" %}
+    {% else %}
+      {% set firstBgColor = mostRecent.data.background | getThemeColor(mostRecent.url) %}
+    {% endif %}
+    <a href="{{ mostRecent.url }}" class="insights-gallery-item insights-gallery-item-1" style="background-color: {{ firstBgColor }};">
       <div class="insights-gallery-content">
         {% if mostRecent.data.icon %}
         <img src="{{ mostRecent.data.icon }}" alt="" class="insights-gallery-icon">
@@ -53,7 +78,13 @@
   {# Second row with 50/50 split #}
   <div class="insights-second-row">
     {% if secondRecent %}
-    <a href="{{ secondRecent.url }}" class="insights-gallery-item" style="background-color: var(--theme-pale-sage);">
+    {# Second position gets pale-sage if it's a featured post #}
+    {% if secondRecent.data.featured %}
+      {% set secondBgColor = "var(--theme-pale-sage)" %}
+    {% else %}
+      {% set secondBgColor = secondRecent.data.background | getThemeColor(secondRecent.url) %}
+    {% endif %}
+    <a href="{{ secondRecent.url }}" class="insights-gallery-item" style="background-color: {{ secondBgColor }};">
       <div class="insights-gallery-content">
         {% if secondRecent.data.icon %}
         <img src="{{ secondRecent.data.icon }}" alt="" class="insights-gallery-icon" loading="lazy">
@@ -69,7 +100,13 @@
     {% endif %}
     
     {% if thirdRecent %}
-    <a href="{{ thirdRecent.url }}" class="insights-gallery-item" style="background-color: var(--theme-light-purple);">
+    {# Third position gets light-purple if it's a featured post #}
+    {% if thirdRecent.data.featured %}
+      {% set thirdBgColor = "var(--theme-light-purple)" %}
+    {% else %}
+      {% set thirdBgColor = thirdRecent.data.background | getThemeColor(thirdRecent.url) %}
+    {% endif %}
+    <a href="{{ thirdRecent.url }}" class="insights-gallery-item" style="background-color: {{ thirdBgColor }};">
       <div class="insights-gallery-content">
         {% if thirdRecent.data.icon %}
         <img src="{{ thirdRecent.data.icon }}" alt="" class="insights-gallery-icon" loading="lazy">

@@ -18,17 +18,9 @@ layout: base
     </div>
     
     {% if featureImage !== false %}
-      {# Check if background has a hex value #}
-      {% set backgroundColor = background %}
-      {% if backgroundColor and backgroundColor.trim() !== "" %}
-        {# If background has a value, ensure it has # prefix for hex color #}
-        {% if not backgroundColor.startsWith('#') %}
-          {% set backgroundColor = '#' + backgroundColor %}
-        {% endif %}
-      {% else %}
-        {# If no background color provided, use a default #}
-        {% set backgroundColor = "var(--theme-terracotta)" %}
-      {% endif %}
+      {# Check if this post is in the top 3 featured positions #}
+      {% set currentPost = { url: page.url, data: { background: background } } %}
+      {% set backgroundColor = currentPost | getPostBackgroundColor(collections.featuredPosts) %}
       
       <div class="post-feature-image" style="background-color: {{ backgroundColor }};">
         {% if icon %}
@@ -103,30 +95,9 @@ layout: base
           {# Display selected posts #}
           {% for post in selectedPosts %}
           <a href="{{ post.url }}" class="insights-card" aria-label="Read {{ post.data.title }}">
-            {% if post.data.featureImage === true %}
-              {# Handle background color #}
-              {% set backgroundColor = post.data.background %}
-              {% if backgroundColor and backgroundColor.trim() !== "" %}
-                {% if not backgroundColor.startsWith('#') %}
-                  {% set backgroundColor = '#' + backgroundColor %}
-                {% endif %}
-              {% else %}
-                {# Use random color from palette if no background specified #}
-                {% set colorIndex = post.url.length % 10 %}
-                {% set colorPalette = [
-                  "var(--theme-terracotta)",
-                  "var(--theme-pale-sage)",
-                  "var(--theme-soft-stone)",
-                  "var(--theme-warm-beige)",
-                  "var(--theme-neutral-cream)",
-                  "var(--theme-warm-bronze)",
-                  "var(--theme-sage-green)",
-                  "var(--theme-soft-blue)",
-                  "var(--theme-dusty-violet)",
-                  "var(--theme-light-purple)"
-                ] %}
-                {% set backgroundColor = colorPalette[colorIndex] %}
-              {% endif %}
+            {% if post.data.featureImage !== false %}
+              {# Use the getPostBackgroundColor filter to handle featured position colors #}
+              {% set backgroundColor = post | getPostBackgroundColor(collections.featuredPosts) %}
               
               <div class="insights-card-image-wrapper" style="background-color: {{ backgroundColor }};">
                 {% if post.data.icon %}

@@ -1,16 +1,3 @@
-{# Define the color palette for blog post backgrounds #}
-{% set colorPalette = [
-  "var(--theme-terracotta)",
-  "var(--theme-pale-sage)",
-  "var(--theme-soft-stone)",
-  "var(--theme-warm-beige)",
-  "var(--theme-neutral-cream)",
-  "var(--theme-warm-bronze)",
-  "var(--theme-sage-green)",
-  "var(--theme-soft-blue)",
-  "var(--theme-dusty-violet)",
-  "var(--theme-light-purple)"
-] %}
 
 {# Get the three most recent featured posts to exclude them #}
 {% set recentFeatured = collections.featuredPosts.slice(0, 3) %}
@@ -33,20 +20,10 @@
   <div class="insights-main-grid">
     {% for item in remainingPosts %}
     <a href="{{ item.url }}" class="insights-card{% if item.data.featureImage !== true %} insights-card--no-image{% endif %}">
-      {# Only render image wrapper if featureImage is true #}
-      {% if item.data.featureImage === true %}
-        {# Check if background has a hex value #}
-        {% set backgroundColor = item.data.background %}
-        {% if backgroundColor and backgroundColor.trim() !== "" %}
-          {# If background has a value, ensure it has # prefix for hex color #}
-          {% if not backgroundColor.startsWith('#') %}
-            {% set backgroundColor = '#' + backgroundColor %}
-          {% endif %}
-        {% else %}
-          {# If background is empty, select a pseudo-random color from the palette #}
-          {% set randomIndex = item.url.length % colorPalette.length %}
-          {% set backgroundColor = colorPalette[randomIndex] %}
-        {% endif %}
+      {# Only render image wrapper if featureImage is not false #}
+      {% if item.data.featureImage !== false %}
+        {# Use the getPostBackgroundColor filter to handle featured position colors #}
+        {% set backgroundColor = item | getPostBackgroundColor(collections.featuredPosts) %}
         
         <div class="insights-card-image-wrapper" style="background-color: {{ backgroundColor }};">
           {% if item.data.icon %}

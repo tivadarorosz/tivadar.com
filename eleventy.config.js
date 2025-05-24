@@ -164,6 +164,94 @@ module.exports = function(eleventyConfig) {
     return `${readingTime} min read`;
   });
 
+  // Get featured position for a post (returns 1, 2, 3 or null)
+  eleventyConfig.addFilter("getFeaturedPosition", function(postUrl, featuredPosts) {
+    if (!featuredPosts || !postUrl) return null;
+    
+    // Get top 3 featured posts
+    const topThree = featuredPosts.slice(0, 3);
+    
+    // Find position (1-based index)
+    for (let i = 0; i < topThree.length; i++) {
+      if (topThree[i].url === postUrl) {
+        return i + 1;
+      }
+    }
+    
+    return null;
+  });
+
+  // Map theme color names to CSS variables
+  eleventyConfig.addFilter("getThemeColor", function(colorName, pageUrl) {
+    const colorMap = {
+      'terracotta': 'var(--theme-terracotta)',
+      'pale-sage': 'var(--theme-pale-sage)',
+      'soft-stone': 'var(--theme-soft-stone)',
+      'warm-beige': 'var(--theme-warm-beige)',
+      'neutral-cream': 'var(--theme-neutral-cream)',
+      'warm-bronze': 'var(--theme-warm-bronze)',
+      'sage-green': 'var(--theme-sage-green)',
+      'soft-blue': 'var(--theme-soft-blue)',
+      'dusty-violet': 'var(--theme-dusty-violet)',
+      'light-purple': 'var(--theme-light-purple)'
+    };
+    
+    // If a valid color name is provided, return the CSS variable
+    if (colorName && colorMap[colorName]) {
+      return colorMap[colorName];
+    }
+    
+    // If no color or invalid color, return a deterministic "random" color based on URL
+    const colors = Object.values(colorMap);
+    
+    // Create a simple hash from the page URL for deterministic randomness
+    let hash = 0;
+    if (pageUrl) {
+      for (let i = 0; i < pageUrl.length; i++) {
+        const char = pageUrl.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32-bit integer
+      }
+    }
+    
+    // Use the hash to pick a color deterministically
+    const index = Math.abs(hash) % colors.length;
+    return colors[index];
+  });
+
+  // Get the appropriate background color for a post considering featured position
+  eleventyConfig.addFilter("getPostBackgroundColor", function(post, featuredPosts) {
+    // Check if this post is in the top 3 featured positions
+    if (!featuredPosts || !post || !post.url) {
+      // Fallback to standard color logic if no featured posts collection
+      return eleventyConfig.getFilter("getThemeColor")(post?.data?.background, post?.url);
+    }
+    
+    // Get top 3 featured posts
+    const topThree = featuredPosts.slice(0, 3);
+    
+    // Find position (1-based index)
+    let featuredPosition = null;
+    for (let i = 0; i < topThree.length; i++) {
+      if (topThree[i].url === post.url) {
+        featuredPosition = i + 1;
+        break;
+      }
+    }
+    
+    // If it's in top 3 featured, use the fixed featured colors
+    if (featuredPosition === 1) {
+      return 'var(--theme-terracotta)';
+    } else if (featuredPosition === 2) {
+      return 'var(--theme-pale-sage)';
+    } else if (featuredPosition === 3) {
+      return 'var(--theme-light-purple)';
+    }
+    
+    // Otherwise, use the standard color logic
+    return eleventyConfig.getFilter("getThemeColor")(post.data.background, post.url);
+  });
+
   return {
     dir: {
       input: "src",
