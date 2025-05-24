@@ -1,12 +1,12 @@
 // ==============================================
-// CITIES HERO COMPONENT
+// TRAVEL HERO COMPONENT
 // ==============================================
-// Independent hero component specifically for the cities page
+// Independent hero component specifically for the travel page
 
 @use '../../variables' as *;
 // Note: Animation style is imported through _components.scss
 
-.cities-hero {
+.travel-hero {
   padding-top: clamp(4rem, 8vw, 7rem); // Fluid top padding
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
@@ -19,7 +19,7 @@
   }
 }
 
-.cities-hero-content {
+.travel-hero-content {
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 5.5rem; // Bottom padding
@@ -30,7 +30,7 @@
   }
 }
 
-.cities-hero-title {
+.travel-hero-title {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-hero); // Using the hero token for consistency
@@ -51,14 +51,14 @@
 }
 
 // Title animation styles
-.cities-title-wrapper {
+.travel-title-wrapper {
   display: inline-block;
   position: relative;
   width: 100%;
   text-align: center;
 }
 
-.cities-title-static {
+.travel-title-static {
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -73,8 +73,8 @@
 }
 
 // CSS fallback for when JavaScript is blocked or fails
-.no-js .cities-title-static:not(.hero-title-animation) {
-  animation: fadeInCitiesTitle 1s ease-out forwards;
+.no-js .travel-title-static:not(.hero-title-animation) {
+  animation: fadeInTravelTitle 1s ease-out forwards;
   animation-delay: 0.5s;
   opacity: 0;
   text-align: center;
@@ -87,14 +87,14 @@
   }
 }
 
-@keyframes fadeInCitiesTitle {
+@keyframes fadeInTravelTitle {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.cities-hero-subtitle {
+.travel-hero-subtitle {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size-lead);
@@ -113,7 +113,7 @@
 }
 
 // Button container
-.cities-hero-button-container {
+.travel-hero-button-container {
   margin-top: 2rem;
   text-align: center;
 }

@@ -1,0 +1,19 @@
+{% if title %}
+<section class="travel-hero">
+  <div class="travel-hero-content">
+    <h1 class="travel-hero-title">
+      <span class="travel-title-wrapper" data-title="{{ title }}">
+        <span class="travel-title-static">{{ title }}</span>
+      </span>
+    </h1>
+    {% if subtitle %}
+    <p class="travel-hero-subtitle">{{ subtitle }}</p>
+    {% endif %}
+    {% if buttonText and buttonUrl %}
+    <div class="travel-hero-button-container">
+      <a href="{{ buttonUrl }}" class="btn{% if buttonInverted %} btn--inverted{% endif %}">{{ buttonText }}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

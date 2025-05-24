@@ -1,11 +1,11 @@
 // ==============================================
-// CITIES PAGE STYLES
+// TRAVEL PAGE STYLES
 // ==============================================
 
 @use '../variables' as *;
 
-// Cities page layout
-.cities-page {
+// Travel page layout
+.travel-page {
   // Remove padding from main container to match other pages
   padding: 0;
 }
@@ -20,7 +20,7 @@
   margin-top: var(--spacing-lg);
 }
 
-// Cities page specific styles
+// Travel page specific styles
 // Match fmty section's top spacing for upcoming-presence-section
 .upcoming-presence-section {
   margin-top: var(--spacing-lg);

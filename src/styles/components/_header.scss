@@ -614,11 +614,19 @@ body.menu-open .logo-slash {
   transform: translateX(-50%) translateY(0);
 }
 
-// Add hover state for offerings link
-.offerings-link {
+// Add hover state for dropdown links
+.offerings-link,
+.included-link {
   cursor: pointer;
   
   &:hover {
     color: var(--color-black);
+  }
+}
+
+// Specific styling for Included dropdown
+.included-dropdown {
+  .dropdown-right {
+    background-color: var(--theme-sage-green);
   }
 }

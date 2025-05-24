@@ -6,25 +6,39 @@ document.addEventListener('DOMContentLoaded', function() {
   const titleWrapper = document.querySelector('.title-animation-wrapper');
   let scrollTimer;
   
-  // Dropdown menu functionality
-  const dropdownWrapper = document.querySelector('.dropdown-wrapper');
-  const offeringsLink = document.querySelector('.offerings-link');
+  // Dropdown menu functionality for all dropdowns
+  const dropdownWrappers = document.querySelectorAll('.dropdown-wrapper');
   
-  if (offeringsLink && dropdownWrapper) {
-    // Handle click on offerings link
-    offeringsLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdownWrapper.classList.toggle('active');
-    });
+  dropdownWrappers.forEach(wrapper => {
+    const dropdownLink = wrapper.querySelector('.offerings-link, .included-link');
     
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!dropdownWrapper.contains(e.target)) {
-        dropdownWrapper.classList.remove('active');
-      }
-    });
-  }
+    if (dropdownLink) {
+      // Handle click on dropdown link
+      dropdownLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close other dropdowns
+        dropdownWrappers.forEach(otherWrapper => {
+          if (otherWrapper !== wrapper) {
+            otherWrapper.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        wrapper.classList.toggle('active');
+      });
+    }
+  });
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown-wrapper')) {
+      dropdownWrappers.forEach(wrapper => {
+        wrapper.classList.remove('active');
+      });
+    }
+  });
   
   // Initialize title animations for all wrappers if we're on desktop
   if (window.innerWidth >= 768) {
@@ -268,25 +282,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Mobile submenu functionality
-  const mobileMenuLink = document.querySelector('.mobile-menu-link.has-submenu');
-  const mobileSubmenu = document.querySelector('.mobile-submenu');
+  // Mobile submenu functionality for all submenus
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link.has-submenu');
   
-  if (mobileMenuLink && mobileSubmenu) {
-    mobileMenuLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.classList.toggle('active');
-      mobileSubmenu.classList.toggle('active');
-    });
-  }
+  mobileMenuLinks.forEach(link => {
+    const submenu = link.nextElementSibling;
+    
+    if (submenu && submenu.classList.contains('mobile-submenu')) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Close other submenus
+        mobileMenuLinks.forEach(otherLink => {
+          if (otherLink !== link) {
+            otherLink.classList.remove('active');
+            const otherSubmenu = otherLink.nextElementSibling;
+            if (otherSubmenu && otherSubmenu.classList.contains('mobile-submenu')) {
+              otherSubmenu.classList.remove('active');
+            }
+          }
+        });
+        
+        // Toggle current submenu
+        this.classList.toggle('active');
+        submenu.classList.toggle('active');
+      });
+    }
+  });
   
-  // Cities hero title animation
-  const citiesTitleWrapper = document.querySelector('.cities-title-wrapper');
+  // Travel hero title animation
+  const travelTitleWrapper = document.querySelector('.travel-title-wrapper');
   
-  if (citiesTitleWrapper) {
+  if (travelTitleWrapper) {
     // Get the title text from the data attribute
-    const titleText = citiesTitleWrapper.getAttribute('data-title');
-    const staticTitle = citiesTitleWrapper.querySelector('.cities-title-static');
+    const titleText = travelTitleWrapper.getAttribute('data-title');
+    const staticTitle = travelTitleWrapper.querySelector('.travel-title-static');
     
     // For mobile: Just show the static title immediately
     if (window.innerWidth < 768) {
