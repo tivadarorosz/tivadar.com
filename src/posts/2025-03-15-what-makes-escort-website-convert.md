@@ -3,8 +3,11 @@ layout: post
 title: "What Makes an Escort Website Convert?"
 date: 2025-03-15
 tags: ["Design"]
-featured: true
 summary: "A quick insight into my approach for creating impactful boudoir photos."
+
+featured: 
+  enabled: true
+  position: 4  # optional, if you want to control sort order
 
 # Feature image control
 featureImage: true

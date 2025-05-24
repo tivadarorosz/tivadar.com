@@ -23,7 +23,9 @@ tags: ["Photography"]
 # Feature Flags Section
 # - featured: When true, includes this post in the featured posts collection and can appear in the special featured gallery.
 # - featureImage: When true, displays the colored background box with icon at the top of the post; when false, no visual header appears.
-featured: true
+featured: 
+  enabled: true
+  position: 1  # optional, if you want to control sort order
 featureImage: true
 
 # Media Section

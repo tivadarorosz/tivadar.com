@@ -96,12 +96,73 @@ module.exports = function(eleventyConfig) {
   
   // Add collections
   eleventyConfig.addCollection("featuredPosts", function(collectionApi) {
-    // Get all posts with featured: true, sorted by date (newest first)
-    return collectionApi.getFilteredByGlob("./src/posts/*.md")
-      .filter(item => item.data.featured === true)
-      .sort((a, b) => {
-        return b.date - a.date;
+    // Get all posts with featured.enabled: true
+    const featuredPosts = collectionApi.getFilteredByGlob("./src/posts/*.md")
+      .filter(item => {
+        // Only support new format: featured.enabled: true
+        return item.data.featured && 
+               typeof item.data.featured === 'object' && 
+               item.data.featured.enabled === true;
       });
+    
+    // Check for duplicate positions and warn
+    const positionMap = new Map();
+    featuredPosts.forEach(post => {
+      const position = post.data.featured.position;
+      if (position) {
+        if (!positionMap.has(position)) {
+          positionMap.set(position, []);
+        }
+        positionMap.get(position).push(post.fileSlug);
+      }
+    });
+    
+    // Warn about duplicates
+    positionMap.forEach((posts, position) => {
+      if (posts.length > 1) {
+        console.warn(`⚠️  Warning: Multiple posts have featured position ${position}: ${posts.join(', ')}`);
+      }
+    });
+    
+    // Sort posts first
+    const sortedPosts = featuredPosts.sort((a, b) => {
+      // Extract position values
+      const posA = a.data.featured.position || null;
+      const posB = b.data.featured.position || null;
+      
+      // If both have positions, sort by position (ascending)
+      if (posA !== null && posB !== null) {
+        // If same position, sort by date as tiebreaker
+        if (posA === posB) {
+          return b.date - a.date;
+        }
+        return posA - posB;
+      }
+      
+      // If only A has position, it comes first
+      if (posA !== null && posB === null) {
+        return -1;
+      }
+      
+      // If only B has position, it comes first
+      if (posA === null && posB !== null) {
+        return 1;
+      }
+      
+      // If neither has position, sort by date (newest first)
+      return b.date - a.date;
+    });
+    
+    // Warn if more than 5 featured posts (AFTER sorting)
+    if (sortedPosts.length > 5) {
+      console.warn(`⚠️  Warning: You have ${sortedPosts.length} featured posts, but only 5 slots available on the homepage.`);
+      console.warn(`   The following posts won't be shown on the homepage:`);
+      sortedPosts.slice(5).forEach((post, index) => {
+        console.warn(`   ${index + 6}. ${post.fileSlug} (position: ${post.data.featured.position || 'none'})`);
+      });
+    }
+    
+    return sortedPosts;
   });
 
   eleventyConfig.addCollection("allPosts", function(collectionApi) {

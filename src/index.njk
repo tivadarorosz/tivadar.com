@@ -77,7 +77,7 @@ title: Home
   <div class="featured-content">
     <h3 class="featured-title">Featured</h3>
     <div class="featured-posts">
-      {% for post in collections.featuredPosts.slice(0, 6) %}
+      {% for post in collections.featuredPosts.slice(0, 5) %}
       <a href="{{ post.url }}" class="featured-post">
         <div class="featured-post-title">{{ post.data.title }}</div>
         <div class="featured-post-category">{{ post.data.tags | formatTags }}</div>

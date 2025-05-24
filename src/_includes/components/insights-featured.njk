@@ -9,7 +9,7 @@
   {% set remainingSlots = 3 - recentFeatured.length %}
   {% set nonFeaturedPosts = [] %}
   {% for post in collections.allPosts %}
-    {% if not post.data.featured %}
+    {% if not post.data.featured or not post.data.featured.enabled %}
       {% set nonFeaturedPosts = (nonFeaturedPosts.push(post), nonFeaturedPosts) %}
     {% endif %}
   {% endfor %}
@@ -28,7 +28,7 @@
     {# First row with 2/3 vs 1/3 split #}
     {% if mostRecent %}
     {# First position always gets terracotta if it's a featured post #}
-    {% if mostRecent.data.featured %}
+    {% if mostRecent.data.featured and mostRecent.data.featured.enabled %}
       {% set firstBgColor = "var(--theme-terracotta)" %}
     {% else %}
       {% set firstBgColor = mostRecent.data.background | getThemeColor(mostRecent.url) %}
@@ -79,7 +79,7 @@
   <div class="insights-second-row">
     {% if secondRecent %}
     {# Second position gets pale-sage if it's a featured post #}
-    {% if secondRecent.data.featured %}
+    {% if secondRecent.data.featured and secondRecent.data.featured.enabled %}
       {% set secondBgColor = "var(--theme-pale-sage)" %}
     {% else %}
       {% set secondBgColor = secondRecent.data.background | getThemeColor(secondRecent.url) %}
@@ -101,7 +101,7 @@
     
     {% if thirdRecent %}
     {# Third position gets light-purple if it's a featured post #}
-    {% if thirdRecent.data.featured %}
+    {% if thirdRecent.data.featured and thirdRecent.data.featured.enabled %}
       {% set thirdBgColor = "var(--theme-light-purple)" %}
     {% else %}
       {% set thirdBgColor = thirdRecent.data.background | getThemeColor(thirdRecent.url) %}
