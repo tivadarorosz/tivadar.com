@@ -34,18 +34,18 @@
         "title": "Tivadar Orosz — Escort & Boudoir Photographer",
         "description": "Luxury escort and boudoir photography for high-end clients in London, Dubai, and worldwide. Discreet, elegant, unforgettable.",
         "keywords": "escort photography, boudoir photographer, sw friendly, luxury escort branding, high-end portraits, london boudoir, dubai escort photographer, sex worker photography, discreet photography",
-        "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg",
+        "image": "https://cdn.tivadar.com/images/twitter-card.webp",
         "type": "website",
         "schemaName": "Tivadar Orosz — Escort & Boudoir Photographer"
       },
       "fallbacks": {
         "article": {
           "description": "Latest insights on escort photography, privacy, and luxury branding.",
-          "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg"
+          "image": "https://cdn.tivadar.com/images/twitter-card.webp"
         },
         "story": {
           "description": "View this exclusive story from Tivadar Orosz's escort and boudoir portfolio.",
-          "image": "https://cdn.tivadarorosz.com/images/twitter-card.jpg"
+          "image": "https://cdn.tivadar.com/images/twitter-card.webp"
         },
         "page": {
           "description": "Luxury escort and boudoir photography for high-end clients in London, Dubai, and worldwide. Discreet, elegant, unforgettable."
@@ -100,7 +100,7 @@
     "cdn": {
       "base": "https://cdn.tivadar.com",
       "images": {
-        "socialCard": "https://cdn.tivadar.com/images/twitter-card.jpg",
+        "socialCard": "https://cdn.tivadar.com/images/twitter-card.webp",
         "favicon32": "https://cdn.tivadar.com/icons/favicon-32x32.png",
         "favicon16": "https://cdn.tivadar.com/icons/favicon-16x16.png",
         "appleTouchIcon": "https://cdn.tivadar.com/icons/apple-touch-icon.png"

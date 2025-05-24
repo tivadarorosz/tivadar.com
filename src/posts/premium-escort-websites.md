@@ -1,14 +1,18 @@
 ---
-# Content
-title: "Premium Websites: The New Key to Escort Success" 
+# Content Section
+# - title: The headline displayed at the top of the blog post and in all post listings.
+# - date: Determines the post's chronological order and displays as "Jan 15, 2025" format on the post.
+# - summary: A brief description shown in social media previews and meta tags for SEO purposes.
+title: "Premium Websites: The New Key to Escort Success"
 date: 2025-05-16
 summary: "Cheap website builders won't get you found. A premium escort website ensures visibility, SEO dominance, and brand authority."
 
-# Taxonomy
+# Taxonomy Section
+# - tags: Categories that appear as styled labels on the post, used for grouping related content.
 # Available tags:
 # - Photography
 # - Branding
-# - Website Design  
+# - Website Design
 # - Privacy
 # - Security
 # - Creative Direction
@@ -16,17 +20,22 @@ summary: "Cheap website builders won't get you found. A premium escort website e
 # - Announcements
 tags: ["Photography"]
 
-# Feature Flags 
+# Feature Flags Section
+# - featured: When true, includes this post in the featured posts collection and can appear in the special featured gallery.
+# - featureImage: When true, displays the colored background box with icon at the top of the post; when false, no visual header appears.
 featured: true
 featureImage: true
 
-# Media
-coverImage: "https://cdn.tivadarorosz.com/blog-icons/001111.webp"
-icon: "https://cdn.tivadarorosz.com/blog-icons/001.webp"
+# Media Section
+# - coverImage: The image used for social media previews (Open Graph and Twitter cards) when sharing the post.
+# - icon: The SVG graphic displayed inside the colored feature image box on the post and in post grids.
+coverImage: "https://cdn.tivadar.com/blog-icons/001111.webp"
+icon: "https://cdn.tivadar.com/blog-icons/001.webp"
 
-# Styling 
+# Styling Section
+# - background: Selects the background color for the feature image box from the predefined palette, or if omitted, assigns a permanent random color based on the post's URL (unless it's in the top 3 featured positions, which override with fixed colors).
 # Available background colors:
-# - terracotta 
+# - terracotta
 # - pale-sage
 # - soft-stone
 # - warm-beige
@@ -38,7 +47,8 @@ icon: "https://cdn.tivadarorosz.com/blog-icons/001.webp"
 # - light-purple
 background: "terracotta"
 
-# Layout 
+# Layout Section
+# - layout: Tells Eleventy which template to use for rendering this content, in this case the "post" template which includes the header, content area, and related posts section.
 layout: post
 ---
 
